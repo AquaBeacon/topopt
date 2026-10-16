@@ -1,0 +1,67 @@
+  shell repaired: 2052 -> 2048 triangles, volume 39790.1 -> 39790.1 mm3 (osmo_tripod_repaired.stl)
+
+mesh target 8.00 mm
+  shell refined to 8.00 mm edges: 2048 -> 4314 triangles
+  mesh osmo_tripod_repaired_h8.00_mesh.inp: 12994 nodes, 6329 elements at 8.00 mm
+  LC1 push 30N at camera top z=88, feet  normal   req 3.00  p99.5  10.045  worst   4.019  max   0.0410 mm  PASS
+  LC2 bag crush 150N straight down on th normal   req 3.00  p99.5  14.592  worst   9.241  max   0.0525 mm  PASS
+  LC3h bag press 150N on one leg tip, bo abnormal req 1.50  p99.5   5.822  worst   4.619  max   0.3463 mm  PASS
+  LC3x worst leverage 150N on one leg ti abnormal req 1.50  p99.5   2.553  worst   1.652  max   2.8189 mm  PASS
+  LC3b 150N sideways on one leg tip, oth abnormal req 1.50  p99.5   9.726  worst   7.604  max   0.2561 mm  PASS
+  LC5tip DROP 100g: land on one foot, ca abnormal req 1.50  p99.5   0.953  worst   0.593  max   5.1897 mm  FAIL
+      - safety factor p99.5 0.953 is below the required 1.50
+      - the worst element is at 0.593, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+
+mesh target 4.00 mm
+  shell refined to 4.00 mm edges: 2048 -> 12012 triangles
+  mesh osmo_tripod_repaired_h4.00_mesh.inp: 44738 nodes, 24308 elements at 4.00 mm
+  LC1 push 30N at camera top z=88, feet  normal   req 3.00  p99.5  10.419  worst   3.159  max   0.0421 mm  PASS
+  LC2 bag crush 150N straight down on th normal   req 3.00  p99.5  23.024  worst   8.916  max   0.0433 mm  PASS
+  LC3h bag press 150N on one leg tip, bo abnormal req 1.50  p99.5   5.614  worst   1.911  max   0.3587 mm  PASS
+  LC3x worst leverage 150N on one leg ti abnormal req 1.50  p99.5   2.256  worst   1.131  max   2.8816 mm  FAIL
+      - the worst element is at 1.131, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+  LC3b 150N sideways on one leg tip, oth abnormal req 1.50  p99.5   9.313  worst   6.194  max   0.2591 mm  PASS
+  LC5tip DROP 100g: land on one foot, ca abnormal req 1.50  p99.5   0.940  worst   0.442  max   4.7853 mm  FAIL
+      - safety factor p99.5 0.940 is below the required 1.50
+      - the worst element is at 0.442, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+
+mesh target 2.00 mm
+  shell refined to 2.00 mm edges: 2048 -> 40110 triangles
+  mesh osmo_tripod_repaired_h2.00_mesh.inp: 216205 nodes, 132126 elements at 2.00 mm
+  LC1 push 30N at camera top z=88, feet  normal   req 3.00  p99.5  12.028  worst   2.961  max   0.0398 mm  PASS
+  LC2 bag crush 150N straight down on th normal   req 3.00  p99.5  23.270  worst   8.282  max   0.0403 mm  PASS
+  LC3h bag press 150N on one leg tip, bo abnormal req 1.50  p99.5   5.881  worst   0.096  max   0.3398 mm  FAIL
+      - the worst element is at 0.096, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+  LC3x worst leverage 150N on one leg ti abnormal req 1.50  p99.5   2.261  worst   0.827  max   2.8176 mm  FAIL
+      - the worst element is at 0.827, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+  LC3b 150N sideways on one leg tip, oth abnormal req 1.50  p99.5   9.700  worst   5.700  max   0.2495 mm  PASS
+  LC5tip DROP 100g: land on one foot, ca abnormal req 1.50  p99.5   0.969  worst   0.313  max   4.7116 mm  FAIL
+      - safety factor p99.5 0.969 is below the required 1.50
+      - the worst element is at 0.313, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+
+wrote osmo_tripod/out/ccx_conv\ccx_summary.json
+  8.00 mm: FAIL  SF 0.953  max 5.18965 mm  mass 49.339686 g
+    modes of {LC1 push 30N at came, LC2 bag crush 150N s}: 1827.6 Hz, 2967.4 Hz, 3330.7 Hz
+    modes of {LC3h bag press 150N }: 2607.8 Hz, 2619.2 Hz, 2868.4 Hz
+    modes of {LC3x worst leverage , LC3b 150N sideways o}: 456.6 Hz, 2021.7 Hz, 2341.6 Hz
+    modes of {LC5tip DROP 100g: la}: 207.7 Hz, 323.4 Hz, 450.4 Hz
+    lowest buckling factor: 17.434
+  4.00 mm: FAIL  SF 0.94  max 4.78526 mm  mass 49.339686 g
+    modes of {LC1 push 30N at came, LC2 bag crush 150N s}: 1843.2 Hz, 2879.0 Hz, 3327.4 Hz
+    modes of {LC3h bag press 150N }: 2616.4 Hz, 2629.6 Hz, 2857.8 Hz
+    modes of {LC3x worst leverage , LC3b 150N sideways o}: 454.8 Hz, 2033.8 Hz, 2358.1 Hz
+    modes of {LC5tip DROP 100g: la}: 212.5 Hz, 332.7 Hz, 455.6 Hz
+    lowest buckling factor: 11.234
+  2.00 mm: FAIL  SF 0.969  max 4.71157 mm  mass 49.339686 g
+    modes of {LC1 push 30N at came, LC2 bag crush 150N s}: 1853.9 Hz, 2820.4 Hz, 3249.8 Hz
+    modes of {LC3h bag press 150N }: 2630.4 Hz, 2636.0 Hz, 2864.2 Hz
+    modes of {LC3x worst leverage , LC3b 150N sideways o}: 457.4 Hz, 2043.8 Hz, 2371.8 Hz
+    modes of {LC5tip DROP 100g: la}: 215.3 Hz, 337.3 Hz, 457.9 Hz
+    lowest buckling factor: 6.225
+  vs voxel FEA, case by case: 6 of 6 within 15 %
+    LC1 push 30N at camera top z=88, feet  voxel   0.0393  ccx   0.0398  ok
+    LC2 bag crush 150N straight down on th voxel   0.0410  ccx   0.0403  ok
+    LC3b 150N sideways on one leg tip, oth voxel   0.2539  ccx   0.2495  ok
+    LC3h bag press 150N on one leg tip, bo voxel   0.3467  ccx   0.3398  ok
+    LC3x worst leverage 150N on one leg ti voxel   2.7837  ccx   2.8176  ok
+    LC5tip DROP 100g: land on one foot, ca voxel   4.6309  ccx   4.7116  ok

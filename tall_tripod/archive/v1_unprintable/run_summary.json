@@ -1,0 +1,56 @@
+{
+  "schema": "topopt/run/1",
+  "study": "osmo_tripod/tall_tripod_study.json",
+  "outdir": "osmo_tripod/out/tall/run",
+  "stages": [
+    {
+      "stage": "setup",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": null
+    },
+    {
+      "stage": "opt",
+      "exit_code": 1,
+      "error": null,
+      "skipped": null,
+      "note": "shape does not meet the requirement; continuing so the report says why"
+    },
+    {
+      "stage": "extract",
+      "exit_code": 1,
+      "error": null,
+      "skipped": null,
+      "note": null
+    },
+    {
+      "stage": "print",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": "wrote printcheck.json (threshold 0.40)"
+    },
+    {
+      "stage": "ccx",
+      "exit_code": null,
+      "error": null,
+      "skipped": true,
+      "note": "gmsh and calculix not installed on this machine -- the independent re-analysis was not run, and the report lists its checks as UNKNOWN"
+    },
+    {
+      "stage": "report",
+      "exit_code": 1,
+      "error": null,
+      "skipped": null,
+      "note": null
+    }
+  ],
+  "stopped_at": null,
+  "valid_through": [
+    "setup",
+    "opt",
+    "extract",
+    "print"
+  ]
+}

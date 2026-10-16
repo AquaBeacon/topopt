@@ -1,0 +1,67 @@
+{
+    "error_string": "Success.",
+    "export_time": 3110,
+    "layer_height": 0.20000000298023224,
+    "plate_index": 0,
+    "prepare_time": 592,
+    "return_code": 0,
+    "sliced_plates": [
+        {
+            "feature_type_times": {
+                "Bottom surface": 60.81904602050781,
+                "Bridge": 750.7883911132813,
+                "Custom": 30.793704986572266,
+                "Gap infill": 27.734643936157227,
+                "Inner wall": 1714.723388671875,
+                "Internal solid infill": 1123.124267578125,
+                "Outer wall": 2665.428466796875,
+                "Overhang wall": 224.6698455810547,
+                "Sparse infill": 4884.541015625,
+                "Support": 9314.650390625,
+                "Support interface": 263.8943176269531,
+                "Support transition": 166.9165496826172,
+                "Top surface": 237.76954650878906,
+                "Travel": 3328.421875,
+                "Undefined": 3317.597900390625
+            },
+            "filament_change_times": 0,
+            "filaments": [
+                {
+                    "filament_id": "GFA00",
+                    "id": 1,
+                    "main_used_g": 164.25094604492188,
+                    "total_used_g": 294.75726318359375
+                }
+            ],
+            "generate_support_material_time": 5751,
+            "id": 1,
+            "infill_time": 1039,
+            "layer_filament_change": 0,
+            "main_predication": 24764.447265625,
+            "make_perimeters_time": 811,
+            "obj_cached_cnt": 0,
+            "objects": [
+                {
+                    "bbox": {
+                        "depth": 177.92323303222656,
+                        "height": 196.5,
+                        "width": 204.63758850097656,
+                        "x": 27.11693572998047,
+                        "y": 38.46556091308594,
+                        "z": 0.0
+                    },
+                    "id": 5,
+                    "name": "tall_tripod_study_t40_finish.stl",
+                    "triangle_count": 898948
+                }
+            ],
+            "sliced_time": 11742,
+            "sliced_time_with_cache": 3741,
+            "total_predication": 24784.38671875,
+            "triangle_count": 898948,
+            "warning_message": ""
+        }
+    ],
+    "sparse_infill_density": 15.0,
+    "wall_loops": 2
+}

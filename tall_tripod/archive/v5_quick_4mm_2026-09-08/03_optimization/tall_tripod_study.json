@@ -1,0 +1,4529 @@
+{
+  "study": "tall_tripod/tall_tripod_study.json",
+  "schema": "geometry",
+  "material": {
+    "material_model": "orthotropic_equivalent_solid",
+    "card_id": "pla_generic_fff_orthotropic_v1",
+    "classification": "conservative_literature_based_default",
+    "measured_for_specific_printer": false,
+    "solid_fraction_applied": 1.0,
+    "Ex_Ey_Ez_MPa": [
+      3000,
+      2400,
+      1500
+    ],
+    "Gxy_Gyz_Gzx_MPa": [
+      1000,
+      550,
+      550
+    ],
+    "strengths_MPa": {
+      "Xt": 50,
+      "Xc": 60,
+      "Yt": 35,
+      "Yc": 50,
+      "Zt": 22,
+      "Zc": 40,
+      "Sxy": 25,
+      "Syz": 15,
+      "Szx": 15
+    },
+    "source": "docs/FFF_PLA_PETG_orthotropic_material_reference.md section 5"
+  },
+  "setup": {
+    "schema": "topopt/setup/1",
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      "load region 'mount_head' in case 'LC1f  push 1.0 N horizontally at the camera mount' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'mount_head' in case 'LC1f  push 1.0 N horizontally at the camera mount' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'mount_head' in case 'LC2   camera weight plus 5x vertical shock' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'mount_head' in case 'LC3n  lift by the head, north foot caught' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'mount_head' in case 'LC3n  lift by the head, north foot caught' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'mount_head' in case 'LC3sw lift by the head, south-west foot caught' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'mount_head' in case 'LC3sw lift by the head, south-west foot caught' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'mount_head' in case 'LC3se lift by the head, south-east foot caught' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'mount_head' in case 'LC3se lift by the head, south-east foot caught' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "load region 'head_plus_x' in case 'LC4t  twist the head about the vertical axis' reaches 17 % (512.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 83 % only.",
+      "load region 'head_minus_x' in case 'LC4t  twist the head about the vertical axis' reaches 25 % (512.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 75 % only.",
+      "load region 'mount_head' in case 'LC4t  twist the head about the vertical axis' reaches 20 % (1024.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 80 % only.",
+      "the free region is only 2.0 voxels (8.00 mm) thick at its thinnest. Below about 3 voxels there is no room for a hole, so the topology there is set by the outline rather than chosen -- refine the grid or widen the design space.",
+      "4 support(s) use ground contact, so the feet are not placed by the CAD. What the study still chooses is the 4 zone(s) to look in (ground_all at [0.0, 0.0, 2.0]; catch_n at [0.0, 79.8, 2.0]; catch_sw at [-69.2, -40.0, 2.0]; catch_se at [69.2, -40.0, 2.0]). If a partial-support case appears at only one azimuth, check the result actually stands up -- a glued contact cannot tip, so nothing in the objective asks for a wide stance."
+    ],
+    "info": {
+      "voxel_mm": 4.0,
+      "grid_shape": [
+        64,
+        64,
+        42
+      ],
+      "origin_mm": [
+        -128.0,
+        -128.0,
+        -8.0
+      ],
+      "design_space_mm3": 6515712.0,
+      "preserve_mm3": 20480.0,
+      "obstacle_mm3": 36736.0,
+      "obstacle_declared_mm3": 21632.0,
+      "domain_mm3": 6515712.0,
+      "free_mm3": 6459520.0,
+      "free_voxels": 100930,
+      "domain_voxels": 101808,
+      "ground": {
+        "axis": "Z",
+        "plane_mm": 0.0,
+        "band_voxels": 2828,
+        "band_area_mm2": 45248.0
+      },
+      "attach": {
+        "mount_head": {
+          "specs": [
+            {
+              "region": "head_underside"
+            }
+          ],
+          "attach_voxels": 16,
+          "attach_usable_voxels": 16,
+          "attach_area_mm2": 256.0,
+          "no_attach_voxels": 276,
+          "no_attach_mm3": 17664.0,
+          "standoff_mm": 4.0
+        }
+      },
+      "no_attach_mm3": 17664.0,
+      "attach_standoff_mm": 4.0,
+      "preserve_outside_design_space_mm3": 0.0,
+      "preserve_bodies": 1,
+      "domain_components": 1,
+      "preserve_bodies_by_domain_component": {
+        "1": [
+          1
+        ]
+      },
+      "design_space_blocked_pct": 0.5,
+      "boundary_conditions": [
+        {
+          "case": "LC1f  push 1.0 N horizontally at the camera mount",
+          "kind": "support",
+          "region": "ground_all",
+          "voxels_in_domain": 2828,
+          "voxels_on_preserve": 0,
+          "contact": "ground",
+          "voxels_on_ground": 2828
+        },
+        {
+          "case": "LC1f  push 1.0 N horizontally at the camera mount",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC1f  push 1.0 N horizontally at the camera mount",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC2   camera weight plus 5x vertical shock",
+          "kind": "support",
+          "region": "ground_all",
+          "voxels_in_domain": 2828,
+          "voxels_on_preserve": 0,
+          "contact": "ground",
+          "voxels_on_ground": 2828
+        },
+        {
+          "case": "LC2   camera weight plus 5x vertical shock",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC3n  lift by the head, north foot caught",
+          "kind": "support",
+          "region": "catch_n",
+          "voxels_in_domain": 15480,
+          "voxels_on_preserve": 0,
+          "contact": "ground",
+          "voxels_on_ground": 430
+        },
+        {
+          "case": "LC3n  lift by the head, north foot caught",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC3n  lift by the head, north foot caught",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC3sw lift by the head, south-west foot caught",
+          "kind": "support",
+          "region": "catch_sw",
+          "voxels_in_domain": 15624,
+          "voxels_on_preserve": 0,
+          "contact": "ground",
+          "voxels_on_ground": 434
+        },
+        {
+          "case": "LC3sw lift by the head, south-west foot caught",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC3sw lift by the head, south-west foot caught",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC3se lift by the head, south-east foot caught",
+          "kind": "support",
+          "region": "catch_se",
+          "voxels_in_domain": 15624,
+          "voxels_on_preserve": 0,
+          "contact": "ground",
+          "voxels_on_ground": 434
+        },
+        {
+          "case": "LC3se lift by the head, south-east foot caught",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC3se lift by the head, south-east foot caught",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        },
+        {
+          "case": "LC4t  twist the head about the vertical axis",
+          "kind": "support",
+          "region": "ground_all",
+          "voxels_in_domain": 2828,
+          "voxels_on_preserve": 0,
+          "contact": "ground",
+          "voxels_on_ground": 2828
+        },
+        {
+          "case": "LC4t  twist the head about the vertical axis",
+          "kind": "load",
+          "region": "head_plus_x",
+          "voxels_in_domain": 48,
+          "voxels_on_preserve": 40
+        },
+        {
+          "case": "LC4t  twist the head about the vertical axis",
+          "kind": "load",
+          "region": "head_minus_x",
+          "voxels_in_domain": 32,
+          "voxels_on_preserve": 24
+        },
+        {
+          "case": "LC4t  twist the head about the vertical axis",
+          "kind": "load",
+          "region": "mount_head",
+          "voxels_in_domain": 80,
+          "voxels_on_preserve": 64
+        }
+      ],
+      "build_volume": {
+        "printer": {
+          "key": "X1C",
+          "name": "Bambu Lab X1-Carbon",
+          "nominal_mm": [
+            256.0,
+            256.0,
+            256.0
+          ],
+          "usable_mm": [
+            250.0,
+            250.0,
+            250.0
+          ],
+          "margin_mm": 0.0,
+          "envelope_mm": [
+            250.0,
+            250.0,
+            250.0
+          ],
+          "nozzle_mm": 0.4,
+          "min_feature_mm": 0.8,
+          "note": "AMS-fed; the purge tower needs ~60x60 mm of plate on multi-material prints.",
+          "source": "built-in",
+          "allow_oversize_design_space": false
+        },
+        "build_axis": "Z",
+        "domain": {
+          "what": "design space",
+          "printer": "X1C",
+          "printer_name": "Bambu Lab X1-Carbon",
+          "printer_source": "built-in",
+          "size_mm": [
+            240.0,
+            240.0,
+            144.0
+          ],
+          "usable_mm": [
+            250.0,
+            250.0,
+            250.0
+          ],
+          "margin_mm": 0.0,
+          "envelope_mm": [
+            250.0,
+            250.0,
+            250.0
+          ],
+          "fits_any_orientation": true,
+          "up_axes_that_fit": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "by_up_axis": {
+            "X": {
+              "fits": true,
+              "overflow_mm": {
+                "Y": -10.0,
+                "Z": -106.0,
+                "X": -10.0
+              }
+            },
+            "Y": {
+              "fits": true,
+              "overflow_mm": {
+                "X": -10.0,
+                "Z": -106.0,
+                "Y": -10.0
+              }
+            },
+            "Z": {
+              "fits": true,
+              "overflow_mm": {
+                "Y": -10.0,
+                "X": -10.0,
+                "Z": -106.0
+              }
+            }
+          },
+          "declared_build_axis": "Z",
+          "fits_as_declared": true,
+          "overflow_mm": {
+            "Y": -10.0,
+            "X": -10.0,
+            "Z": -106.0
+          },
+          "margin_to_envelope_mm": 10.0,
+          "lo_mm": [
+            -120.0,
+            -120.0,
+            0.0
+          ],
+          "hi_mm": [
+            120.0,
+            120.0,
+            144.0
+          ]
+        },
+        "preserve": {
+          "what": "preserve",
+          "printer": "X1C",
+          "printer_name": "Bambu Lab X1-Carbon",
+          "printer_source": "built-in",
+          "size_mm": [
+            32.0,
+            32.0,
+            36.0
+          ],
+          "usable_mm": [
+            250.0,
+            250.0,
+            250.0
+          ],
+          "margin_mm": 0.0,
+          "envelope_mm": [
+            250.0,
+            250.0,
+            250.0
+          ],
+          "fits_any_orientation": true,
+          "up_axes_that_fit": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "by_up_axis": {
+            "X": {
+              "fits": true,
+              "overflow_mm": {
+                "Z": -214.0,
+                "Y": -218.0,
+                "X": -218.0
+              }
+            },
+            "Y": {
+              "fits": true,
+              "overflow_mm": {
+                "Z": -214.0,
+                "X": -218.0,
+                "Y": -218.0
+              }
+            },
+            "Z": {
+              "fits": true,
+              "overflow_mm": {
+                "Y": -218.0,
+                "X": -218.0,
+                "Z": -214.0
+              }
+            }
+          },
+          "declared_build_axis": "Z",
+          "fits_as_declared": true,
+          "overflow_mm": {
+            "Y": -218.0,
+            "X": -218.0,
+            "Z": -214.0
+          },
+          "margin_to_envelope_mm": 214.0
+        },
+        "voxel_vs_min_feature": "one voxel is 4.00 mm and the smallest printable wall is 0.80 mm, so the grid cannot represent the printer's limit; minimum-feature checks on this run are about the grid, not the machine."
+      },
+      "design_freedom": {
+        "free_voxels": 100930,
+        "domain_voxels": 101808,
+        "free_fraction_of_domain": 0.9914,
+        "volfrac": 0.04,
+        "expected_final_mm3": 278860.8,
+        "preserve_mm3": 20480.0,
+        "preserve_fraction_of_expected_part": 0.0734,
+        "free_min_thickness_mm": 8.0,
+        "free_median_thickness_mm": 120.0,
+        "free_min_thickness_voxels": 2.0,
+        "fixed_points": [
+          {
+            "kind": "load",
+            "region": "mount_head",
+            "centroid_mm": [
+              2.5,
+              0.0,
+              135.0
+            ],
+            "mm3": 4096.0
+          },
+          {
+            "kind": "load",
+            "region": "head_plus_x",
+            "centroid_mm": [
+              6.8,
+              0.0,
+              135.2
+            ],
+            "mm3": 2560.0
+          },
+          {
+            "kind": "load",
+            "region": "head_minus_x",
+            "centroid_mm": [
+              -4.7,
+              0.0,
+              134.7
+            ],
+            "mm3": 1536.0
+          }
+        ],
+        "ground_zones": [
+          {
+            "region": "ground_all",
+            "centroid_mm": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "area_mm2": 45248.0
+          },
+          {
+            "region": "catch_n",
+            "centroid_mm": [
+              0.0,
+              79.8,
+              2.0
+            ],
+            "area_mm2": 6880.0
+          },
+          {
+            "region": "catch_sw",
+            "centroid_mm": [
+              -69.2,
+              -40.0,
+              2.0
+            ],
+            "area_mm2": 6944.0
+          },
+          {
+            "region": "catch_se",
+            "centroid_mm": [
+              69.2,
+              -40.0,
+              2.0
+            ],
+            "area_mm2": 6944.0
+          }
+        ],
+        "note_ground_zones": "4 support(s) act on the build plane rather than on preserve, so where the part touches down is a result. The zones themselves are still an input: this study says to look for contact inside them.",
+        "note_fixed_points": "3 load/support footprint(s) sit on preserve at positions the CAD model chose. The optimiser decides how to reach them, not where they are."
+      }
+    },
+    "bodies": [
+      {
+        "name": "mount_head",
+        "kind": "preserve",
+        "source": "stl:tall_preserve.stl",
+        "voxels": 320,
+        "mm3": 20480.0,
+        "bbox_mm": [
+          [
+            -16.0,
+            -16.0,
+            108.0
+          ],
+          [
+            16.0,
+            16.0,
+            144.0
+          ]
+        ],
+        "mesh": {
+          "triangles": 776,
+          "open_edges": 0,
+          "non_manifold_edges": 0,
+          "degenerate": 0,
+          "closed_shell": true,
+          "components": 1,
+          "edge_components": 1,
+          "self_intersections": 0,
+          "self_intersection_examples": []
+        },
+        "attach": {
+          "specs": [
+            {
+              "region": "head_underside"
+            }
+          ],
+          "attach_voxels": 16,
+          "attach_usable_voxels": 16,
+          "attach_area_mm2": 256.0,
+          "no_attach_voxels": 276,
+          "no_attach_mm3": 17664.0,
+          "standoff_mm": 4.0
+        }
+      },
+      {
+        "name": "design_space",
+        "kind": "design_space",
+        "source": "stl:tall_design_space.stl",
+        "voxels": 101808,
+        "mm3": 6515712.0,
+        "bbox_mm": [
+          [
+            -120.0,
+            -120.0,
+            0.0
+          ],
+          [
+            120.0,
+            120.0,
+            144.0
+          ]
+        ],
+        "mesh": {
+          "triangles": 284,
+          "open_edges": 0,
+          "non_manifold_edges": 0,
+          "degenerate": 0,
+          "closed_shell": true,
+          "components": 1,
+          "edge_components": 1,
+          "self_intersections": 0,
+          "self_intersection_examples": []
+        }
+      },
+      {
+        "name": "camera_swing_and_screw_access",
+        "kind": "obstacle",
+        "source": "stl:tall_obstacle.stl",
+        "voxels": 338,
+        "mm3": 21632.0,
+        "bbox_mm": [
+          [
+            -40.0,
+            -24.0,
+            124.0
+          ],
+          [
+            40.0,
+            28.0,
+            148.0
+          ]
+        ],
+        "clearance_requested_mm": 0.0,
+        "clearance_achieved_mm": 0.0,
+        "mesh": {
+          "triangles": 780,
+          "open_edges": 0,
+          "non_manifold_edges": 0,
+          "degenerate": 0,
+          "closed_shell": true,
+          "components": 2,
+          "edge_components": 2,
+          "self_intersections": 0,
+          "self_intersection_examples": []
+        }
+      },
+      {
+        "name": "preserve body 1",
+        "kind": "preserve_component",
+        "source": "mount_head",
+        "voxels": 320,
+        "mm3": 20480.0,
+        "domain_component": 1
+      }
+    ]
+  },
+  "converged": false,
+  "termination_reason": "max_iterations",
+  "density_converged": false,
+  "objective_converged": true,
+  "volume_converged": true,
+  "shape_converged": false,
+  "stress_converged": null,
+  "convergence_streak_required": 5,
+  "settings": {
+    "optimizer": "oc",
+    "stress": null,
+    "volfrac_of_free_cells": 0.04,
+    "filter_mm": 20.0,
+    "projection_eta": 0.5,
+    "beta_final": 16.0,
+    "penal_final": 3.0,
+    "symmetry": [],
+    "overhang": {
+      "self_support": true,
+      "rule": "45 deg cone, AM filter",
+      "axis": "Z",
+      "up": "+",
+      "p": 40.0,
+      "ramp_iterations": 27,
+      "max_support_mm": 0.0,
+      "reach_layers": 0,
+      "allow_support": [],
+      "allow_support_voxels": 0
+    },
+    "move_limit": 0.2,
+    "move_taper": true,
+    "volume_exact": true,
+    "iterations_run": 80,
+    "iterations_requested": 80,
+    "build_axis": "Z",
+    "raster_axis": "X",
+    "load_case_reference_compliance_Nmm": [
+      0.003124,
+      0.066249,
+      0.244003,
+      0.451124,
+      0.424367,
+      0.003658
+    ]
+  },
+  "stress_constraint": null,
+  "solver": {
+    "non_converged_solves": 0,
+    "total_solves": 480,
+    "warnings": [],
+    "solve_seconds": 177.564,
+    "cg_iterations": 12655,
+    "backend": "cuda",
+    "device": "NVIDIA GeForce RTX 4060 Ti",
+    "torch": "2.12.0+cu130",
+    "preconditioner": "mg",
+    "precision": "mixed32",
+    "multigrid": {
+      "levels": [
+        {
+          "shape": [
+            64,
+            64,
+            42
+          ],
+          "elements": 101250,
+          "ndof": 545025
+        },
+        {
+          "shape": [
+            32,
+            32,
+            21
+          ],
+          "elements": 13166,
+          "ndof": 71874
+        },
+        {
+          "shape": [
+            16,
+            16,
+            11
+          ],
+          "elements": 2080,
+          "ndof": 10404
+        },
+        {
+          "shape": [
+            8,
+            8,
+            6
+          ],
+          "elements": 300,
+          "ndof": 1701
+        }
+      ],
+      "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+      "coarse_solver": "dense cholesky",
+      "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+      "setup_seconds": 0.16
+    }
+  },
+  "volumes": {
+    "final_mm3": 280576.0,
+    "preserve_mm3": 20480.0,
+    "design_space_mm3": 6515712.0,
+    "domain_mm3": 6515712.0,
+    "volume_fraction_of_free_cells": 0.0403,
+    "volume_fraction_of_domain": 0.0431,
+    "mass_saving_vs_domain_pct": 95.7,
+    "min_member": {
+      "min_mm": 8.0,
+      "p5_mm": 8.0,
+      "median_mm": 16.0
+    },
+    "min_member_optimised": {
+      "min_mm": 8.0,
+      "p5_mm": 8.0,
+      "median_mm": 16.0
+    },
+    "ground_contact": {
+      "plane_mm": 0.0,
+      "axis": "Z",
+      "area_mm2": 2000.0,
+      "pads": 6,
+      "band_area_mm2": 45248.0
+    },
+    "unsupported": {
+      "voxels": 1,
+      "area_mm2": 16.0,
+      "on_preserve_voxels": 14,
+      "on_preserve_area_mm2": 224.0,
+      "axis": "Z",
+      "up": "+",
+      "max_support_mm": 0.0,
+      "allow_support": [],
+      "rule": "solid voxel with no solid voxel in the 45 degree cone below; voxels touching preserve are listed separately",
+      "bbox_mm": [
+        [
+          -32.0,
+          -24.0,
+          48.0
+        ],
+        [
+          -28.0,
+          -20.0,
+          52.0
+        ]
+      ]
+    }
+  },
+  "connectivity": {
+    "components": 1,
+    "preserve_bodies": 1,
+    "preserve_body_components": [
+      {
+        "body": 1,
+        "component": 1,
+        "preserve_voxels": 320,
+        "kept_fraction": 1.0
+      }
+    ],
+    "connected": true,
+    "island_voxels": 0,
+    "island_mm3": 0.0,
+    "unsupported_pruned_voxels": 0,
+    "unsupported_pruned_mm3": 0.0,
+    "pinches_healed": 5,
+    "pinches_healed_mm3": 320.0,
+    "pinches_left": 20,
+    "pinches_note": "20 contact(s) between cells remain an edge or a corner because every bridging cell is obstacle; the STL has a non-manifold edge there and the printed part a line contact"
+  },
+  "seconds": 373.5,
+  "history": [
+    {
+      "iter": 1,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.0,
+      "oc_evaluations": 13,
+      "objective": 6.0,
+      "compliance_per_case_Nmm": [
+        0.0031,
+        0.0662,
+        0.244,
+        0.4511,
+        0.4244,
+        0.0037
+      ],
+      "normalised_per_case": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "volume_fraction_free": 0.03237609321863069,
+      "greyness": 0.12487854921042701,
+      "change": 0.2,
+      "topology_change_frac": 1.0,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": null,
+        "volume_error_frac": 0.190598,
+        "topology_change_frac": 1.0
+      }
+    },
+    {
+      "iter": 2,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.037,
+      "oc_evaluations": 9,
+      "objective": 3.084104259762906,
+      "compliance_per_case_Nmm": [
+        0.0018,
+        0.0381,
+        0.1025,
+        0.1904,
+        0.178,
+        0.0024
+      ],
+      "normalised_per_case": [
+        0.5865,
+        0.5749,
+        0.4199,
+        0.422,
+        0.4194,
+        0.6614
+      ],
+      "volume_fraction_free": 0.039624847055645306,
+      "greyness": 0.14831621943896675,
+      "change": 0.20000000000000004,
+      "topology_change_frac": 0.0,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.48598262,
+        "volume_error_frac": 0.009379,
+        "topology_change_frac": 0.0
+      }
+    },
+    {
+      "iter": 3,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.0741,
+      "oc_evaluations": 9,
+      "objective": 2.6382382597547727,
+      "compliance_per_case_Nmm": [
+        0.0015,
+        0.0314,
+        0.0868,
+        0.1687,
+        0.1568,
+        0.0021
+      ],
+      "normalised_per_case": [
+        0.4954,
+        0.4734,
+        0.3557,
+        0.3739,
+        0.3695,
+        0.5703
+      ],
+      "volume_fraction_free": 0.03968543889887231,
+      "greyness": 0.14393392186390866,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 4e-05,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.14456904,
+        "volume_error_frac": 0.007864,
+        "topology_change_frac": 4e-05
+      }
+    },
+    {
+      "iter": 4,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.1111,
+      "oc_evaluations": 9,
+      "objective": 2.468504201908353,
+      "compliance_per_case_Nmm": [
+        0.0014,
+        0.0288,
+        0.0807,
+        0.1608,
+        0.1489,
+        0.0019
+      ],
+      "normalised_per_case": [
+        0.4631,
+        0.435,
+        0.3308,
+        0.3566,
+        0.3509,
+        0.5322
+      ],
+      "volume_fraction_free": 0.039697897224460814,
+      "greyness": 0.1399594845585938,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00022,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.06433614,
+        "volume_error_frac": 0.007553,
+        "topology_change_frac": 0.000218
+      }
+    },
+    {
+      "iter": 5,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.1481,
+      "oc_evaluations": 9,
+      "objective": 2.3830451345550134,
+      "compliance_per_case_Nmm": [
+        0.0014,
+        0.0276,
+        0.0777,
+        0.1569,
+        0.1449,
+        0.0019
+      ],
+      "normalised_per_case": [
+        0.4479,
+        0.4161,
+        0.3183,
+        0.3479,
+        0.3415,
+        0.5114
+      ],
+      "volume_fraction_free": 0.039703620173778174,
+      "greyness": 0.13676175179875416,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00067,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.03461978,
+        "volume_error_frac": 0.007409,
+        "topology_change_frac": 0.000674
+      }
+    },
+    {
+      "iter": 6,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.1852,
+      "oc_evaluations": 9,
+      "objective": 2.3332576013703314,
+      "compliance_per_case_Nmm": [
+        0.0014,
+        0.0268,
+        0.076,
+        0.1548,
+        0.1427,
+        0.0018
+      ],
+      "normalised_per_case": [
+        0.4392,
+        0.4051,
+        0.3113,
+        0.3431,
+        0.3363,
+        0.4982
+      ],
+      "volume_fraction_free": 0.039706093695809797,
+      "greyness": 0.13427870691673197,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.00059,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.0208924,
+        "volume_error_frac": 0.007348,
+        "topology_change_frac": 0.000594
+      }
+    },
+    {
+      "iter": 7,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.2222,
+      "oc_evaluations": 9,
+      "objective": 2.312713491547302,
+      "compliance_per_case_Nmm": [
+        0.0014,
+        0.0265,
+        0.0751,
+        0.1536,
+        0.1414,
+        0.0018
+      ],
+      "normalised_per_case": [
+        0.436,
+        0.4002,
+        0.3076,
+        0.3405,
+        0.3333,
+        0.4951
+      ],
+      "volume_fraction_free": 0.039715769889026066,
+      "greyness": 0.13306405873955585,
+      "change": 0.18499538673061244,
+      "topology_change_frac": 0.00033,
+      "criteria": {
+        "max_density_change": 0.184995,
+        "objective_rel_change": 0.0088049,
+        "volume_error_frac": 0.007106,
+        "topology_change_frac": 0.000327
+      }
+    },
+    {
+      "iter": 8,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.2593,
+      "oc_evaluations": 9,
+      "objective": 2.3026013150280353,
+      "compliance_per_case_Nmm": [
+        0.0014,
+        0.0264,
+        0.0743,
+        0.1526,
+        0.1403,
+        0.0018
+      ],
+      "normalised_per_case": [
+        0.4349,
+        0.3983,
+        0.3045,
+        0.3382,
+        0.3307,
+        0.496
+      ],
+      "volume_fraction_free": 0.03973020707864176,
+      "greyness": 0.1322925484670243,
+      "change": 0.1547000203647615,
+      "topology_change_frac": 0.00041,
+      "criteria": {
+        "max_density_change": 0.1547,
+        "objective_rel_change": 0.00437243,
+        "volume_error_frac": 0.006745,
+        "topology_change_frac": 0.000406
+      }
+    },
+    {
+      "iter": 9,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.2963,
+      "oc_evaluations": 9,
+      "objective": 2.295883897726354,
+      "compliance_per_case_Nmm": [
+        0.0014,
+        0.0263,
+        0.0737,
+        0.152,
+        0.1398,
+        0.0018
+      ],
+      "normalised_per_case": [
+        0.4339,
+        0.3968,
+        0.3021,
+        0.337,
+        0.3294,
+        0.4967
+      ],
+      "volume_fraction_free": 0.039748031491136045,
+      "greyness": 0.1316671031100543,
+      "change": 0.1393093153518864,
+      "topology_change_frac": 0.00033,
+      "criteria": {
+        "max_density_change": 0.139309,
+        "objective_rel_change": 0.00291732,
+        "volume_error_frac": 0.006299,
+        "topology_change_frac": 0.000327
+      }
+    },
+    {
+      "iter": 10,
+      "penal": 1.0,
+      "beta": 1.0,
+      "overhang_alpha": 0.3333,
+      "oc_evaluations": 9,
+      "objective": 2.2900930746661787,
+      "compliance_per_case_Nmm": [
+        0.0014,
+        0.0262,
+        0.0732,
+        0.1519,
+        0.1396,
+        0.0018
+      ],
+      "normalised_per_case": [
+        0.4326,
+        0.3953,
+        0.3002,
+        0.3367,
+        0.3289,
+        0.4965
+      ],
+      "volume_fraction_free": 0.03977254842671703,
+      "greyness": 0.13108564069077394,
+      "change": 0.11899157940468219,
+      "topology_change_frac": 0.00017,
+      "criteria": {
+        "max_density_change": 0.118992,
+        "objective_rel_change": 0.00252226,
+        "volume_error_frac": 0.005686,
+        "topology_change_frac": 0.000168
+      }
+    },
+    {
+      "iter": 11,
+      "penal": 1.5,
+      "beta": 1.0,
+      "overhang_alpha": 0.3704,
+      "oc_evaluations": 6,
+      "objective": 5.361453323206,
+      "compliance_per_case_Nmm": [
+        0.0028,
+        0.0499,
+        0.1919,
+        0.4692,
+        0.4218,
+        0.0032
+      ],
+      "normalised_per_case": [
+        0.9043,
+        0.7533,
+        0.7867,
+        1.04,
+        0.994,
+        0.8831
+      ],
+      "volume_fraction_free": 0.039806370861550464,
+      "greyness": 0.13044884341220064,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00012,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 1.34115084,
+        "volume_error_frac": 0.004841,
+        "topology_change_frac": 0.000119
+      }
+    },
+    {
+      "iter": 12,
+      "penal": 1.5,
+      "beta": 1.0,
+      "overhang_alpha": 0.4074,
+      "oc_evaluations": 9,
+      "objective": 5.133704215896719,
+      "compliance_per_case_Nmm": [
+        0.0029,
+        0.0491,
+        0.1881,
+        0.4183,
+        0.3753,
+        0.0033
+      ],
+      "normalised_per_case": [
+        0.9149,
+        0.7409,
+        0.7708,
+        0.9272,
+        0.8844,
+        0.8954
+      ],
+      "volume_fraction_free": 0.03983253252627594,
+      "greyness": 0.12992237405336202,
+      "change": 0.2,
+      "topology_change_frac": 0.00097,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.04247899,
+        "volume_error_frac": 0.004187,
+        "topology_change_frac": 0.000971
+      }
+    },
+    {
+      "iter": 13,
+      "penal": 1.5,
+      "beta": 1.0,
+      "overhang_alpha": 0.4444,
+      "oc_evaluations": 9,
+      "objective": 4.966677106785687,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0474,
+        0.1801,
+        0.406,
+        0.3643,
+        0.0032
+      ],
+      "normalised_per_case": [
+        0.877,
+        0.7151,
+        0.7383,
+        0.9,
+        0.8585,
+        0.8778
+      ],
+      "volume_fraction_free": 0.039865967075530764,
+      "greyness": 0.12822998718925668,
+      "change": 0.2,
+      "topology_change_frac": 0.00048,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.0325354,
+        "volume_error_frac": 0.003351,
+        "topology_change_frac": 0.000476
+      }
+    },
+    {
+      "iter": 14,
+      "penal": 1.5,
+      "beta": 1.0,
+      "overhang_alpha": 0.4815,
+      "oc_evaluations": 7,
+      "objective": 4.811736516247289,
+      "compliance_per_case_Nmm": [
+        0.0026,
+        0.0457,
+        0.174,
+        0.3959,
+        0.355,
+        0.0031
+      ],
+      "normalised_per_case": [
+        0.8402,
+        0.6898,
+        0.7131,
+        0.8776,
+        0.8366,
+        0.8545
+      ],
+      "volume_fraction_free": 0.03990367814243711,
+      "greyness": 0.12630962617838773,
+      "change": 0.12509006546042256,
+      "topology_change_frac": 0.00066,
+      "criteria": {
+        "max_density_change": 0.12509,
+        "objective_rel_change": 0.03119603,
+        "volume_error_frac": 0.002408,
+        "topology_change_frac": 0.000664
+      }
+    },
+    {
+      "iter": 15,
+      "penal": 1.5,
+      "beta": 1.0,
+      "overhang_alpha": 0.5185,
+      "oc_evaluations": 7,
+      "objective": 4.685392077300409,
+      "compliance_per_case_Nmm": [
+        0.0025,
+        0.0443,
+        0.1691,
+        0.386,
+        0.3455,
+        0.0031
+      ],
+      "normalised_per_case": [
+        0.812,
+        0.6692,
+        0.693,
+        0.8556,
+        0.8142,
+        0.8413
+      ],
+      "volume_fraction_free": 0.039928989643136605,
+      "greyness": 0.12441940180203141,
+      "change": 0.12345502183303603,
+      "topology_change_frac": 0.00109,
+      "criteria": {
+        "max_density_change": 0.123455,
+        "objective_rel_change": 0.02625756,
+        "volume_error_frac": 0.001775,
+        "topology_change_frac": 0.00109
+      }
+    },
+    {
+      "iter": 16,
+      "penal": 1.5,
+      "beta": 1.0,
+      "overhang_alpha": 0.5556,
+      "oc_evaluations": 6,
+      "objective": 4.590758007055347,
+      "compliance_per_case_Nmm": [
+        0.0025,
+        0.0436,
+        0.1654,
+        0.3745,
+        0.3346,
+        0.0031
+      ],
+      "normalised_per_case": [
+        0.7987,
+        0.6574,
+        0.6778,
+        0.83,
+        0.7886,
+        0.8382
+      ],
+      "volume_fraction_free": 0.03994422889864562,
+      "greyness": 0.12309071971413454,
+      "change": 0.11588062676948507,
+      "topology_change_frac": 0.00169,
+      "criteria": {
+        "max_density_change": 0.115881,
+        "objective_rel_change": 0.02019768,
+        "volume_error_frac": 0.001394,
+        "topology_change_frac": 0.001694
+      }
+    },
+    {
+      "iter": 17,
+      "penal": 1.5,
+      "beta": 2.0,
+      "overhang_alpha": 0.5926,
+      "oc_evaluations": 8,
+      "objective": 5.705231203494521,
+      "compliance_per_case_Nmm": [
+        0.0029,
+        0.0504,
+        0.2103,
+        0.5079,
+        0.4482,
+        0.0036
+      ],
+      "normalised_per_case": [
+        0.9245,
+        0.7605,
+        0.8618,
+        1.1259,
+        1.0562,
+        0.9763
+      ],
+      "volume_fraction_free": 0.032970949346548574,
+      "greyness": 0.10006731264540676,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00087,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.24276453,
+        "volume_error_frac": 0.175726,
+        "topology_change_frac": 0.000872
+      }
+    },
+    {
+      "iter": 18,
+      "penal": 1.5,
+      "beta": 2.0,
+      "overhang_alpha": 0.6296,
+      "oc_evaluations": 8,
+      "objective": 4.351367091635703,
+      "compliance_per_case_Nmm": [
+        0.0024,
+        0.0401,
+        0.16,
+        0.3481,
+        0.3077,
+        0.003
+      ],
+      "normalised_per_case": [
+        0.7632,
+        0.6048,
+        0.6558,
+        0.7716,
+        0.7252,
+        0.8308
+      ],
+      "volume_fraction_free": 0.039945478960602084,
+      "greyness": 0.11617614984520921,
+      "change": 0.13603240324351773,
+      "topology_change_frac": 0.00338,
+      "criteria": {
+        "max_density_change": 0.136032,
+        "objective_rel_change": 0.23730223,
+        "volume_error_frac": 0.001363,
+        "topology_change_frac": 0.003379
+      }
+    },
+    {
+      "iter": 19,
+      "penal": 1.5,
+      "beta": 2.0,
+      "overhang_alpha": 0.6667,
+      "oc_evaluations": 8,
+      "objective": 4.285414351122879,
+      "compliance_per_case_Nmm": [
+        0.0023,
+        0.0403,
+        0.1523,
+        0.3421,
+        0.3049,
+        0.003
+      ],
+      "normalised_per_case": [
+        0.7461,
+        0.6085,
+        0.6241,
+        0.7583,
+        0.7186,
+        0.8299
+      ],
+      "volume_fraction_free": 0.03994644859440252,
+      "greyness": 0.11573815971940678,
+      "change": 0.12454471752188168,
+      "topology_change_frac": 0.00039,
+      "criteria": {
+        "max_density_change": 0.124545,
+        "objective_rel_change": 0.01515679,
+        "volume_error_frac": 0.001339,
+        "topology_change_frac": 0.000386
+      }
+    },
+    {
+      "iter": 20,
+      "penal": 1.5,
+      "beta": 2.0,
+      "overhang_alpha": 0.7037,
+      "oc_evaluations": 8,
+      "objective": 4.2321997612340265,
+      "compliance_per_case_Nmm": [
+        0.0023,
+        0.04,
+        0.1497,
+        0.3375,
+        0.3001,
+        0.003
+      ],
+      "normalised_per_case": [
+        0.7363,
+        0.6033,
+        0.6136,
+        0.7481,
+        0.7072,
+        0.8237
+      ],
+      "volume_fraction_free": 0.039947845147540406,
+      "greyness": 0.11498208469911046,
+      "change": 0.12863525213476146,
+      "topology_change_frac": 0.0002,
+      "criteria": {
+        "max_density_change": 0.128635,
+        "objective_rel_change": 0.01241761,
+        "volume_error_frac": 0.001304,
+        "topology_change_frac": 0.000198
+      }
+    },
+    {
+      "iter": 21,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 0.7407,
+      "oc_evaluations": 8,
+      "objective": 7.730514722126272,
+      "compliance_per_case_Nmm": [
+        0.0037,
+        0.0634,
+        0.2921,
+        0.7317,
+        0.6327,
+        0.0047
+      ],
+      "normalised_per_case": [
+        1.1753,
+        0.9576,
+        1.1972,
+        1.6219,
+        1.4909,
+        1.2877
+      ],
+      "volume_fraction_free": 0.03994805169761783,
+      "greyness": 0.11421651425797523,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00024,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.82659495,
+        "volume_error_frac": 0.001299,
+        "topology_change_frac": 0.000238
+      }
+    },
+    {
+      "iter": 22,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 0.7778,
+      "oc_evaluations": 8,
+      "objective": 7.361699618333631,
+      "compliance_per_case_Nmm": [
+        0.0038,
+        0.0619,
+        0.2855,
+        0.6365,
+        0.5542,
+        0.0048
+      ],
+      "normalised_per_case": [
+        1.2231,
+        0.935,
+        1.17,
+        1.4109,
+        1.3059,
+        1.3169
+      ],
+      "volume_fraction_free": 0.03994133538259985,
+      "greyness": 0.11363129002630692,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.00107,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.047709,
+        "volume_error_frac": 0.001467,
+        "topology_change_frac": 0.00107
+      }
+    },
+    {
+      "iter": 23,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 0.8148,
+      "oc_evaluations": 6,
+      "objective": 7.100757453474639,
+      "compliance_per_case_Nmm": [
+        0.0036,
+        0.0593,
+        0.2675,
+        0.6253,
+        0.546,
+        0.0047
+      ],
+      "normalised_per_case": [
+        1.1538,
+        0.8953,
+        1.0961,
+        1.3861,
+        1.2866,
+        1.2828
+      ],
+      "volume_fraction_free": 0.039940352717739235,
+      "greyness": 0.11137647175161595,
+      "change": 0.1828997120708633,
+      "topology_change_frac": 0.00091,
+      "criteria": {
+        "max_density_change": 0.1829,
+        "objective_rel_change": 0.03544591,
+        "volume_error_frac": 0.001491,
+        "topology_change_frac": 0.000912
+      }
+    },
+    {
+      "iter": 24,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 0.8519,
+      "oc_evaluations": 7,
+      "objective": 6.9022361615108885,
+      "compliance_per_case_Nmm": [
+        0.0036,
+        0.0584,
+        0.2592,
+        0.5928,
+        0.5169,
+        0.0047
+      ],
+      "normalised_per_case": [
+        1.1447,
+        0.8818,
+        1.0623,
+        1.314,
+        1.2181,
+        1.2814
+      ],
+      "volume_fraction_free": 0.03993389075243288,
+      "greyness": 0.11023776146976594,
+      "change": 0.1490092476232039,
+      "topology_change_frac": 0.00049,
+      "criteria": {
+        "max_density_change": 0.149009,
+        "objective_rel_change": 0.02795776,
+        "volume_error_frac": 0.001653,
+        "topology_change_frac": 0.000485
+      }
+    },
+    {
+      "iter": 25,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 0.8889,
+      "oc_evaluations": 7,
+      "objective": 6.741657713641861,
+      "compliance_per_case_Nmm": [
+        0.0035,
+        0.0571,
+        0.25,
+        0.5777,
+        0.5056,
+        0.0046
+      ],
+      "normalised_per_case": [
+        1.1167,
+        0.8623,
+        1.0248,
+        1.2806,
+        1.1914,
+        1.2659
+      ],
+      "volume_fraction_free": 0.039939738428271566,
+      "greyness": 0.10892337781089578,
+      "change": 0.13134158255289552,
+      "topology_change_frac": 0.00083,
+      "criteria": {
+        "max_density_change": 0.131342,
+        "objective_rel_change": 0.0232647,
+        "volume_error_frac": 0.001507,
+        "topology_change_frac": 0.000832
+      }
+    },
+    {
+      "iter": 26,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 0.9259,
+      "oc_evaluations": 7,
+      "objective": 6.615442767662286,
+      "compliance_per_case_Nmm": [
+        0.0034,
+        0.0563,
+        0.2447,
+        0.5618,
+        0.4929,
+        0.0046
+      ],
+      "normalised_per_case": [
+        1.1,
+        0.8495,
+        1.0027,
+        1.2453,
+        1.1615,
+        1.2565
+      ],
+      "volume_fraction_free": 0.039942331512635154,
+      "greyness": 0.10787976671733511,
+      "change": 0.13895941749608232,
+      "topology_change_frac": 0.00052,
+      "criteria": {
+        "max_density_change": 0.138959,
+        "objective_rel_change": 0.01872165,
+        "volume_error_frac": 0.001442,
+        "topology_change_frac": 0.000515
+      }
+    },
+    {
+      "iter": 27,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 0.963,
+      "oc_evaluations": 9,
+      "objective": 6.513129563677114,
+      "compliance_per_case_Nmm": [
+        0.0034,
+        0.0555,
+        0.2399,
+        0.5506,
+        0.484,
+        0.0046
+      ],
+      "normalised_per_case": [
+        1.0835,
+        0.8383,
+        0.9834,
+        1.2205,
+        1.1405,
+        1.247
+      ],
+      "volume_fraction_free": 0.039945384688391684,
+      "greyness": 0.10693987647019135,
+      "change": 0.12416914306532334,
+      "topology_change_frac": 0.00038,
+      "criteria": {
+        "max_density_change": 0.124169,
+        "objective_rel_change": 0.01546581,
+        "volume_error_frac": 0.001365,
+        "topology_change_frac": 0.000376
+      }
+    },
+    {
+      "iter": 28,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 6.428154226895738,
+      "compliance_per_case_Nmm": [
+        0.0033,
+        0.055,
+        0.236,
+        0.5403,
+        0.4767,
+        0.0045
+      ],
+      "normalised_per_case": [
+        1.0701,
+        0.8297,
+        0.9673,
+        1.1977,
+        1.1234,
+        1.2399
+      ],
+      "volume_fraction_free": 0.03995506680886143,
+      "greyness": 0.10614828596320706,
+      "change": 0.1298427336229152,
+      "topology_change_frac": 0.00019,
+      "criteria": {
+        "max_density_change": 0.129843,
+        "objective_rel_change": 0.01304678,
+        "volume_error_frac": 0.001123,
+        "topology_change_frac": 0.000188
+      }
+    },
+    {
+      "iter": 29,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 6.334251400423608,
+      "compliance_per_case_Nmm": [
+        0.0033,
+        0.0545,
+        0.2322,
+        0.5285,
+        0.4653,
+        0.0045
+      ],
+      "normalised_per_case": [
+        1.0581,
+        0.8224,
+        0.9516,
+        1.1716,
+        1.0965,
+        1.234
+      ],
+      "volume_fraction_free": 0.03999999941010494,
+      "greyness": 0.10549434193533705,
+      "change": 0.1302634673108115,
+      "topology_change_frac": 0.00047,
+      "criteria": {
+        "max_density_change": 0.130263,
+        "objective_rel_change": 0.01460805,
+        "volume_error_frac": 0.0,
+        "topology_change_frac": 0.000466
+      }
+    },
+    {
+      "iter": 30,
+      "penal": 2.0,
+      "beta": 2.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 7,
+      "objective": 6.266271668832959,
+      "compliance_per_case_Nmm": [
+        0.0033,
+        0.054,
+        0.2292,
+        0.5209,
+        0.459,
+        0.0045
+      ],
+      "normalised_per_case": [
+        1.0477,
+        0.8151,
+        0.9394,
+        1.1547,
+        1.0817,
+        1.2277
+      ],
+      "volume_fraction_free": 0.03999999953154385,
+      "greyness": 0.10480728659552015,
+      "change": 0.11047557916879314,
+      "topology_change_frac": 0.00059,
+      "criteria": {
+        "max_density_change": 0.110476,
+        "objective_rel_change": 0.01073209,
+        "volume_error_frac": 0.0,
+        "topology_change_frac": 0.000594
+      }
+    },
+    {
+      "iter": 31,
+      "penal": 2.5,
+      "beta": 2.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 9.725527409609219,
+      "compliance_per_case_Nmm": [
+        0.0046,
+        0.0758,
+        0.3701,
+        0.9094,
+        0.7845,
+        0.0063
+      ],
+      "normalised_per_case": [
+        1.4857,
+        1.1448,
+        1.5168,
+        2.0158,
+        1.8487,
+        1.7137
+      ],
+      "volume_fraction_free": 0.03999674906720207,
+      "greyness": 0.10420223706339928,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00055,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.55204369,
+        "volume_error_frac": 8.1e-05,
+        "topology_change_frac": 0.000555
+      }
+    },
+    {
+      "iter": 32,
+      "penal": 2.5,
+      "beta": 2.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 7,
+      "objective": 9.493434967849081,
+      "compliance_per_case_Nmm": [
+        0.0048,
+        0.0748,
+        0.3696,
+        0.8358,
+        0.7395,
+        0.0063
+      ],
+      "normalised_per_case": [
+        1.5228,
+        1.1283,
+        1.5147,
+        1.8528,
+        1.7425,
+        1.7323
+      ],
+      "volume_fraction_free": 0.04000004275180738,
+      "greyness": 0.10365937859080787,
+      "change": 0.2,
+      "topology_change_frac": 0.00113,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.02386425,
+        "volume_error_frac": 1e-06,
+        "topology_change_frac": 0.001129
+      }
+    },
+    {
+      "iter": 33,
+      "penal": 2.5,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 13.502512075912497,
+      "compliance_per_case_Nmm": [
+        0.0054,
+        0.0825,
+        0.551,
+        1.4931,
+        1.2278,
+        0.0076
+      ],
+      "normalised_per_case": [
+        1.7139,
+        1.2452,
+        2.258,
+        3.3097,
+        2.8934,
+        2.0823
+      ],
+      "volume_fraction_free": 0.03022136354122172,
+      "greyness": 0.07165116140392175,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00083,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.42229995,
+        "volume_error_frac": 0.244466,
+        "topology_change_frac": 0.000832
+      }
+    },
+    {
+      "iter": 34,
+      "penal": 2.5,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 7,
+      "objective": 7.345165262915973,
+      "compliance_per_case_Nmm": [
+        0.0039,
+        0.0525,
+        0.3163,
+        0.5798,
+        0.5354,
+        0.0053
+      ],
+      "normalised_per_case": [
+        1.2512,
+        0.7925,
+        1.2965,
+        1.2852,
+        1.2616,
+        1.4581
+      ],
+      "volume_fraction_free": 0.04000358539940546,
+      "greyness": 0.08445159859404514,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01231,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.45601491,
+        "volume_error_frac": 9e-05,
+        "topology_change_frac": 0.012306
+      }
+    },
+    {
+      "iter": 35,
+      "penal": 2.5,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 7.052127183957095,
+      "compliance_per_case_Nmm": [
+        0.0034,
+        0.0578,
+        0.2435,
+        0.625,
+        0.5103,
+        0.0055
+      ],
+      "normalised_per_case": [
+        1.1018,
+        0.8721,
+        0.9978,
+        1.3854,
+        1.2025,
+        1.4925
+      ],
+      "volume_fraction_free": 0.04000287496761273,
+      "greyness": 0.08547454335883801,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.0085,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.03989537,
+        "volume_error_frac": 7.2e-05,
+        "topology_change_frac": 0.008501
+      }
+    },
+    {
+      "iter": 36,
+      "penal": 2.5,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 6.970325388527014,
+      "compliance_per_case_Nmm": [
+        0.0038,
+        0.0545,
+        0.2737,
+        0.5249,
+        0.5012,
+        0.0054
+      ],
+      "normalised_per_case": [
+        1.2045,
+        0.8233,
+        1.1216,
+        1.1636,
+        1.1811,
+        1.4763
+      ],
+      "volume_fraction_free": 0.04000024165257094,
+      "greyness": 0.08525996169845226,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00499,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.01159959,
+        "volume_error_frac": 6e-06,
+        "topology_change_frac": 0.004994
+      }
+    },
+    {
+      "iter": 37,
+      "penal": 2.5,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 6.927372218847319,
+      "compliance_per_case_Nmm": [
+        0.0034,
+        0.0562,
+        0.232,
+        0.6562,
+        0.4822,
+        0.0053
+      ],
+      "normalised_per_case": [
+        1.0755,
+        0.8479,
+        0.9508,
+        1.4545,
+        1.1362,
+        1.4625
+      ],
+      "volume_fraction_free": 0.04000009688214785,
+      "greyness": 0.08435423453686718,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00485,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00616229,
+        "volume_error_frac": 2e-06,
+        "topology_change_frac": 0.004855
+      }
+    },
+    {
+      "iter": 38,
+      "penal": 2.5,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 6.897832009866128,
+      "compliance_per_case_Nmm": [
+        0.0037,
+        0.0557,
+        0.2639,
+        0.4916,
+        0.5126,
+        0.0055
+      ],
+      "normalised_per_case": [
+        1.188,
+        0.8402,
+        1.0817,
+        1.0896,
+        1.2079,
+        1.4904
+      ],
+      "volume_fraction_free": 0.04000302432951578,
+      "greyness": 0.08467984251217503,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00551,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00426427,
+        "volume_error_frac": 7.6e-05,
+        "topology_change_frac": 0.005509
+      }
+    },
+    {
+      "iter": 39,
+      "penal": 2.5,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 6.954147106421056,
+      "compliance_per_case_Nmm": [
+        0.0033,
+        0.0546,
+        0.2301,
+        0.731,
+        0.4514,
+        0.0052
+      ],
+      "normalised_per_case": [
+        1.0709,
+        0.8237,
+        0.943,
+        1.6204,
+        1.0638,
+        1.4323
+      ],
+      "volume_fraction_free": 0.03999992640381255,
+      "greyness": 0.08325338304429747,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00726,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00816417,
+        "volume_error_frac": 2e-06,
+        "topology_change_frac": 0.007262
+      }
+    },
+    {
+      "iter": 40,
+      "penal": 2.5,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 6.917417365373179,
+      "compliance_per_case_Nmm": [
+        0.0036,
+        0.0567,
+        0.2555,
+        0.4639,
+        0.5582,
+        0.0055
+      ],
+      "normalised_per_case": [
+        1.1668,
+        0.8561,
+        1.047,
+        1.0282,
+        1.3154,
+        1.5038
+      ],
+      "volume_fraction_free": 0.040003533790195674,
+      "greyness": 0.08399916091803836,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00814,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.0052817,
+        "volume_error_frac": 8.8e-05,
+        "topology_change_frac": 0.008144
+      }
+    },
+    {
+      "iter": 41,
+      "penal": 3.0,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 9.300379928663908,
+      "compliance_per_case_Nmm": [
+        0.0041,
+        0.0658,
+        0.3059,
+        1.2177,
+        0.5671,
+        0.0062
+      ],
+      "normalised_per_case": [
+        1.3124,
+        0.9933,
+        1.2538,
+        2.6992,
+        1.3363,
+        1.7054
+      ],
+      "volume_fraction_free": 0.040002410628446936,
+      "greyness": 0.08257106780702761,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00921,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.34448732,
+        "volume_error_frac": 6e-05,
+        "topology_change_frac": 0.009214
+      }
+    },
+    {
+      "iter": 42,
+      "penal": 3.0,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 9.221526995192022,
+      "compliance_per_case_Nmm": [
+        0.0044,
+        0.072,
+        0.3304,
+        0.5917,
+        0.924,
+        0.0069
+      ],
+      "normalised_per_case": [
+        1.4137,
+        1.0875,
+        1.3542,
+        1.3115,
+        2.1774,
+        1.8772
+      ],
+      "volume_fraction_free": 0.04000022823423945,
+      "greyness": 0.08313187009653494,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01031,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00847846,
+        "volume_error_frac": 6e-06,
+        "topology_change_frac": 0.010314
+      }
+    },
+    {
+      "iter": 43,
+      "penal": 3.0,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 9.294396493067476,
+      "compliance_per_case_Nmm": [
+        0.0042,
+        0.0653,
+        0.316,
+        1.2291,
+        0.5177,
+        0.0063
+      ],
+      "normalised_per_case": [
+        1.3554,
+        0.9851,
+        1.2949,
+        2.7245,
+        1.2199,
+        1.7146
+      ],
+      "volume_fraction_free": 0.04000006017789717,
+      "greyness": 0.08179529934696012,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01078,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00790211,
+        "volume_error_frac": 2e-06,
+        "topology_change_frac": 0.01078
+      }
+    },
+    {
+      "iter": 44,
+      "penal": 3.0,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 9.230533276318244,
+      "compliance_per_case_Nmm": [
+        0.0043,
+        0.073,
+        0.3199,
+        0.573,
+        0.9734,
+        0.0069
+      ],
+      "normalised_per_case": [
+        1.3805,
+        1.1019,
+        1.3111,
+        1.2703,
+        2.2938,
+        1.873
+      ],
+      "volume_fraction_free": 0.04000008306664351,
+      "greyness": 0.08242810298978706,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01095,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00687115,
+        "volume_error_frac": 2e-06,
+        "topology_change_frac": 0.010948
+      }
+    },
+    {
+      "iter": 45,
+      "penal": 3.0,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 9.225333716586183,
+      "compliance_per_case_Nmm": [
+        0.0043,
+        0.0644,
+        0.3215,
+        1.2017,
+        0.4973,
+        0.0063
+      ],
+      "normalised_per_case": [
+        1.3805,
+        0.972,
+        1.3178,
+        2.6638,
+        1.1718,
+        1.7194
+      ],
+      "volume_fraction_free": 0.04000004732292535,
+      "greyness": 0.08141985364763472,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01093,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.0005633,
+        "volume_error_frac": 1e-06,
+        "topology_change_frac": 0.010928
+      }
+    },
+    {
+      "iter": 46,
+      "penal": 3.0,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 9.20236269212119,
+      "compliance_per_case_Nmm": [
+        0.0043,
+        0.0732,
+        0.3158,
+        0.5597,
+        0.9876,
+        0.0068
+      ],
+      "normalised_per_case": [
+        1.3666,
+        1.1046,
+        1.2944,
+        1.2407,
+        2.3272,
+        1.8688
+      ],
+      "volume_fraction_free": 0.040003407459915645,
+      "greyness": 0.08203978583348955,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01104,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00248999,
+        "volume_error_frac": 8.5e-05,
+        "topology_change_frac": 0.011037
+      }
+    },
+    {
+      "iter": 47,
+      "penal": 3.0,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 9.183780516329948,
+      "compliance_per_case_Nmm": [
+        0.0043,
+        0.064,
+        0.3226,
+        1.1942,
+        0.4855,
+        0.0063
+      ],
+      "normalised_per_case": [
+        1.3848,
+        0.9657,
+        1.322,
+        2.6472,
+        1.1441,
+        1.72
+      ],
+      "volume_fraction_free": 0.040000031395386076,
+      "greyness": 0.08112894589121102,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01115,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00201928,
+        "volume_error_frac": 1e-06,
+        "topology_change_frac": 0.011146
+      }
+    },
+    {
+      "iter": 48,
+      "penal": 3.0,
+      "beta": 4.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 9.180344250874452,
+      "compliance_per_case_Nmm": [
+        0.0043,
+        0.0728,
+        0.3146,
+        0.5496,
+        0.9973,
+        0.0068
+      ],
+      "normalised_per_case": [
+        1.3615,
+        1.0986,
+        1.2895,
+        1.2184,
+        2.3501,
+        1.8622
+      ],
+      "volume_fraction_free": 0.040001277378536815,
+      "greyness": 0.08173889577465061,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01131,
+      "criteria": {
+        "max_density_change": 0.2,
+        "objective_rel_change": 0.00037417,
+        "volume_error_frac": 3.2e-05,
+        "topology_change_frac": 0.011315
+      }
+    },
+    {
+      "iter": 49,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 10,
+      "objective": 12.396048326564337,
+      "compliance_per_case_Nmm": [
+        0.0036,
+        0.0522,
+        0.2716,
+        3.1385,
+        0.3624,
+        0.0056
+      ],
+      "normalised_per_case": [
+        1.1449,
+        0.7872,
+        1.1131,
+        6.9571,
+        0.854,
+        1.5396
+      ],
+      "volume_fraction_free": 0.03362952025444584,
+      "greyness": 0.04624449281963773,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.01154,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.35028143,
+        "volume_error_frac": 0.159262,
+        "topology_change_frac": 0.011543
+      }
+    },
+    {
+      "iter": 50,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.532341829207257,
+      "compliance_per_case_Nmm": [
+        0.003,
+        0.042,
+        0.2077,
+        0.4958,
+        0.3057,
+        0.0047
+      ],
+      "normalised_per_case": [
+        0.9479,
+        0.634,
+        0.851,
+        1.099,
+        0.7203,
+        1.2801
+      ],
+      "volume_fraction_free": 0.04000380995553308,
+      "greyness": 0.049719546279179176,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.0073,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.55370117,
+        "volume_error_frac": 9.5e-05,
+        "topology_change_frac": 0.007302
+      }
+    },
+    {
+      "iter": 51,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.459325165735811,
+      "compliance_per_case_Nmm": [
+        0.0028,
+        0.0448,
+        0.1908,
+        0.3441,
+        0.4268,
+        0.0048
+      ],
+      "normalised_per_case": [
+        0.9078,
+        0.6758,
+        0.782,
+        0.7629,
+        1.0057,
+        1.3252
+      ],
+      "volume_fraction_free": 0.0400001367319956,
+      "greyness": 0.051059755370311065,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00621,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.01319815,
+        "volume_error_frac": 3e-06,
+        "topology_change_frac": 0.006212
+      }
+    },
+    {
+      "iter": 52,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.450070592484592,
+      "compliance_per_case_Nmm": [
+        0.0028,
+        0.0429,
+        0.1866,
+        0.5199,
+        0.3023,
+        0.0047
+      ],
+      "normalised_per_case": [
+        0.8959,
+        0.6479,
+        0.7647,
+        1.1525,
+        0.7123,
+        1.2768
+      ],
+      "volume_fraction_free": 0.040000338323371576,
+      "greyness": 0.05033165371805137,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00604,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00169519,
+        "volume_error_frac": 8e-06,
+        "topology_change_frac": 0.006044
+      }
+    },
+    {
+      "iter": 53,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.411774876796762,
+      "compliance_per_case_Nmm": [
+        0.0028,
+        0.0447,
+        0.1844,
+        0.3388,
+        0.4366,
+        0.0048
+      ],
+      "normalised_per_case": [
+        0.8906,
+        0.6745,
+        0.7557,
+        0.7509,
+        1.0288,
+        1.3112
+      ],
+      "volume_fraction_free": 0.04000096561013785,
+      "greyness": 0.05118854159589845,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00614,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00702665,
+        "volume_error_frac": 2.4e-05,
+        "topology_change_frac": 0.006143
+      }
+    },
+    {
+      "iter": 54,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.411145932453326,
+      "compliance_per_case_Nmm": [
+        0.0028,
+        0.0426,
+        0.1835,
+        0.526,
+        0.2983,
+        0.0046
+      ],
+      "normalised_per_case": [
+        0.885,
+        0.6433,
+        0.752,
+        1.1661,
+        0.703,
+        1.2618
+      ],
+      "volume_fraction_free": 0.04000013022348194,
+      "greyness": 0.05032891063320027,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00628,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00011622,
+        "volume_error_frac": 3e-06,
+        "topology_change_frac": 0.006282
+      }
+    },
+    {
+      "iter": 55,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.385774128631012,
+      "compliance_per_case_Nmm": [
+        0.0028,
+        0.0447,
+        0.1818,
+        0.3341,
+        0.4425,
+        0.0048
+      ],
+      "normalised_per_case": [
+        0.8814,
+        0.674,
+        0.7451,
+        0.7405,
+        1.0427,
+        1.3021
+      ],
+      "volume_fraction_free": 0.04000082363291077,
+      "greyness": 0.05111685999589364,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.0064,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.0046888,
+        "volume_error_frac": 2.1e-05,
+        "topology_change_frac": 0.0064
+      }
+    },
+    {
+      "iter": 56,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.386499693899548,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0424,
+        0.1817,
+        0.5304,
+        0.2947,
+        0.0046
+      ],
+      "normalised_per_case": [
+        0.8785,
+        0.6406,
+        0.7447,
+        1.1758,
+        0.6945,
+        1.2524
+      ],
+      "volume_fraction_free": 0.04000006100304864,
+      "greyness": 0.05027460091985862,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00641,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00013472,
+        "volume_error_frac": 2e-06,
+        "topology_change_frac": 0.00641
+      }
+    },
+    {
+      "iter": 57,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.37225191473883,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0446,
+        0.1801,
+        0.3305,
+        0.4488,
+        0.0047
+      ],
+      "normalised_per_case": [
+        0.8751,
+        0.6734,
+        0.738,
+        0.7325,
+        1.0575,
+        1.2957
+      ],
+      "volume_fraction_free": 0.040000307989878185,
+      "greyness": 0.051018668306929166,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00659,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00264509,
+        "volume_error_frac": 8e-06,
+        "topology_change_frac": 0.006589
+      }
+    },
+    {
+      "iter": 58,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 5.372316037756021,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0423,
+        0.1807,
+        0.5344,
+        0.2911,
+        0.0046
+      ],
+      "normalised_per_case": [
+        0.8749,
+        0.6391,
+        0.7407,
+        1.1845,
+        0.686,
+        1.2471
+      ],
+      "volume_fraction_free": 0.04000016405675819,
+      "greyness": 0.05021711807721348,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00663,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 1.194e-05,
+        "volume_error_frac": 4e-06,
+        "topology_change_frac": 0.006628
+      }
+    },
+    {
+      "iter": 59,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.368984486959705,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0446,
+        0.1792,
+        0.327,
+        0.4556,
+        0.0047
+      ],
+      "normalised_per_case": [
+        0.8719,
+        0.6728,
+        0.7344,
+        0.7248,
+        1.0737,
+        1.2915
+      ],
+      "volume_fraction_free": 0.039998126230349554,
+      "greyness": 0.05093192422939435,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00677,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00062013,
+        "volume_error_frac": 4.7e-05,
+        "topology_change_frac": 0.006767
+      }
+    },
+    {
+      "iter": 60,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 10,
+      "objective": 5.367658498884285,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0423,
+        0.18,
+        0.5409,
+        0.2873,
+        0.0045
+      ],
+      "normalised_per_case": [
+        0.8722,
+        0.6381,
+        0.7377,
+        1.199,
+        0.6771,
+        1.2437
+      ],
+      "volume_fraction_free": 0.040000190705739964,
+      "greyness": 0.050166002236262865,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00676,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00024697,
+        "volume_error_frac": 5e-06,
+        "topology_change_frac": 0.006757
+      }
+    },
+    {
+      "iter": 61,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 5.3689800690625615,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0446,
+        0.1786,
+        0.3241,
+        0.4617,
+        0.0047
+      ],
+      "normalised_per_case": [
+        0.8695,
+        0.6725,
+        0.7321,
+        0.7184,
+        1.088,
+        1.2885
+      ],
+      "volume_fraction_free": 0.03999998963502879,
+      "greyness": 0.050878615268473856,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00682,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00024621,
+        "volume_error_frac": 0.0,
+        "topology_change_frac": 0.006817
+      }
+    },
+    {
+      "iter": 62,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 10,
+      "objective": 5.366338830743961,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0422,
+        0.1796,
+        0.5464,
+        0.2841,
+        0.0045
+      ],
+      "normalised_per_case": [
+        0.8706,
+        0.6376,
+        0.7359,
+        1.2113,
+        0.6695,
+        1.2415
+      ],
+      "volume_fraction_free": 0.04000004075920359,
+      "greyness": 0.0501322959833783,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.0069,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00049194,
+        "volume_error_frac": 1e-06,
+        "topology_change_frac": 0.006896
+      }
+    },
+    {
+      "iter": 63,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 5.364285369177233,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0446,
+        0.1785,
+        0.3219,
+        0.4627,
+        0.0047
+      ],
+      "normalised_per_case": [
+        0.8687,
+        0.6729,
+        0.7314,
+        0.7135,
+        1.0904,
+        1.2874
+      ],
+      "volume_fraction_free": 0.04000000137872135,
+      "greyness": 0.050851586044640934,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.007,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00038266,
+        "volume_error_frac": 0.0,
+        "topology_change_frac": 0.007005
+      }
+    },
+    {
+      "iter": 64,
+      "penal": 3.0,
+      "beta": 8.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 5.362054149335304,
+      "compliance_per_case_Nmm": [
+        0.0027,
+        0.0422,
+        0.1793,
+        0.5488,
+        0.2818,
+        0.0045
+      ],
+      "normalised_per_case": [
+        0.8697,
+        0.6373,
+        0.735,
+        1.2164,
+        0.6639,
+        1.2397
+      ],
+      "volume_fraction_free": 0.040002468397856684,
+      "greyness": 0.050111065397472614,
+      "change": 0.10000000000000003,
+      "topology_change_frac": 0.00702,
+      "criteria": {
+        "max_density_change": 0.1,
+        "objective_rel_change": 0.00041594,
+        "volume_error_frac": 6.2e-05,
+        "topology_change_frac": 0.007025
+      }
+    },
+    {
+      "iter": 65,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 4.308177663126404,
+      "compliance_per_case_Nmm": [
+        0.0023,
+        0.037,
+        0.1373,
+        0.2339,
+        0.3468,
+        0.0041
+      ],
+      "normalised_per_case": [
+        0.7222,
+        0.5592,
+        0.5629,
+        0.5185,
+        0.8172,
+        1.1282
+      ],
+      "volume_fraction_free": 0.03888510153820727,
+      "greyness": 0.026612766942278453,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00706,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.19654342,
+        "volume_error_frac": 0.027872,
+        "topology_change_frac": 0.007064
+      }
+    },
+    {
+      "iter": 66,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 8,
+      "objective": 3.9917746177249676,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0344,
+        0.1316,
+        0.2751,
+        0.2361,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.701,
+        0.519,
+        0.5395,
+        0.6099,
+        0.5563,
+        1.0661
+      ],
+      "volume_fraction_free": 0.04000055663993553,
+      "greyness": 0.02628360009201844,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.0043,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.07344243,
+        "volume_error_frac": 1.4e-05,
+        "topology_change_frac": 0.0043
+      }
+    },
+    {
+      "iter": 67,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 10,
+      "objective": 4.0061669134223195,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0351,
+        0.1325,
+        0.246,
+        0.2569,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.7039,
+        0.5294,
+        0.543,
+        0.5453,
+        0.6054,
+        1.0792
+      ],
+      "volume_fraction_free": 0.04000096248989029,
+      "greyness": 0.026758677864338207,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00194,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00360549,
+        "volume_error_frac": 2.4e-05,
+        "topology_change_frac": 0.001942
+      }
+    },
+    {
+      "iter": 68,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 4.015286398223078,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0344,
+        0.1292,
+        0.3136,
+        0.2205,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.693,
+        0.519,
+        0.5296,
+        0.6952,
+        0.5196,
+        1.0588
+      ],
+      "volume_fraction_free": 0.039996267539242444,
+      "greyness": 0.02632269443150803,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.003,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00227636,
+        "volume_error_frac": 9.3e-05,
+        "topology_change_frac": 0.003002
+      }
+    },
+    {
+      "iter": 69,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 11,
+      "objective": 4.0014412753043995,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0349,
+        0.1309,
+        0.2435,
+        0.2665,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.6984,
+        0.5272,
+        0.5365,
+        0.5397,
+        0.6281,
+        1.0715
+      ],
+      "volume_fraction_free": 0.04000301815022611,
+      "greyness": 0.026740133541777768,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00324,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.0034481,
+        "volume_error_frac": 7.5e-05,
+        "topology_change_frac": 0.00324
+      }
+    },
+    {
+      "iter": 70,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 4.006705180428741,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0344,
+        0.1284,
+        0.3157,
+        0.2178,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.6903,
+        0.5198,
+        0.5263,
+        0.6999,
+        0.5133,
+        1.0571
+      ],
+      "volume_fraction_free": 0.0400000008068941,
+      "greyness": 0.026415563933452773,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00329,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.0013155,
+        "volume_error_frac": 0.0,
+        "topology_change_frac": 0.003289
+      }
+    },
+    {
+      "iter": 71,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 11,
+      "objective": 3.998700834213181,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0349,
+        0.1294,
+        0.2428,
+        0.273,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.6937,
+        0.5263,
+        0.5304,
+        0.5381,
+        0.6434,
+        1.0668
+      ],
+      "volume_fraction_free": 0.04000134724202799,
+      "greyness": 0.026768950616675297,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00335,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00199774,
+        "volume_error_frac": 3.4e-05,
+        "topology_change_frac": 0.003349
+      }
+    },
+    {
+      "iter": 72,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 3.9990112392063786,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0344,
+        0.1281,
+        0.3154,
+        0.2169,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.6895,
+        0.5194,
+        0.5251,
+        0.6992,
+        0.5112,
+        1.0545
+      ],
+      "volume_fraction_free": 0.04000001415638237,
+      "greyness": 0.026470142918365816,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00333,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 7.763e-05,
+        "volume_error_frac": 0.0,
+        "topology_change_frac": 0.003329
+      }
+    },
+    {
+      "iter": 73,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 10,
+      "objective": 3.993024879862418,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0349,
+        0.1287,
+        0.2428,
+        0.2737,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.6919,
+        0.5263,
+        0.5274,
+        0.5382,
+        0.6449,
+        1.0644
+      ],
+      "volume_fraction_free": 0.04000396422983711,
+      "greyness": 0.02681568799955264,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00337,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00149696,
+        "volume_error_frac": 9.9e-05,
+        "topology_change_frac": 0.003369
+      }
+    },
+    {
+      "iter": 74,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 10,
+      "objective": 3.9929358923833345,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0344,
+        0.128,
+        0.3151,
+        0.2163,
+        0.0038
+      ],
+      "normalised_per_case": [
+        0.6896,
+        0.5187,
+        0.5247,
+        0.6984,
+        0.5097,
+        1.0518
+      ],
+      "volume_fraction_free": 0.03999633876787254,
+      "greyness": 0.0265004579224043,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00325,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 2.229e-05,
+        "volume_error_frac": 9.2e-05,
+        "topology_change_frac": 0.00325
+      }
+    },
+    {
+      "iter": 75,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 3.9886914612618813,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0349,
+        0.1282,
+        0.2429,
+        0.2737,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.691,
+        0.5264,
+        0.5254,
+        0.5385,
+        0.645,
+        1.0625
+      ],
+      "volume_fraction_free": 0.039996904518514766,
+      "greyness": 0.026850406109186306,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00335,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00106299,
+        "volume_error_frac": 7.7e-05,
+        "topology_change_frac": 0.003349
+      }
+    },
+    {
+      "iter": 76,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 3.9864191736704075,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0343,
+        0.1279,
+        0.3144,
+        0.2159,
+        0.0038
+      ],
+      "normalised_per_case": [
+        0.6896,
+        0.5179,
+        0.5242,
+        0.697,
+        0.5086,
+        1.0491
+      ],
+      "volume_fraction_free": 0.040003507191479874,
+      "greyness": 0.026512853660910673,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00333,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00056968,
+        "volume_error_frac": 8.8e-05,
+        "topology_change_frac": 0.003329
+      }
+    },
+    {
+      "iter": 77,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 3.983432626119033,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0349,
+        0.1278,
+        0.2429,
+        0.2734,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.6903,
+        0.5261,
+        0.5238,
+        0.5385,
+        0.6442,
+        1.0604
+      ],
+      "volume_fraction_free": 0.040003004218811755,
+      "greyness": 0.026869389012113033,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00333,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00074918,
+        "volume_error_frac": 7.5e-05,
+        "topology_change_frac": 0.003329
+      }
+    },
+    {
+      "iter": 78,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 3.981964586610669,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0343,
+        0.1278,
+        0.3142,
+        0.2155,
+        0.0038
+      ],
+      "normalised_per_case": [
+        0.6895,
+        0.5175,
+        0.5236,
+        0.6964,
+        0.5078,
+        1.0471
+      ],
+      "volume_fraction_free": 0.04000301211753785,
+      "greyness": 0.026524296752016376,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00334,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00036854,
+        "volume_error_frac": 7.5e-05,
+        "topology_change_frac": 0.003339
+      }
+    },
+    {
+      "iter": 79,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 3.979651557984183,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0348,
+        0.1276,
+        0.2429,
+        0.2731,
+        0.0039
+      ],
+      "normalised_per_case": [
+        0.69,
+        0.5259,
+        0.5229,
+        0.5384,
+        0.6436,
+        1.0589
+      ],
+      "volume_fraction_free": 0.040002559572088946,
+      "greyness": 0.026884163142837186,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00334,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00058088,
+        "volume_error_frac": 6.4e-05,
+        "topology_change_frac": 0.003339
+      }
+    },
+    {
+      "iter": 80,
+      "penal": 3.0,
+      "beta": 16.0,
+      "overhang_alpha": 1.0,
+      "oc_evaluations": 9,
+      "objective": 3.978172942885978,
+      "compliance_per_case_Nmm": [
+        0.0022,
+        0.0343,
+        0.1276,
+        0.314,
+        0.2153,
+        0.0038
+      ],
+      "normalised_per_case": [
+        0.6892,
+        0.5171,
+        0.5229,
+        0.696,
+        0.5074,
+        1.0456
+      ],
+      "volume_fraction_free": 0.040002654034687765,
+      "greyness": 0.026533653970135344,
+      "change": 0.050000000000000044,
+      "topology_change_frac": 0.00331,
+      "criteria": {
+        "max_density_change": 0.05,
+        "objective_rel_change": 0.00037154,
+        "volume_error_frac": 6.6e-05,
+        "topology_change_frac": 0.003309
+      }
+    }
+  ],
+  "final_stl_triangles": 9276,
+  "final_smooth_stl_triangles": null,
+  "final_step": null,
+  "final_fea": [
+    {
+      "elements": 4384,
+      "voxel_mm": 4.0,
+      "volume_mm3": 280576.0,
+      "converged": true,
+      "cg_iterations": 26,
+      "compliance_Nmm": 0.001890489716820895,
+      "max_displacement_mm": 0.0011710155802808924,
+      "max_displacement_at": [
+        12.0,
+        8.0,
+        144.0
+      ],
+      "von_mises_max_MPa": 0.03360945340865591,
+      "von_mises_p99_5_MPa": 0.017750459407992605,
+      "stress_concentration_ratio": 1.893441326567716,
+      "failure_index_max": 0.0009334764594938082,
+      "failure_index_p99_5": 0.00048118068987413866,
+      "failure_criterion": "max_stress_material_axes",
+      "material_axes": {
+        "build_axis": "Z",
+        "raster_axis": "X",
+        "stiffness": "orthotropic",
+        "card_id": "pla_generic_fff_orthotropic_v1"
+      },
+      "min_safety_factor": 1071.2642936301418,
+      "safety_factor_p99_5": 2078.2213855289324,
+      "mesh": {
+        "thin_section_mm": 8.0,
+        "typical_section_mm": 16.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "1071.26 (worst element) / 2078.22 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 3.000 mm",
+          "got": "0.001 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 2.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -10.0,
+            18.0,
+            106.0
+          ],
+          "failure_index": 0.001,
+          "safety_factor": 1071.26
+        },
+        {
+          "pos": [
+            10.0,
+            10.0,
+            118.0
+          ],
+          "failure_index": 0.001,
+          "safety_factor": 1215.83
+        },
+        {
+          "pos": [
+            10.0,
+            6.0,
+            134.0
+          ],
+          "failure_index": 0.001,
+          "safety_factor": 1946.26
+        },
+        {
+          "pos": [
+            18.0,
+            18.0,
+            106.0
+          ],
+          "failure_index": 0.0,
+          "safety_factor": 2483.56
+        },
+        {
+          "pos": [
+            -6.0,
+            2.0,
+            106.0
+          ],
+          "failure_index": 0.0,
+          "safety_factor": 2561.81
+        }
+      ],
+      "case": "LC1f  push 1.0 N horizontally at the camera mount",
+      "load_class": "normal",
+      "required_safety_factor": 3.0,
+      "solver": {
+        "backend": "cuda",
+        "device": "NVIDIA GeForce RTX 4060 Ti",
+        "torch": "2.12.0+cu130",
+        "preconditioner": "mg",
+        "precision": "mixed32",
+        "multigrid": {
+          "levels": [
+            {
+              "shape": [
+                64,
+                64,
+                42
+              ],
+              "elements": 4384,
+              "ndof": 545025
+            },
+            {
+              "shape": [
+                32,
+                32,
+                21
+              ],
+              "elements": 871,
+              "ndof": 71874
+            },
+            {
+              "shape": [
+                16,
+                16,
+                11
+              ],
+              "elements": 205,
+              "ndof": 10404
+            },
+            {
+              "shape": [
+                8,
+                8,
+                6
+              ],
+              "elements": 52,
+              "ndof": 1701
+            }
+          ],
+          "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+          "coarse_solver": "dense cholesky",
+          "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+          "setup_seconds": 0.276
+        }
+      },
+      "solve_seconds": 0.194
+    },
+    {
+      "elements": 4384,
+      "voxel_mm": 4.0,
+      "volume_mm3": 280576.0,
+      "converged": true,
+      "cg_iterations": 25,
+      "compliance_Nmm": 0.029734891292294164,
+      "max_displacement_mm": 0.0024185862247240986,
+      "max_displacement_at": [
+        12.0,
+        -8.0,
+        144.0
+      ],
+      "von_mises_max_MPa": 0.08779215341192359,
+      "von_mises_p99_5_MPa": 0.058852257553555234,
+      "stress_concentration_ratio": 1.4917380753326788,
+      "failure_index_max": 0.0030472859213193587,
+      "failure_index_p99_5": 0.0014760895998971637,
+      "failure_criterion": "max_stress_material_axes",
+      "material_axes": {
+        "build_axis": "Z",
+        "raster_axis": "X",
+        "stiffness": "orthotropic",
+        "card_id": "pla_generic_fff_orthotropic_v1"
+      },
+      "min_safety_factor": 328.1608703022649,
+      "safety_factor_p99_5": 677.4656498288912,
+      "mesh": {
+        "thin_section_mm": 8.0,
+        "typical_section_mm": 16.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "328.16 (worst element) / 677.47 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 3.000 mm",
+          "got": "0.002 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 2.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -6.0,
+            -6.0,
+            106.0
+          ],
+          "failure_index": 0.003,
+          "safety_factor": 328.16
+        },
+        {
+          "pos": [
+            -10.0,
+            18.0,
+            106.0
+          ],
+          "failure_index": 0.002,
+          "safety_factor": 457.89
+        },
+        {
+          "pos": [
+            10.0,
+            -10.0,
+            118.0
+          ],
+          "failure_index": 0.002,
+          "safety_factor": 468.84
+        },
+        {
+          "pos": [
+            6.0,
+            6.0,
+            106.0
+          ],
+          "failure_index": 0.002,
+          "safety_factor": 531.39
+        },
+        {
+          "pos": [
+            10.0,
+            -6.0,
+            134.0
+          ],
+          "failure_index": 0.002,
+          "safety_factor": 537.8
+        }
+      ],
+      "case": "LC2   camera weight plus 5x vertical shock",
+      "load_class": "normal",
+      "required_safety_factor": 3.0,
+      "solver": {
+        "backend": "cuda",
+        "device": "NVIDIA GeForce RTX 4060 Ti",
+        "torch": "2.12.0+cu130",
+        "preconditioner": "mg",
+        "precision": "mixed32",
+        "multigrid": {
+          "levels": [
+            {
+              "shape": [
+                64,
+                64,
+                42
+              ],
+              "elements": 4384,
+              "ndof": 545025
+            },
+            {
+              "shape": [
+                32,
+                32,
+                21
+              ],
+              "elements": 871,
+              "ndof": 71874
+            },
+            {
+              "shape": [
+                16,
+                16,
+                11
+              ],
+              "elements": 205,
+              "ndof": 10404
+            },
+            {
+              "shape": [
+                8,
+                8,
+                6
+              ],
+              "elements": 52,
+              "ndof": 1701
+            }
+          ],
+          "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+          "coarse_solver": "dense cholesky",
+          "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+          "setup_seconds": 0.276
+        }
+      },
+      "solve_seconds": 0.194
+    },
+    {
+      "elements": 4384,
+      "voxel_mm": 4.0,
+      "volume_mm3": 280576.0,
+      "converged": true,
+      "cg_iterations": 36,
+      "compliance_Nmm": 0.10471962615791201,
+      "max_displacement_mm": 0.01789132404735391,
+      "max_displacement_at": [
+        -8.0,
+        -8.0,
+        144.0
+      ],
+      "von_mises_max_MPa": 0.2534553693338599,
+      "von_mises_p99_5_MPa": 0.11807208204539427,
+      "stress_concentration_ratio": 2.146615566890875,
+      "failure_index_max": 0.012512875554329528,
+      "failure_index_p99_5": 0.004803679845620125,
+      "failure_criterion": "max_stress_material_axes",
+      "material_axes": {
+        "build_axis": "Z",
+        "raster_axis": "X",
+        "stiffness": "orthotropic",
+        "card_id": "pla_generic_fff_orthotropic_v1"
+      },
+      "min_safety_factor": 79.91768124425997,
+      "safety_factor_p99_5": 208.17374016125885,
+      "mesh": {
+        "thin_section_mm": 8.0,
+        "typical_section_mm": 16.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 1.50",
+          "got": "79.92 (worst element) / 208.17 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 3.000 mm",
+          "got": "0.018 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 2.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -14.0,
+            34.0,
+            2.0
+          ],
+          "failure_index": 0.013,
+          "safety_factor": 79.92
+        },
+        {
+          "pos": [
+            -6.0,
+            -6.0,
+            106.0
+          ],
+          "failure_index": 0.01,
+          "safety_factor": 96.3
+        },
+        {
+          "pos": [
+            -10.0,
+            18.0,
+            106.0
+          ],
+          "failure_index": 0.009,
+          "safety_factor": 111.03
+        },
+        {
+          "pos": [
+            -18.0,
+            26.0,
+            18.0
+          ],
+          "failure_index": 0.004,
+          "safety_factor": 226.66
+        },
+        {
+          "pos": [
+            38.0,
+            102.0,
+            2.0
+          ],
+          "failure_index": 0.004,
+          "safety_factor": 233.06
+        }
+      ],
+      "case": "LC3n  lift by the head, north foot caught",
+      "load_class": "abnormal",
+      "required_safety_factor": 1.5,
+      "solver": {
+        "backend": "cuda",
+        "device": "NVIDIA GeForce RTX 4060 Ti",
+        "torch": "2.12.0+cu130",
+        "preconditioner": "mg",
+        "precision": "mixed32",
+        "multigrid": {
+          "levels": [
+            {
+              "shape": [
+                64,
+                64,
+                42
+              ],
+              "elements": 4384,
+              "ndof": 545025
+            },
+            {
+              "shape": [
+                32,
+                32,
+                21
+              ],
+              "elements": 871,
+              "ndof": 71874
+            },
+            {
+              "shape": [
+                16,
+                16,
+                11
+              ],
+              "elements": 205,
+              "ndof": 10404
+            },
+            {
+              "shape": [
+                8,
+                8,
+                6
+              ],
+              "elements": 52,
+              "ndof": 1701
+            }
+          ],
+          "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+          "coarse_solver": "dense cholesky",
+          "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+          "setup_seconds": 0.276
+        }
+      },
+      "solve_seconds": 0.519
+    },
+    {
+      "elements": 4384,
+      "voxel_mm": 4.0,
+      "volume_mm3": 280576.0,
+      "converged": true,
+      "cg_iterations": 47,
+      "compliance_Nmm": 0.18510933956812503,
+      "max_displacement_mm": 0.026805013621970592,
+      "max_displacement_at": [
+        12.0,
+        8.0,
+        144.0
+      ],
+      "von_mises_max_MPa": 0.37858708299702737,
+      "von_mises_p99_5_MPa": 0.14854012641245393,
+      "stress_concentration_ratio": 2.548719272971386,
+      "failure_index_max": 0.017549872610378384,
+      "failure_index_p99_5": 0.0055431625629912855,
+      "failure_criterion": "max_stress_material_axes",
+      "material_axes": {
+        "build_axis": "Z",
+        "raster_axis": "X",
+        "stiffness": "orthotropic",
+        "card_id": "pla_generic_fff_orthotropic_v1"
+      },
+      "min_safety_factor": 56.98047058236963,
+      "safety_factor_p99_5": 180.40243067675158,
+      "mesh": {
+        "thin_section_mm": 8.0,
+        "typical_section_mm": 16.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 1.50",
+          "got": "56.98 (worst element) / 180.40 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 3.000 mm",
+          "got": "0.027 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 2.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -26.0,
+            -18.0,
+            2.0
+          ],
+          "failure_index": 0.018,
+          "safety_factor": 56.98
+        },
+        {
+          "pos": [
+            10.0,
+            10.0,
+            118.0
+          ],
+          "failure_index": 0.007,
+          "safety_factor": 143.59
+        },
+        {
+          "pos": [
+            -26.0,
+            -14.0,
+            30.0
+          ],
+          "failure_index": 0.006,
+          "safety_factor": 155.33
+        },
+        {
+          "pos": [
+            -66.0,
+            -34.0,
+            38.0
+          ],
+          "failure_index": 0.005,
+          "safety_factor": 187.56
+        },
+        {
+          "pos": [
+            -98.0,
+            -54.0,
+            2.0
+          ],
+          "failure_index": 0.005,
+          "safety_factor": 212.09
+        }
+      ],
+      "case": "LC3sw lift by the head, south-west foot caught",
+      "load_class": "abnormal",
+      "required_safety_factor": 1.5,
+      "solver": {
+        "backend": "cuda",
+        "device": "NVIDIA GeForce RTX 4060 Ti",
+        "torch": "2.12.0+cu130",
+        "preconditioner": "mg",
+        "precision": "mixed32",
+        "multigrid": {
+          "levels": [
+            {
+              "shape": [
+                64,
+                64,
+                42
+              ],
+              "elements": 4384,
+              "ndof": 545025
+            },
+            {
+              "shape": [
+                32,
+                32,
+                21
+              ],
+              "elements": 871,
+              "ndof": 71874
+            },
+            {
+              "shape": [
+                16,
+                16,
+                11
+              ],
+              "elements": 205,
+              "ndof": 10404
+            },
+            {
+              "shape": [
+                8,
+                8,
+                6
+              ],
+              "elements": 52,
+              "ndof": 1701
+            }
+          ],
+          "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+          "coarse_solver": "dense cholesky",
+          "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+          "setup_seconds": 0.276
+        }
+      },
+      "solve_seconds": 0.532
+    },
+    {
+      "elements": 4384,
+      "voxel_mm": 4.0,
+      "volume_mm3": 280576.0,
+      "converged": true,
+      "cg_iterations": 45,
+      "compliance_Nmm": 0.19026778801000707,
+      "max_displacement_mm": 0.027250213304508438,
+      "max_displacement_at": [
+        -8.0,
+        8.0,
+        144.0
+      ],
+      "von_mises_max_MPa": 0.436323127945198,
+      "von_mises_p99_5_MPa": 0.15864408805976998,
+      "stress_concentration_ratio": 2.750327057764743,
+      "failure_index_max": 0.019155580650146036,
+      "failure_index_p99_5": 0.005811417967009076,
+      "failure_criterion": "max_stress_material_axes",
+      "material_axes": {
+        "build_axis": "Z",
+        "raster_axis": "X",
+        "stiffness": "orthotropic",
+        "card_id": "pla_generic_fff_orthotropic_v1"
+      },
+      "min_safety_factor": 52.20410794451048,
+      "safety_factor_p99_5": 172.07504359123962,
+      "mesh": {
+        "thin_section_mm": 8.0,
+        "typical_section_mm": 16.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 1.50",
+          "got": "52.20 (worst element) / 172.08 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 3.000 mm",
+          "got": "0.027 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 2.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            26.0,
+            -18.0,
+            2.0
+          ],
+          "failure_index": 0.019,
+          "safety_factor": 52.2
+        },
+        {
+          "pos": [
+            -10.0,
+            18.0,
+            106.0
+          ],
+          "failure_index": 0.01,
+          "safety_factor": 101.01
+        },
+        {
+          "pos": [
+            -6.0,
+            -6.0,
+            106.0
+          ],
+          "failure_index": 0.008,
+          "safety_factor": 130.56
+        },
+        {
+          "pos": [
+            42.0,
+            -18.0,
+            22.0
+          ],
+          "failure_index": 0.007,
+          "safety_factor": 144.5
+        },
+        {
+          "pos": [
+            14.0,
+            -18.0,
+            18.0
+          ],
+          "failure_index": 0.005,
+          "safety_factor": 199.38
+        }
+      ],
+      "case": "LC3se lift by the head, south-east foot caught",
+      "load_class": "abnormal",
+      "required_safety_factor": 1.5,
+      "solver": {
+        "backend": "cuda",
+        "device": "NVIDIA GeForce RTX 4060 Ti",
+        "torch": "2.12.0+cu130",
+        "preconditioner": "mg",
+        "precision": "mixed32",
+        "multigrid": {
+          "levels": [
+            {
+              "shape": [
+                64,
+                64,
+                42
+              ],
+              "elements": 4384,
+              "ndof": 545025
+            },
+            {
+              "shape": [
+                32,
+                32,
+                21
+              ],
+              "elements": 871,
+              "ndof": 71874
+            },
+            {
+              "shape": [
+                16,
+                16,
+                11
+              ],
+              "elements": 205,
+              "ndof": 10404
+            },
+            {
+              "shape": [
+                8,
+                8,
+                6
+              ],
+              "elements": 52,
+              "ndof": 1701
+            }
+          ],
+          "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+          "coarse_solver": "dense cholesky",
+          "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+          "setup_seconds": 0.276
+        }
+      },
+      "solve_seconds": 0.496
+    },
+    {
+      "elements": 4384,
+      "voxel_mm": 4.0,
+      "volume_mm3": 280576.0,
+      "converged": true,
+      "cg_iterations": 25,
+      "compliance_Nmm": 0.0034208349487014744,
+      "max_displacement_mm": 0.0011658257501233294,
+      "max_displacement_at": [
+        -8.0,
+        -8.0,
+        144.0
+      ],
+      "von_mises_max_MPa": 0.06241698416654859,
+      "von_mises_p99_5_MPa": 0.03200561879119744,
+      "stress_concentration_ratio": 1.9501883270482256,
+      "failure_index_max": 0.001403278272569427,
+      "failure_index_p99_5": 0.0008612533246554308,
+      "failure_criterion": "max_stress_material_axes",
+      "material_axes": {
+        "build_axis": "Z",
+        "raster_axis": "X",
+        "stiffness": "orthotropic",
+        "card_id": "pla_generic_fff_orthotropic_v1"
+      },
+      "min_safety_factor": 712.617033661458,
+      "safety_factor_p99_5": 1161.0985657443805,
+      "mesh": {
+        "thin_section_mm": 8.0,
+        "typical_section_mm": 16.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "712.62 (worst element) / 1161.10 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 3.000 mm",
+          "got": "0.001 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 2.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -2.0,
+            -6.0,
+            134.0
+          ],
+          "failure_index": 0.001,
+          "safety_factor": 712.62
+        },
+        {
+          "pos": [
+            10.0,
+            6.0,
+            134.0
+          ],
+          "failure_index": 0.001,
+          "safety_factor": 1068.34
+        },
+        {
+          "pos": [
+            2.0,
+            10.0,
+            118.0
+          ],
+          "failure_index": 0.001,
+          "safety_factor": 1150.07
+        },
+        {
+          "pos": [
+            -2.0,
+            -18.0,
+            106.0
+          ],
+          "failure_index": 0.001,
+          "safety_factor": 1186.09
+        },
+        {
+          "pos": [
+            6.0,
+            -10.0,
+            118.0
+          ],
+          "failure_index": 0.001,
+          "safety_factor": 1359.22
+        }
+      ],
+      "case": "LC4t  twist the head about the vertical axis",
+      "load_class": "normal",
+      "required_safety_factor": 3.0,
+      "solver": {
+        "backend": "cuda",
+        "device": "NVIDIA GeForce RTX 4060 Ti",
+        "torch": "2.12.0+cu130",
+        "preconditioner": "mg",
+        "precision": "mixed32",
+        "multigrid": {
+          "levels": [
+            {
+              "shape": [
+                64,
+                64,
+                42
+              ],
+              "elements": 4384,
+              "ndof": 545025
+            },
+            {
+              "shape": [
+                32,
+                32,
+                21
+              ],
+              "elements": 871,
+              "ndof": 71874
+            },
+            {
+              "shape": [
+                16,
+                16,
+                11
+              ],
+              "elements": 205,
+              "ndof": 10404
+            },
+            {
+              "shape": [
+                8,
+                8,
+                6
+              ],
+              "elements": 52,
+              "ndof": 1701
+            }
+          ],
+          "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+          "coarse_solver": "dense cholesky",
+          "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+          "setup_seconds": 0.276
+        }
+      },
+      "solve_seconds": 0.194
+    }
+  ],
+  "quick": true,
+  "extracted_members": {
+    "note": "skipped by --quick"
+  },
+  "outputs": {
+    "preserve": "tall_tripod_study_preserve.stl",
+    "obstacle": "tall_tripod_study_obstacle.stl",
+    "obstacle_declared": "tall_tripod_study_obstacle_declared.stl",
+    "design_space": "tall_tripod_study_design_space.stl",
+    "attach": "tall_tripod_study_attach.stl",
+    "no_attach": "tall_tripod_study_no_attach.stl",
+    "setup": "tall_tripod_study_setup.stl",
+    "scad": "tall_tripod_study_setup.scad",
+    "png": "tall_tripod_study_setup.png",
+    "json": "tall_tripod_study_setup.json",
+    "density_raw": "tall_tripod_study_density_raw.npy",
+    "density_phys": "tall_tripod_study_density_phys.npy",
+    "binary": "tall_tripod_study_binary.npy",
+    "final_stl": "tall_tripod_study_final.stl",
+    "result_png": "tall_tripod_study_topo.png"
+  },
+  "checks": [
+    {
+      "name": "connectivity",
+      "required": "every preserve region connected through material",
+      "got": "1 component(s), 1 preserve body(ies)",
+      "pass": true
+    },
+    {
+      "name": "volume constraint",
+      "required": "volume fraction of the free cells <= 0.0400 (+2 % of the target)",
+      "got": "0.0403 of the free cells, measured on the thresholded shape",
+      "pass": true
+    },
+    {
+      "name": "solver",
+      "required": "every CG solve reaches the tolerance",
+      "got": "480 of 480 solves converged",
+      "pass": true
+    },
+    {
+      "name": "final FEA",
+      "required": "every load case passes its own checks",
+      "got": "6 of 6 case(s) fail: LC1f  push 1.0 N horizontally at the camera mount, LC2   camera weight plus 5x vertical shock, LC3n  lift by the head, north foot caught, LC3sw lift by the head, south-west foot caught, LC3se lift by the head, south-east foot caught, LC4t  twist the head about the vertical axis",
+      "pass": false
+    }
+  ],
+  "pass": false
+}

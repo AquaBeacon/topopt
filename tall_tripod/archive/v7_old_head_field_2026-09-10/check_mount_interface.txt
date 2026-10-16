@@ -1,0 +1,22 @@
+
+== tall_tripod/04_print/tall_tripod.stl
+   extents    : x -101.50..99.50  y -60.00..105.96  z 0.00..196.50
+   clipped?   : top of part 196.50 mm, mount top 196.50 mm  (whole)
+   nut pocket : 0 of 1804 mouth lines blocked towards -X (open)
+     0.65 mm deep : across flats  8.12 (CAD 8.20, nut 8.10 max)   across corners  9.12 (CAD 9.47)
+     2.15 mm deep : across flats  8.12 (CAD 8.20, nut 8.10 max)   across corners  9.12 (CAD 9.47)
+     3.65 mm deep : across flats  8.12 (CAD 8.20, nut 8.10 max)   across corners  9.12 (CAD 9.47)
+   fingers    : -10.62..-4.62 (6.00)  -1.38..1.38 (2.75)  4.62..7.62 (3.00)
+   slots      : -4.62..-1.38 (3.25)  1.38..4.62 (3.25)
+   bore       : 133.38..139.50 (6.12)
+
+== tall_tripod/02_setup/tall_camera_mount.stl
+   extents    : x -52.00..52.00  y -52.45..27.00  z 112.00..196.50
+   clipped?   : top of part 196.50 mm, mount top 196.50 mm  (whole)
+   nut pocket : 0 of 1804 mouth lines blocked towards -X (open)
+     0.65 mm deep : across flats  8.12 (CAD 8.20, nut 8.10 max)   across corners  9.38 (CAD 9.47)
+     2.15 mm deep : across flats  8.12 (CAD 8.20, nut 8.10 max)   across corners  9.38 (CAD 9.47)
+     3.65 mm deep : across flats  8.12 (CAD 8.20, nut 8.10 max)   across corners  9.38 (CAD 9.47)
+   fingers    : -10.62..-4.62 (6.00)  -1.38..1.38 (2.75)  4.62..7.62 (3.00)
+   slots      : -4.62..-1.38 (3.25)  1.38..4.62 (3.25)
+   bore       : 133.38..139.62 (6.25)

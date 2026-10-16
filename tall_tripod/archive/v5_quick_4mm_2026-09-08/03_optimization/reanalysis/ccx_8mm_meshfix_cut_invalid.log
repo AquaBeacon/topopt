@@ -1,0 +1,19 @@
+  shell repaired: 1400 -> 924 triangles, volume 309000.0 -> 242833.3 mm3 (tall_tripod_study_t40_repaired.stl)
+
+mesh target 8.00 mm
+  shell refined to 8.00 mm edges: 924 -> 4488 triangles
+  mesh tall_tripod_study_t40_repaired_h8.00_mesh.inp: 15607 nodes, 8200 elements at 8.00 mm
+  LC1f  push 1.0 N horizontally at the c normal   req 3.00  p99.5 2193.519  worst 1084.630  max   0.0035 mm  PASS
+  LC2   camera weight plus 5x vertical s normal   req 3.00  p99.5 569.095  worst 336.783  max   0.0055 mm  PASS
+  LC3n  lift by the head, north foot cau abnormal req 1.50  p99.5  53.350  worst  15.575  max   0.2312 mm  PASS
+  LC3sw lift by the head, south-west foo abnormal req 1.50  p99.5  52.117  worst  18.367  max   0.3071 mm  PASS
+  LC3se lift by the head, south-east foo abnormal req 1.50  p99.5  24.043  worst   3.862  max   0.8703 mm  PASS
+  LC4t  twist the head about the vertica normal   req 3.00  p99.5 1015.255  worst 671.853  max   0.0017 mm  PASS
+
+wrote tall_tripod/03_optimization/ccx_r8\ccx_summary.json
+  8.00 mm: PASS  SF 24.043  max 0.87033 mm  mass 301.113333 g
+    modes of {LC1f  push 1.0 N hor, LC2   camera weight , LC4t  twist the head}: 354.2 Hz, 603.4 Hz, 811.0 Hz
+    modes of {LC3n  lift by the he}: 67.9 Hz, 105.0 Hz, 114.5 Hz
+    modes of {LC3se lift by the he}: 44.4 Hz, 92.2 Hz, 110.8 Hz
+    modes of {LC3sw lift by the he}: 92.8 Hz, 111.9 Hz, 249.5 Hz
+    lowest buckling factor: 186.365

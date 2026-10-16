@@ -1,0 +1,38 @@
+{
+  "_what": "Illustrative underwater thruster bracket workflow; not a production design.",
+  "_why": "All dimensions and loads below are demonstration assumptions. Replace from interface CAD, measured loads and manufacturer data before designing a real part.",
+  "units": "mm_N_MPa",
+  "material": "PETG",
+  "build_axis": "Z",
+  "raster_axis": "X",
+  "printer": "X1C",
+  "voxel_mm": 4.0,
+  "safety_factor": 3.0,
+  "max_deflection_mm": 1.0,
+  "geometry": {
+    "design_space": {"type": "box", "min": [0, 0, 0], "max": [80, 32, 24]},
+    "preserve": {
+      "frame": {"type": "box", "min": [0, 0, 0], "max": [8, 32, 24], "attach": ["+X"]},
+      "thruster": {"type": "box", "min": [72, 0, 0], "max": [80, 32, 24], "attach": ["-X"]}
+    },
+    "obstacle": {"cable_access": {"type": "box", "min": [16, 0, 0], "max": [64, 8, 8]}}
+  },
+  "regions": {
+    "frame": {"type": "box", "min": [0, 0, 0], "max": [8, 32, 24]},
+    "thruster": {"type": "box", "min": [72, 0, 0], "max": [80, 32, 24]},
+    "torque_low": {"type": "box", "min": [72, 0, 0], "max": [80, 16, 24]},
+    "torque_high": {"type": "box", "min": [72, 16, 0], "max": [80, 32, 24]}
+  },
+  "cases": [
+    {"name": "forward", "load_class": "normal", "_note": "Illustrative 40 N thrust; replace with operating-voltage forward thrust.",
+     "supports": [{"region": "frame", "fix": "xyz"}], "loads": [{"region": "thruster", "force": [40, 0, 0]}]},
+    {"name": "reverse", "load_class": "normal", "_note": "Illustrative 30 N reverse; not assumed equal to forward thrust.",
+     "supports": [{"region": "frame", "fix": "xyz"}], "loads": [{"region": "thruster", "force": [-30, 0, 0]}]},
+    {"name": "lateral_and_weight", "load_class": "normal", "_note": "Illustrative attached payload loads; excludes the bracket's own buoyancy and pressure field.",
+     "supports": [{"region": "frame", "fix": "xyz"}], "loads": [{"region": "thruster", "force": [0, 10, -5]}]},
+    {"name": "reaction_torque", "load_class": "normal", "_note": "Illustrative pure 40 N mm torque about +X: equal/opposite 2.5 N at centroids separated by 16 mm.",
+     "supports": [{"region": "frame", "fix": "xyz"}],
+     "loads": [{"region": "torque_low", "force": [0, 0, -2.5]}, {"region": "torque_high", "force": [0, 0, 2.5]}]}
+  ],
+  "design": {"volfrac": 0.4, "filter_mm": 12.0, "overhang": true, "symmetry": []}
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "topopt/run/1",
+  "study": "tall_tripod/tall_tripod_study.json",
+  "outdir": "tall_tripod\\03_optimization",
+  "model_dir": "tall_tripod",
+  "quick": false,
+  "seconds": 777.8,
+  "stages": [
+    {
+      "stage": "setup",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": null,
+      "seconds": 9.8
+    },
+    {
+      "stage": "opt",
+      "exit_code": 1,
+      "error": null,
+      "skipped": null,
+      "note": "shape does not meet the requirement; continuing so the report says why",
+      "seconds": 627.8
+    },
+    {
+      "stage": "extract",
+      "exit_code": 1,
+      "error": null,
+      "skipped": null,
+      "note": null,
+      "seconds": 100.8
+    },
+    {
+      "stage": "ccx",
+      "exit_code": null,
+      "error": null,
+      "skipped": true,
+      "note": "disabled with --no-ccx",
+      "seconds": 0.0
+    },
+    {
+      "stage": "print",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": "wrote printcheck.json (threshold 0.40)",
+      "seconds": 0.6
+    },
+    {
+      "stage": "slice",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": null,
+      "seconds": 17.9
+    },
+    {
+      "stage": "report",
+      "exit_code": 1,
+      "error": null,
+      "skipped": null,
+      "note": null,
+      "seconds": 1.8
+    },
+    {
+      "stage": "assumptions",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": "wrote tall_tripod\\01_assumptions\\assumptions.md",
+      "seconds": 0.5
+    },
+    {
+      "stage": "publish",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": "wrote tall_tripod\\04_print\\PRINT.md",
+      "seconds": 18.5
+    }
+  ],
+  "stopped_at": null,
+  "valid_through": [
+    "setup",
+    "opt",
+    "extract",
+    "print",
+    "slice",
+    "assumptions",
+    "publish"
+  ]
+}

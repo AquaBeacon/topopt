@@ -1,0 +1,666 @@
+{
+  "schema": "topopt/assumptions/1",
+  "part": "tall_tripod_study",
+  "study_file": "tall_tripod_study.json",
+  "what": "Topology-optimisation validation model: the tall tripod (spec 5.3).",
+  "why": "Raising the camera to about 200 mm puts a real three-dimensional load path between the camera mount and the floor, and how to build it -- one column, three legs, a braced tripod, something else -- is genuinely open.",
+  "caveat": "This is a validation model, not the shipped bracket. osmo_tripod/osmo_tripod.scad stays as it is.",
+  "units": "mm / N / MPa (lengths mm, forces N, stresses MPa)",
+  "material": {
+    "name": "PLA",
+    "model": "orthotropic_equivalent_solid",
+    "chosen": {
+      "material_model": "orthotropic_equivalent_solid",
+      "card_id": "pla_generic_fff_orthotropic_v1_x0.75E_x0.75S",
+      "classification": "conservative_literature_based_default",
+      "measured_for_specific_printer": false,
+      "solid_fraction_applied": 0.75,
+      "Ex_Ey_Ez_MPa": [
+        2250.0,
+        1800.0,
+        1125.0
+      ],
+      "Gxy_Gyz_Gzx_MPa": [
+        750.0,
+        412.5,
+        412.5
+      ],
+      "strengths_MPa": {
+        "Xt": 37.5,
+        "Xc": 45.0,
+        "Yt": 26.25,
+        "Yc": 37.5,
+        "Zt": 16.5,
+        "Zc": 30.0,
+        "Sxy": 18.75,
+        "Syz": 11.25,
+        "Szx": 11.25
+      },
+      "source": "docs/FFF_PLA_PETG_orthotropic_material_reference.md section 5"
+    },
+    "notes": "Stiffest common filament, but creeps under sustained load and softens in a hot car / direct sun. Fine for jigs and dry indoor parts; wrong for anything structural left loaded for days.",
+    "max_service_c": 50,
+    "required_safety_factor": 4.0,
+    "card_id": "pla_generic_fff_orthotropic_v1_x0.75E_x0.75S",
+    "classification": "conservative_literature_based_default",
+    "measured_for_specific_printer": false,
+    "source": "docs/FFF_PLA_PETG_orthotropic_material_reference.md section 5",
+    "conditions": {
+      "moisture": "dry",
+      "temperature_C": 23,
+      "immersion_hours": 0,
+      "nozzle_mm": "0.4-0.6",
+      "layer_height_mm": "0.15-0.28",
+      "model": "equivalent solid, high density, generous perimeters",
+      "polymer": "unfilled PLA"
+    },
+    "stiffness_MPa": {
+      "Ex": 2250.0,
+      "Ey": 1800.0,
+      "Ez": 1125.0,
+      "Gxy": 750.0,
+      "Gyz": 412.5,
+      "Gzx": 412.5
+    },
+    "poisson": {
+      "nu_xy": 0.35,
+      "nu_yz": 0.3,
+      "nu_zx": 0.3
+    },
+    "strength_MPa": {
+      "Xt": 37.5,
+      "Xc": 45.0,
+      "Yt": 26.25,
+      "Yc": 37.5,
+      "Zt": 16.5,
+      "Zc": 30.0,
+      "Sxy": 18.75,
+      "Syz": 11.25,
+      "Szx": 11.25
+    }
+  },
+  "manufacturing": {
+    "printer": {
+      "key": "X1C",
+      "name": "Bambu Lab X1-Carbon",
+      "nominal_mm": [
+        256.0,
+        256.0,
+        256.0
+      ],
+      "usable_mm": [
+        250.0,
+        250.0,
+        250.0
+      ],
+      "margin_mm": 0.0,
+      "envelope_mm": [
+        250.0,
+        250.0,
+        250.0
+      ],
+      "nozzle_mm": 0.4,
+      "min_feature_mm": 0.8,
+      "note": "AMS-fed; the purge tower needs ~60x60 mm of plate on multi-material prints.",
+      "source": "built-in",
+      "allow_oversize_design_space": false
+    },
+    "printer_declared": true,
+    "build_axis": "Z",
+    "build_axis_declared": true,
+    "build_axis_note": "Printed standing up, the way the model is drawn: the layer planes are horizontal, so bending the structure pulls the layers apart. That is the worst orientation for an FFF part and is exactly what this model is meant to expose. `build_axis` is also which way is *down* for ground contact.",
+    "raster_axis": "X",
+    "raster_axis_declared": true,
+    "walls": 4,
+    "infill": 0.25
+  },
+  "requirements": {
+    "safety_factor": 3.0,
+    "safety_factor_note": "materials.required_safety_factor() asks for 4.0 while the PLA card is provisional (no value measured on this printer). 3.0 is kept here so the number stays comparable with the recorded runs; the report states the shortfall.",
+    "max_deflection_mm": 3.0,
+    "deflection_note": "At about 200 mm the camera is a long lever. 3 mm at the camera top is about 0.9 degrees of tilt, which is where video framing visibly drifts.",
+    "required_cases": [
+      "LC1f",
+      "LC2",
+      "LC3n",
+      "LC3sw",
+      "LC3se",
+      "LC4t"
+    ]
+  },
+  "cases": [
+    {
+      "name": "LC1f  push 1.0 N horizontally at the camera mount",
+      "represents": "1.0 N is the tipping limit, and the tipping limit is what bounds the load on this model -- it is not a strength case, because past it the part is lying on the floor. BEST-CASE tipping (feet on the rim of the design space, camera mass only, camera top at z = 202.5 using the 54.04 mm case height measured from osmo-action-6.step rather than the mount's provisional 75 mm envelope): 0.35 kg x 9.81 x 60 mm / 202.5 mm = 1.02 N. Essentially unchanged from v7's 1.025 N -- the mount raises the camera by 1.5 mm, not by its own height. The actual value depends on where the optimiser puts the feet and is only known after the run -- read `ground_contact` in the summary.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force_N": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "magnitude_N": 1.0,
+          "kind": "force"
+        },
+        {
+          "region": "cam_iface",
+          "force_N": [
+            0.0,
+            0.0,
+            -3.44
+          ],
+          "magnitude_N": 3.44,
+          "kind": "force"
+        }
+      ],
+      "gravity": null,
+      "resultant_N": [
+        0.0,
+        1.0,
+        -3.44
+      ],
+      "resultant_magnitude_N": 3.582,
+      "load_note": "1.0 N forward at the mount plus the 0.35 kg camera weight (3.44 N down). The horizontal force is applied at the mount because that is where preserve is; the moment it stands in for is 1.0 N x about 47 mm of remaining lever from the region's centroid to the camera top."
+    },
+    {
+      "name": "LC2   camera weight plus 5x vertical shock",
+      "represents": "Setting the tripod down hard, or a knock straight down. 5 g is the usual screening factor for a hand-carried item. NOTE that the mount's own 143,505 mm3 -- about 180 g of PLA, half the camera again -- is NOT in this number. Self-weight is not applied anywhere in this study; it was not in v4..v7 either, and it matters more now than it did.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force_N": [
+            0.0,
+            0.0,
+            -17.2
+          ],
+          "magnitude_N": 17.2,
+          "kind": "force"
+        }
+      ],
+      "gravity": null,
+      "resultant_N": [
+        0.0,
+        0.0,
+        -17.2
+      ],
+      "resultant_magnitude_N": 17.2,
+      "load_note": null
+    },
+    {
+      "name": "LC3n  lift by the head, north foot caught",
+      "represents": "Picking the tripod up by the camera while one leg is still hooked on something. This is the case that decided the mass of the short tripod, and the only kind of case here that asks for a wide base -- everything else is happiest with a single central post. Three of them, one per catch zone, because the hooked leg can be any of them and one case alone just moves the post over to that zone (measured in v4 -- see the catch-zone note in `regions`).",
+      "supports": [
+        {
+          "region": "catch_n",
+          "fix": "xyz"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force_N": [
+            0.0,
+            0.0,
+            12.0
+          ],
+          "magnitude_N": 12.0,
+          "kind": "force"
+        },
+        {
+          "region": "cam_iface",
+          "force_N": [
+            4.0,
+            0.0,
+            0.0
+          ],
+          "magnitude_N": 4.0,
+          "kind": "force"
+        }
+      ],
+      "gravity": null,
+      "resultant_N": [
+        4.0,
+        0.0,
+        12.0
+      ],
+      "resultant_magnitude_N": 12.649,
+      "load_note": null
+    },
+    {
+      "name": "LC3sw lift by the head, south-west foot caught",
+      "represents": null,
+      "supports": [
+        {
+          "region": "catch_sw",
+          "fix": "xyz"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force_N": [
+            0.0,
+            0.0,
+            12.0
+          ],
+          "magnitude_N": 12.0,
+          "kind": "force"
+        },
+        {
+          "region": "cam_iface",
+          "force_N": [
+            -3.46,
+            -2.0,
+            0.0
+          ],
+          "magnitude_N": 3.996,
+          "kind": "force"
+        }
+      ],
+      "gravity": null,
+      "resultant_N": [
+        -3.46,
+        -2.0,
+        12.0
+      ],
+      "resultant_magnitude_N": 12.648,
+      "load_note": "The 4 N horizontal component points away from the caught foot, as in LC3n, rotated with the zone."
+    },
+    {
+      "name": "LC3se lift by the head, south-east foot caught",
+      "represents": null,
+      "supports": [
+        {
+          "region": "catch_se",
+          "fix": "xyz"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force_N": [
+            0.0,
+            0.0,
+            12.0
+          ],
+          "magnitude_N": 12.0,
+          "kind": "force"
+        },
+        {
+          "region": "cam_iface",
+          "force_N": [
+            3.46,
+            -2.0,
+            0.0
+          ],
+          "magnitude_N": 3.996,
+          "kind": "force"
+        }
+      ],
+      "gravity": null,
+      "resultant_N": [
+        3.46,
+        -2.0,
+        12.0
+      ],
+      "resultant_magnitude_N": 12.648,
+      "load_note": null
+    },
+    {
+      "name": "LC4t  twist the head about the vertical axis",
+      "represents": "Tightening the screw, or panning the camera against friction. A hollow section is stiff in bending and can still be soft in torsion, so this case is what stops the optimiser producing an open C-section.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_plus_x",
+          "force_N": [
+            0.0,
+            0.6,
+            0.0
+          ],
+          "magnitude_N": 0.6,
+          "kind": "force"
+        },
+        {
+          "region": "cam_minus_x",
+          "force_N": [
+            0.0,
+            -0.6,
+            0.0
+          ],
+          "magnitude_N": 0.6,
+          "kind": "force"
+        },
+        {
+          "region": "cam_iface",
+          "force_N": [
+            0.0,
+            0.0,
+            -3.44
+          ],
+          "magnitude_N": 3.44,
+          "kind": "force"
+        }
+      ],
+      "gravity": null,
+      "resultant_N": [
+        0.0,
+        0.0,
+        -3.44
+      ],
+      "resultant_magnitude_N": 3.44,
+      "load_note": "A 0.60 N couple across the mount: +Y on the +X half, -Y on the -X half, about 52 mm apart, which is 31 N.mm -- the same moment v4..v7 applied as 3.0 N across 10 mm. Combined with the camera weight so the case is a real one rather than pure torsion."
+    }
+  ],
+  "design_settings": {
+    "volfrac": 0.05,
+    "filter_mm": 20.0,
+    "symmetry": [],
+    "symmetry_note": "No mirror symmetry declared. The three LC3 cases each load one side and LC4t twists; mirror-averaging would pull the result away from what those cases actually ask for. It would also decide part of the stance, which is the thing this model exists to stop doing. NOTE that the head itself is NOT symmetric in X (the nut side is 6.00 mm thick, the knob side 3.00) nor in Y (the rear plate and its gussets are all on -Y), so a mirrored structure would be wrong for it anyway.",
+    "voxel_mm": 4.0,
+    "voxel_note": "4.0 mm. v4..v7 recorded 10.0 here and were run at 3.0 from the command line, which meant the file never said what was actually solved. This is the size the v8 run was solved on. It is still an EXPLORATORY grid: 4 mm across a d240 x 120 design space is 60 cells wide and about 106,000 free cells -- enough to see which topology the loads ask for, not enough to size a member. `topopt setup` times one solve on whatever grid it builds and prints what the run would cost, so the trade is priced before it is paid.",
+    "target_elements": 200000
+  },
+  "geometry_sources": {
+    "preserve": {
+      "camera_mount": {
+        "stl": "02_setup/tall_camera_mount.stl"
+      }
+    },
+    "design_space": "02_setup/tall_v8_design_space.stl"
+  },
+  "design_space": {
+    "voxel_mm": 4.0,
+    "grid_shape": [
+      64,
+      64,
+      54
+    ],
+    "bbox_mm": [
+      240.0,
+      240.0,
+      196.0
+    ],
+    "bbox_lo_mm": [
+      -120.0,
+      -120.0,
+      0.0
+    ],
+    "design_space_mm3": 5429760.0,
+    "preserve_mm3": 136960.0,
+    "obstacle_mm3": 0.0,
+    "free_mm3": 5364224.0
+  },
+  "design_freedom": {
+    "free_voxels": 83816,
+    "domain_voxels": 85956,
+    "free_fraction_of_domain": 0.9751,
+    "volfrac": 0.05,
+    "expected_final_mm3": 405171.2,
+    "preserve_mm3": 136960.0,
+    "preserve_fraction_of_expected_part": 0.338,
+    "free_min_thickness_mm": 8.0,
+    "free_median_thickness_mm": 112.0,
+    "free_min_thickness_voxels": 2.0,
+    "fixed_points": [
+      {
+        "kind": "load",
+        "region": "cam_iface",
+        "centroid_mm": [
+          -0.2,
+          -17.5,
+          150.4
+        ],
+        "mm3": 71424.0
+      },
+      {
+        "kind": "load",
+        "region": "cam_plus_x",
+        "centroid_mm": [
+          24.9,
+          -19.0,
+          151.5
+        ],
+        "mm3": 27328.0
+      },
+      {
+        "kind": "load",
+        "region": "cam_minus_x",
+        "centroid_mm": [
+          -24.3,
+          -18.2,
+          150.6
+        ],
+        "mm3": 28480.0
+      }
+    ],
+    "ground_zones": [
+      {
+        "region": "ground_all",
+        "centroid_mm": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "area_mm2": 45248.0
+      },
+      {
+        "region": "catch_n",
+        "centroid_mm": [
+          0.0,
+          79.8,
+          2.0
+        ],
+        "area_mm2": 6880.0
+      },
+      {
+        "region": "catch_sw",
+        "centroid_mm": [
+          -69.2,
+          -40.0,
+          2.0
+        ],
+        "area_mm2": 6944.0
+      },
+      {
+        "region": "catch_se",
+        "centroid_mm": [
+          69.2,
+          -40.0,
+          2.0
+        ],
+        "area_mm2": 6944.0
+      }
+    ],
+    "note_ground_zones": "4 support(s) act on the build plane rather than on preserve, so where the part touches down is a result. The zones themselves are still an input: this study says to look for contact inside them.",
+    "note_fixed_points": "3 load/support footprint(s) sit on preserve at positions the CAD model chose. The optimiser decides how to reach them, not where they are."
+  },
+  "build_volume": {
+    "printer": {
+      "key": "X1C",
+      "name": "Bambu Lab X1-Carbon",
+      "nominal_mm": [
+        256.0,
+        256.0,
+        256.0
+      ],
+      "usable_mm": [
+        250.0,
+        250.0,
+        250.0
+      ],
+      "margin_mm": 0.0,
+      "envelope_mm": [
+        250.0,
+        250.0,
+        250.0
+      ],
+      "nozzle_mm": 0.4,
+      "min_feature_mm": 0.8,
+      "note": "AMS-fed; the purge tower needs ~60x60 mm of plate on multi-material prints.",
+      "source": "built-in",
+      "allow_oversize_design_space": false
+    },
+    "build_axis": "Z",
+    "domain": {
+      "what": "design space",
+      "printer": "X1C",
+      "printer_name": "Bambu Lab X1-Carbon",
+      "printer_source": "built-in",
+      "size_mm": [
+        240.0,
+        240.0,
+        196.0
+      ],
+      "usable_mm": [
+        250.0,
+        250.0,
+        250.0
+      ],
+      "margin_mm": 0.0,
+      "envelope_mm": [
+        250.0,
+        250.0,
+        250.0
+      ],
+      "fits_any_orientation": true,
+      "up_axes_that_fit": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "by_up_axis": {
+        "X": {
+          "fits": true,
+          "overflow_mm": {
+            "Y": -10.0,
+            "Z": -54.0,
+            "X": -10.0
+          }
+        },
+        "Y": {
+          "fits": true,
+          "overflow_mm": {
+            "X": -10.0,
+            "Z": -54.0,
+            "Y": -10.0
+          }
+        },
+        "Z": {
+          "fits": true,
+          "overflow_mm": {
+            "Y": -10.0,
+            "X": -10.0,
+            "Z": -54.0
+          }
+        }
+      },
+      "declared_build_axis": "Z",
+      "fits_as_declared": true,
+      "overflow_mm": {
+        "Y": -10.0,
+        "X": -10.0,
+        "Z": -54.0
+      },
+      "margin_to_envelope_mm": 10.0,
+      "lo_mm": [
+        -120.0,
+        -120.0,
+        0.0
+      ],
+      "hi_mm": [
+        120.0,
+        120.0,
+        196.0
+      ]
+    },
+    "preserve": {
+      "what": "preserve",
+      "printer": "X1C",
+      "printer_name": "Bambu Lab X1-Carbon",
+      "printer_source": "built-in",
+      "size_mm": [
+        104.0,
+        80.0,
+        84.0
+      ],
+      "usable_mm": [
+        250.0,
+        250.0,
+        250.0
+      ],
+      "margin_mm": 0.0,
+      "envelope_mm": [
+        250.0,
+        250.0,
+        250.0
+      ],
+      "fits_any_orientation": true,
+      "up_axes_that_fit": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "by_up_axis": {
+        "X": {
+          "fits": true,
+          "overflow_mm": {
+            "Z": -166.0,
+            "Y": -170.0,
+            "X": -146.0
+          }
+        },
+        "Y": {
+          "fits": true,
+          "overflow_mm": {
+            "X": -146.0,
+            "Z": -166.0,
+            "Y": -170.0
+          }
+        },
+        "Z": {
+          "fits": true,
+          "overflow_mm": {
+            "X": -146.0,
+            "Y": -170.0,
+            "Z": -166.0
+          }
+        }
+      },
+      "declared_build_axis": "Z",
+      "fits_as_declared": true,
+      "overflow_mm": {
+        "X": -146.0,
+        "Y": -170.0,
+        "Z": -166.0
+      },
+      "margin_to_envelope_mm": 146.0
+    },
+    "voxel_vs_min_feature": "one voxel is 4.00 mm and the smallest printable wall is 0.80 mm, so the grid cannot represent the printer's limit; minimum-feature checks on this run are about the grid, not the machine."
+  },
+  "setup_valid": true,
+  "setup_errors": [],
+  "setup_warnings": [
+    "preserve 'camera_mount' is 52 % outside the design space (71424.0 mm3) -- normal for an interface whose shape the mating part dictates. The protruding part is kept as material; no material can be added to it. Worth a look only if you expected the design space to cover it.",
+    "the free region is only 2.0 voxels (8.00 mm) thick at its thinnest. Below about 3 voxels there is no room for a hole, so the topology there is set by the outline rather than chosen -- refine the grid or widen the design space.",
+    "4 support(s) use ground contact, so the feet are not placed by the CAD. What the study still chooses is the 4 zone(s) to look in (ground_all at [0.0, 0.0, 2.0]; catch_n at [0.0, 79.8, 2.0]; catch_sw at [-69.2, -40.0, 2.0]; catch_se at [69.2, -40.0, 2.0]). If a partial-support case appears at only one azimuth, check the result actually stands up -- a glued contact cannot tip, so nothing in the objective asks for a wide stance."
+  ]
+}

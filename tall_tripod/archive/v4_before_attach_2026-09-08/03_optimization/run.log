@@ -1,0 +1,137 @@
+grid 63 x 63 x 41 at 4.000 mm (origin [-126.0, -126.0, -8.0])
+
+--- setup ---
+  voxel               4.000 mm, grid [63, 63, 41]
+  design space        1144192 mm3
+  preserve            65664 mm3 in 5 bodies
+  obstacle            24320 mm3 declared -> 59712 mm3 with clearance
+  free (optimisable)  1080064 mm3 (16876 cells)
+  build volume        250x250x250 on Bambu Lab X1-Carbon -- design space 236x236x144, fits
+  free to decide      94 % of the domain; preserve is 22 % of the expected part
+    preserve   mount_head                65664 mm3  stl:tall_preserve.stl
+    design_space design_space            1144192 mm3  stl:tall_design_space.stl
+    obstacle   camera_swing              59712 mm3  stl:tall_obstacle.stl
+  WARN  obstacle 'camera_swing': clearance 1.00 mm is below the voxel size 4.00 mm, so it was rounded up to one voxel (4.00 mm). Refine the grid if that matters.
+  WARN  preserve 'mount_head' is 2 % outside the design space (1536.0 mm3) -- normal for an interface whose shape the mating part dictates. The protruding part is kept as material; no material can be added to it. Worth a look only if you expected the design space to cover it.
+  WARN  support region 'foot_B' in case 'LC1f  push 1.0 N horizontally at the camera top (tipping limit)' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_C' in case 'LC1f  push 1.0 N horizontally at the camera top (tipping limit)' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_B' in case 'LC2   camera weight plus 5x vertical shock' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_C' in case 'LC2   camera weight plus 5x vertical shock' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_B' in case 'LC4t  twist the head about the mast axis' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_C' in case 'LC4t  twist the head about the mast axis' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  the free region is only 2.0 voxels (8.00 mm) thick at its thinnest. Below about 3 voxels there is no room for a hole, so the topology there is set by the outline rather than chosen -- refine the grid or widen the design space.
+  WARN  the 3 support point(s) are fixed by preserve at foot_A at [0.0, 110.0, 4.0]; foot_B at [-94.9, -54.7, 4.0]; foot_C at [94.9, -54.7, 4.0]. Where the part is held is an input to this study, not a result of it -- if the layout of the supports is itself meant to be optimised, that decision is currently being made in CAD.
+  => setup OK
+
+wrote tall_tripod\02_setup
+  look at tall_tripod\02_setup\tall_tripod_study_setup.png
+  look at tall_tripod\02_setup\tall_tripod_study_setup.scad
+
+NEXT: topopt opt tall_tripod/tall_tripod_study.json --out DIR
+[setup  ] ok       
+grid 63 x 63 x 41 at 4.000 mm (origin [-126.0, -126.0, -8.0])
+
+--- setup ---
+  voxel               4.000 mm, grid [63, 63, 41]
+  design space        1144192 mm3
+  preserve            65664 mm3 in 5 bodies
+  obstacle            24320 mm3 declared -> 59712 mm3 with clearance
+  free (optimisable)  1080064 mm3 (16876 cells)
+  build volume        250x250x250 on Bambu Lab X1-Carbon -- design space 236x236x144, fits
+  free to decide      94 % of the domain; preserve is 22 % of the expected part
+    preserve   mount_head                65664 mm3  stl:tall_preserve.stl
+    design_space design_space            1144192 mm3  stl:tall_design_space.stl
+    obstacle   camera_swing              59712 mm3  stl:tall_obstacle.stl
+  WARN  obstacle 'camera_swing': clearance 1.00 mm is below the voxel size 4.00 mm, so it was rounded up to one voxel (4.00 mm). Refine the grid if that matters.
+  WARN  preserve 'mount_head' is 2 % outside the design space (1536.0 mm3) -- normal for an interface whose shape the mating part dictates. The protruding part is kept as material; no material can be added to it. Worth a look only if you expected the design space to cover it.
+  WARN  support region 'foot_B' in case 'LC1f  push 1.0 N horizontally at the camera top (tipping limit)' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_C' in case 'LC1f  push 1.0 N horizontally at the camera top (tipping limit)' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_B' in case 'LC2   camera weight plus 5x vertical shock' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_C' in case 'LC2   camera weight plus 5x vertical shock' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_B' in case 'LC4t  twist the head about the mast axis' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  support region 'foot_C' in case 'LC4t  twist the head about the mast axis' reaches 27 % (896.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 73 % only.
+  WARN  the free region is only 2.0 voxels (8.00 mm) thick at its thinnest. Below about 3 voxels there is no room for a hole, so the topology there is set by the outline rather than chosen -- refine the grid or widen the design space.
+  WARN  the 3 support point(s) are fixed by preserve at foot_A at [0.0, 110.0, 4.0]; foot_B at [-94.9, -54.7, 4.0]; foot_C at [94.9, -54.7, 4.0]. Where the part is held is an input to this study, not a result of it -- if the layout of the supports is itself meant to be optimised, that decision is currently being made in CAD.
+  => setup OK
+
+domain 17902 voxels (16876 free, 1026 preserve, 0 obstacle) at 4.000 mm
+volfrac 0.220 of the free cells, filter 13.00 mm, 4 load case(s)
+ iter  penal  beta   objective       vol      grey    dshape
+    1   1.00   1.0      4.0000     0.175    0.5654    1.0000
+    6   1.00   1.0      1.8116     0.220    0.4902    0.0117
+   11   1.50   1.0      2.5225     0.220    0.4605    0.0021
+   16   1.50   1.0      2.3683     0.221    0.4115    0.0044
+   21   2.00   2.0      2.8285     0.221    0.3589    0.0013
+   26   2.00   2.0      2.7232     0.221    0.3297    0.0030
+   31   2.50   2.0      3.2027     0.220    0.3161    0.0017
+   36   2.50   4.0      2.6513     0.220    0.2340    0.0013
+   41   3.00   4.0      2.9188     0.220    0.2296    0.0009
+   46   3.00   4.0      2.8972     0.220    0.2251    0.0009
+   51   3.00   8.0      2.2215     0.220    0.1260    0.0017
+   56   3.00   8.0      2.2195     0.220    0.1258    0.0009
+   61   3.00   8.0      2.2157     0.220    0.1254    0.0004
+   66   3.00  16.0      1.9379     0.219    0.0611    0.0033
+   71   3.00  16.0      1.9238     0.220    0.0598    0.0010
+   76   3.00  16.0      1.9242     0.220    0.0597    0.0010
+   80   3.00  16.0      1.9228     0.220    0.0595    0.0007
+
+final FEA on the thresholded solid geometry:
+  LC1f  push 1.0 N horizontally at the camera  SF(p99.5) 1313.69   max 0.003 mm   compliance 0.008 N*mm
+  LC2   camera weight plus 5x vertical shock   SF(p99.5) 267.70   max 0.010 mm   compliance 0.154 N*mm
+  LC3x  lift by the head with one foot caught  SF(p99.5)  68.86   max 0.212 mm   compliance 1.407 N*mm
+  LC4t  twist the head about the mast axis     SF(p99.5) 322.75   max 0.021 mm   compliance 0.116 N*mm
+
+--- result ---
+  final volume        305152 mm3  (preserve 65664 mm3)
+  volume fraction     0.222 of the free cells / 0.266 of the domain
+  optimised members   min 8.00 mm, p5 11.31 mm, median 17.89 mm (asked for >= 13.00 mm)
+  whole part          min 8.00 mm, median 16.00 mm (includes preserve, which filter_mm does not govern)
+  connectivity        OK -- 1 component(s), 5 preserve body(ies), 0.0 mm3 of islands dropped
+  STEP                1442 planar faces (from 4436 voxel faces), 0 open / 0 non-manifold edge(s)
+  worst case          'LC3x  lift by the head with one foot caught'  SF(p99.5) 68.86, max 0.212 mm
+
+wrote tall_tripod\03_optimization (5268.8 s)
+
+NEXT: this is a load-path map, not a part. Rebuild it as parametric OpenSCAD from cubes/cylinders (a starting sketch is in *_members.scad), keeping every preserve interface exactly, then:
+  topopt compare tall_tripod\03_optimization <rebuild>.stl --study tall_tripod/tall_tripod_study.json
+  (the grid origin is read from the summary; no --origin needed)
+[opt    ] exit 1   shape does not meet the requirement; continuing so the report says why
+grid 63 x 63 x 41 at 4.000 mm (origin [-126.0, -126.0, -8.0])
+
+density field tall_tripod_study at 4.0000 mm voxel, 63x63x41
+thresholds: 0.40, 0.50, 0.60
+
+level       volume  SF p99.5  SF worst    max mm   min thk   down A  verdict
+0.40        309312     69.73     24.23     0.211     11.31    14272  FAIL: mesh resolution (2.8 (thin 11.31 mm) / 4.0 (typical 16
+0.50        305152     68.86     24.15     0.212     8.00*    14160  FAIL: mesh resolution (2.0 (thin 8.00 mm) / 4.0 (typical 16.
+0.60        299456     66.56     23.98     0.215     8.00*    14112  FAIL: mesh resolution (2.0 (thin 8.00 mm) / 4.0 (typical 16.
+  * grid-limited: min thickness is exactly 2 x voxel, i.e. the finest the grid can hold. Not a measurement of the structure.
+
+wrote threshold 0.40 to tall_tripod\03_optimization
+  stl         tall_tripod\03_optimization\tall_tripod_study_t40.stl
+  smooth_stl  tall_tripod\03_optimization\tall_tripod_study_t40_smooth.stl
+  step        tall_tripod\03_optimization\tall_tripod_study_t40.step
+
+chosen threshold 0.40 -- no candidate passes every check; this is the strongest of the connected ones and is NOT a pass. Outstanding: mesh resolution (2.8 (thin 11.31 mm) / 4.0 (typical 16.00 mm), required >= 3 elements across the thinnest section)
+
+NEXT: this is still not a part. Interface dimensions are quantised to 4.000 mm. Rebuild them as parametric CAD and prove it carries the load with:
+  topopt compare tall_tripod\03_optimization <rebuild>.stl --study tall_tripod/tall_tripod_study.json
+[extract] exit 1   
+[ccx    ] SKIPPED  gmsh and calculix not installed on this machine -- the independent re-analysis was not run, and the report lists its checks as UNKNOWN
+[print  ] ok       wrote printcheck.json (threshold 0.40)
+wrote tall_tripod\03_optimization\report.md
+verdict: FAIL  (3 fail, 2 unknown, 9 pass)
+  FAIL     The density field converged (not merely out of iterations) -- termination: max_iterations
+  FAIL     Mesh convergence confirmed -- TOO COARSE (voxel FEA only: 2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm) vs required >= 3 elements across the thinnest section). A three-mesh convergence study still has not been run.
+  FAIL     No support lands on a mating (preserve) face -- support rests on 97 preserve voxel(s) (1552.0 mm2). Those faces come off the printer rough and out of tolerance. Reorient the part, or accept the finish and say so explicitly.
+  UNKNOWN  Load/reaction balance within 1 %
+  UNKNOWN  Final shape is watertight
+[report ] exit 1   
+[assumptions] ok       wrote tall_tripod\01_assumptions\assumptions.md
+04_print: PRINT.md, preview_design_space.png, preview_orientation.png, preview_shape.png, preview_stress.png, tall_tripod.step, tall_tripod.stl, tall_tripod_smooth.stl
+[publish] ok       wrote tall_tripod\04_print\PRINT.md
+
+valid through: setup -> opt -> extract -> print -> assumptions -> publish
+skipped: ccx
+tall_tripod\03_optimization\report.md (5461 s)
+to print:      tall_tripod\04_print\PRINT.md

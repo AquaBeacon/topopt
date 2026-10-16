@@ -1,0 +1,66 @@
+{
+  "voxel_mm": 2.550161893262948,
+  "optimum_voxels": 3044,
+  "rebuild_voxels": 465,
+  "overlap": 3,
+  "missing": 3041,
+  "extra": 462,
+  "fea": [
+    {
+      "shape": "optimum shape",
+      "case": "push 30N from the front (-Y) at camera top",
+      "deflection_mm": 0.011162454238880187,
+      "compliance_Nmm": 1.2670896289192697,
+      "safety_factor": 29.194469273202166
+    },
+    {
+      "shape": "optimum shape",
+      "case": "push 30N from the back (+Y) at camera top",
+      "deflection_mm": 0.011162454238880187,
+      "compliance_Nmm": 1.2670896289192697,
+      "safety_factor": 30.02796427375591
+    },
+    {
+      "shape": "optimum shape",
+      "case": "crush 150N down on the mount",
+      "deflection_mm": 0.024300213201979344,
+      "compliance_Nmm": 1.7353593231359525,
+      "safety_factor": 25.159054248189786
+    },
+    {
+      "shape": "optimum shape",
+      "case": "press 150N on one leg tip, body resting",
+      "deflection_mm": 0.07641824924745151,
+      "compliance_Nmm": 8.420218414005983,
+      "safety_factor": 13.777762606232956
+    },
+    {
+      "shape": "rebuild",
+      "case": "push 30N from the front (-Y) at camera top",
+      "deflection_mm": 0.026006144789827216,
+      "compliance_Nmm": 2.262544870617372,
+      "safety_factor": 19.126911893699962
+    },
+    {
+      "shape": "rebuild",
+      "case": "push 30N from the back (+Y) at camera top",
+      "deflection_mm": 0.026006144789827216,
+      "compliance_Nmm": 2.262544870617372,
+      "safety_factor": 19.869883679748398
+    },
+    {
+      "shape": "rebuild",
+      "case": "crush 150N down on the mount",
+      "deflection_mm": 0.02747826119492833,
+      "compliance_Nmm": 3.851618123492327,
+      "safety_factor": 13.133999454615688
+    },
+    {
+      "shape": "rebuild",
+      "case": "press 150N on one leg tip, body resting",
+      "deflection_mm": 0.30543277853782563,
+      "compliance_Nmm": 31.24391619682087,
+      "safety_factor": 4.251469955561006
+    }
+  ]
+}

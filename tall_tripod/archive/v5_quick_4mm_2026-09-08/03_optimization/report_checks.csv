@@ -1,0 +1,17 @@
+name,pass,detail
+Units are declared and are mm / N / MPa,True,mm / N / MPa
+Material properties have no unresolved nulls,True,"orthotropic_equivalent_solid, provisional card (no values measured on this printer)"
+Material coordinate system (build_axis) is defined,True,build axis Z
+"Setup validation passed (preserve/obstacle, loads on preserve)",True,"0 error(s), 2 warning(s)"
+All preserve regions are connected,True,3 component(s); 21000 mm3 of floating islands were dropped
+The density field converged (not merely out of iterations),False,termination: max_iterations
+The optimiser's stress constraint held on the final density field,True,not requested (design.stress off); strength is judged by the final FEA only
+The final shape was re-analysed,True,6 load case(s) re-solved on the thresholded solid
+Safety factor meets the requirement on every case,True,p99.5 12.88 vs required 3.00 (worst element 11.83)
+Load/reaction balance within 1 %,,not checked in this run
+Mesh convergence confirmed,False,TOO COARSE (voxel FEA only: 2.0 (thin 20.00 mm) / 2.0 (typical 20.00 mm) vs required >= 3 elements across the thinnest section). A three-mesh convergence study still has not been run.
+Final shape is watertight,,not checked in this run
+Minimum wall thickness is met,,not checked in this run
+Self-supporting along the build axis (no voxel without material in the 45 degree cone below it),,not checked in this run
+No support lands on a mating (preserve) face,True,no support lands on a preserve surface
+No support inside a sealed cavity,True,all support is reachable from outside

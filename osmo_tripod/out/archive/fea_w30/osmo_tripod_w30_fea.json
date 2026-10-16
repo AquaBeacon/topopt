@@ -1,0 +1,661 @@
+{
+  "part": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\osmo_tripod\\out/osmo_tripod_w30.stl",
+  "material": "PLA",
+  "pass": false,
+  "cases": [
+    {
+      "elements": 41948,
+      "voxel_mm": 1.0,
+      "volume_mm3": 41948.0,
+      "converged": true,
+      "cg_iterations": 1180,
+      "compliance_Nmm": 2.010462970921552,
+      "max_displacement_mm": 0.02096164803620396,
+      "max_displacement_at": [
+        10.716678619384766,
+        4.3708343505859375,
+        32.0
+      ],
+      "von_mises_max_MPa": 3.0922210279099196,
+      "von_mises_p99_5_MPa": 1.4431475730449965,
+      "stress_concentration_ratio": 2.142692185931775,
+      "failure_index_max": 0.12245660697903928,
+      "failure_index_p99_5": 0.043439998022751766,
+      "min_safety_factor": 8.166157994000018,
+      "safety_factor_p99_5": 23.020258874695354,
+      "mesh": {
+        "thin_section_mm": 2.0,
+        "typical_section_mm": 4.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "8.17 (worst element) / 23.02 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "0.021 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 2.00 mm) / 4.0 (typical 4.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 0.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -10.78,
+            9.87,
+            17.5
+          ],
+          "failure_index": 0.122,
+          "safety_factor": 8.17
+        },
+        {
+          "pos": [
+            11.22,
+            9.87,
+            17.5
+          ],
+          "failure_index": 0.122,
+          "safety_factor": 8.22
+        },
+        {
+          "pos": [
+            5.22,
+            9.87,
+            17.5
+          ],
+          "failure_index": 0.095,
+          "safety_factor": 10.54
+        },
+        {
+          "pos": [
+            0.22,
+            9.87,
+            17.5
+          ],
+          "failure_index": 0.095,
+          "safety_factor": 10.58
+        },
+        {
+          "pos": [
+            -4.78,
+            9.87,
+            17.5
+          ],
+          "failure_index": 0.092,
+          "safety_factor": 10.86
+        }
+      ],
+      "case": "LC1 push 30N at camera top z=88, feet gripped",
+      "total_applied_load_N": [
+        0.0,
+        -30.0,
+        -0.434
+      ],
+      "resultant_load_N": 30.003,
+      "material": "PLA",
+      "solve_seconds": 71.9
+    },
+    {
+      "elements": 41948,
+      "voxel_mm": 1.0,
+      "volume_mm3": 41948.0,
+      "converged": true,
+      "cg_iterations": 1167,
+      "compliance_Nmm": 3.1195138013948505,
+      "max_displacement_mm": 0.022082630240149545,
+      "max_displacement_at": [
+        1.7166786193847656,
+        0.3708343505859375,
+        26.0
+      ],
+      "von_mises_max_MPa": 5.231488583085107,
+      "von_mises_p99_5_MPa": 2.0272906934192827,
+      "stress_concentration_ratio": 2.5805320371996276,
+      "failure_index_max": 0.138179493720273,
+      "failure_index_p99_5": 0.05051923387838462,
+      "min_safety_factor": 7.2369638437406225,
+      "safety_factor_p99_5": 19.794441111425176,
+      "mesh": {
+        "thin_section_mm": 2.0,
+        "typical_section_mm": 4.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "7.24 (worst element) / 19.79 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "0.022 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 2.00 mm) / 4.0 (typical 4.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 0.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -33.78,
+            -17.13,
+            0.5
+          ],
+          "failure_index": 0.138,
+          "safety_factor": 7.24
+        },
+        {
+          "pos": [
+            33.22,
+            -18.13,
+            0.5
+          ],
+          "failure_index": 0.134,
+          "safety_factor": 7.44
+        },
+        {
+          "pos": [
+            4.22,
+            38.87,
+            0.5
+          ],
+          "failure_index": 0.112,
+          "safety_factor": 8.94
+        },
+        {
+          "pos": [
+            -3.78,
+            38.87,
+            0.5
+          ],
+          "failure_index": 0.106,
+          "safety_factor": 9.43
+        },
+        {
+          "pos": [
+            -31.78,
+            -22.13,
+            0.5
+          ],
+          "failure_index": 0.104,
+          "safety_factor": 9.61
+        }
+      ],
+      "case": "LC2 bag crush 150N straight down on the mount",
+      "total_applied_load_N": [
+        0.0,
+        0.0,
+        -150.0
+      ],
+      "resultant_load_N": 150.0,
+      "material": "PLA",
+      "solve_seconds": 74.9
+    },
+    {
+      "elements": 41948,
+      "voxel_mm": 1.0,
+      "volume_mm3": 41948.0,
+      "converged": true,
+      "cg_iterations": 1237,
+      "compliance_Nmm": 25.639257373294477,
+      "max_displacement_mm": 0.24644575282016218,
+      "max_displacement_at": [
+        2.7166786193847656,
+        52.37083435058594,
+        0.0
+      ],
+      "von_mises_max_MPa": 16.46702676553758,
+      "von_mises_p99_5_MPa": 6.890793151833722,
+      "stress_concentration_ratio": 2.389714275657151,
+      "failure_index_max": 0.3739910209332758,
+      "failure_index_p99_5": 0.15121431382833223,
+      "min_safety_factor": 2.6738609860326332,
+      "safety_factor_p99_5": 6.613130560743485,
+      "mesh": {
+        "thin_section_mm": 2.0,
+        "typical_section_mm": 4.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "2.67 (worst element) / 6.61 (p99.5)",
+          "pass": true,
+          "inspect": true
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "0.246 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 2.00 mm) / 4.0 (typical 4.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 0.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            2.22,
+            19.87,
+            0.5
+          ],
+          "failure_index": 0.374,
+          "safety_factor": 2.67
+        },
+        {
+          "pos": [
+            -2.78,
+            19.87,
+            0.5
+          ],
+          "failure_index": 0.372,
+          "safety_factor": 2.69
+        },
+        {
+          "pos": [
+            6.22,
+            18.87,
+            0.5
+          ],
+          "failure_index": 0.284,
+          "safety_factor": 3.52
+        },
+        {
+          "pos": [
+            -6.78,
+            18.87,
+            0.5
+          ],
+          "failure_index": 0.263,
+          "safety_factor": 3.8
+        },
+        {
+          "pos": [
+            -9.78,
+            23.87,
+            11.5
+          ],
+          "failure_index": 0.262,
+          "safety_factor": 3.81
+        }
+      ],
+      "case": "LC3h bag press 150N on one leg tip, body resting (hub supported)",
+      "total_applied_load_N": [
+        0.0,
+        0.0,
+        -150.0
+      ],
+      "resultant_load_N": 150.0,
+      "material": "PLA",
+      "solve_seconds": 79.6
+    },
+    {
+      "elements": 41948,
+      "voxel_mm": 1.0,
+      "volume_mm3": 41948.0,
+      "converged": true,
+      "cg_iterations": 1717,
+      "compliance_Nmm": 241.30427162014828,
+      "max_displacement_mm": 1.849317096242647,
+      "max_displacement_at": [
+        2.7166786193847656,
+        52.37083435058594,
+        0.0
+      ],
+      "von_mises_max_MPa": 56.14560033247742,
+      "von_mises_p99_5_MPa": 19.82156946926691,
+      "stress_concentration_ratio": 2.83255069279607,
+      "failure_index_max": 1.4071567607733764,
+      "failure_index_p99_5": 0.5411791908508556,
+      "min_safety_factor": 0.7106528766918604,
+      "safety_factor_p99_5": 1.847816798771909,
+      "mesh": {
+        "thin_section_mm": 2.0,
+        "typical_section_mm": 4.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "0.71 (worst element) / 1.85 (p99.5)",
+          "pass": false,
+          "inspect": true
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "1.849 mm",
+          "pass": false,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 2.00 mm) / 4.0 (typical 4.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 0.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            35.22,
+            -16.13,
+            0.5
+          ],
+          "failure_index": 1.407,
+          "safety_factor": 0.71
+        },
+        {
+          "pos": [
+            -36.78,
+            -15.13,
+            0.5
+          ],
+          "failure_index": 1.392,
+          "safety_factor": 0.72
+        },
+        {
+          "pos": [
+            -33.78,
+            -17.13,
+            2.5
+          ],
+          "failure_index": 1.194,
+          "safety_factor": 0.84
+        },
+        {
+          "pos": [
+            -32.78,
+            -27.13,
+            3.5
+          ],
+          "failure_index": 1.167,
+          "safety_factor": 0.86
+        },
+        {
+          "pos": [
+            31.22,
+            -26.13,
+            4.5
+          ],
+          "failure_index": 0.905,
+          "safety_factor": 1.1
+        }
+      ],
+      "case": "LC3x worst leverage 150N on one leg tip, other two feet gripped",
+      "total_applied_load_N": [
+        0.0,
+        0.0,
+        -150.0
+      ],
+      "resultant_load_N": 150.0,
+      "material": "PLA",
+      "solve_seconds": 106.1
+    },
+    {
+      "elements": 41948,
+      "voxel_mm": 1.0,
+      "volume_mm3": 41948.0,
+      "converged": true,
+      "cg_iterations": 1739,
+      "compliance_Nmm": 23.234416010448875,
+      "max_displacement_mm": 0.19667453097199217,
+      "max_displacement_at": [
+        2.7166786193847656,
+        52.37083435058594,
+        0.0
+      ],
+      "von_mises_max_MPa": 8.113582528696606,
+      "von_mises_p99_5_MPa": 4.497663530515392,
+      "stress_concentration_ratio": 1.8039549809913997,
+      "failure_index_max": 0.1763822288847088,
+      "failure_index_p99_5": 0.10358171595343998,
+      "min_safety_factor": 5.669505404955757,
+      "safety_factor_p99_5": 9.654213495067994,
+      "mesh": {
+        "thin_section_mm": 2.0,
+        "typical_section_mm": 4.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "5.67 (worst element) / 9.65 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "0.197 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 2.00 mm) / 4.0 (typical 4.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 0.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -9.78,
+            23.87,
+            11.5
+          ],
+          "failure_index": 0.176,
+          "safety_factor": 5.67
+        },
+        {
+          "pos": [
+            -10.78,
+            18.87,
+            12.5
+          ],
+          "failure_index": 0.169,
+          "safety_factor": 5.92
+        },
+        {
+          "pos": [
+            35.22,
+            -17.13,
+            3.5
+          ],
+          "failure_index": 0.154,
+          "safety_factor": 6.5
+        },
+        {
+          "pos": [
+            -32.78,
+            -27.13,
+            3.5
+          ],
+          "failure_index": 0.15,
+          "safety_factor": 6.65
+        },
+        {
+          "pos": [
+            -11.78,
+            14.87,
+            1.5
+          ],
+          "failure_index": 0.144,
+          "safety_factor": 6.93
+        }
+      ],
+      "case": "LC3b 150N sideways on one leg tip, other two feet gripped",
+      "total_applied_load_N": [
+        150.0,
+        0.0,
+        0.0
+      ],
+      "resultant_load_N": 150.0,
+      "material": "PLA",
+      "solve_seconds": 105.9
+    },
+    {
+      "elements": 41948,
+      "voxel_mm": 1.0,
+      "volume_mm3": 41948.0,
+      "converged": true,
+      "cg_iterations": 2213,
+      "compliance_Nmm": 494.640554238735,
+      "max_displacement_mm": 3.1845852418685396,
+      "max_displacement_at": [
+        39.716678619384766,
+        -29.629165649414062,
+        0.0
+      ],
+      "von_mises_max_MPa": 123.41460849693374,
+      "von_mises_p99_5_MPa": 39.81960265168285,
+      "stress_concentration_ratio": 3.099343044090321,
+      "failure_index_max": 2.6829262716724727,
+      "failure_index_p99_5": 0.935208740843166,
+      "min_safety_factor": 0.3727273501916337,
+      "safety_factor_p99_5": 1.0692799974243392,
+      "mesh": {
+        "thin_section_mm": 2.0,
+        "typical_section_mm": 4.0,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 4.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "0.37 (worst element) / 1.07 (p99.5)",
+          "pass": false,
+          "inspect": true
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "3.185 mm",
+          "pass": false,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 2.00 mm) / 4.0 (typical 4.00 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 0.67"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            3.22,
+            38.87,
+            0.5
+          ],
+          "failure_index": 2.683,
+          "safety_factor": 0.37
+        },
+        {
+          "pos": [
+            -2.78,
+            38.87,
+            0.5
+          ],
+          "failure_index": 2.582,
+          "safety_factor": 0.39
+        },
+        {
+          "pos": [
+            7.22,
+            43.87,
+            3.5
+          ],
+          "failure_index": 1.839,
+          "safety_factor": 0.54
+        },
+        {
+          "pos": [
+            -6.78,
+            45.87,
+            3.5
+          ],
+          "failure_index": 1.714,
+          "safety_factor": 0.58
+        },
+        {
+          "pos": [
+            -6.78,
+            40.87,
+            0.5
+          ],
+          "failure_index": 1.533,
+          "safety_factor": 0.65
+        }
+      ],
+      "case": "LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount",
+      "total_applied_load_N": [
+        0.0,
+        0.0,
+        -288.373
+      ],
+      "resultant_load_N": 288.373,
+      "material": "PLA",
+      "solve_seconds": 143.6
+    }
+  ]
+}

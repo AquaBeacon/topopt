@@ -1,0 +1,129 @@
+grid 28 x 28 x 19 at 10.000 mm (origin [-140.0, -140.0, -20.0])
+
+runtime  80 iterations x 6 case(s) ~ 12 min  (range 6 min - 18 min; one cold solve of case 1 took 1.5 s on 6720 elements [cuda/mg])
+
+--- setup ---
+  voxel               10.000 mm, grid [28, 28, 19]
+  design space        6720000 mm3
+  preserve            12000 mm3 in 1 bodies
+  obstacle            40000 mm3 declared -> 40000 mm3 with clearance
+  free (optimisable)  6668000 mm3 (6668 cells)
+  build volume        250x250x250 on Bambu Lab X1-Carbon -- design space 240x240x150, fits
+  free to decide      99 % of the domain; preserve is 4 % of the expected part
+    preserve   mount_head                12000 mm3  stl:tall_preserve.stl
+    design_space design_space            6720000 mm3  stl:tall_design_space.stl
+    obstacle   camera_swing_and_screw_access    40000 mm3  stl:tall_obstacle.stl
+  WARN  the free region is only 2.0 voxels (20.00 mm) thick at its thinnest. Below about 3 voxels there is no room for a hole, so the topology there is set by the outline rather than chosen -- refine the grid or widen the design space.
+  WARN  4 support(s) use ground contact, so the feet are not placed by the CAD. What the study still chooses is the 4 zone(s) to look in (ground_all at [0.0, 0.0, 5.0]; catch_n at [0.0, 80.7, 5.0]; catch_sw at [-69.6, -38.0, 5.0]; catch_se at [69.6, -38.0, 5.0]). If a partial-support case appears at only one azimuth, check the result actually stands up -- a glued contact cannot tip, so nothing in the objective asks for a wide stance.
+  => setup OK
+
+wrote tall_tripod/archive/phase6_2026-09-08/build_y
+  look at tall_tripod/archive/phase6_2026-09-08/build_y\build_y_study_setup.png
+  look at tall_tripod/archive/phase6_2026-09-08/build_y\build_y_study_setup.scad
+
+NEXT: topopt opt tall_tripod/archive/phase6_2026-09-08/build_y_study.json --out DIR
+[setup  ] ok       
+grid 28 x 28 x 19 at 10.000 mm (origin [-140.0, -140.0, -20.0])
+
+--- setup ---
+  voxel               10.000 mm, grid [28, 28, 19]
+  design space        6720000 mm3
+  preserve            12000 mm3 in 1 bodies
+  obstacle            40000 mm3 declared -> 40000 mm3 with clearance
+  free (optimisable)  6668000 mm3 (6668 cells)
+  build volume        250x250x250 on Bambu Lab X1-Carbon -- design space 240x240x150, fits
+  free to decide      99 % of the domain; preserve is 4 % of the expected part
+    preserve   mount_head                12000 mm3  stl:tall_preserve.stl
+    design_space design_space            6720000 mm3  stl:tall_design_space.stl
+    obstacle   camera_swing_and_screw_access    40000 mm3  stl:tall_obstacle.stl
+  WARN  the free region is only 2.0 voxels (20.00 mm) thick at its thinnest. Below about 3 voxels there is no room for a hole, so the topology there is set by the outline rather than chosen -- refine the grid or widen the design space.
+  WARN  4 support(s) use ground contact, so the feet are not placed by the CAD. What the study still chooses is the 4 zone(s) to look in (ground_all at [0.0, 0.0, 5.0]; catch_n at [0.0, 80.7, 5.0]; catch_sw at [-69.6, -38.0, 5.0]; catch_se at [69.6, -38.0, 5.0]). If a partial-support case appears at only one azimuth, check the result actually stands up -- a glued contact cannot tip, so nothing in the objective asks for a wide stance.
+  => setup OK
+
+domain 6720 voxels (6668 free, 12 preserve, 40 obstacle) at 10.000 mm
+volfrac 0.040 of the free cells, filter 20.00 mm, 6 load case(s), self-supporting along +Y (45 deg)
+ iter  penal  beta   objective       vol      grey    dshape
+    1   1.00   1.0      6.0000     0.033    0.1254    1.0000
+    6   1.00   1.0      2.1197     0.039    0.1309    0.0004
+   11   1.50   1.0      5.6229     0.038    0.1276    0.0001
+   16   1.50   1.0      5.2924     0.037    0.1244    0.0000
+   21   2.00   2.0     16.6677     0.035    0.1198    0.0000
+   26   2.00   2.0     53.9834     0.032    0.1187    0.0000
+   31   2.50   2.0    241.5233     0.040    0.1480    0.0000
+   36   2.50   4.0    283.1617     0.040    0.1500    0.0000
+   41   3.00   4.0    206.0920     0.040    0.1379    0.0000
+   46   3.00   4.0     71.0496     0.040    0.1162    0.0000
+   51   3.00   8.0    158.0172     0.040    0.0791    0.0154
+   56   3.00   8.0     30.3204     0.040    0.0637    0.0112
+   61   3.00   8.0     18.9970     0.040    0.0540    0.0105
+   66   3.00  16.0     11.8216     0.040    0.0264    0.0039
+   71   3.00  16.0     11.0098     0.040    0.0228    0.0022
+   76   3.00  16.0     10.7779     0.040    0.0215    0.0018
+   80   3.00  16.0     10.6979     0.040    0.0210    0.0015
+
+final FEA on the thresholded solid geometry:
+  LC1f  push 1.0 N horizontally at the camera  SF(p99.5) 2437.70   max 0.001 mm   compliance 0.002 N*mm
+  LC2   camera weight plus 5x vertical shock   SF(p99.5) 779.13   max 0.005 mm   compliance 0.027 N*mm
+  LC3n  lift by the head, north foot caught    SF(p99.5) 108.73   max 0.035 mm   compliance 0.187 N*mm
+  LC3sw lift by the head, south-west foot caug SF(p99.5)  37.32   max 0.132 mm   compliance 0.810 N*mm
+  LC3se lift by the head, south-east foot caug SF(p99.5)  93.44   max 0.062 mm   compliance 0.393 N*mm
+  LC4t  twist the head about the vertical axis SF(p99.5) 1208.49   max 0.001 mm   compliance 0.003 N*mm
+
+--- result ---
+  final volume        305000 mm3  (preserve 12000 mm3)
+  volume fraction     0.044 of the free cells / 0.045 of the domain
+  self-support        3 voxel(s) / 300 mm2 with nothing in the 45 deg cone below (build axis +Y; constraint on)
+  optimised members   min 20.00 mm, p5 20.00 mm, median 20.00 mm (asked for >= 20.00 mm)
+  whole part          min 20.00 mm, median 20.00 mm (includes preserve, which filter_mm does not govern)
+  connectivity        OK -- 1 component(s), 1 preserve body(ies), 0.0 mm3 of islands dropped
+  STEP                297 planar faces (from 618 voxel faces), 0 open / 0 non-manifold edge(s)
+  worst case          'LC3sw lift by the head, south-west foot caught'  SF(p99.5) 37.32, max 0.132 mm
+
+wrote tall_tripod/archive/phase6_2026-09-08/build_y (87.6 s)
+
+NEXT: this is a load-path map, not a part. Rebuild it as parametric OpenSCAD from cubes/cylinders (a starting sketch is in *_members.scad), keeping every preserve interface exactly, then:
+  topopt compare tall_tripod/archive/phase6_2026-09-08/build_y <rebuild>.stl --study tall_tripod/archive/phase6_2026-09-08/build_y_study.json
+  (the grid origin is read from the summary; no --origin needed)
+[opt    ] exit 1   shape does not meet the requirement; continuing so the report says why
+grid 28 x 28 x 19 at 10.000 mm (origin [-140.0, -140.0, -20.0])
+
+density field build_y_study at 10.0000 mm voxel, 28x28x19
+thresholds: 0.40, 0.50, 0.60
+
+level       volume  SF p99.5  SF worst    max mm   min thk   down A  verdict
+0.40        306000     37.33     35.24     0.132    20.00*     9300  FAIL: mesh resolution (2.0 (thin 20.00 mm) / 2.0 (typical 20
+0.50        305000     37.32     35.24     0.132    20.00*     9300  FAIL: mesh resolution (2.0 (thin 20.00 mm) / 2.0 (typical 20
+0.60        292000     36.99     35.11     0.134    20.00*     9300  FAIL: mesh resolution (2.0 (thin 20.00 mm) / 2.0 (typical 20
+  * grid-limited: min thickness is exactly 2 x voxel, i.e. the finest the grid can hold. Not a measurement of the structure.
+
+finish (interface at CAD dimensions, 0.50 mm grid)
+  finish  + mount_head           149200 cells (+6674.0 mm3)
+  finish  - mount_features       101184 cells (3056.2 mm3)
+  finish  -> build_y_study_t40_finish.stl (2582 triangles at 0.500 mm)
+
+wrote threshold 0.40 to tall_tripod/archive/phase6_2026-09-08/build_y
+  stl         tall_tripod/archive/phase6_2026-09-08/build_y\build_y_study_t40.stl
+  smooth_stl  tall_tripod/archive/phase6_2026-09-08/build_y\build_y_study_t40_smooth.stl
+  step        tall_tripod/archive/phase6_2026-09-08/build_y\build_y_study_t40.step
+  finish_stl  tall_tripod/archive/phase6_2026-09-08/build_y\build_y_study_t40_finish.stl
+
+chosen threshold 0.40 -- no candidate passes every check; this is the strongest of the connected ones and is NOT a pass. Outstanding: mesh resolution (2.0 (thin 20.00 mm) / 2.0 (typical 20.00 mm), required >= 3 elements across the thinnest section)
+
+NEXT: this is still not a part. Interface dimensions are quantised to 10.000 mm. Rebuild them as parametric CAD and prove it carries the load with:
+  topopt compare tall_tripod/archive/phase6_2026-09-08/build_y <rebuild>.stl --study tall_tripod/archive/phase6_2026-09-08/build_y_study.json
+[extract] exit 1   
+[ccx    ] SKIPPED  disabled with --no-ccx
+[print  ] ok       wrote printcheck.json (threshold 0.40)
+wrote tall_tripod/archive/phase6_2026-09-08/build_y\report.md
+verdict: FAIL  (3 fail, 3 unknown, 10 pass)
+  FAIL     The density field converged (not merely out of iterations) -- termination: max_iterations
+  FAIL     Mesh convergence confirmed -- TOO COARSE (voxel FEA only: 2.0 (thin 20.00 mm) / 2.0 (typical 20.00 mm) vs required >= 3 elements across the thinnest section). A three-mesh convergence study still has not been run.
+  FAIL     Self-supporting along the build axis (no voxel without material in the 45 degree cone below it) -- 3 voxel(s), 300 mm2 of material with nothing under it within 45 degrees (build axis +Y, at [[-30.0, -100.0, 10.0], [0.0, -40.0, 50.0]]); it would print on support or not at all. Enable design.overhang, or move the build axis
+  UNKNOWN  Load/reaction balance within 1 %
+  UNKNOWN  Final shape is watertight
+  UNKNOWN  Minimum wall thickness is met
+[report ] exit 1   
+
+valid through: setup -> opt -> extract -> print
+skipped: ccx
+tall_tripod/archive/phase6_2026-09-08/build_y\report.md (127 s)

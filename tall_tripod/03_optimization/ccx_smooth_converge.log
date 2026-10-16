@@ -1,0 +1,36 @@
+
+mesh target 14.00 mm
+  shell refined to 14.00 mm edges: 16100 -> 16100 triangles
+  mesh tall_tripod_study_t40_smooth_h14.00_mesh.inp: 45309 nodes, 20779 elements at 14.00 mm
+  LC1f  push 1.0 N horizontally at the c normal   req 3.00  p99.5 2994.295  worst 437.640  max   0.0008 mm  PASS
+  LC2   camera weight plus 5x vertical s normal   req 3.00  p99.5 712.281  worst  86.964  max   0.0023 mm  PASS
+  LC3n  lift by the head, north foot cau abnormal req 1.50  p99.5 345.572  worst  35.250  max   0.0164 mm  PASS
+  LC3sw lift by the head, south-west foo abnormal req 1.50  p99.5 300.099  worst  52.417  max   0.0223 mm  PASS
+  LC3se lift by the head, south-east foo abnormal req 1.50  p99.5 268.542  worst  47.671  max   0.0216 mm  PASS
+  LC4t  twist the head about the vertica normal   req 3.00  p99.5 957.750  worst 311.198  max   0.0011 mm  PASS
+
+mesh target 7.00 mm
+  shell refined to 7.00 mm edges: 16100 -> 16100 triangles
+  mesh tall_tripod_study_t40_smooth_h7.00_mesh.inp: 69249 nodes, 39459 elements at 7.00 mm
+  LC1f  push 1.0 N horizontally at the c normal   req 3.00  p99.5 3639.651  worst 1044.328  max   0.0009 mm  PASS
+  LC2   camera weight plus 5x vertical s normal   req 3.00  p99.5 989.861  worst 209.922  max   0.0018 mm  PASS
+  LC3n  lift by the head, north foot cau abnormal req 1.50  p99.5 383.437  worst  27.146  max   0.0147 mm  PASS
+  LC3sw lift by the head, south-west foo abnormal req 1.50  p99.5 319.752  worst  47.043  max   0.0219 mm  PASS
+  LC3se lift by the head, south-east foo abnormal req 1.50  p99.5 296.934  worst  47.775  max   0.0230 mm  PASS
+  LC4t  twist the head about the vertica normal   req 3.00  p99.5 1520.006  worst 383.777  max   0.0009 mm  PASS
+
+mesh target 3.50 mm
+  shell refined to 3.50 mm edges: 16100 -> 29446 triangles
+  mesh tall_tripod_study_t40_smooth_h3.50_mesh.inp: 208751 nodes, 135040 elements at 3.50 mm
+  LC1f  push 1.0 N horizontally at the c normal   req 3.00  p99.5 4313.545  worst 948.605  max   0.0008 mm  PASS
+  LC2   camera weight plus 5x vertical s normal   req 3.00  p99.5 1127.035  worst 346.675  max   0.0017 mm  PASS
+  LC3n  lift by the head, north foot cau abnormal req 1.50  p99.5 398.419  worst  43.177  max   0.0149 mm  PASS
+  LC3sw lift by the head, south-west foo abnormal req 1.50  p99.5 325.809  worst  20.646  max   0.0215 mm  PASS
+  LC3se lift by the head, south-east foo abnormal req 1.50  p99.5 308.091  worst  12.265  max   0.0224 mm  PASS
+  LC4t  twist the head about the vertica normal   req 3.00  p99.5 1810.273  worst 470.644  max   0.0007 mm  PASS
+
+wrote tall_tripod/03_optimization\ccx_summary.json
+  14.00 mm: FAIL  SF 268.542  max 0.02226 mm  mass 377.580888 g
+    mesh quality: the mesh contains sliver elements; the stress maximum may be a property of the worst element rather than of the part
+  7.00 mm: PASS  SF 296.934  max 0.02301 mm  mass 377.580888 g
+  3.50 mm: PASS  SF 308.091  max 0.02237 mm  mass 377.580888 g

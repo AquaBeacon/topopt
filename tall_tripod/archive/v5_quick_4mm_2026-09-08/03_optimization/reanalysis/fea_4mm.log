@@ -1,0 +1,24 @@
+voxelised tall_tripod_study_t40.stl: 1992 solid voxels at 4.000 mm (0.0 s)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\topopt\src\topopt\__main__.py", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\topopt\src\topopt\cli\__init__.py", line 93, in main
+    code = mod.main(rest)
+  File "C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\topopt\src\topopt\cli\fea.py", line 369, in main
+    results = run_study(study, a.out, a.elements, a.quiet, not a.no_png,
+                        a.voxel, isotropic=a.isotropic)
+  File "C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\topopt\src\topopt\cli\fea.py", line 111, in run_study
+    bcs = [build_bcs(grid, case, study.regions, mat,
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     infill=study.infill, walls=study.walls,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     ground=g_mask, ground_axis=g_axis) for case in study.cases]
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\topopt\src\topopt\loadcase.py", line 410, in build_bcs
+    raise ValueError(
+    ...<2 lines>...
+           "material on the ground plane" if on_ground else "material"))
+ValueError: support region 'catch_sw' selected no material on the ground plane

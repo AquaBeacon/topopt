@@ -1,0 +1,68 @@
+voxelised osmo_tripod.stl: 121971 solid voxels at 0.670 mm (0.3 s)
+  NOTE  121971 elements x 4 case(s) is a long run (tens of minutes). Thin-walled parts are expensive in voxel FEA because resolving the wall sets the voxel size for the whole part. Iterate at a coarser --voxel and refine once.
+
+--- case: LC3b 150N sideways on one leg tip, other two feet gripped ---
+  applied load        150.00 N [150.0, 0.0, 0.0]
+  max deflection      0.354 mm at [-2.5, 51.9, 0.0]
+  von Mises           max 17.24 MPa / p99.5 7.27 MPa
+  safety factor       2.67 (worst) / 6.22 (p99.5)   [need >= 3.00]
+  [PASS] strength         safety factor >= 3.00 -> 2.67 (worst element) / 6.22 (p99.5)
+  [PASS] stiffness        max deflection <= 1.000 mm -> 0.354 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 2.68 mm) / 6.0 (typical 4.02 mm)
+  hotspots (worst first):
+    at [7.9, 17.37, 13.07]    SF 2.67
+    at [7.9, 17.37, 1.68]     SF 3.1
+    at [7.9, 17.37, 4.36]     SF 3.16
+    at [-7.51, 18.71, 2.35]   SF 3.37
+    at [7.9, 17.37, 7.71]     SF 3.37
+
+--- case: LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount ---
+  applied load        282.93 N [0.0, 0.0, -282.931]
+  max deflection      3.746 mm at [39.7, -29.2, 0.0]
+  von Mises           max 160.42 MPa / p99.5 43.03 MPa
+  safety factor       0.28 (worst) / 1.02 (p99.5)   [need >= 3.00]
+  [FAIL] strength         safety factor >= 3.00 -> 0.28 (worst element) / 1.02 (p99.5)
+  [FAIL] stiffness        max deflection <= 1.000 mm -> 3.746 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 2.68 mm) / 6.0 (typical 4.02 mm)
+  NOTE  max/p99.5 stress ratio is 3.7 -- the peak is probably a stair-step or clamp artefact. Check the hotspot list before trusting it.
+  hotspots (worst first):
+    at [-2.82, 38.81, 0.34]   SF 0.28
+    at [3.21, 38.81, 0.34]    SF 0.29
+    at [-5.5, 40.15, 0.34]    SF 0.46
+    at [0.53, 38.14, 0.34]    SF 0.49
+    at [-6.17, 45.51, 3.02]   SF 0.51
+
+--- case: LC5flat DROP 100g: land flat on the base, camera inertia 245N down at the mount ---
+  applied load        282.93 N [0.0, 0.0, -282.931]
+  max deflection      0.005 mm at [10.9, 0.3, 28.8]
+  von Mises           max 1.98 MPa / p99.5 0.90 MPa
+  safety factor       22.77 (worst) / 50.26 (p99.5)   [need >= 3.00]
+  [PASS] strength         safety factor >= 3.00 -> 22.77 (worst element) / 50.26 (p99.5)
+  [PASS] stiffness        max deflection <= 1.000 mm -> 0.005 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 2.68 mm) / 6.0 (typical 4.02 mm)
+  hotspots (worst first):
+    at [-4.16, 7.99, 22.45]   SF 22.77
+    at [-4.16, -8.09, 22.45]  SF 22.84
+    at [7.23, 3.3, 23.12]     SF 23.22
+    at [-4.16, 7.32, 19.77]   SF 23.76
+    at [-4.16, -7.42, 19.77]  SF 23.97
+
+--- case: LC5side DROP 100g: land on one foot, camera inertia 245N sideways at the mount ---
+  applied load        282.93 N [0.0, -282.931, 0.0]
+  max deflection      1.749 mm at [37.7, -29.2, 8.0]
+  von Mises           max 61.34 MPa / p99.5 18.98 MPa
+  safety factor       0.74 (worst) / 2.18 (p99.5)   [need >= 3.00]
+  [FAIL] strength         safety factor >= 3.00 -> 0.74 (worst element) / 2.18 (p99.5)
+  [FAIL] stiffness        max deflection <= 1.000 mm -> 1.749 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 2.68 mm) / 6.0 (typical 4.02 mm)
+  NOTE  max/p99.5 stress ratio is 3.2 -- the peak is probably a stair-step or clamp artefact. Check the hotspot list before trusting it.
+  hotspots (worst first):
+    at [-2.82, 38.81, 0.34]   SF 0.74
+    at [2.54, 38.81, 0.34]    SF 0.76
+    at [-6.17, 45.51, 3.02]   SF 1.09
+    at [5.89, 47.52, 3.02]    SF 1.14
+    at [3.21, 39.48, 3.02]    SF 1.15
+
+wrote C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\osmo_tripod\out\fea_drop
+
+=== FAIL ===

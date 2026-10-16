@@ -1,0 +1,293 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [
+    "obstacle 'camera_swing': clearance 1.00 mm is below the voxel size 4.00 mm, so it was rounded up to one voxel (4.00 mm). Refine the grid if that matters.",
+    "obstacle 'camera_swing' shares a one-cell boundary layer with preserve 'mount_head' (576.0 mm3) -- that is the voxelisation of a surface the two meshes have in common, as when 'camera_swing' is a feature cut into 'mount_head'. Preserve keeps those cells.",
+    "preserve 'mount_head' is 4 % outside the design space (2112.0 mm3) -- normal for an interface whose shape the mating part dictates. The protruding part is kept as material; no material can be added to it. Worth a look only if you expected the design space to cover it.",
+    "support region 'foot_B' in case 'LC1f  push 1.0 N horizontally at the camera top (tipping limit)' reaches 41 % (1664.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 59 % only.",
+    "support region 'foot_C' in case 'LC1f  push 1.0 N horizontally at the camera top (tipping limit)' reaches 41 % (1664.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 59 % only.",
+    "support region 'foot_B' in case 'LC2   camera weight plus 5x vertical shock' reaches 41 % (1664.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 59 % only.",
+    "support region 'foot_C' in case 'LC2   camera weight plus 5x vertical shock' reaches 41 % (1664.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 59 % only.",
+    "support region 'foot_B' in case 'LC4t  twist the head about the mast axis' reaches 41 % (1664.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 59 % only.",
+    "support region 'foot_C' in case 'LC4t  twist the head about the mast axis' reaches 41 % (1664.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the support acts on the preserve 59 % only."
+  ],
+  "info": {
+    "voxel_mm": 4.0,
+    "grid_shape": [
+      79,
+      79,
+      53
+    ],
+    "origin_mm": [
+      -158.0,
+      -158.0,
+      -8.0
+    ],
+    "design_space_mm3": 1778368.0,
+    "preserve_mm3": 47680.0,
+    "obstacle_mm3": 128960.0,
+    "obstacle_declared_mm3": 75392.0,
+    "domain_mm3": 1780480.0,
+    "free_mm3": 1732800.0,
+    "free_voxels": 27075,
+    "domain_voxels": 27820,
+    "preserve_outside_design_space_mm3": 2112.0,
+    "preserve_outside_design_space_pct": 4.4,
+    "preserve_bodies": 5,
+    "domain_components": 1,
+    "preserve_bodies_by_domain_component": {
+      "1": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "note_preserve_bodies": "5 separate preserve bodies, all reachable through the design space -- that is the normal generative-design setup.",
+    "boundary_conditions": [
+      {
+        "case": "LC1f  push 1.0 N horizontally at the camera top (tipping limit)",
+        "kind": "support",
+        "region": "foot_A",
+        "voxels_in_domain": 40,
+        "voxels_on_preserve": 40
+      },
+      {
+        "case": "LC1f  push 1.0 N horizontally at the camera top (tipping limit)",
+        "kind": "support",
+        "region": "foot_B",
+        "voxels_in_domain": 64,
+        "voxels_on_preserve": 38
+      },
+      {
+        "case": "LC1f  push 1.0 N horizontally at the camera top (tipping limit)",
+        "kind": "support",
+        "region": "foot_C",
+        "voxels_in_domain": 64,
+        "voxels_on_preserve": 38
+      },
+      {
+        "case": "LC1f  push 1.0 N horizontally at the camera top (tipping limit)",
+        "kind": "load",
+        "region": "head_top",
+        "voxels_in_domain": 128,
+        "voxels_on_preserve": 128
+      },
+      {
+        "case": "LC1f  push 1.0 N horizontally at the camera top (tipping limit)",
+        "kind": "load",
+        "region": "head_top",
+        "voxels_in_domain": 128,
+        "voxels_on_preserve": 128
+      },
+      {
+        "case": "LC2   camera weight plus 5x vertical shock",
+        "kind": "support",
+        "region": "foot_A",
+        "voxels_in_domain": 40,
+        "voxels_on_preserve": 40
+      },
+      {
+        "case": "LC2   camera weight plus 5x vertical shock",
+        "kind": "support",
+        "region": "foot_B",
+        "voxels_in_domain": 64,
+        "voxels_on_preserve": 38
+      },
+      {
+        "case": "LC2   camera weight plus 5x vertical shock",
+        "kind": "support",
+        "region": "foot_C",
+        "voxels_in_domain": 64,
+        "voxels_on_preserve": 38
+      },
+      {
+        "case": "LC2   camera weight plus 5x vertical shock",
+        "kind": "load",
+        "region": "head_top",
+        "voxels_in_domain": 128,
+        "voxels_on_preserve": 128
+      },
+      {
+        "case": "LC3x  lift by the head with one foot caught",
+        "kind": "support",
+        "region": "foot_A",
+        "voxels_in_domain": 40,
+        "voxels_on_preserve": 40
+      },
+      {
+        "case": "LC3x  lift by the head with one foot caught",
+        "kind": "load",
+        "region": "head_top",
+        "voxels_in_domain": 128,
+        "voxels_on_preserve": 128
+      },
+      {
+        "case": "LC3x  lift by the head with one foot caught",
+        "kind": "load",
+        "region": "head_top",
+        "voxels_in_domain": 128,
+        "voxels_on_preserve": 128
+      },
+      {
+        "case": "LC4t  twist the head about the mast axis",
+        "kind": "support",
+        "region": "foot_A",
+        "voxels_in_domain": 40,
+        "voxels_on_preserve": 40
+      },
+      {
+        "case": "LC4t  twist the head about the mast axis",
+        "kind": "support",
+        "region": "foot_B",
+        "voxels_in_domain": 64,
+        "voxels_on_preserve": 38
+      },
+      {
+        "case": "LC4t  twist the head about the mast axis",
+        "kind": "support",
+        "region": "foot_C",
+        "voxels_in_domain": 64,
+        "voxels_on_preserve": 38
+      },
+      {
+        "case": "LC4t  twist the head about the mast axis",
+        "kind": "load",
+        "region": "bolt_tab",
+        "voxels_in_domain": 70,
+        "voxels_on_preserve": 70
+      },
+      {
+        "case": "LC4t  twist the head about the mast axis",
+        "kind": "load",
+        "region": "head_top",
+        "voxels_in_domain": 128,
+        "voxels_on_preserve": 128
+      }
+    ]
+  },
+  "bodies": [
+    {
+      "name": "mount_head",
+      "kind": "preserve",
+      "source": "stl:tall_preserve.stl",
+      "voxels": 745,
+      "mm3": 47680.0,
+      "bbox_mm": [
+        [
+          -134.0,
+          -82.0,
+          0.0
+        ],
+        [
+          134.0,
+          150.0,
+          184.0
+        ]
+      ],
+      "mesh": {
+        "triangles": 1096,
+        "open_edges": 0,
+        "non_manifold_edges": 0,
+        "degenerate": 0,
+        "closed_shell": true
+      }
+    },
+    {
+      "name": "design_space",
+      "kind": "design_space",
+      "source": "stl:tall_design_space.stl",
+      "voxels": 27787,
+      "mm3": 1778368.0,
+      "bbox_mm": [
+        [
+          -150.0,
+          -150.0,
+          0.0
+        ],
+        [
+          150.0,
+          150.0,
+          172.0
+        ]
+      ],
+      "mesh": {
+        "triangles": 756,
+        "open_edges": 0,
+        "non_manifold_edges": 0,
+        "degenerate": 0,
+        "closed_shell": true
+      }
+    },
+    {
+      "name": "camera_swing",
+      "kind": "obstacle",
+      "source": "stl:tall_obstacle.stl",
+      "voxels": 2024,
+      "mm3": 129536.0,
+      "bbox_mm": [
+        [
+          -42.0,
+          -34.0,
+          172.0
+        ],
+        [
+          42.0,
+          38.0,
+          200.0
+        ]
+      ],
+      "clearance_requested_mm": 1.0,
+      "clearance_achieved_mm": 4.0,
+      "mesh": {
+        "triangles": 60,
+        "open_edges": 0,
+        "non_manifold_edges": 0,
+        "degenerate": 0,
+        "closed_shell": true
+      }
+    },
+    {
+      "name": "preserve body 1",
+      "kind": "preserve_component",
+      "source": "mount_head",
+      "voxels": 38,
+      "mm3": 2432.0,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 2",
+      "kind": "preserve_component",
+      "source": "mount_head",
+      "voxels": 354,
+      "mm3": 22656.0,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 3",
+      "kind": "preserve_component",
+      "source": "mount_head",
+      "voxels": 275,
+      "mm3": 17600.0,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 4",
+      "kind": "preserve_component",
+      "source": "mount_head",
+      "voxels": 40,
+      "mm3": 2560.0,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 5",
+      "kind": "preserve_component",
+      "source": "mount_head",
+      "voxels": 38,
+      "mm3": 2432.0,
+      "domain_component": 1
+    }
+  ]
+}

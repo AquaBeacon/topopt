@@ -1,0 +1,2240 @@
+{
+  "part": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\osmo_tripod\\out/design_space.stl",
+  "material": "PLA",
+  "voxel_mm": 2.0240648360274096,
+  "domain_voxels": 16874,
+  "volume_fraction_target": 0.125,
+  "volume_fraction_final": 0.2161153468984023,
+  "kept_volume_mm3": 27463.9872,
+  "original_volume_mm3": 139923.70773333334,
+  "mass_saving_pct": 80.4,
+  "filter_mm": 5.0,
+  "symmetry": [
+    "X"
+  ],
+  "overhang_filter": true,
+  "history": [
+    {
+      "iter": 1,
+      "compliance": 2702.5560310906085,
+      "volume_fraction": 0.2076567038944037,
+      "change": 0.2
+    },
+    {
+      "iter": 2,
+      "compliance": 689.609910063092,
+      "volume_fraction": 0.20765674444945176,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 3,
+      "compliance": 303.7340864605708,
+      "volume_fraction": 0.20765681355945745,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 4,
+      "compliance": 177.13871554045613,
+      "volume_fraction": 0.2076567923237709,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 5,
+      "compliance": 116.19205328895723,
+      "volume_fraction": 0.20765671927791382,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 6,
+      "compliance": 89.35858631159869,
+      "volume_fraction": 0.2076567833391198,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 7,
+      "compliance": 74.25427153284983,
+      "volume_fraction": 0.20765670692611307,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 8,
+      "compliance": 64.71898543310982,
+      "volume_fraction": 0.20765674519996707,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 9,
+      "compliance": 59.53012952116903,
+      "volume_fraction": 0.20765676192287855,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 10,
+      "compliance": 56.63240303961618,
+      "volume_fraction": 0.20765674177634796,
+      "change": 0.20000000000000007
+    },
+    {
+      "iter": 11,
+      "compliance": 54.7541466788292,
+      "volume_fraction": 0.20765675083049548,
+      "change": 0.19283179214512047
+    },
+    {
+      "iter": 12,
+      "compliance": 53.36238546682321,
+      "volume_fraction": 0.2076567537548167,
+      "change": 0.1705168555881651
+    },
+    {
+      "iter": 13,
+      "compliance": 52.213463352797426,
+      "volume_fraction": 0.20765674418652846,
+      "change": 0.19427805172291313
+    },
+    {
+      "iter": 14,
+      "compliance": 51.249297821724795,
+      "volume_fraction": 0.2076567556133188,
+      "change": 0.16534651486656338
+    },
+    {
+      "iter": 15,
+      "compliance": 50.42232559873594,
+      "volume_fraction": 0.20765674648235685,
+      "change": 0.1751492435533465
+    },
+    {
+      "iter": 16,
+      "compliance": 49.71551462443528,
+      "volume_fraction": 0.20765673471927976,
+      "change": 0.14591945777970938
+    },
+    {
+      "iter": 17,
+      "compliance": 49.143173910358456,
+      "volume_fraction": 0.2076567371478466,
+      "change": 0.14785929826832367
+    },
+    {
+      "iter": 18,
+      "compliance": 48.65287875716891,
+      "volume_fraction": 0.2076567324872696,
+      "change": 0.16886919643907916
+    },
+    {
+      "iter": 19,
+      "compliance": 48.38309973187809,
+      "volume_fraction": 0.2076567655050959,
+      "change": 0.15019066703043982
+    },
+    {
+      "iter": 20,
+      "compliance": 48.21971417921752,
+      "volume_fraction": 0.2076567346008479,
+      "change": 0.14028776368407536
+    },
+    {
+      "iter": 21,
+      "compliance": 48.09515916202283,
+      "volume_fraction": 0.20765675824726668,
+      "change": 0.10930658142470051
+    },
+    {
+      "iter": 22,
+      "compliance": 48.01252244316083,
+      "volume_fraction": 0.2076567542719222,
+      "change": 0.1377592178543845
+    },
+    {
+      "iter": 23,
+      "compliance": 47.95701161779189,
+      "volume_fraction": 0.20765676165286154,
+      "change": 0.17199634487367643
+    },
+    {
+      "iter": 24,
+      "compliance": 47.914695796160444,
+      "volume_fraction": 0.20765674927768796,
+      "change": 0.1102868700400298
+    },
+    {
+      "iter": 25,
+      "compliance": 47.88793075074166,
+      "volume_fraction": 0.2076567424648648,
+      "change": 0.11828078713068191
+    },
+    {
+      "iter": 26,
+      "compliance": 47.86227559829868,
+      "volume_fraction": 0.20765674240232962,
+      "change": 0.14631787381870687
+    },
+    {
+      "iter": 27,
+      "compliance": 47.82806061164543,
+      "volume_fraction": 0.20765676182660212,
+      "change": 0.18144575915491745
+    },
+    {
+      "iter": 28,
+      "compliance": 47.7870279324961,
+      "volume_fraction": 0.20765674433684422,
+      "change": 0.11868521948727562
+    },
+    {
+      "iter": 29,
+      "compliance": 47.73945911498449,
+      "volume_fraction": 0.20765675097976632,
+      "change": 0.14020275099807977
+    },
+    {
+      "iter": 30,
+      "compliance": 47.71267528354498,
+      "volume_fraction": 0.20765674173121923,
+      "change": 0.08673564363930975
+    },
+    {
+      "iter": 31,
+      "compliance": 47.68673162352425,
+      "volume_fraction": 0.20765674896045014,
+      "change": 0.0968484326692276
+    },
+    {
+      "iter": 32,
+      "compliance": 47.66066415922979,
+      "volume_fraction": 0.20765674534958148,
+      "change": 0.07494798783645862
+    },
+    {
+      "iter": 33,
+      "compliance": 47.63810906460881,
+      "volume_fraction": 0.20765675675550388,
+      "change": 0.06918802111447508
+    },
+    {
+      "iter": 34,
+      "compliance": 47.61601549825971,
+      "volume_fraction": 0.20765675719660093,
+      "change": 0.07306908181728977
+    },
+    {
+      "iter": 35,
+      "compliance": 47.59530518753944,
+      "volume_fraction": 0.20765675557319094,
+      "change": 0.07714019917744064
+    },
+    {
+      "iter": 36,
+      "compliance": 47.577368257924164,
+      "volume_fraction": 0.2076567474474255,
+      "change": 0.08369431300507302
+    },
+    {
+      "iter": 37,
+      "compliance": 47.56275113342906,
+      "volume_fraction": 0.20765675792150756,
+      "change": 0.0916656068249545
+    },
+    {
+      "iter": 38,
+      "compliance": 47.5516505337082,
+      "volume_fraction": 0.20765675102523012,
+      "change": 0.09364047652022744
+    },
+    {
+      "iter": 39,
+      "compliance": 47.53859650447989,
+      "volume_fraction": 0.20765674832932596,
+      "change": 0.08076291651870948
+    },
+    {
+      "iter": 40,
+      "compliance": 47.52776629531442,
+      "volume_fraction": 0.20765675707567455,
+      "change": 0.08513906486717138
+    },
+    {
+      "iter": 41,
+      "compliance": 47.52075908756896,
+      "volume_fraction": 0.20765674776950582,
+      "change": 0.09285915221834784
+    },
+    {
+      "iter": 42,
+      "compliance": 47.512815657453345,
+      "volume_fraction": 0.20765675615273985,
+      "change": 0.08563330555808768
+    },
+    {
+      "iter": 43,
+      "compliance": 47.49963637593998,
+      "volume_fraction": 0.20765675642596548,
+      "change": 0.08150895084040721
+    },
+    {
+      "iter": 44,
+      "compliance": 47.489577332913925,
+      "volume_fraction": 0.20765674656041733,
+      "change": 0.057492021177454444
+    },
+    {
+      "iter": 45,
+      "compliance": 47.479321715070604,
+      "volume_fraction": 0.2076567436587184,
+      "change": 0.06212281819879206
+    },
+    {
+      "iter": 46,
+      "compliance": 47.47169718237441,
+      "volume_fraction": 0.20765675095648264,
+      "change": 0.06559555617523716
+    },
+    {
+      "iter": 47,
+      "compliance": 47.462480137482345,
+      "volume_fraction": 0.20765674374645096,
+      "change": 0.0567768538773491
+    },
+    {
+      "iter": 48,
+      "compliance": 47.45301364749842,
+      "volume_fraction": 0.20765675266668843,
+      "change": 0.060844119913380235
+    },
+    {
+      "iter": 49,
+      "compliance": 47.444952612755365,
+      "volume_fraction": 0.20765675371601985,
+      "change": 0.06487486274691445
+    },
+    {
+      "iter": 50,
+      "compliance": 47.43999454798804,
+      "volume_fraction": 0.2076567479492998,
+      "change": 0.068658020518097
+    }
+  ],
+  "blocky_stl_triangles": 6712,
+  "smooth_stl_triangles": 4234,
+  "ribs": {
+    "axes": {
+      "X": [
+        {
+          "index": 0,
+          "coord_mm": -50.99,
+          "area_mm2": 8.2,
+          "extent_mm": [
+            4.0,
+            2.0
+          ],
+          "members": 1
+        },
+        {
+          "index": 1,
+          "coord_mm": -48.96,
+          "area_mm2": 8.2,
+          "extent_mm": [
+            4.0,
+            2.0
+          ],
+          "members": 1
+        },
+        {
+          "index": 2,
+          "coord_mm": -46.94,
+          "area_mm2": 16.4,
+          "extent_mm": [
+            24.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 3,
+          "coord_mm": -44.92,
+          "area_mm2": 24.6,
+          "extent_mm": [
+            28.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 4,
+          "coord_mm": -42.89,
+          "area_mm2": 36.9,
+          "extent_mm": [
+            32.4,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 5,
+          "coord_mm": -40.87,
+          "area_mm2": 61.5,
+          "extent_mm": [
+            34.4,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 6,
+          "coord_mm": -38.84,
+          "area_mm2": 118.8,
+          "extent_mm": [
+            34.4,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 7,
+          "coord_mm": -36.82,
+          "area_mm2": 122.9,
+          "extent_mm": [
+            34.4,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 8,
+          "coord_mm": -34.8,
+          "area_mm2": 102.4,
+          "extent_mm": [
+            32.4,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 9,
+          "coord_mm": -32.77,
+          "area_mm2": 94.2,
+          "extent_mm": [
+            30.4,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 10,
+          "coord_mm": -30.75,
+          "area_mm2": 77.8,
+          "extent_mm": [
+            26.3,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 11,
+          "coord_mm": -28.72,
+          "area_mm2": 86.0,
+          "extent_mm": [
+            24.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 12,
+          "coord_mm": -26.7,
+          "area_mm2": 86.0,
+          "extent_mm": [
+            22.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 13,
+          "coord_mm": -24.68,
+          "area_mm2": 90.1,
+          "extent_mm": [
+            22.3,
+            14.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 14,
+          "coord_mm": -22.65,
+          "area_mm2": 127.0,
+          "extent_mm": [
+            24.3,
+            14.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 15,
+          "coord_mm": -20.63,
+          "area_mm2": 131.1,
+          "extent_mm": [
+            24.3,
+            14.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 16,
+          "coord_mm": -18.6,
+          "area_mm2": 159.8,
+          "extent_mm": [
+            24.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 17,
+          "coord_mm": -16.58,
+          "area_mm2": 180.3,
+          "extent_mm": [
+            24.3,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 18,
+          "coord_mm": -14.55,
+          "area_mm2": 180.3,
+          "extent_mm": [
+            28.3,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 19,
+          "coord_mm": -12.53,
+          "area_mm2": 315.5,
+          "extent_mm": [
+            28.3,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 20,
+          "coord_mm": -10.51,
+          "area_mm2": 430.2,
+          "extent_mm": [
+            32.4,
+            22.3
+          ],
+          "members": 2
+        },
+        {
+          "index": 21,
+          "coord_mm": -8.48,
+          "area_mm2": 499.8,
+          "extent_mm": [
+            46.6,
+            22.3
+          ],
+          "members": 2
+        },
+        {
+          "index": 22,
+          "coord_mm": -6.46,
+          "area_mm2": 819.4,
+          "extent_mm": [
+            68.8,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 23,
+          "coord_mm": -4.43,
+          "area_mm2": 1007.8,
+          "extent_mm": [
+            68.8,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 24,
+          "coord_mm": -2.41,
+          "area_mm2": 1032.4,
+          "extent_mm": [
+            70.8,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 25,
+          "coord_mm": -0.39,
+          "area_mm2": 1040.6,
+          "extent_mm": [
+            70.8,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 26,
+          "coord_mm": 1.64,
+          "area_mm2": 1040.6,
+          "extent_mm": [
+            70.8,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 27,
+          "coord_mm": 3.66,
+          "area_mm2": 1032.4,
+          "extent_mm": [
+            70.8,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 28,
+          "coord_mm": 5.69,
+          "area_mm2": 1007.8,
+          "extent_mm": [
+            68.8,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 29,
+          "coord_mm": 7.71,
+          "area_mm2": 819.4,
+          "extent_mm": [
+            68.8,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 30,
+          "coord_mm": 9.73,
+          "area_mm2": 499.8,
+          "extent_mm": [
+            46.6,
+            22.3
+          ],
+          "members": 2
+        },
+        {
+          "index": 31,
+          "coord_mm": 11.76,
+          "area_mm2": 307.3,
+          "extent_mm": [
+            32.4,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 32,
+          "coord_mm": 13.78,
+          "area_mm2": 315.5,
+          "extent_mm": [
+            28.3,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 33,
+          "coord_mm": 15.81,
+          "area_mm2": 180.3,
+          "extent_mm": [
+            28.3,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 34,
+          "coord_mm": 17.83,
+          "area_mm2": 180.3,
+          "extent_mm": [
+            24.3,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 35,
+          "coord_mm": 19.85,
+          "area_mm2": 159.8,
+          "extent_mm": [
+            24.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 36,
+          "coord_mm": 21.88,
+          "area_mm2": 131.1,
+          "extent_mm": [
+            24.3,
+            14.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 37,
+          "coord_mm": 23.9,
+          "area_mm2": 127.0,
+          "extent_mm": [
+            24.3,
+            14.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 38,
+          "coord_mm": 25.93,
+          "area_mm2": 90.1,
+          "extent_mm": [
+            22.3,
+            14.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 39,
+          "coord_mm": 27.95,
+          "area_mm2": 86.0,
+          "extent_mm": [
+            22.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 40,
+          "coord_mm": 29.97,
+          "area_mm2": 86.0,
+          "extent_mm": [
+            24.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 41,
+          "coord_mm": 32.0,
+          "area_mm2": 77.8,
+          "extent_mm": [
+            26.3,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 42,
+          "coord_mm": 34.02,
+          "area_mm2": 94.2,
+          "extent_mm": [
+            30.4,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 43,
+          "coord_mm": 36.05,
+          "area_mm2": 102.4,
+          "extent_mm": [
+            32.4,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 44,
+          "coord_mm": 38.07,
+          "area_mm2": 122.9,
+          "extent_mm": [
+            34.4,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 45,
+          "coord_mm": 40.09,
+          "area_mm2": 118.8,
+          "extent_mm": [
+            34.4,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 46,
+          "coord_mm": 42.12,
+          "area_mm2": 57.4,
+          "extent_mm": [
+            32.4,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 47,
+          "coord_mm": 44.14,
+          "area_mm2": 32.8,
+          "extent_mm": [
+            30.4,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 48,
+          "coord_mm": 46.17,
+          "area_mm2": 20.5,
+          "extent_mm": [
+            26.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 49,
+          "coord_mm": 48.19,
+          "area_mm2": 12.3,
+          "extent_mm": [
+            22.3,
+            16.2
+          ],
+          "members": 2
+        },
+        {
+          "index": 50,
+          "coord_mm": 50.22,
+          "area_mm2": 8.2,
+          "extent_mm": [
+            4.0,
+            2.0
+          ],
+          "members": 1
+        },
+        {
+          "index": 51,
+          "coord_mm": 52.24,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        }
+      ],
+      "Y": [
+        {
+          "index": 0,
+          "coord_mm": -50.99,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 1,
+          "coord_mm": -48.96,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 2,
+          "coord_mm": -46.94,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 3,
+          "coord_mm": -44.92,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 4,
+          "coord_mm": -42.89,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 5,
+          "coord_mm": -40.87,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 6,
+          "coord_mm": -38.84,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 7,
+          "coord_mm": -36.82,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 8,
+          "coord_mm": -34.8,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 9,
+          "coord_mm": -32.77,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        },
+        {
+          "index": 10,
+          "coord_mm": -30.75,
+          "area_mm2": 20.5,
+          "extent_mm": [
+            83.0,
+            2.0
+          ],
+          "members": 2
+        },
+        {
+          "index": 11,
+          "coord_mm": -28.72,
+          "area_mm2": 36.9,
+          "extent_mm": [
+            87.0,
+            2.0
+          ],
+          "members": 2
+        },
+        {
+          "index": 12,
+          "coord_mm": -26.7,
+          "area_mm2": 49.2,
+          "extent_mm": [
+            89.1,
+            2.0
+          ],
+          "members": 2
+        },
+        {
+          "index": 13,
+          "coord_mm": -24.68,
+          "area_mm2": 53.3,
+          "extent_mm": [
+            91.1,
+            2.0
+          ],
+          "members": 2
+        },
+        {
+          "index": 14,
+          "coord_mm": -22.65,
+          "area_mm2": 65.5,
+          "extent_mm": [
+            93.1,
+            2.0
+          ],
+          "members": 2
+        },
+        {
+          "index": 15,
+          "coord_mm": -20.63,
+          "area_mm2": 110.6,
+          "extent_mm": [
+            95.1,
+            6.1
+          ],
+          "members": 2
+        },
+        {
+          "index": 16,
+          "coord_mm": -18.6,
+          "area_mm2": 254.0,
+          "extent_mm": [
+            97.2,
+            10.1
+          ],
+          "members": 3
+        },
+        {
+          "index": 17,
+          "coord_mm": -16.58,
+          "area_mm2": 376.9,
+          "extent_mm": [
+            89.1,
+            12.1
+          ],
+          "members": 3
+        },
+        {
+          "index": 18,
+          "coord_mm": -14.55,
+          "area_mm2": 475.2,
+          "extent_mm": [
+            81.0,
+            14.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 19,
+          "coord_mm": -12.53,
+          "area_mm2": 762.0,
+          "extent_mm": [
+            81.0,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 20,
+          "coord_mm": -10.51,
+          "area_mm2": 655.5,
+          "extent_mm": [
+            81.0,
+            16.2
+          ],
+          "members": 3
+        },
+        {
+          "index": 21,
+          "coord_mm": -8.48,
+          "area_mm2": 643.2,
+          "extent_mm": [
+            81.0,
+            22.3
+          ],
+          "members": 6
+        },
+        {
+          "index": 22,
+          "coord_mm": -6.46,
+          "area_mm2": 610.4,
+          "extent_mm": [
+            81.0,
+            22.3
+          ],
+          "members": 6
+        },
+        {
+          "index": 23,
+          "coord_mm": -4.43,
+          "area_mm2": 635.0,
+          "extent_mm": [
+            85.0,
+            22.3
+          ],
+          "members": 3
+        },
+        {
+          "index": 24,
+          "coord_mm": -2.41,
+          "area_mm2": 643.2,
+          "extent_mm": [
+            85.0,
+            22.3
+          ],
+          "members": 3
+        },
+        {
+          "index": 25,
+          "coord_mm": -0.39,
+          "area_mm2": 721.0,
+          "extent_mm": [
+            103.2,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 26,
+          "coord_mm": 1.64,
+          "area_mm2": 737.4,
+          "extent_mm": [
+            103.2,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 27,
+          "coord_mm": 3.66,
+          "area_mm2": 561.3,
+          "extent_mm": [
+            48.6,
+            22.3
+          ],
+          "members": 3
+        },
+        {
+          "index": 28,
+          "coord_mm": 5.69,
+          "area_mm2": 544.9,
+          "extent_mm": [
+            40.5,
+            22.3
+          ],
+          "members": 3
+        },
+        {
+          "index": 29,
+          "coord_mm": 7.71,
+          "area_mm2": 536.7,
+          "extent_mm": [
+            36.4,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 30,
+          "coord_mm": 9.73,
+          "area_mm2": 528.5,
+          "extent_mm": [
+            32.4,
+            22.3
+          ],
+          "members": 1
+        },
+        {
+          "index": 31,
+          "coord_mm": 11.76,
+          "area_mm2": 393.3,
+          "extent_mm": [
+            32.4,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 32,
+          "coord_mm": 13.78,
+          "area_mm2": 385.1,
+          "extent_mm": [
+            28.3,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 33,
+          "coord_mm": 15.81,
+          "area_mm2": 303.2,
+          "extent_mm": [
+            24.3,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 34,
+          "coord_mm": 17.83,
+          "area_mm2": 303.2,
+          "extent_mm": [
+            20.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 35,
+          "coord_mm": 19.85,
+          "area_mm2": 286.8,
+          "extent_mm": [
+            20.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 36,
+          "coord_mm": 21.88,
+          "area_mm2": 286.8,
+          "extent_mm": [
+            20.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 37,
+          "coord_mm": 23.9,
+          "area_mm2": 270.4,
+          "extent_mm": [
+            20.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 38,
+          "coord_mm": 25.93,
+          "area_mm2": 270.4,
+          "extent_mm": [
+            20.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 39,
+          "coord_mm": 27.95,
+          "area_mm2": 262.2,
+          "extent_mm": [
+            20.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 40,
+          "coord_mm": 29.97,
+          "area_mm2": 237.6,
+          "extent_mm": [
+            16.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 41,
+          "coord_mm": 32.0,
+          "area_mm2": 237.6,
+          "extent_mm": [
+            16.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 42,
+          "coord_mm": 34.02,
+          "area_mm2": 237.6,
+          "extent_mm": [
+            16.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 43,
+          "coord_mm": 36.05,
+          "area_mm2": 204.8,
+          "extent_mm": [
+            16.2,
+            16.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 44,
+          "coord_mm": 38.07,
+          "area_mm2": 188.5,
+          "extent_mm": [
+            16.2,
+            14.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 45,
+          "coord_mm": 40.09,
+          "area_mm2": 172.1,
+          "extent_mm": [
+            16.2,
+            14.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 46,
+          "coord_mm": 42.12,
+          "area_mm2": 147.5,
+          "extent_mm": [
+            16.2,
+            12.1
+          ],
+          "members": 1
+        },
+        {
+          "index": 47,
+          "coord_mm": 44.14,
+          "area_mm2": 131.1,
+          "extent_mm": [
+            16.2,
+            10.1
+          ],
+          "members": 1
+        },
+        {
+          "index": 48,
+          "coord_mm": 46.17,
+          "area_mm2": 114.7,
+          "extent_mm": [
+            16.2,
+            8.1
+          ],
+          "members": 1
+        },
+        {
+          "index": 49,
+          "coord_mm": 48.19,
+          "area_mm2": 81.9,
+          "extent_mm": [
+            16.2,
+            6.1
+          ],
+          "members": 1
+        },
+        {
+          "index": 50,
+          "coord_mm": 50.22,
+          "area_mm2": 32.8,
+          "extent_mm": [
+            16.2,
+            2.0
+          ],
+          "members": 1
+        },
+        {
+          "index": 51,
+          "coord_mm": 52.24,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        }
+      ],
+      "Z": [
+        {
+          "index": 0,
+          "coord_mm": 1.01,
+          "area_mm2": 2368.0,
+          "extent_mm": [
+            97.2,
+            83.0
+          ],
+          "members": 3
+        },
+        {
+          "index": 1,
+          "coord_mm": 3.04,
+          "area_mm2": 1229.1,
+          "extent_mm": [
+            81.0,
+            70.8
+          ],
+          "members": 5
+        },
+        {
+          "index": 2,
+          "coord_mm": 5.06,
+          "area_mm2": 1106.1,
+          "extent_mm": [
+            81.0,
+            70.8
+          ],
+          "members": 3
+        },
+        {
+          "index": 3,
+          "coord_mm": 7.08,
+          "area_mm2": 1024.2,
+          "extent_mm": [
+            85.0,
+            66.8
+          ],
+          "members": 5
+        },
+        {
+          "index": 4,
+          "coord_mm": 9.11,
+          "area_mm2": 1515.8,
+          "extent_mm": [
+            85.0,
+            64.8
+          ],
+          "members": 3
+        },
+        {
+          "index": 5,
+          "coord_mm": 11.13,
+          "area_mm2": 1614.2,
+          "extent_mm": [
+            85.0,
+            60.7
+          ],
+          "members": 1
+        },
+        {
+          "index": 6,
+          "coord_mm": 13.16,
+          "area_mm2": 1753.4,
+          "extent_mm": [
+            81.0,
+            56.7
+          ],
+          "members": 3
+        },
+        {
+          "index": 7,
+          "coord_mm": 15.18,
+          "area_mm2": 1606.0,
+          "extent_mm": [
+            103.2,
+            50.6
+          ],
+          "members": 1
+        },
+        {
+          "index": 8,
+          "coord_mm": 17.2,
+          "area_mm2": 450.7,
+          "extent_mm": [
+            22.3,
+            20.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 9,
+          "coord_mm": 19.23,
+          "area_mm2": 450.7,
+          "extent_mm": [
+            22.3,
+            20.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 10,
+          "coord_mm": 21.25,
+          "area_mm2": 450.7,
+          "extent_mm": [
+            22.3,
+            20.2
+          ],
+          "members": 1
+        },
+        {
+          "index": 11,
+          "coord_mm": 23.28,
+          "area_mm2": 0.0,
+          "extent_mm": [
+            0.0,
+            0.0
+          ],
+          "members": 0
+        }
+      ]
+    }
+  },
+  "extracted_members": {
+    "prismatic_axis": null,
+    "prismatic_iou": 0.371,
+    "level": 0.5,
+    "members": [],
+    "note": "structure is not prismatic; 148 skeleton voxels reported as a point cloud rather than clean members. Slice the domain or add symmetry to get a cleaner result.",
+    "skeleton_points_mm": [
+      [
+        -50.99,
+        1.64,
+        15.18
+      ],
+      [
+        -48.96,
+        1.64,
+        15.18
+      ],
+      [
+        -46.94,
+        1.64,
+        15.18
+      ],
+      [
+        -44.92,
+        1.64,
+        15.18
+      ],
+      [
+        -42.89,
+        1.64,
+        15.18
+      ],
+      [
+        -40.87,
+        -2.41,
+        9.11
+      ],
+      [
+        -40.87,
+        1.64,
+        15.18
+      ],
+      [
+        -38.84,
+        -22.65,
+        1.01
+      ],
+      [
+        -38.84,
+        -6.46,
+        5.06
+      ],
+      [
+        -38.84,
+        -4.43,
+        7.08
+      ],
+      [
+        -38.84,
+        -2.41,
+        11.13
+      ],
+      [
+        -38.84,
+        -0.39,
+        15.18
+      ],
+      [
+        -36.82,
+        -20.63,
+        1.01
+      ],
+      [
+        -36.82,
+        -12.53,
+        3.04
+      ],
+      [
+        -36.82,
+        -10.51,
+        3.04
+      ],
+      [
+        -36.82,
+        -8.48,
+        3.04
+      ],
+      [
+        -36.82,
+        -4.43,
+        13.16
+      ],
+      [
+        -36.82,
+        -2.41,
+        13.16
+      ],
+      [
+        -36.82,
+        -0.39,
+        15.18
+      ],
+      [
+        -34.8,
+        -18.6,
+        1.01
+      ],
+      [
+        -34.8,
+        -14.55,
+        3.04
+      ],
+      [
+        -34.8,
+        -6.46,
+        13.16
+      ],
+      [
+        -34.8,
+        1.64,
+        15.18
+      ],
+      [
+        -32.77,
+        -16.58,
+        3.04
+      ],
+      [
+        -32.77,
+        -8.48,
+        11.13
+      ],
+      [
+        -32.77,
+        1.64,
+        15.18
+      ],
+      [
+        -30.75,
+        -16.58,
+        3.04
+      ],
+      [
+        -30.75,
+        -10.51,
+        11.13
+      ],
+      [
+        -30.75,
+        1.64,
+        15.18
+      ],
+      [
+        -28.72,
+        -16.58,
+        5.06
+      ],
+      [
+        -28.72,
+        -10.51,
+        11.13
+      ],
+      [
+        -28.72,
+        1.64,
+        15.18
+      ],
+      [
+        -26.7,
+        -16.58,
+        5.06
+      ],
+      [
+        -26.7,
+        -12.53,
+        9.11
+      ],
+      [
+        -26.7,
+        1.64,
+        15.18
+      ],
+      [
+        -24.68,
+        -14.55,
+        7.08
+      ],
+      [
+        -24.68,
+        1.64,
+        15.18
+      ],
+      [
+        -22.65,
+        -14.55,
+        7.08
+      ],
+      [
+        -22.65,
+        -0.39,
+        13.16
+      ],
+      [
+        -20.63,
+        -14.55,
+        9.11
+      ],
+      [
+        -20.63,
+        -0.39,
+        13.16
+      ],
+      [
+        -18.6,
+        -12.53,
+        11.13
+      ],
+      [
+        -18.6,
+        -2.41,
+        13.16
+      ],
+      [
+        -16.58,
+        -12.53,
+        7.08
+      ],
+      [
+        -16.58,
+        -12.53,
+        9.11
+      ],
+      [
+        -16.58,
+        -10.51,
+        13.16
+      ],
+      [
+        -16.58,
+        -4.43,
+        13.16
+      ],
+      [
+        -14.55,
+        -10.51,
+        3.04
+      ],
+      [
+        -14.55,
+        -10.51,
+        5.06
+      ],
+      [
+        -14.55,
+        -8.48,
+        13.16
+      ],
+      [
+        -14.55,
+        -6.46,
+        13.16
+      ],
+      [
+        -12.53,
+        -8.48,
+        1.01
+      ],
+      [
+        -12.53,
+        -6.46,
+        13.16
+      ],
+      [
+        -10.51,
+        -6.46,
+        1.01
+      ],
+      [
+        -10.51,
+        -6.46,
+        11.13
+      ],
+      [
+        -8.48,
+        -6.46,
+        11.13
+      ],
+      [
+        -8.48,
+        -4.43,
+        1.01
+      ],
+      [
+        -6.46,
+        -4.43,
+        1.01
+      ],
+      [
+        -6.46,
+        -4.43,
+        13.16
+      ],
+      [
+        -4.43,
+        -2.41,
+        1.01
+      ],
+      [
+        -4.43,
+        -2.41,
+        15.18
+      ],
+      [
+        -2.41,
+        -0.39,
+        3.04
+      ],
+      [
+        -2.41,
+        -0.39,
+        15.18
+      ],
+      [
+        -0.39,
+        -0.39,
+        3.04
+      ],
+      [
+        -0.39,
+        1.64,
+        5.06
+      ],
+      [
+        -0.39,
+        1.64,
+        15.18
+      ],
+      [
+        -0.39,
+        3.66,
+        13.16
+      ],
+      [
+        -0.39,
+        5.69,
+        7.08
+      ],
+      [
+        -0.39,
+        5.69,
+        11.13
+      ],
+      [
+        -0.39,
+        7.71,
+        9.11
+      ],
+      [
+        -0.39,
+        9.73,
+        9.11
+      ],
+      [
+        -0.39,
+        11.76,
+        9.11
+      ],
+      [
+        -0.39,
+        15.81,
+        9.11
+      ],
+      [
+        -0.39,
+        17.83,
+        9.11
+      ],
+      [
+        -0.39,
+        19.85,
+        9.11
+      ],
+      [
+        -0.39,
+        21.88,
+        9.11
+      ],
+      [
+        -0.39,
+        23.9,
+        9.11
+      ],
+      [
+        -0.39,
+        25.93,
+        9.11
+      ],
+      [
+        -0.39,
+        27.95,
+        9.11
+      ],
+      [
+        -0.39,
+        29.97,
+        7.08
+      ],
+      [
+        -0.39,
+        32.0,
+        7.08
+      ],
+      [
+        1.64,
+        -2.41,
+        3.04
+      ],
+      [
+        1.64,
+        1.64,
+        15.18
+      ],
+      [
+        1.64,
+        3.66,
+        5.06
+      ],
+      [
+        1.64,
+        13.78,
+        7.08
+      ],
+      [
+        3.66,
+        -2.41,
+        1.01
+      ],
+      [
+        3.66,
+        -0.39,
+        15.18
+      ],
+      [
+        5.69,
+        -2.41,
+        1.01
+      ],
+      [
+        5.69,
+        -2.41,
+        15.18
+      ],
+      [
+        7.71,
+        -4.43,
+        1.01
+      ],
+      [
+        7.71,
+        -4.43,
+        13.16
+      ],
+      [
+        9.73,
+        -6.46,
+        11.13
+      ],
+      [
+        9.73,
+        -4.43,
+        1.01
+      ],
+      [
+        11.76,
+        -6.46,
+        1.01
+      ],
+      [
+        11.76,
+        -6.46,
+        11.13
+      ],
+      [
+        13.78,
+        -8.48,
+        1.01
+      ],
+      [
+        13.78,
+        -6.46,
+        13.16
+      ],
+      [
+        15.81,
+        -10.51,
+        3.04
+      ],
+      [
+        15.81,
+        -10.51,
+        11.13
+      ],
+      [
+        15.81,
+        -8.48,
+        13.16
+      ],
+      [
+        15.81,
+        -6.46,
+        13.16
+      ],
+      [
+        17.83,
+        -12.53,
+        5.06
+      ],
+      [
+        17.83,
+        -12.53,
+        11.13
+      ],
+      [
+        17.83,
+        -4.43,
+        13.16
+      ],
+      [
+        19.85,
+        -14.55,
+        7.08
+      ],
+      [
+        19.85,
+        -14.55,
+        9.11
+      ],
+      [
+        19.85,
+        -2.41,
+        13.16
+      ],
+      [
+        21.88,
+        -14.55,
+        9.11
+      ],
+      [
+        21.88,
+        -0.39,
+        13.16
+      ],
+      [
+        23.9,
+        -14.55,
+        7.08
+      ],
+      [
+        23.9,
+        -0.39,
+        13.16
+      ],
+      [
+        25.93,
+        -14.55,
+        7.08
+      ],
+      [
+        25.93,
+        1.64,
+        15.18
+      ],
+      [
+        27.95,
+        -16.58,
+        5.06
+      ],
+      [
+        27.95,
+        -12.53,
+        9.11
+      ],
+      [
+        27.95,
+        1.64,
+        15.18
+      ],
+      [
+        29.97,
+        -16.58,
+        5.06
+      ],
+      [
+        29.97,
+        -10.51,
+        11.13
+      ],
+      [
+        29.97,
+        1.64,
+        15.18
+      ],
+      [
+        32.0,
+        -16.58,
+        3.04
+      ],
+      [
+        32.0,
+        -10.51,
+        11.13
+      ],
+      [
+        32.0,
+        1.64,
+        15.18
+      ],
+      [
+        34.02,
+        -16.58,
+        3.04
+      ],
+      [
+        34.02,
+        -8.48,
+        11.13
+      ],
+      [
+        34.02,
+        1.64,
+        15.18
+      ],
+      [
+        36.05,
+        -18.6,
+        1.01
+      ],
+      [
+        36.05,
+        -14.55,
+        3.04
+      ],
+      [
+        36.05,
+        -6.46,
+        13.16
+      ],
+      [
+        36.05,
+        1.64,
+        15.18
+      ],
+      [
+        38.07,
+        -24.68,
+        1.01
+      ],
+      [
+        38.07,
+        -22.65,
+        1.01
+      ],
+      [
+        38.07,
+        -20.63,
+        1.01
+      ],
+      [
+        38.07,
+        -12.53,
+        3.04
+      ],
+      [
+        38.07,
+        -10.51,
+        3.04
+      ],
+      [
+        38.07,
+        -8.48,
+        3.04
+      ],
+      [
+        38.07,
+        -4.43,
+        13.16
+      ],
+      [
+        38.07,
+        -2.41,
+        13.16
+      ],
+      [
+        38.07,
+        -0.39,
+        15.18
+      ],
+      [
+        40.09,
+        -6.46,
+        5.06
+      ],
+      [
+        40.09,
+        -4.43,
+        7.08
+      ],
+      [
+        40.09,
+        -2.41,
+        11.13
+      ],
+      [
+        40.09,
+        -0.39,
+        15.18
+      ],
+      [
+        42.12,
+        -2.41,
+        9.11
+      ],
+      [
+        42.12,
+        1.64,
+        15.18
+      ],
+      [
+        44.14,
+        1.64,
+        15.18
+      ],
+      [
+        46.17,
+        1.64,
+        15.18
+      ],
+      [
+        48.19,
+        1.64,
+        15.18
+      ],
+      [
+        50.22,
+        1.64,
+        15.18
+      ]
+    ],
+    "skeleton_width_mm": 6.83
+  }
+}

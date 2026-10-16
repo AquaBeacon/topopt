@@ -1,0 +1,22 @@
+{
+  "schema": "topopt/run/1",
+  "study": "tall_tripod/tall_tripod_study.json",
+  "outdir": "tall_tripod\\03_optimization",
+  "model_dir": "tall_tripod",
+  "quick": false,
+  "seconds": 10.7,
+  "stages": [
+    {
+      "stage": "publish",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": "wrote tall_tripod\\04_print\\PRINT.md",
+      "seconds": 10.7
+    }
+  ],
+  "stopped_at": null,
+  "valid_through": [
+    "publish"
+  ]
+}

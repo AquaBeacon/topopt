@@ -1,0 +1,35 @@
+{
+  "part": "out/osmo_tripod.stl",
+  "material": "PLA",
+  "build_axis": "Z",
+  "resolution_mm": 1.0,
+  "safety_factor": 3.0,
+  "max_deflection_mm": 1.0,
+  "walls": 5,
+  "infill": 0.25,
+
+  "_note": "the two remaining drop attitudes on the final geometry. LC5tip lives in study_w30.json.",
+
+  "regions": {
+    "foot_F": {"type": "cylinder", "axis": "Z", "centre": [0.0, 47.0, 0], "r": 8.0, "range": [0, 3]},
+    "bed":    {"type": "face", "axis": "Z", "side": "min", "depth": 1.5},
+    "bolt":   {"type": "cylinder", "axis": "X", "centre": [0, 0, 23.0], "r": 8.0}
+  },
+
+  "cases": [
+    {
+      "name": "LC5flat DROP 100g: land flat on the base",
+      "load_class": "abnormal",
+      "supports": [{"region": "bed", "fix": "xyz"}],
+      "loads": [{"region": "bolt", "force": [0, 0, -245]}],
+      "gravity": {"direction": [0, 0, -1], "g_factor": 100.0}
+    },
+    {
+      "name": "LC5side DROP 100g: land on one foot, inertia sideways",
+      "load_class": "abnormal",
+      "supports": [{"region": "foot_F", "fix": "xyz"}],
+      "loads": [{"region": "bolt", "force": [0, -245, 0]}],
+      "gravity": {"direction": [0, -1, 0], "g_factor": 100.0}
+    }
+  ]
+}

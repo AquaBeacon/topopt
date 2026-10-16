@@ -1,0 +1,107 @@
+{
+  "schema": "topopt/report/1",
+  "verdict": "FAIL",
+  "fail": [
+    {
+      "key": "converged",
+      "condition": "The density field converged (not merely out of iterations)",
+      "detail": "termination: max_iterations"
+    },
+    {
+      "key": "mesh_convergence",
+      "condition": "Mesh convergence confirmed",
+      "detail": "TOO COARSE (voxel FEA only: 2.2 (thin 8.99 mm) / 4.5 (typical 17.89 mm) vs required >= 3 elements across the thinnest section). A three-mesh convergence study still has not been run."
+    }
+  ],
+  "unknown": [
+    {
+      "key": "equilibrium",
+      "condition": "Load/reaction balance within 1 %",
+      "detail": "not checked in this run"
+    },
+    {
+      "key": "watertight",
+      "condition": "Final shape is watertight",
+      "detail": "not checked in this run"
+    },
+    {
+      "key": "min_wall",
+      "condition": "Minimum wall thickness is met",
+      "detail": "not checked in this run"
+    }
+  ],
+  "pass": [
+    {
+      "key": "units",
+      "condition": "Units are declared and are mm / N / MPa",
+      "detail": "mm / N / MPa"
+    },
+    {
+      "key": "material_values",
+      "condition": "Material properties have no unresolved nulls",
+      "detail": "orthotropic_equivalent_solid, provisional card (no values measured on this printer)"
+    },
+    {
+      "key": "build_axis",
+      "condition": "Material coordinate system (build_axis) is defined",
+      "detail": "build axis Z"
+    },
+    {
+      "key": "setup_valid",
+      "condition": "Setup validation passed (preserve/obstacle, loads on preserve)",
+      "detail": "0 error(s), 14 warning(s)"
+    },
+    {
+      "key": "connected",
+      "condition": "All preserve regions are connected",
+      "detail": "1 component(s)"
+    },
+    {
+      "key": "reanalysed",
+      "condition": "The final shape was re-analysed",
+      "detail": "6 load case(s) re-solved on the thresholded solid"
+    },
+    {
+      "key": "safety_factor",
+      "condition": "Safety factor meets the requirement on every case",
+      "detail": "p99.5 90.84 vs required 3.00 (worst element 26.58)"
+    },
+    {
+      "key": "support_faces",
+      "condition": "No support lands on a mating (preserve) face",
+      "detail": "no support lands on a preserve surface"
+    },
+    {
+      "key": "enclosed_support",
+      "condition": "No support inside a sealed cavity",
+      "detail": "all support is reachable from outside"
+    }
+  ],
+  "external_tools": {
+    "calculix": {
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    "freecad": {
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    "gmsh": {
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    "openscad": {
+      "available": true,
+      "path": "C:\\Program Files\\OpenSCAD\\openscad.exe",
+      "version": "OpenSCAD version 2021.01"
+    },
+    "slicer": {
+      "available": false,
+      "path": null,
+      "version": null
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "topopt/manifest/1",
+  "tool": {
+    "name": "topopt",
+    "version": "1.0.0"
+  },
+  "command": {
+    "name": "ccx",
+    "argv": [
+      "tall_tripod/03_optimization/reanalysis/tall_tripod_study_t40.stl",
+      "--study",
+      "tall_tripod/tall_tripod_study.json",
+      "--mesh-mm",
+      "8",
+      "--buckle",
+      "--frequency",
+      "--voxel-fea",
+      "tall_tripod/03_optimization/reanalysis/tall_tripod_fea.json",
+      "--out",
+      "tall_tripod/03_optimization/reanalysis/ccx_8mm"
+    ],
+    "line": "ccx tall_tripod/03_optimization/reanalysis/tall_tripod_study_t40.stl --study tall_tripod/tall_tripod_study.json --mesh-mm 8 --buckle --frequency --voxel-fea tall_tripod/03_optimization/reanalysis/tall_tripod_fea.json --out tall_tripod/03_optimization/reanalysis/ccx_8mm",
+    "cwd": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing"
+  },
+  "run": {
+    "started_utc": "2026-09-08T03:05:51Z",
+    "finished_utc": "2026-09-08T03:08:43Z",
+    "seconds": 171.769,
+    "exit_code": 0,
+    "exit_code_meaning": "pass / valid"
+  },
+  "source": {
+    "git_commit": "1cb8af4c5968fe6f86e43008a471f9a84f93d4ab",
+    "git_dirty": true
+  },
+  "environment": {
+    "python": "3.13.5",
+    "python_full": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "packages": {
+      "numpy": "2.4.2",
+      "scipy": "1.18.0",
+      "matplotlib": "3.10.8",
+      "skimage": "0.26.0",
+      "pytest": "9.1.1",
+      "torch": "2.12.0+cu130"
+    },
+    "external_tools": {
+      "freecad": null,
+      "calculix": null,
+      "gmsh": null,
+      "openscad": null
+    }
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\03_optimization\\reanalysis\\tall_tripod_study_t40.stl",
+      "bytes": 70484,
+      "sha256": "991822a850da4a454f3f5be56592d87663bafc3c23acde26110234a907d947fe"
+    },
+    {
+      "path": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\tall_tripod_study.json",
+      "bytes": 15709,
+      "sha256": "4352684e744de6c338f54957e82bedf65d394028714a3747122a74dc50b754d7"
+    },
+    {
+      "path": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\03_optimization\\reanalysis\\tall_tripod_fea.json",
+      "bytes": 19203,
+      "sha256": "0cca28b202929725e3b3bd3a4e48bab6a9f40365d17db0be74da8283f4c90304"
+    }
+  ],
+  "random_seed": null,
+  "random_seed_note": "no seed was declared by the study. The voxel path is deterministic (uniform initial density, OC update, CG solve), so a seed is not currently required for reproducibility."
+}

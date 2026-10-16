@@ -1,0 +1,58 @@
+grid 84 x 84 x 54 at 3.000 mm (origin [-126.0, -126.0, -6.0])
+
+density field tall_tripod_study at 3.0000 mm voxel, 84x84x54
+thresholds: 0.40, 0.50, 0.60
+
+level       volume  SF p99.5  SF worst    max mm   min thk   down A  verdict
+0.40        297891    215.82     49.13     0.024     6.00*     8658  FAIL: mesh resolution (2.0 (thin 6.00 mm) / 5.7 (typical 16.
+0.50        281313    201.51     45.10     0.026     6.00*     8478  FAIL: mesh resolution (2.0 (thin 6.00 mm) / 5.7 (typical 16.
+0.60        263871    178.27     40.26     0.029     6.00*     8217  FAIL: mesh resolution (2.0 (thin 6.00 mm) / 4.9 (typical 14.
+  * grid-limited: min thickness is exactly 2 x voxel, i.e. the finest the grid can hold. Not a measurement of the structure.
+
+finish (interface at CAD dimensions, 0.50 mm grid)
+  finish  = grid grown by (0, 0, 0) / (0, 0, 15) analysis voxels so the CAD bodies are not clipped at the domain wall
+  finish  ~ mount_head         replaces preserve 'mount_head' (648 analysed cells dropped, bridge 972 mm3)
+  finish  + mount_head          1154208 cells (+143504.5 mm3)
+  finish  ~ smoothed optimised body: sigma 3.00 mm, level 0.466, volume +0.00 %, fillet at the joint 1154 mm3
+  finish  -> tall_tripod_study_t40_finish.stl (904908 triangles, isosurface at 0.466 on a 0.500 mm grid)
+  shell   finish_stl   904908 triangles  !! 2 separate bodies
+  shell   finish_voxel_stl 211156 triangles  !! 104567 open edge(s)
+  shell   smooth_stl    16108 triangles  watertight, one body, no self-intersection
+  shell   stl           16796 triangles  watertight, one body, no self-intersection
+
+wrote threshold 0.40 to tall_tripod\03_optimization
+  stl         tall_tripod\03_optimization\tall_tripod_study_t40.stl
+  smooth_stl  tall_tripod\03_optimization\tall_tripod_study_t40_smooth.stl
+  step        tall_tripod\03_optimization\tall_tripod_study_t40.step
+  finish_stl  tall_tripod\03_optimization\tall_tripod_study_t40_finish.stl
+  finish_voxel_stl tall_tripod\03_optimization\tall_tripod_study_t40_finish_voxel.stl
+
+chosen threshold 0.40 -- no candidate passes every check; this is the strongest of the connected ones and is NOT a pass. Outstanding: mesh resolution (2.0 (thin 6.00 mm) / 5.7 (typical 16.97 mm), required >= 3 elements across the thinnest section)
+
+NEXT: this is still not a part. Interface dimensions are quantised to 3.000 mm. Rebuild them as parametric CAD and prove it carries the load with:
+  topopt compare tall_tripod\03_optimization <rebuild>.stl --study tall_tripod/tall_tripod_study.json
+[extract] exit 1      106 s  
+[print  ] ok            1 s  wrote printcheck.json (threshold 0.40)
+wrote tall_tripod\04_print\slice\slice.json
+  slicer      ?
+  presets     Bambu Lab X1 Carbon 0.4 nozzle | 0.20mm Standard @BBL X1C | Bambu PLA Basic @BBL X1C
+  print time  6h 25m 53s (23153.0 s)
+  filament    188.89 g / 149910 mm3 over 989 layers (720 of object)
+  support     59.20 g / 46984 mm3 (31.3 % of filament)
+  bed fits    True
+  spec 13.3   UNKNOWN (5 conditions) -- the slicer reports how much support, never where
+[slice  ] ok            5 s  
+wrote tall_tripod\03_optimization\report.md
+verdict: FAIL  (3 fail, 1 unknown, 12 pass)
+  FAIL     The density field converged (not merely out of iterations) -- termination: max_iterations
+  FAIL     Mesh convergence confirmed -- the numbers settled but the hotspot moved 17.49 mm (allowed 7.00); the two meshes are not describing the same failure, so it is a property of the discretisation, not of the part
+  FAIL     Self-supporting along the build axis (no voxel without material in the 45 degree cone below it) -- 1 voxel(s), 9 mm2 of material with nothing under it within 45 degrees (build axis +Z, at [[-63.0, -33.0, 36.0], [-60.0, -30.0, 39.0]]); it would print on support or not at all. Enable design.overhang, or move the build axis
+  UNKNOWN  Minimum wall thickness is met
+[report ] exit 1        2 s  
+[assumptions] ok            1 s  wrote tall_tripod\01_assumptions\assumptions.md
+04_print: PRINT.md, preview_design_space.png, preview_orientation.png, preview_shape.png, preview_stress.png, tall_tripod.step, tall_tripod.stl, tall_tripod_raw.stl
+[publish] ok            1 s  wrote tall_tripod\04_print\PRINT.md
+
+valid through: extract -> print -> slice -> assumptions -> publish
+tall_tripod\03_optimization\report.md (115 s)
+to print:      tall_tripod\04_print\PRINT.md

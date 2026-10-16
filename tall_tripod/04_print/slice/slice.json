@@ -1,0 +1,115 @@
+{
+  "schema": "topopt/slice/1",
+  "part": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\03_optimization\\tall_tripod_study_t40_finish.stl",
+  "tool": {
+    "name": "Bambu Studio / OrcaSlicer CLI",
+    "path": "C:\\Program Files\\Bambu Studio\\bambu-studio.exe",
+    "version": null
+  },
+  "printer": "X1C",
+  "printer_name": "Bambu Lab X1-Carbon",
+  "material": "PLA",
+  "layer_mm": 0.2,
+  "supports": "auto",
+  "support_type": "normal(auto)",
+  "orient": "keep",
+  "presets": {
+    "root": "C:\\Program Files\\Bambu Studio\\resources\\profiles",
+    "machine": "Bambu Lab X1 Carbon 0.4 nozzle",
+    "process": "0.20mm Standard @BBL X1C",
+    "filament": "Bambu PLA Basic @BBL X1C",
+    "files": {
+      "machine": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\04_print\\slice\\preset_machine.json",
+      "process": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\04_print\\slice\\preset_process.json",
+      "filament": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\04_print\\slice\\preset_filament.json"
+    }
+  },
+  "project_3mf": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\04_print\\slice\\tall_tripod_study_t40_finish.3mf",
+  "plate_gcode": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\04_print\\slice\\plate_1.gcode",
+  "seconds": 15.85,
+  "exit_code_slicer": 0,
+  "error": null,
+  "warnings": [],
+  "checks": [
+    {
+      "key": "sliced",
+      "condition": "The slicer produced a sliced plate",
+      "state": "PASS",
+      "detail": "3mf written and parsed"
+    },
+    {
+      "key": "bed_fits",
+      "condition": "The object sits inside the build volume in the orientation it was sliced in",
+      "state": "PASS",
+      "detail": "the slicer's own arrangement result"
+    },
+    {
+      "key": "no_support_in_sealed_cavity",
+      "condition": "No support is generated inside a sealed cavity",
+      "state": "UNKNOWN",
+      "detail": "the slicer reports how much support there is, never where it is; spec 13.3 is a question about location. `printcheck.json` answers the first and third of these on the voxel grid."
+    },
+    {
+      "key": "no_support_out_of_reach",
+      "condition": "No support is generated where a tool cannot reach it",
+      "state": "UNKNOWN",
+      "detail": "the slicer reports how much support there is, never where it is; spec 13.3 is a question about location. `printcheck.json` answers the first and third of these on the voxel grid."
+    },
+    {
+      "key": "no_support_on_mating_faces",
+      "condition": "No support touches a critical (preserve) mating face",
+      "state": "UNKNOWN",
+      "detail": "the slicer reports how much support there is, never where it is; spec 13.3 is a question about location. `printcheck.json` answers the first and third of these on the voxel grid."
+    },
+    {
+      "key": "removal_does_not_break_thin_members",
+      "condition": "Removing the support does not break a thin member",
+      "state": "UNKNOWN",
+      "detail": "the slicer reports how much support there is, never where it is; spec 13.3 is a question about location. `printcheck.json` answers the first and third of these on the voxel grid."
+    },
+    {
+      "key": "support_not_preferred_over_structure",
+      "condition": "Support quantity was not preferred over structural performance",
+      "state": "UNKNOWN",
+      "detail": "the slicer reports how much support there is, never where it is; spec 13.3 is a question about location. `printcheck.json` answers the first and third of these on the voxel grid."
+    }
+  ],
+  "pass": true,
+  "note": "`pass` means the slice ran and the object fits the plate. It is not a spec 13.3 verdict: all five 13.3 conditions are UNKNOWN here.",
+  "print_time_s": 24784.0,
+  "print_time_text": "6h 53m 4s",
+  "model_print_time_text": "6h 52m 44s",
+  "filament_g": 294.76,
+  "filament_mm": 97258.59,
+  "layers": 1263,
+  "max_z_mm": 196.6,
+  "object_layers": 983,
+  "layers_note": "`layers` is every layer the machine executes. With `independent_support_layer_height` on (the stock profile) support adds layers of its own, so it exceeds `object_layers` (max_z / layer height).",
+  "bed_fits": true,
+  "support_used": true,
+  "material_density_g_cm3": 1.24,
+  "slicer_filament_density_g_cm3": 1.26,
+  "filament_mm3": 233934.32375441535,
+  "filament_mm3_source": "length x wire cross-section, both from the slicer's G-code header",
+  "filament_by_feature_mm": {
+    "Bottom surface": 90.121,
+    "Bridge": 1553.023,
+    "Custom": 30.0,
+    "Floating vertical shell": 1391.945,
+    "Gap infill": 34.307,
+    "Inner wall": 11538.383,
+    "Internal solid infill": 3176.849,
+    "Outer wall": 10934.759,
+    "Overhang wall": 74.242,
+    "Sparse infill": 24733.684,
+    "Support": 42100.936,
+    "Support interface": 642.778,
+    "Support transition": 318.364,
+    "Top surface": 639.197
+  },
+  "support_filament_g": 130.50630765684295,
+  "support_mm3": 103576.43464828805,
+  "support_mm": 43062.07755000085,
+  "support_fraction": 0.4427586151668294,
+  "support_note": "summed over the G-code's `; FEATURE: Support*` blocks (the slicer states no support total); the same sum reproduces its own filament total to 0.0000 %. Density 1.260 g/cm3 from the slicer preset. This is extruded 1.75 mm wire, not the part-space volume `printcheck.json` reports."
+}

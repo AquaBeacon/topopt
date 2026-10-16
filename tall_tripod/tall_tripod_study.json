@@ -1,0 +1,361 @@
+{
+  "_what": "Topology-optimisation validation model: the tall tripod (spec 5.3).",
+  "_why": "Raising the camera to about 200 mm puts a real three-dimensional load path between the camera mount and the floor, and how to build it -- one column, three legs, a braced tripod, something else -- is genuinely open.",
+  "_not_a_part": "This is a validation model, not the shipped bracket. osmo_tripod/osmo_tripod.scad stays as it is.",
+  "units": "mm_N_MPa",
+  "material": "PLA",
+  "build_axis": "Z",
+  "raster_axis": "X",
+  "_build_axis_note": "Printed standing up, the way the model is drawn: the layer planes are horizontal, so bending the structure pulls the layers apart. That is the worst orientation for an FFF part and is exactly what this model is meant to expose. `build_axis` is also which way is *down* for ground contact.",
+  "printer": "X1C",
+  "_printer_note": "Declared, not defaulted. The design space is d240 x 120 against a 250 mm usable envelope. NOTE that `topopt setup` checks the DESIGN SPACE against the machine and v8's preserve reaches 76.5 mm above it -- the part is 196.5 mm tall, not 120. That check is in 02_setup/make_v8_design_space.py, which is also what draws the cylinder.",
+  "safety_factor": 3.0,
+  "_safety_factor_note": "materials.required_safety_factor() asks for 4.0 while the PLA card is provisional (no value measured on this printer). 3.0 is kept here so the number stays comparable with the recorded runs; the report states the shortfall.",
+  "max_deflection_mm": 3.0,
+  "_deflection_note": "At about 200 mm the camera is a long lever. 3 mm at the camera top is about 0.9 degrees of tilt, which is where video framing visibly drifts.",
+  "voxel_mm": 4.0,
+  "_voxel_note": "4.0 mm. v4..v7 recorded 10.0 here and were run at 3.0 from the command line, which meant the file never said what was actually solved. This is the size the v8 run was solved on. It is still an EXPLORATORY grid: 4 mm across a d240 x 120 design space is 60 cells wide and about 106,000 free cells -- enough to see which topology the loads ask for, not enough to size a member. `topopt setup` times one solve on whatever grid it builds and prints what the run would cost, so the trade is priced before it is paid.",
+  "_voxel_and_the_interface": "4 mm cannot represent the camera interface: the mount's centre finger is 2.70 mm and its fingers are 3.00 mm. That is not a problem here -- the whole mount is preserve, the optimiser never touches it, and the `finish` block re-cuts it from the source STL on a 0.5 mm grid. MEASURED (v7, same finish settings): every interface dimension in the shipped file matches the source STL exactly. What a coarse grid still costs is the FEA: stresses in and around the mount are resolved no better than 4 mm, and the report says so.",
+  "target_elements": 200000,
+  "design": {
+    "volfrac": 0.05,
+    "_volfrac_note": "Set for an optimised body of comparable mass to the recorded v5 result (about 263,000 mm3 of optimised material), not copied from any earlier number. volfrac is a fraction of the FREE cells; v8's free volume is about 5.36e6 mm3 (the d240 x 120 cylinder less the base plate that sits in it), so 0.050 asks for about 268,000 mm3. THIS IS A CHOICE, NOT A RESULT: the head it has to carry is now 143,505 mm3 and 84.5 mm tall against v5's 17,064 mm3 and 36 mm, so the same mass of structure is not obviously enough. Read the safety factors in the report before believing it.",
+    "filter_mm": 20.0,
+    "_filter_note": "Five voxels at 4 mm. Kept at the recorded value so the v8 topology is comparable with v5's; see known-issues G1 and lessons-learned #49 for what it does and does not control.",
+    "symmetry": [],
+    "_symmetry_note": "No mirror symmetry declared. The three LC3 cases each load one side and LC4t twists; mirror-averaging would pull the result away from what those cases actually ask for. It would also decide part of the stance, which is the thing this model exists to stop doing. NOTE that the head itself is NOT symmetric in X (the nut side is 6.00 mm thick, the knob side 3.00) nor in Y (the rear plate and its gussets are all on -Y), so a mirrored structure would be wrong for it anyway.",
+    "move": 0.2,
+    "tol_change": 0.002
+  },
+  "geometry": {
+    "voxel_mm": 4.0,
+    "clearance_mm": 0.0,
+    "_clearance_note": "Zero on purpose. A requested clearance under one voxel is rounded up to a whole one, so asking for 1 mm at this grid would silently grow every body by 4 mm. The clearances that matter are in the source CAD of the mount itself.",
+    "_preserve_why": "THE WHOLE CAMERA MOUNT, exactly as it is drawn -- not an envelope with the holes filled in. Two reasons it can be handed over with its holes in it, where v4..v7's head could not: (1) nothing above the base plate is in the design space, so a hole up there is not a free cell the optimiser could fill; (2) the holes that ARE in the design space are the four M5 bores through the base plate, and those are 5.4 mm on a 4 mm grid -- they are lost to voxelisation either way, and the `finish` stage cuts them back in from the source STL.",
+    "preserve": {
+      "camera_mount": {
+        "stl": "02_setup/tall_camera_mount.stl"
+      }
+    },
+    "_attach_why_absent": "v5..v7 needed `attach` because the design space wrapped the whole head and material grew onto its flanks and top. v8 does not: the design space stops at the top of the base plate, so the only faces the optimiser can reach are the plate's underside and its edge -- which is exactly where a stand may hold it. Declaring `attach` here would only remove the edge, and buttressing the plate's edge is a legitimate answer to a 104 x 79 mm plate on a stalk.",
+    "_design_space_why": "One cylinder, d240, from the build plate to the TOP of the mount's base plate (z = 120). As wide as the machine allows and no outline that contains the answer. It overlaps the base plate by its 8 mm thickness on purpose -- preserve wins inside the overlap, and what the overlap buys is a ring of free cells around the plate's edge. See 02_setup/make_v8_design_space.py, which derives the cylinder from the placed mount rather than from numbers copied out of it.",
+    "design_space": "02_setup/tall_v8_design_space.stl",
+    "_obstacle_why_absent": "There is none, and that is a simplification, not an oversight. v4..v7 declared the camera's +/-30 deg swing and the room to turn a thumbscrew. The v8 mount DOES NOT HINGE -- the case is held against a rear plate and bolted through a three-finger receiver -- so the swing volume describes a machine that no longer exists. Everything else that has to stay empty (the case's own volume, the room to push the nut in from -X, the gap between the rear plate and the front supports) is ABOVE z = 120 and therefore not in the design space to begin with. Re-read `obstacle_mm3` in the setup report if the design space ever grows past the plate."
+  },
+  "finish": {
+    "_what": "How the chosen shape becomes a part. The optimised body is resampled from the analysis grid, the analysed voxels of the mount are DROPPED (the add entry is named after the preserve body `camera_mount`, so it replaces them) except a one-voxel bridge where the structure meets it, the source mount is unioned back in at its own dimensions, and the optimised body is smoothed with the plate contact held. There is no `cut` stage: the mount arrives with its holes already in it. See topopt/finish.py.",
+    "_why": "Because the mount is preserve. It went in as CAD, the optimiser never had a say in it, and there is no reason for it to come out of a 4 mm grid.",
+    "_not": "It does not re-run the analysis. The FEA saw the 4 mm mount; the finished file is a finished SHAPE, not a re-verified part.",
+    "voxel_mm": 0.5,
+    "_voxel_mm_note": "0.5 mm, because this is the run that gets printed. MEASURED at 1.0 mm (v7): the nut pocket came out 8.12 mm across flats at its mouth and 7.62 mm at 3.65 mm deep, against an M5 nut of 8.00 nominal / 8.10 max -- the nut does not go in. A pocket is a concave feature of the `add` body now (v6 cut it with a `cut` body, and cuts round OUTWARD, which hid this), so it rounds inwards by a fraction of a finish cell at every wall and by about a whole one in the corner at its closed end. Halving the cell halves that, and at 0.5 mm every measured dimension matches the source STL. Quote `feature_tolerance_mm` from the extract summary, not the drawing.",
+    "add": {
+      "camera_mount": "02_setup/tall_camera_mount.stl"
+    },
+    "_add_note": "The same file the preserve is built from, placed by 02_setup/place_camera_mount.py: the source part translated +112 mm in Z, which puts its screw axis (24.0 mm above its own base) at z = 136. The entry is named after the preserve body so the finish stage REPLACES the analysed voxels rather than piling the CAD on top of them.",
+    "occupancy_samples": 3,
+    "_occupancy_samples_note": "How finely each CAD body is sampled inside one finish cell, per axis, to get the fraction of the cell it fills. 3 puts a CAD face within about finish_voxel/6. The bound this buys is reported as `smooth.cad_tolerance_mm`; it is NOT the same number as `feature_tolerance_mm`, which still applies to the voxel file and to the optimised body.",
+    "cut": {},
+    "_cut_note": "EMPTY ON PURPOSE. The mount is a finished solid -- its slots, bore, nut pocket and bolt holes are already in the STL. v6's `tall_mount_cuts.stl` cuts the OLD head's features at the OLD head's coordinates and would gouge a d22 knob pocket through this one.",
+    "bridge_mm": null,
+    "_bridge_mm_note": "null is one analysis voxel. There is no `attach` stand-off to bridge in v8, but the joint fillet is still what stops the structure necking where it meets the plate. `info.smooth.bridge_mm3` is how much it added.",
+    "smooth_mm": "auto",
+    "_smooth_mm_note": "\"auto\" is one analysis voxel (4.0 mm here). Half a voxel does not remove the staircase, it rounds it into a row of beads -- one per analysis cell -- which is what a user sees and calls \"the optimised part is still faceted\". The CAD mount is not in the Gaussian at all: it enters as sub-cell occupancy, so its faces are not moved. lessons-learned #91, #93."
+  },
+  "regions": {
+    "_ground_all_note": "The build plane. `face`/`min` measures from the extent of the material, not the grid, so the padding cannot move it. Used with `\"contact\": \"ground\"`, which clips it to the one-voxel contact band and fixes only the nodes on the plane itself.",
+    "ground_all": {
+      "type": "face",
+      "axis": "Z",
+      "side": "min",
+      "depth": 2.0
+    },
+    "_catch_zone_note": [
+      "Three d100 patches of floor at 120 degrees, radius 85 mm from the axis, for the one-foot-caught cases.",
+      "WHY THREE CASES AND NOT ONE. A ground support is glued: the FEA cannot tip the part over. So none of the standing cases rewards a wide base -- a slim central post standing anywhere on the plate is stiffer per gram than a tripod, and MEASURED (v4): with a single catch zone the optimiser produced exactly that, a post leaning towards the one zone, 2 contact pads, and a footprint of 50 x 140 mm. It would fall over if you looked at it.",
+      "Stability is a rigid-body criterion and compliance minimisation cannot express it. The scenario that does require reach is being lifted with one leg hooked, and that leg can be any of them -- so it is three cases, and the structure has to reach all three patches.",
+      "THIS IS THE ONE THING A HUMAN STILL CHOOSES ABOUT THE STANCE: that there are three zones and roughly where. Each is d100 rather than a 16 mm pad, so the radius, the number of contact patches, the leg shape and everything above the floor are the optimiser's. Rotate the set and re-run if you want to know whether the answer depends on the choice.",
+      "UNCHANGED FROM v4..v7 on purpose, so the v8 topology can be compared with the recorded one."
+    ],
+    "catch_n": {
+      "type": "cylinder",
+      "axis": "Z",
+      "centre": [
+        0.0,
+        85.0,
+        0
+      ],
+      "r": 50.0
+    },
+    "catch_sw": {
+      "type": "cylinder",
+      "axis": "Z",
+      "centre": [
+        -73.6,
+        -42.5,
+        0
+      ],
+      "r": 50.0
+    },
+    "catch_se": {
+      "type": "cylinder",
+      "axis": "Z",
+      "centre": [
+        73.6,
+        -42.5,
+        0
+      ],
+      "r": 50.0
+    },
+    "_cam_iface_note": [
+      "WHERE THE CAMERA ACTS ON THE MOUNT: everything above the base plate -- the rear plate the case leans on, its two gussets, the front support wall and pads, and the three-finger screw receiver. All of it is preserve, which is the rule loads have to obey.",
+      "v4..v7 put the loads on a d19 cylinder about the hinge axis, because that was the whole head. This mount holds the case in three places instead of one, and none of them is a hinge; a region covering all three is closer to what happens than a cylinder around a screw that no longer carries the case's weight on its own.",
+      "WHAT THIS DOES NOT DO: the camera's own lever is not modelled. The case sits from z = 148.5 to about 202.5 and its loads are applied at the mount, exactly as v4..v7 applied them at the head. LC1f carries the moment explicitly (see its note)."
+    ],
+    "cam_iface": {
+      "type": "box",
+      "min": [
+        -52.0,
+        -53.0,
+        120.5
+      ],
+      "max": [
+        52.0,
+        27.0,
+        197.0
+      ]
+    },
+    "_couple_note": "The two halves of the mount above the base plate, for LC4t. Their material centroids are about 26 mm either side of the axis, so a 0.60 N couple is about 31 N.mm -- the same twist v4..v7 applied as 3.0 N across a 10 mm head. THE MOMENT IS THE PHYSICAL QUANTITY, not the force: a wider head with the same force would have been a six times bigger case for no stated reason.",
+    "cam_plus_x": {
+      "type": "box",
+      "min": [
+        8.0,
+        -53.0,
+        120.5
+      ],
+      "max": [
+        52.0,
+        27.0,
+        197.0
+      ]
+    },
+    "cam_minus_x": {
+      "type": "box",
+      "min": [
+        -52.0,
+        -53.0,
+        120.5
+      ],
+      "max": [
+        -8.0,
+        27.0,
+        197.0
+      ]
+    }
+  },
+  "required_cases": [
+    "LC1f",
+    "LC2",
+    "LC3n",
+    "LC3sw",
+    "LC3se",
+    "LC4t"
+  ],
+  "cases": [
+    {
+      "name": "LC1f  push 1.0 N horizontally at the camera mount",
+      "_note": "1.0 N is the tipping limit, and the tipping limit is what bounds the load on this model -- it is not a strength case, because past it the part is lying on the floor. BEST-CASE tipping (feet on the rim of the design space, camera mass only, camera top at z = 202.5 using the 54.04 mm case height measured from osmo-action-6.step rather than the mount's provisional 75 mm envelope): 0.35 kg x 9.81 x 60 mm / 202.5 mm = 1.02 N. Essentially unchanged from v7's 1.025 N -- the mount raises the camera by 1.5 mm, not by its own height. The actual value depends on where the optimiser puts the feet and is only known after the run -- read `ground_contact` in the summary.",
+      "_note_on_the_support": "With the whole floor available as contact the FEA cannot tip: this case is 'push it sideways with the base standing on the table'. Tipping itself stays a closed-form check, where it belongs.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force": [
+            0,
+            1.0,
+            0
+          ]
+        },
+        {
+          "region": "cam_iface",
+          "force": [
+            0,
+            0,
+            -3.44
+          ]
+        }
+      ],
+      "_load_note": "1.0 N forward at the mount plus the 0.35 kg camera weight (3.44 N down). The horizontal force is applied at the mount because that is where preserve is; the moment it stands in for is 1.0 N x about 47 mm of remaining lever from the region's centroid to the camera top."
+    },
+    {
+      "name": "LC2   camera weight plus 5x vertical shock",
+      "_note": "Setting the tripod down hard, or a knock straight down. 5 g is the usual screening factor for a hand-carried item. NOTE that the mount's own 143,505 mm3 -- about 180 g of PLA, half the camera again -- is NOT in this number. Self-weight is not applied anywhere in this study; it was not in v4..v7 either, and it matters more now than it did.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force": [
+            0,
+            0,
+            -17.2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LC3n  lift by the head, north foot caught",
+      "load_class": "abnormal",
+      "_note": "Picking the tripod up by the camera while one leg is still hooked on something. This is the case that decided the mass of the short tripod, and the only kind of case here that asks for a wide base -- everything else is happiest with a single central post. Three of them, one per catch zone, because the hooked leg can be any of them and one case alone just moves the post over to that zone (measured in v4 -- see the catch-zone note in `regions`).",
+      "supports": [
+        {
+          "region": "catch_n",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force": [
+            0,
+            0,
+            12.0
+          ]
+        },
+        {
+          "region": "cam_iface",
+          "force": [
+            4.0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LC3sw lift by the head, south-west foot caught",
+      "load_class": "abnormal",
+      "supports": [
+        {
+          "region": "catch_sw",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force": [
+            0,
+            0,
+            12.0
+          ]
+        },
+        {
+          "region": "cam_iface",
+          "force": [
+            -3.46,
+            -2.0,
+            0
+          ]
+        }
+      ],
+      "_load_note": "The 4 N horizontal component points away from the caught foot, as in LC3n, rotated with the zone."
+    },
+    {
+      "name": "LC3se lift by the head, south-east foot caught",
+      "load_class": "abnormal",
+      "supports": [
+        {
+          "region": "catch_se",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_iface",
+          "force": [
+            0,
+            0,
+            12.0
+          ]
+        },
+        {
+          "region": "cam_iface",
+          "force": [
+            3.46,
+            -2.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LC4t  twist the head about the vertical axis",
+      "_note": "Tightening the screw, or panning the camera against friction. A hollow section is stiff in bending and can still be soft in torsion, so this case is what stops the optimiser producing an open C-section.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "cam_plus_x",
+          "force": [
+            0,
+            0.6,
+            0
+          ]
+        },
+        {
+          "region": "cam_minus_x",
+          "force": [
+            0,
+            -0.6,
+            0
+          ]
+        },
+        {
+          "region": "cam_iface",
+          "force": [
+            0,
+            0,
+            -3.44
+          ]
+        }
+      ],
+      "_load_note": "A 0.60 N couple across the mount: +Y on the +X half, -Y on the -X half, about 52 mm apart, which is 31 N.mm -- the same moment v4..v7 applied as 3.0 N across 10 mm. Combined with the camera weight so the case is a real one rather than pure torsion."
+    }
+  ],
+  "_what_changed_in_v8": [
+    "THE OPTIMISATION WAS RE-RUN AGAINST THE REAL HEAD. v7 swapped the camera interface for the child unit's DJI Osmo Action 6 mount but kept v5's density field, which had been solved against a 15 x 15 mm pedestal weighing 17,064 mm3. The part actually on top is a 104 x 79.45 mm plate carrying an 84.5 mm rear plate, 143,505 mm3 of it. Nobody had solved that. The user asked for the re-run.",
+    "preserve is now the WHOLE MOUNT, holes and all, straight from 02_setup/tall_camera_mount.stl. There is no separate solid envelope and no `mount_solid` / `mount_cuts` pair, because the mount is already a finished solid.",
+    "The design space is a d240 cylinder that stops at the TOP of the mount's base plate (z = 120) instead of enclosing the head. It is derived from the placed mount by 02_setup/make_v8_design_space.py rather than drawn in tall_tripod.scad -- the .scad draws the OLD head and its asserts are about that head, so keeping it as the source would have meant copying the mount's dimensions into a second file.",
+    "`obstacle` is gone. The camera does not swing any more and everything else that must stay empty is above the design space.",
+    "`attach` is gone. It existed to stop material climbing the flanks of a head the design space surrounded; the design space no longer surrounds anything.",
+    "The load regions moved from a d19 cylinder about the hinge axis to the mount above its base plate (`cam_iface`, and `cam_plus_x` / `cam_minus_x` for the couple). The LC4t couple was rescaled from 3.0 N to 0.60 N to keep the MOMENT at 31 N.mm across a head five times wider.",
+    "`voxel_mm` in the file is now the size the run was actually solved on (4.0). v4..v7 recorded 10.0 and were run at 3.0 from the command line."
+  ],
+  "_history": [
+    "v1 (archived, archive/v1_unprintable/): raised the hinge to 173 mm, which forced a 300 mm footprint, which does not fit a 250 mm printer. 3.6 hours of optimisation produced an STL that fits the machine in no orientation at all. Nothing checked it before solving.",
+    "v2, v3: printability fixed, but the design space was a disc plus a tapered mast and preserve included three foot pads and a hub seat -- everything structural about the answer was decided in CAD before the optimiser started.",
+    "v4 (archived, archive/v4_before_attach_2026-09-08/): design space became one d240 x 146 cylinder around the WHOLE head, supports became `\"contact\": \"ground\"`, so the number of feet and where they go became a result. Material then grew onto the flanks and top of the head.",
+    "v5 (2026-09-08): `attach` on the preserve body, so only the pedestal underside was joinable; the finish stage replaced the analysed head with CAD and smoothed only the optimised material.",
+    "v6 (2026-09-09): the real part could not be assembled. The nut pocket was a blind hole (the access was declared as `obstacle`, which keeps the OPTIMISER out and does not move `preserve`) and the smoothing had moved the CAD face 0.34 mm outwards. Fits widened, nut floor 1.80 -> 2.80.",
+    "v7 (2026-09-10, archived with its results in archive/v7_old_head_field_2026-09-10/): the camera interface was swapped for the child unit's mount, without re-running the optimisation. It exposed three tool defects -- the finish grid clipped CAD bodies at the analysis-domain wall, a concave feature of an `add` body rounds INWARDS where a `cut` rounds outwards, and `slice` was measuring the analysis-grid body rather than the shipped one. All three fixed; lessons-learned #96-#99."
+  ]
+}

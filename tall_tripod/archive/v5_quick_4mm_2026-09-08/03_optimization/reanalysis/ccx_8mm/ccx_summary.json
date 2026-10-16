@@ -1,0 +1,1259 @@
+{
+  "schema": "topopt/ccx/1",
+  "stl": "tall_tripod/03_optimization/reanalysis/tall_tripod_study_t40.stl",
+  "study": "tall_tripod/tall_tripod_study.json",
+  "map_mode": "volume",
+  "runs": [
+    {
+      "mesh_target_mm": 8.0,
+      "nodes": 18616,
+      "elements": 9526,
+      "converged": true,
+      "convergence_note": "no error or divergence reported",
+      "material_model": {
+        "material_model": "orthotropic_equivalent_solid",
+        "card_id": "pla_generic_fff_orthotropic_v1",
+        "classification": "conservative_literature_based_default",
+        "measured_for_specific_printer": false,
+        "solid_fraction_applied": 1.0,
+        "Ex_Ey_Ez_MPa": [
+          3000,
+          2400,
+          1500
+        ],
+        "Gxy_Gyz_Gzx_MPa": [
+          1000,
+          550,
+          550
+        ],
+        "strengths_MPa": {
+          "Xt": 50,
+          "Xc": 60,
+          "Yt": 35,
+          "Yc": 50,
+          "Zt": 22,
+          "Zc": 40,
+          "Sxy": 25,
+          "Syz": 15,
+          "Szx": 15
+        },
+        "source": "docs/FFF_PLA_PETG_orthotropic_material_reference.md section 5"
+      },
+      "build_axis": "Z",
+      "map_mode": "volume",
+      "load_split": "consistent",
+      "ground_tol_mm": 0.05,
+      "exclude_mm": 0.0,
+      "mesh_quality": {
+        "min": 0.41447,
+        "sliver_count": 0,
+        "sliver_fraction": 0.0,
+        "p1": 0.51781,
+        "p5": 0.6,
+        "median": 0.75595,
+        "poor_count": 0,
+        "poor_fraction": 0.0,
+        "elements": 9526,
+        "pass": true,
+        "note": "no sliver elements"
+      },
+      "mass_properties": {
+        "volume_mm3": 312000.0,
+        "mass_g": 386.88,
+        "centroid_mm": [
+          -3.942308,
+          2.051282,
+          52.435897
+        ],
+        "inertia_tensor_g_mm2": [
+          [
+            880196.512821,
+            -90362.615385,
+            -40109.230769
+          ],
+          [
+            -90362.615385,
+            934835.602564,
+            -43822.871795
+          ],
+          [
+            -40109.230769,
+            -43822.871795,
+            904503.294872
+          ]
+        ],
+        "elements": 9526
+      },
+      "density_kg_m3": 1240,
+      "inp": "tall_tripod/03_optimization/reanalysis/ccx_8mm\\tall_tripod_study_t40_h8.00.inp",
+      "frd": "tall_tripod/03_optimization/reanalysis/ccx_8mm\\tall_tripod_study_t40_h8.00.frd",
+      "stl_meshed": "tall_tripod/03_optimization/reanalysis/ccx_8mm\\tall_tripod_study_t40_h8.00_shell.stl",
+      "surface_refinement": {
+        "triangles_before": 1408,
+        "triangles_after": 5632,
+        "max_edge_before_mm": 14.142,
+        "max_edge_after_mm": 7.071,
+        "passes": 1,
+        "path": "tall_tripod/03_optimization/reanalysis/ccx_8mm\\tall_tripod_study_t40_h8.00_shell.stl"
+      },
+      "shell": {
+        "stl": "tall_tripod/03_optimization/reanalysis/tall_tripod_study_t40.stl",
+        "shell": {
+          "triangles": 1408,
+          "open_edges": 0,
+          "non_manifold_edges": 0,
+          "degenerate": 0,
+          "closed_shell": true
+        },
+        "repaired": false
+      },
+      "cases": [
+        {
+          "case": "LC1f  push 1.0 N horizontally at the camera mount",
+          "step": 1,
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "ground_all",
+                "mode": "volume",
+                "fix": "xyz",
+                "contact": "ground",
+                "plane_mm": 0.0,
+                "ground_tol_mm": 0.05,
+                "axis": "Z",
+                "nodes": 606,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 3000.0
+              }
+            ],
+            "loads": [
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  0.0,
+                  0.0,
+                  -3.44
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is spread over its volume nodes (consistent weights): the resultant is exact, the distribution is uniform over what the region selects"
+          },
+          "max_disp_mm": 0.00107,
+          "max_disp_components_mm": [
+            0.00056,
+            0.00081,
+            0.0005
+          ],
+          "max_disp_at_mm": [
+            10.0,
+            0.0,
+            140.0
+          ],
+          "von_mises_max_MPa": 0.0221,
+          "von_mises_p99_5_MPa": 0.0124,
+          "principal_max_MPa": 0.0108,
+          "principal_min_MPa": -0.0259,
+          "tresca_max_MPa": 0.0234,
+          "strain_energy_density_max_MPa": 0.0,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.00069,
+          "failure_index_p99_5": 0.00035,
+          "safety_factor_p99_5": 2896.655,
+          "worst_element_safety_factor": 1447.541,
+          "hotspot": {
+            "node": 5276,
+            "xyz_mm": [
+              10.0,
+              5.0,
+              132.5
+            ],
+            "failure_index": 0.0007
+          },
+          "applied_N": [
+            0.0,
+            1.0,
+            -3.44
+          ],
+          "reaction_total_N": [
+            -0.0,
+            -1.0,
+            3.44
+          ],
+          "reaction_moment_Nmm": [
+            134.949,
+            -10.9514,
+            -3.1835
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              -134.9491,
+              10.9514,
+              3.1836
+            ],
+            "reaction_Nmm": [
+              134.949,
+              -10.9514,
+              -3.1835
+            ],
+            "residual_Nmm": [
+              -3.5e-05,
+              1e-06,
+              8e-06
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 0.001916,
+          "equilibrium": {
+            "applied_N": [
+              0.0,
+              1.0,
+              -3.44
+            ],
+            "reaction_N": [
+              -0.0,
+              -1.0,
+              3.44
+            ],
+            "residual_N": [
+              -0.0,
+              0.0,
+              -0.0
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "buckling_factors": [
+            11863.0,
+            15461.01,
+            18772.0,
+            20978.41
+          ],
+          "buckling_factor_min": 11863.0,
+          "frequencies_hz": [
+            591.2364,
+            735.6314,
+            843.5331,
+            1004.853,
+            1070.843,
+            1139.285
+          ],
+          "pass": true
+        },
+        {
+          "case": "LC2   camera weight plus 5x vertical shock",
+          "step": 2,
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "ground_all",
+                "mode": "volume",
+                "fix": "xyz",
+                "contact": "ground",
+                "plane_mm": 0.0,
+                "ground_tol_mm": 0.05,
+                "axis": "Z",
+                "nodes": 606,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 3000.0
+              }
+            ],
+            "loads": [
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  0.0,
+                  0.0,
+                  -17.2
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is spread over its volume nodes (consistent weights): the resultant is exact, the distribution is uniform over what the region selects"
+          },
+          "max_disp_mm": 0.00382,
+          "max_disp_components_mm": [
+            0.00248,
+            0.00146,
+            0.00272
+          ],
+          "max_disp_at_mm": [
+            10.0,
+            0.0,
+            140.0
+          ],
+          "von_mises_max_MPa": 0.1002,
+          "von_mises_p99_5_MPa": 0.0587,
+          "principal_max_MPa": 0.0276,
+          "principal_min_MPa": -0.0976,
+          "tresca_max_MPa": 0.1042,
+          "strain_energy_density_max_MPa": 3e-06,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.00244,
+          "failure_index_p99_5": 0.00143,
+          "safety_factor_p99_5": 697.161,
+          "worst_element_safety_factor": 409.947,
+          "hotspot": {
+            "node": 1150,
+            "xyz_mm": [
+              10.0,
+              0.0,
+              130.0
+            ],
+            "failure_index": 0.0024
+          },
+          "applied_N": [
+            0.0,
+            0.0,
+            -17.2
+          ],
+          "reaction_total_N": [
+            -0.0,
+            0.0,
+            17.2
+          ],
+          "reaction_moment_Nmm": [
+            -5.4108,
+            -54.7571,
+            0.0
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              5.4108,
+              54.7571,
+              0.0
+            ],
+            "reaction_Nmm": [
+              -5.4108,
+              -54.7571,
+              0.0
+            ],
+            "residual_Nmm": [
+              -7.3e-05,
+              -6e-06,
+              1.1e-05
+            ],
+            "relative_error": 1e-06,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 0.03564,
+          "equilibrium": {
+            "applied_N": [
+              0.0,
+              0.0,
+              -17.2
+            ],
+            "reaction_N": [
+              0.0,
+              0.0,
+              17.2
+            ],
+            "residual_N": [
+              0.0,
+              0.0,
+              -0.0
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "buckling_factors": [
+            2437.765,
+            4261.113,
+            7263.468,
+            7917.672
+          ],
+          "buckling_factor_min": 2437.765,
+          "frequencies_hz": [
+            591.2364,
+            735.6314,
+            843.5331,
+            1004.853,
+            1070.843,
+            1139.285
+          ],
+          "pass": true
+        },
+        {
+          "case": "LC3n  lift by the head, north foot caught",
+          "step": 3,
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "catch_n",
+                "mode": "volume",
+                "fix": "xyz",
+                "contact": "ground",
+                "plane_mm": 0.0,
+                "ground_tol_mm": 0.05,
+                "axis": "Z",
+                "nodes": 96,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 350.0
+              }
+            ],
+            "loads": [
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  0.0,
+                  0.0,
+                  12.0
+                ]
+              },
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  4.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is spread over its volume nodes (consistent weights): the resultant is exact, the distribution is uniform over what the region selects"
+          },
+          "max_disp_mm": 0.01706,
+          "max_disp_components_mm": [
+            0.00835,
+            0.0135,
+            0.01607
+          ],
+          "max_disp_at_mm": [
+            -10.0,
+            -10.0,
+            140.0
+          ],
+          "von_mises_max_MPa": 0.2064,
+          "von_mises_p99_5_MPa": 0.1006,
+          "principal_max_MPa": 0.2505,
+          "principal_min_MPa": -0.2932,
+          "tresca_max_MPa": 0.2172,
+          "strain_energy_density_max_MPa": 1.8e-05,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.01019,
+          "failure_index_p99_5": 0.0035,
+          "safety_factor_p99_5": 285.309,
+          "worst_element_safety_factor": 98.144,
+          "hotspot": {
+            "node": 9944,
+            "xyz_mm": [
+              -15.0,
+              37.5,
+              0.0
+            ],
+            "failure_index": 0.0102
+          },
+          "applied_N": [
+            4.0,
+            0.0,
+            12.0
+          ],
+          "reaction_total_N": [
+            -4.0,
+            -1e-05,
+            -12.0
+          ],
+          "reaction_moment_Nmm": [
+            3.7749,
+            -505.9224,
+            -1.2582
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              -3.775,
+              505.9222,
+              1.2583
+            ],
+            "reaction_Nmm": [
+              3.7749,
+              -505.9224,
+              -1.2582
+            ],
+            "residual_Nmm": [
+              -3.5e-05,
+              -0.000184,
+              0.000168
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 0.102013,
+          "equilibrium": {
+            "applied_N": [
+              4.0,
+              0.0,
+              12.0
+            ],
+            "reaction_N": [
+              -4.0,
+              0.0,
+              -12.0
+            ],
+            "residual_N": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "buckling_factors": [
+            1292.084,
+            1679.699,
+            1879.281,
+            2364.907
+          ],
+          "buckling_factor_min": 1292.084,
+          "frequencies_hz": [
+            91.3931,
+            97.0125,
+            157.4839,
+            164.3142,
+            258.7819,
+            289.5895
+          ],
+          "pass": true
+        },
+        {
+          "case": "LC3sw lift by the head, south-west foot caught",
+          "step": 4,
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "catch_sw",
+                "mode": "volume",
+                "fix": "xyz",
+                "contact": "ground",
+                "plane_mm": 0.0,
+                "ground_tol_mm": 0.05,
+                "axis": "Z",
+                "nodes": 143,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 625.0
+              }
+            ],
+            "loads": [
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  0.0,
+                  0.0,
+                  12.0
+                ]
+              },
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  -3.46,
+                  -2.0,
+                  0.0
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is spread over its volume nodes (consistent weights): the resultant is exact, the distribution is uniform over what the region selects"
+          },
+          "max_disp_mm": 0.03109,
+          "max_disp_components_mm": [
+            0.02735,
+            0.00688,
+            0.02474
+          ],
+          "max_disp_at_mm": [
+            10.0,
+            2.5,
+            140.0
+          ],
+          "von_mises_max_MPa": 0.5495,
+          "von_mises_p99_5_MPa": 0.1781,
+          "principal_max_MPa": 0.5318,
+          "principal_min_MPa": -0.7321,
+          "tresca_max_MPa": 0.5609,
+          "strain_energy_density_max_MPa": 9.7e-05,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.01339,
+          "failure_index_p99_5": 0.00502,
+          "safety_factor_p99_5": 199.354,
+          "worst_element_safety_factor": 74.655,
+          "hotspot": {
+            "node": 4144,
+            "xyz_mm": [
+              -40.0,
+              -7.5,
+              0.0
+            ],
+            "failure_index": 0.0134
+          },
+          "applied_N": [
+            -3.46,
+            -2.0,
+            12.0
+          ],
+          "reaction_total_N": [
+            3.46,
+            1.99999,
+            -12.00001
+          ],
+          "reaction_moment_Nmm": [
+            -268.2874,
+            508.8704,
+            7.4559
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              268.2875,
+              -508.8706,
+              -7.4555
+            ],
+            "reaction_Nmm": [
+              -268.2874,
+              508.8704,
+              7.4559
+            ],
+            "residual_Nmm": [
+              9.5e-05,
+              -0.000142,
+              0.000377
+            ],
+            "relative_error": 1e-06,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 0.23417,
+          "equilibrium": {
+            "applied_N": [
+              -3.46,
+              -2.0,
+              12.0
+            ],
+            "reaction_N": [
+              3.46,
+              2.0,
+              -12.0
+            ],
+            "residual_N": [
+              -0.0,
+              -0.0,
+              0.0
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "buckling_factors": [
+            1012.4,
+            1528.786,
+            1746.435,
+            1880.585
+          ],
+          "buckling_factor_min": 1012.4,
+          "frequencies_hz": [
+            96.4782,
+            118.6908,
+            142.0484,
+            174.8594,
+            253.0762,
+            282.4109
+          ],
+          "pass": true
+        },
+        {
+          "case": "LC3se lift by the head, south-east foot caught",
+          "step": 5,
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "catch_se",
+                "mode": "volume",
+                "fix": "xyz",
+                "contact": "ground",
+                "plane_mm": 0.0,
+                "ground_tol_mm": 0.05,
+                "axis": "Z",
+                "nodes": 91,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 350.0
+              }
+            ],
+            "loads": [
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  0.0,
+                  0.0,
+                  12.0
+                ]
+              },
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  3.46,
+                  -2.0,
+                  0.0
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is spread over its volume nodes (consistent weights): the resultant is exact, the distribution is uniform over what the region selects"
+          },
+          "max_disp_mm": 0.04249,
+          "max_disp_components_mm": [
+            0.02786,
+            0.02716,
+            0.03374
+          ],
+          "max_disp_at_mm": [
+            -10.0,
+            10.0,
+            140.0
+          ],
+          "von_mises_max_MPa": 0.5135,
+          "von_mises_p99_5_MPa": 0.2397,
+          "principal_max_MPa": 0.619,
+          "principal_min_MPa": -0.6527,
+          "tresca_max_MPa": 0.5821,
+          "strain_energy_density_max_MPa": 9.1e-05,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.02072,
+          "failure_index_p99_5": 0.00742,
+          "safety_factor_p99_5": 134.722,
+          "worst_element_safety_factor": 48.253,
+          "hotspot": {
+            "node": 10166,
+            "xyz_mm": [
+              35.0,
+              -12.5,
+              0.0
+            ],
+            "failure_index": 0.0207
+          },
+          "applied_N": [
+            3.46,
+            -2.0,
+            12.0
+          ],
+          "reaction_total_N": [
+            -3.46001,
+            2.0,
+            -12.0
+          ],
+          "reaction_moment_Nmm": [
+            -268.2867,
+            -432.4643,
+            5.2782
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              268.2875,
+              432.4654,
+              -5.2787
+            ],
+            "reaction_Nmm": [
+              -268.2867,
+              -432.4643,
+              5.2782
+            ],
+            "residual_Nmm": [
+              0.000728,
+              0.0011,
+              -0.000433
+            ],
+            "relative_error": 3e-06,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 0.310764,
+          "equilibrium": {
+            "applied_N": [
+              3.46,
+              -2.0,
+              12.0
+            ],
+            "reaction_N": [
+              -3.46,
+              2.0,
+              -12.0
+            ],
+            "residual_N": [
+              0.0,
+              -0.0,
+              0.0
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "buckling_factors": [
+            512.0954,
+            592.269,
+            749.7037,
+            1120.67
+          ],
+          "buckling_factor_min": 512.0954,
+          "frequencies_hz": [
+            84.4705,
+            108.4847,
+            182.6992,
+            209.7917,
+            274.2796,
+            384.9187
+          ],
+          "pass": true
+        },
+        {
+          "case": "LC4t  twist the head about the vertical axis",
+          "step": 6,
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "ground_all",
+                "mode": "volume",
+                "fix": "xyz",
+                "contact": "ground",
+                "plane_mm": 0.0,
+                "ground_tol_mm": 0.05,
+                "axis": "Z",
+                "nodes": 606,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 3000.0
+              }
+            ],
+            "loads": [
+              {
+                "region": "head_plus_x",
+                "mode": "volume",
+                "nodes": 105,
+                "loaded_nodes": 55,
+                "split": "consistent body force over 16 fully selected elements",
+                "force_N": [
+                  0.0,
+                  3.0,
+                  0.0
+                ]
+              },
+              {
+                "region": "head_minus_x",
+                "mode": "volume",
+                "nodes": 68,
+                "loaded_nodes": 68,
+                "split": "equal split over 68 nodes (no element lies fully inside the region, so the consistent weights are empty)",
+                "force_N": [
+                  0.0,
+                  -3.0,
+                  0.0
+                ]
+              },
+              {
+                "region": "mount_head",
+                "mode": "volume",
+                "nodes": 186,
+                "loaded_nodes": 94,
+                "split": "consistent body force over 31 fully selected elements",
+                "force_N": [
+                  0.0,
+                  0.0,
+                  -3.44
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is spread over its volume nodes (consistent weights): the resultant is exact, the distribution is uniform over what the region selects"
+          },
+          "max_disp_mm": 0.00115,
+          "max_disp_components_mm": [
+            0.00089,
+            0.00074,
+            0.00049
+          ],
+          "max_disp_at_mm": [
+            -10.0,
+            -10.0,
+            140.0
+          ],
+          "von_mises_max_MPa": 0.0438,
+          "von_mises_p99_5_MPa": 0.0225,
+          "principal_max_MPa": 0.0288,
+          "principal_min_MPa": -0.0468,
+          "tresca_max_MPa": 0.047,
+          "strain_energy_density_max_MPa": 1e-06,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.00156,
+          "failure_index_p99_5": 0.00065,
+          "safety_factor_p99_5": 1535.52,
+          "worst_element_safety_factor": 639.138,
+          "hotspot": {
+            "node": 1178,
+            "xyz_mm": [
+              10.0,
+              5.0,
+              130.0
+            ],
+            "failure_index": 0.0016
+          },
+          "applied_N": [
+            0.0,
+            0.0,
+            -3.44
+          ],
+          "reaction_total_N": [
+            0.0,
+            -0.0,
+            3.44
+          ],
+          "reaction_moment_Nmm": [
+            -1.2938,
+            -10.9514,
+            -36.6562
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              1.2938,
+              10.9514,
+              36.6562
+            ],
+            "reaction_Nmm": [
+              -1.2938,
+              -10.9514,
+              -36.6562
+            ],
+            "residual_Nmm": [
+              7e-06,
+              6e-06,
+              -3e-06
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 0.003359,
+          "equilibrium": {
+            "applied_N": [
+              0.0,
+              0.0,
+              -3.44
+            ],
+            "reaction_N": [
+              0.0,
+              -0.0,
+              3.44
+            ],
+            "residual_N": [
+              0.0,
+              -0.0,
+              -0.0
+            ],
+            "relative_error": 0.0,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "buckling_factors": [
+            12251.96,
+            17979.65,
+            20459.68,
+            28114.26
+          ],
+          "buckling_factor_min": 12251.96,
+          "frequencies_hz": [
+            591.2364,
+            735.6314,
+            843.5331,
+            1004.853,
+            1070.843,
+            1139.285
+          ],
+          "pass": true
+        }
+      ],
+      "frequencies_hz": [
+        {
+          "inp": "tall_tripod/03_optimization/reanalysis/ccx_8mm\\tall_tripod_study_t40_h8.00_freq_1.inp",
+          "frequencies_hz": [
+            591.2364,
+            735.6314,
+            843.5331,
+            1004.853,
+            1070.843,
+            1139.285
+          ],
+          "cases": [
+            "LC1f  push 1.0 N horizontally at the camera mount",
+            "LC2   camera weight plus 5x vertical shock",
+            "LC4t  twist the head about the vertical axis"
+          ]
+        },
+        {
+          "inp": "tall_tripod/03_optimization/reanalysis/ccx_8mm\\tall_tripod_study_t40_h8.00_freq_2.inp",
+          "frequencies_hz": [
+            91.3931,
+            97.0125,
+            157.4839,
+            164.3142,
+            258.7819,
+            289.5895
+          ],
+          "cases": [
+            "LC3n  lift by the head, north foot caught"
+          ]
+        },
+        {
+          "inp": "tall_tripod/03_optimization/reanalysis/ccx_8mm\\tall_tripod_study_t40_h8.00_freq_3.inp",
+          "frequencies_hz": [
+            84.4705,
+            108.4847,
+            182.6992,
+            209.7917,
+            274.2796,
+            384.9187
+          ],
+          "cases": [
+            "LC3se lift by the head, south-east foot caught"
+          ]
+        },
+        {
+          "inp": "tall_tripod/03_optimization/reanalysis/ccx_8mm\\tall_tripod_study_t40_h8.00_freq_4.inp",
+          "frequencies_hz": [
+            96.4782,
+            118.6908,
+            142.0484,
+            174.8594,
+            253.0762,
+            282.4109
+          ],
+          "cases": [
+            "LC3sw lift by the head, south-west foot caught"
+          ]
+        }
+      ],
+      "governing_case": "LC3se lift by the head, south-east foot caught",
+      "safety_factor_p99_5": 134.722,
+      "worst_element_safety_factor": 48.253,
+      "hotspot": {
+        "node": 10166,
+        "xyz_mm": [
+          35.0,
+          -12.5,
+          0.0
+        ],
+        "failure_index": 0.0207
+      },
+      "failure_criterion": "max_stress_material_axes",
+      "von_mises_p99_5_MPa": 0.2397,
+      "required_safety_factor": 1.5,
+      "load_class": "abnormal",
+      "p99_5_stress_MPa": 0.2397,
+      "hotspot_xyz_mm": [
+        35.0,
+        -12.5,
+        0.0
+      ],
+      "max_disp_mm": 0.04249,
+      "von_mises_max_MPa": 0.5495,
+      "max_stress_MPa": 0.5495,
+      "equilibrium": {
+        "applied_N": [
+          0.0,
+          1.0,
+          -3.44
+        ],
+        "reaction_N": [
+          -0.0,
+          -1.0,
+          3.44
+        ],
+        "residual_N": [
+          -0.0,
+          0.0,
+          -0.0
+        ],
+        "relative_error": 0.0,
+        "pass": true,
+        "required": "<= 1 % of the applied load"
+      },
+      "buckling_factor_min": 512.0954,
+      "pass": true
+    }
+  ],
+  "vs_voxel_fea_cases": {
+    "cases": [
+      {
+        "case": "LC1f  push 1.0 N horizontally at the camera mount",
+        "voxel_case": "LC1f  push 1.0 N horizontally at the camera mount",
+        "voxel_max_disp_mm": 0.0007437908596005791,
+        "ccx_max_disp_mm": 0.00107,
+        "voxel_safety_factor_p99_5": 3509.6973404748574,
+        "voxel_min_safety_factor": 3131.6009804284686,
+        "ccx_safety_factor_p99_5": 2896.655,
+        "ccx_worst_element_safety_factor": 1447.541,
+        "ratio_ccx_over_voxel": 1.43858,
+        "relative_difference": 0.30487,
+        "pass": false
+      },
+      {
+        "case": "LC2   camera weight plus 5x vertical shock",
+        "voxel_case": "LC2   camera weight plus 5x vertical shock",
+        "voxel_max_disp_mm": 0.002319333854765982,
+        "ccx_max_disp_mm": 0.00382,
+        "voxel_safety_factor_p99_5": 773.049368322264,
+        "voxel_min_safety_factor": 765.7928872831075,
+        "ccx_safety_factor_p99_5": 697.161,
+        "ccx_worst_element_safety_factor": 409.947,
+        "ratio_ccx_over_voxel": 1.64702,
+        "relative_difference": 0.39284,
+        "pass": false
+      },
+      {
+        "case": "LC3n  lift by the head, north foot caught",
+        "voxel_case": "LC3n  lift by the head, north foot caught",
+        "voxel_max_disp_mm": 0.01570724951350262,
+        "ccx_max_disp_mm": 0.01706,
+        "voxel_safety_factor_p99_5": 148.51230580192535,
+        "voxel_min_safety_factor": 133.20116525638812,
+        "ccx_safety_factor_p99_5": 285.309,
+        "ccx_worst_element_safety_factor": 98.144,
+        "ratio_ccx_over_voxel": 1.08612,
+        "relative_difference": 0.07929,
+        "pass": true
+      },
+      {
+        "case": "LC3se lift by the head, south-east foot caught",
+        "voxel_case": "LC3se lift by the head, south-east foot caught",
+        "voxel_max_disp_mm": 0.0314702901532969,
+        "ccx_max_disp_mm": 0.04249,
+        "voxel_safety_factor_p99_5": 81.35291614889063,
+        "voxel_min_safety_factor": 76.27801752643732,
+        "ccx_safety_factor_p99_5": 134.722,
+        "ccx_worst_element_safety_factor": 48.253,
+        "ratio_ccx_over_voxel": 1.35016,
+        "relative_difference": 0.25935,
+        "pass": false
+      },
+      {
+        "case": "LC3sw lift by the head, south-west foot caught",
+        "voxel_case": "LC3sw lift by the head, south-west foot caught",
+        "voxel_max_disp_mm": 0.021747972609348316,
+        "ccx_max_disp_mm": 0.03109,
+        "voxel_safety_factor_p99_5": 135.287174184776,
+        "voxel_min_safety_factor": 115.41603132367413,
+        "ccx_safety_factor_p99_5": 199.354,
+        "ccx_worst_element_safety_factor": 74.655,
+        "ratio_ccx_over_voxel": 1.42956,
+        "relative_difference": 0.30048,
+        "pass": false
+      },
+      {
+        "case": "LC4t  twist the head about the vertical axis",
+        "voxel_case": "LC4t  twist the head about the vertical axis",
+        "voxel_max_disp_mm": 0.000742453269393677,
+        "ccx_max_disp_mm": 0.00115,
+        "voxel_safety_factor_p99_5": 1932.6366172481305,
+        "voxel_min_safety_factor": 1779.793825486987,
+        "ccx_safety_factor_p99_5": 1535.52,
+        "ccx_worst_element_safety_factor": 639.138,
+        "ratio_ccx_over_voxel": 1.54892,
+        "relative_difference": 0.35439,
+        "pass": false
+      }
+    ],
+    "pass": false,
+    "within": 1,
+    "total": 6,
+    "tolerance": 0.15,
+    "unmatched_voxel": [],
+    "unmatched_ccx": [],
+    "note": "5 of 6 cases disagree by more than 15 %; identify whether the mesh, the boundary conditions or the material is responsible before using either number",
+    "voxel_fea": "tall_tripod/03_optimization/reanalysis/tall_tripod_fea.json"
+  }
+}

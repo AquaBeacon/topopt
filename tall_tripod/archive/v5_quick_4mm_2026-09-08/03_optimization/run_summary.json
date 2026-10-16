@@ -1,0 +1,48 @@
+{
+  "schema": "topopt/run/1",
+  "study": "tall_tripod/tall_tripod_study.json",
+  "outdir": "tall_tripod\\03_optimization",
+  "model_dir": "tall_tripod",
+  "quick": true,
+  "seconds": 4.2,
+  "stages": [
+    {
+      "stage": "print",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": "wrote printcheck.json (threshold 0.40)",
+      "seconds": 0.6
+    },
+    {
+      "stage": "report",
+      "exit_code": 1,
+      "error": null,
+      "skipped": null,
+      "note": null,
+      "seconds": 2.4
+    },
+    {
+      "stage": "assumptions",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": "wrote tall_tripod\\01_assumptions\\assumptions.md",
+      "seconds": 0.5
+    },
+    {
+      "stage": "publish",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": "wrote tall_tripod\\04_print\\PRINT.md",
+      "seconds": 0.7
+    }
+  ],
+  "stopped_at": null,
+  "valid_through": [
+    "print",
+    "assumptions",
+    "publish"
+  ]
+}

@@ -1,0 +1,147 @@
+grid 84 x 84 x 54 at 3.000 mm (origin [-126.0, -126.0, -6.0])
+
+runtime  80 iterations x 6 case(s) ~ 21 min  (range 10 min - 31 min; one cold solve of case 1 took 2.6 s on 246176 elements [cuda/mg])
+
+--- setup ---
+  voxel               3.000 mm, grid [84, 84, 54]
+  design space        6646752 mm3
+  preserve            17064 mm3 in 1 bodies
+  obstacle            30780 mm3 declared -> 30780 mm3 with clearance
+  free (optimisable)  6598908 mm3 (244404 cells)
+  build volume        250x250x250 on Bambu Lab X1-Carbon -- design space 240x240x147, fits
+  free to decide      99 % of the domain; preserve is 6 % of the expected part
+    preserve   mount_head                17064 mm3  stl:tall_preserve.stl
+    design_space design_space            6646752 mm3  stl:tall_design_space.stl
+    obstacle   camera_swing_and_screw_access    30780 mm3  stl:tall_obstacle.stl
+  WARN  load region 'mount_head' in case 'LC1f  push 1.0 N horizontally at the camera mount' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC1f  push 1.0 N horizontally at the camera mount' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC2   camera weight plus 5x vertical shock' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3n  lift by the head, north foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3n  lift by the head, north foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3sw lift by the head, south-west foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3sw lift by the head, south-west foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3se lift by the head, south-east foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3se lift by the head, south-east foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'head_plus_x' in case 'LC4t  twist the head about the vertical axis' reaches 27 % (864.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 73 % only.
+  WARN  load region 'head_minus_x' in case 'LC4t  twist the head about the vertical axis' reaches 36 % (864.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 64 % only.
+  WARN  load region 'mount_head' in case 'LC4t  twist the head about the vertical axis' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  the free region is only 2.0 voxels (6.00 mm) thick at its thinnest. Below about 3 voxels there is no room for a hole, so the topology there is set by the outline rather than chosen -- refine the grid or widen the design space.
+  WARN  4 support(s) use ground contact, so the feet are not placed by the CAD. What the study still chooses is the 4 zone(s) to look in (ground_all at [0.0, 0.0, 1.5]; catch_n at [0.0, 80.0, 1.5]; catch_sw at [-69.0, -40.3, 1.5]; catch_se at [69.0, -40.3, 1.5]). If a partial-support case appears at only one azimuth, check the result actually stands up -- a glued contact cannot tip, so nothing in the objective asks for a wide stance.
+  => setup OK
+
+wrote C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\tall_tripod\archive\v4_3mm_selfsupport_2026-09-05
+  look at C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\tall_tripod\archive\v4_3mm_selfsupport_2026-09-05\tall_tripod_study_setup.png
+  look at C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\tall_tripod\archive\v4_3mm_selfsupport_2026-09-05\tall_tripod_study_setup.scad
+
+NEXT: topopt opt tall_tripod/tall_tripod_study.json --out DIR
+[setup  ] ok       
+grid 84 x 84 x 54 at 3.000 mm (origin [-126.0, -126.0, -6.0])
+
+--- setup ---
+  voxel               3.000 mm, grid [84, 84, 54]
+  design space        6646752 mm3
+  preserve            17064 mm3 in 1 bodies
+  obstacle            30780 mm3 declared -> 30780 mm3 with clearance
+  free (optimisable)  6598908 mm3 (244404 cells)
+  build volume        250x250x250 on Bambu Lab X1-Carbon -- design space 240x240x147, fits
+  free to decide      99 % of the domain; preserve is 6 % of the expected part
+    preserve   mount_head                17064 mm3  stl:tall_preserve.stl
+    design_space design_space            6646752 mm3  stl:tall_design_space.stl
+    obstacle   camera_swing_and_screw_access    30780 mm3  stl:tall_obstacle.stl
+  WARN  load region 'mount_head' in case 'LC1f  push 1.0 N horizontally at the camera mount' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC1f  push 1.0 N horizontally at the camera mount' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC2   camera weight plus 5x vertical shock' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3n  lift by the head, north foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3n  lift by the head, north foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3sw lift by the head, south-west foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3sw lift by the head, south-west foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3se lift by the head, south-east foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'mount_head' in case 'LC3se lift by the head, south-east foot caught' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  load region 'head_plus_x' in case 'LC4t  twist the head about the vertical axis' reaches 27 % (864.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 73 % only.
+  WARN  load region 'head_minus_x' in case 'LC4t  twist the head about the vertical axis' reaches 36 % (864.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 64 % only.
+  WARN  load region 'mount_head' in case 'LC4t  twist the head about the vertical axis' reaches 30 % (1728.0 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.
+  WARN  the free region is only 2.0 voxels (6.00 mm) thick at its thinnest. Below about 3 voxels there is no room for a hole, so the topology there is set by the outline rather than chosen -- refine the grid or widen the design space.
+  WARN  4 support(s) use ground contact, so the feet are not placed by the CAD. What the study still chooses is the 4 zone(s) to look in (ground_all at [0.0, 0.0, 1.5]; catch_n at [0.0, 80.0, 1.5]; catch_sw at [-69.0, -40.3, 1.5]; catch_se at [69.0, -40.3, 1.5]). If a partial-support case appears at only one azimuth, check the result actually stands up -- a glued contact cannot tip, so nothing in the objective asks for a wide stance.
+  => setup OK
+
+domain 246176 voxels (244404 free, 632 preserve, 1140 obstacle) at 3.000 mm
+volfrac 0.040 of the free cells, filter 20.00 mm, 6 load case(s), self-supporting along +Z (45 deg)
+ iter  penal  beta   objective       vol      grey    dshape
+    1   1.00   1.0      6.0000     0.033    0.1265    1.0000
+    6   1.00   1.0      2.2126     0.040    0.1342    0.0007
+   11   1.00   1.0      2.1481     0.040    0.1294    0.0002
+   16   1.00   1.0      2.1336     0.040    0.1277    0.0002
+   21   1.50   1.0      4.7992     0.040    0.1254    0.0007
+   26   1.50   1.0      4.3864     0.040    0.1188    0.0008
+   31   1.50   2.0      5.0949     0.034    0.0970    0.0003
+   36   1.50   2.0      3.9621     0.040    0.1079    0.0003
+   41   2.00   2.0      6.4105     0.040    0.1043    0.0006
+   46   2.00   2.0      6.1903     0.040    0.1016    0.0003
+   51   2.00   2.0      6.0893     0.040    0.1002    0.0002
+   56   2.50   2.0      9.1061     0.040    0.0994    0.0010
+   61   2.50   4.0     11.2954     0.032    0.0703    0.0003
+   66   2.50   4.0      6.5877     0.040    0.0796    0.0010
+   71   2.50   4.0      6.5224     0.040    0.0792    0.0002
+   76   3.00   4.0      8.2482     0.040    0.0785    0.0003
+   81   3.00   4.0      8.1660     0.040    0.0778    0.0002
+   86   3.00   4.0      8.1112     0.040    0.0773    0.0001
+   91   3.00   8.0      6.6231     0.034    0.0443    0.0001
+   96   3.00   8.0      4.9830     0.040    0.0467    0.0004
+  101   3.00   8.0      4.9145     0.040    0.0468    0.0002
+  106   3.00   8.0      4.8836     0.040    0.0467    0.0001
+  111   3.00   8.0      4.8641     0.040    0.0465    0.0001
+  116   3.00   8.0      4.8492     0.040    0.0464    0.0001
+  121   3.00  16.0      3.8311     0.039    0.0236    0.0001
+  126   3.00  16.0      3.6758     0.040    0.0238    0.0010
+  131   3.00  16.0      3.6713     0.040    0.0242    0.0019
+  136   3.00  16.0      3.6621     0.040    0.0242    0.0020
+  141   3.00  16.0      3.6566     0.040    0.0244    0.0022
+  146   3.00  16.0      3.6468     0.040    0.0243    0.0022
+  150   3.00  16.0      3.6415     0.040    0.0244    0.0022
+
+final FEA on the thresholded solid geometry:
+  LC1f  push 1.0 N horizontally at the camera  SF(p99.5) 4638.72   max 0.001 mm   compliance 0.001 N*mm
+  LC2   camera weight plus 5x vertical shock   SF(p99.5) 1039.18   max 0.002 mm   compliance 0.024 N*mm
+  LC3n  lift by the head, north foot caught    SF(p99.5) 280.72   max 0.016 mm   compliance 0.096 N*mm
+  LC3sw lift by the head, south-west foot caug SF(p99.5) 202.64   max 0.026 mm   compliance 0.189 N*mm
+  LC3se lift by the head, south-east foot caug SF(p99.5) 193.42   max 0.027 mm   compliance 0.194 N*mm
+  LC4t  twist the head about the vertical axis SF(p99.5) 2243.30   max 0.001 mm   compliance 0.002 N*mm
+
+--- result ---
+  final volume        280665 mm3  (preserve 17064 mm3)
+  volume fraction     0.040 of the free cells / 0.042 of the domain
+  self-support        0 voxel(s) / 0 mm2 with nothing in the 45 deg cone below (build axis +Z; constraint on)
+  optimised members   min 8.48 mm, p5 13.42 mm, median 16.97 mm (asked for >= 20.00 mm)
+  whole part          min 6.00 mm, median 16.97 mm (includes preserve, which filter_mm does not govern)
+  connectivity        OK -- 1 component(s), 1 preserve body(ies), 0.0 mm3 of islands dropped
+  STEP                3429 planar faces (from 7916 voxel faces), 0 open / 6 non-manifold edge(s)
+                      (voxels touching only along an edge -- four faces meet there; kernels sew it, some flag it)
+  worst case          'LC3se lift by the head, south-east foot caught'  SF(p99.5) 193.42, max 0.027 mm
+
+wrote C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\tall_tripod\archive\v4_3mm_selfsupport_2026-09-05 (3343.1 s)
+
+NEXT: this is a load-path map, not a part. Rebuild it as parametric OpenSCAD from cubes/cylinders (a starting sketch is in *_members.scad), keeping every preserve interface exactly, then:
+  topopt compare C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\tall_tripod\archive\v4_3mm_selfsupport_2026-09-05 <rebuild>.stl --study tall_tripod/tall_tripod_study.json
+  (the grid origin is read from the summary; no --origin needed)
+[opt    ] ok       
+grid 84 x 84 x 54 at 3.000 mm (origin [-126.0, -126.0, -6.0])
+
+density field tall_tripod_study at 3.0000 mm voxel, 84x84x54
+thresholds: 0.40, 0.50, 0.60
+[extract] ERROR    TypeError: final_geometry() got an unexpected keyword argument 'study'
+[ccx    ] SKIPPED  gmsh and calculix not installed on this machine -- the independent re-analysis was not run, and the report lists its checks as UNKNOWN
+wrote C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\tall_tripod\archive\v4_3mm_selfsupport_2026-09-05\report.md
+verdict: FAIL  (1 fail, 6 unknown, 8 pass)
+  FAIL     The density field converged (not merely out of iterations) -- termination: max_iterations
+  UNKNOWN  Safety factor meets the requirement on every case
+  UNKNOWN  Load/reaction balance within 1 %
+  UNKNOWN  Final shape is watertight
+  UNKNOWN  Minimum wall thickness is met
+  UNKNOWN  No support lands on a mating (preserve) face
+  UNKNOWN  No support inside a sealed cavity
+[report ] exit 1   
+
+valid through: setup -> opt
+STOPPED at 'extract'. Stages after it were not run and their checks are UNKNOWN, not passing.
+skipped: ccx
+C:\Users\ryupc\WorkSpace\Mitou26\TO_printing\tall_tripod\archive\v4_3mm_selfsupport_2026-09-05\report.md (3375 s)

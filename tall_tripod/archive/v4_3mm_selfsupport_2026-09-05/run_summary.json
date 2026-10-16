@@ -1,0 +1,48 @@
+{
+  "schema": "topopt/run/1",
+  "study": "tall_tripod/tall_tripod_study.json",
+  "outdir": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\archive\\v4_3mm_selfsupport_2026-09-05",
+  "model_dir": null,
+  "stages": [
+    {
+      "stage": "setup",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": null
+    },
+    {
+      "stage": "opt",
+      "exit_code": 0,
+      "error": null,
+      "skipped": null,
+      "note": null
+    },
+    {
+      "stage": "extract",
+      "exit_code": null,
+      "error": "TypeError: final_geometry() got an unexpected keyword argument 'study'",
+      "skipped": null,
+      "note": null
+    },
+    {
+      "stage": "ccx",
+      "exit_code": null,
+      "error": null,
+      "skipped": true,
+      "note": "gmsh and calculix not installed on this machine -- the independent re-analysis was not run, and the report lists its checks as UNKNOWN"
+    },
+    {
+      "stage": "report",
+      "exit_code": 1,
+      "error": null,
+      "skipped": null,
+      "note": null
+    }
+  ],
+  "stopped_at": "extract",
+  "valid_through": [
+    "setup",
+    "opt"
+  ]
+}

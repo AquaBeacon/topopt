@@ -1,0 +1,96 @@
+voxelised tall_tripod_study_t40.stl: 19968 solid voxels at 2.500 mm (0.1 s)
+
+--- case: LC1f  push 1.0 N horizontally at the camera mount ---
+  applied load        3.58 N [0.0, 1.0, -3.44]
+  max deflection      0.001 mm at [10.0, 10.0, 140.0]
+  von Mises           max 0.03 MPa / p99.5 0.01 MPa
+  safety factor       1636.82 (worst) / 3582.31 (p99.5)   [need >= 3.00, normal load]
+  [PASS] strength         safety factor >= 3.00 -> 1636.82 (worst element) / 3582.31 (p99.5)
+  [PASS] stiffness        max deflection <= 3.000 mm -> 0.001 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 10.00 mm) / 5.7 (typical 14.14 mm)
+  hotspots (worst first):
+    at [28.75, 88.75, 21.25]  SF 1636.82
+    at [6.25, 8.75, 131.25]   SF 1833.72
+    at [-6.25, 8.75, 131.25]  SF 1941.34
+    at [21.25, 91.25, 28.75]  SF 2252.54
+    at [6.25, 28.75, 101.25]  SF 2582.41
+
+--- case: LC2   camera weight plus 5x vertical shock ---
+  applied load        17.20 N [0.0, 0.0, -17.2]
+  max deflection      0.002 mm at [10.0, -10.0, 140.0]
+  von Mises           max 0.07 MPa / p99.5 0.04 MPa
+  safety factor       497.01 (worst) / 981.01 (p99.5)   [need >= 3.00, normal load]
+  [PASS] strength         safety factor >= 3.00 -> 497.01 (worst element) / 981.01 (p99.5)
+  [PASS] stiffness        max deflection <= 3.000 mm -> 0.002 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 10.00 mm) / 5.7 (typical 14.14 mm)
+  hotspots (worst first):
+    at [8.75, -8.75, 131.25]  SF 497.01
+    at [8.75, 8.75, 131.25]   SF 503.72
+    at [-8.75, 8.75, 131.25]  SF 513.94
+    at [-8.75, -8.75, 131.25] SF 524.81
+    at [-41.25, -21.25, 58.75] SF 531.2
+
+--- case: LC3n  lift by the head, north foot caught ---
+  applied load        12.65 N [4.0, 0.0, 12.0]
+  max deflection      0.019 mm at [-10.0, -10.0, 140.0]
+  von Mises           max 0.35 MPa / p99.5 0.12 MPa
+  safety factor       69.29 (worst) / 233.17 (p99.5)   [need >= 1.50, abnormal load]
+  [PASS] strength         safety factor >= 1.50 -> 69.29 (worst element) / 233.17 (p99.5)
+  [PASS] stiffness        max deflection <= 3.000 mm -> 0.019 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 10.00 mm) / 5.7 (typical 14.14 mm)
+  hotspots (worst first):
+    at [-26.25, 41.25, 1.25]  SF 69.29
+    at [-11.25, 33.75, 1.25]  SF 83.8
+    at [28.75, 88.75, 21.25]  SF 126.46
+    at [-1.25, 38.75, 58.75]  SF 161.22
+    at [-18.75, 21.25, 41.25] SF 163.23
+
+--- case: LC3sw lift by the head, south-west foot caught ---
+  applied load        12.65 N [-3.46, -2.0, 12.0]
+  max deflection      0.028 mm at [10.0, 10.0, 140.0]
+  von Mises           max 0.71 MPa / p99.5 0.20 MPa
+  safety factor       40.43 (worst) / 179.42 (p99.5)   [need >= 1.50, abnormal load]
+  [PASS] strength         safety factor >= 1.50 -> 40.43 (worst element) / 179.42 (p99.5)
+  [PASS] stiffness        max deflection <= 3.000 mm -> 0.028 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 10.00 mm) / 5.7 (typical 14.14 mm)
+  NOTE  max/p99.5 stress ratio is 3.5 -- the peak is probably a stair-step or clamp artefact. Check the hotspot list before trusting it.
+  hotspots (worst first):
+    at [-28.75, -13.75, 1.25] SF 40.43
+    at [-36.25, -6.25, 1.25]  SF 56.78
+    at [-48.75, -28.75, 61.25] SF 65.62
+    at [-23.75, -26.25, 1.25] SF 72.69
+    at [-38.75, -18.75, 61.25] SF 80.67
+
+--- case: LC3se lift by the head, south-east foot caught ---
+  applied load        12.65 N [3.46, -2.0, 12.0]
+  max deflection      0.042 mm at [-10.0, 10.0, 140.0]
+  von Mises           max 0.81 MPa / p99.5 0.29 MPa
+  safety factor       25.59 (worst) / 119.77 (p99.5)   [need >= 1.50, abnormal load]
+  [PASS] strength         safety factor >= 1.50 -> 25.59 (worst element) / 119.77 (p99.5)
+  [PASS] stiffness        max deflection <= 3.000 mm -> 0.042 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 10.00 mm) / 5.7 (typical 14.14 mm)
+  hotspots (worst first):
+    at [28.75, -13.75, 1.25]  SF 25.59
+    at [36.25, -6.25, 1.25]   SF 38.29
+    at [23.75, -26.25, 1.25]  SF 50.76
+    at [48.75, -28.75, 51.25] SF 61.51
+    at [28.75, -18.75, 58.75] SF 63.07
+
+--- case: LC4t  twist the head about the vertical axis ---
+  applied load        3.44 N [0.0, 0.0, -3.44]
+  max deflection      0.001 mm at [-10.0, -10.0, 140.0]
+  von Mises           max 0.04 MPa / p99.5 0.02 MPa
+  safety factor       1145.24 (worst) / 1999.11 (p99.5)   [need >= 3.00, normal load]
+  [PASS] strength         safety factor >= 3.00 -> 1145.24 (worst element) / 1999.11 (p99.5)
+  [PASS] stiffness        max deflection <= 3.000 mm -> 0.001 mm
+  [PASS] mesh resolution  >= 3 elements across the thinnest section -> 4.0 (thin 10.00 mm) / 5.7 (typical 14.14 mm)
+  hotspots (worst first):
+    at [8.75, 8.75, 131.25]   SF 1145.24
+    at [-8.75, -8.75, 131.25] SF 1163.95
+    at [3.75, -8.75, 131.25]  SF 1288.98
+    at [-8.75, 6.25, 131.25]  SF 1295.45
+    at [8.75, -1.25, 126.25]  SF 1573.59
+
+wrote tall_tripod/03_optimization/reanalysis/fea_2p5mm
+
+=== PASS ===

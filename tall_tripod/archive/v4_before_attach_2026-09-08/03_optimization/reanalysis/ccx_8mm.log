@@ -1,0 +1,25 @@
+
+mesh target 8.00 mm
+  shell refined to 8.00 mm edges: 1408 -> 5632 triangles
+  mesh tall_tripod_study_t40_h8.00_mesh.inp: 18616 nodes, 9526 elements at 8.00 mm
+  LC1f  push 1.0 N horizontally at the c normal   req 3.00  p99.5 2896.655  worst 1447.541  max   0.0011 mm  PASS
+  LC2   camera weight plus 5x vertical s normal   req 3.00  p99.5 697.161  worst 409.947  max   0.0038 mm  PASS
+  LC3n  lift by the head, north foot cau abnormal req 1.50  p99.5 285.309  worst  98.144  max   0.0171 mm  PASS
+  LC3sw lift by the head, south-west foo abnormal req 1.50  p99.5 199.354  worst  74.655  max   0.0311 mm  PASS
+  LC3se lift by the head, south-east foo abnormal req 1.50  p99.5 134.722  worst  48.253  max   0.0425 mm  PASS
+  LC4t  twist the head about the vertica normal   req 3.00  p99.5 1535.520  worst 639.138  max   0.0011 mm  PASS
+
+wrote tall_tripod/03_optimization/reanalysis/ccx_8mm\ccx_summary.json
+  8.00 mm: PASS  SF 134.722  max 0.04249 mm  mass 386.88 g
+    modes of {LC1f  push 1.0 N hor, LC2   camera weight , LC4t  twist the head}: 591.2 Hz, 735.6 Hz, 843.5 Hz
+    modes of {LC3n  lift by the he}: 91.4 Hz, 97.0 Hz, 157.5 Hz
+    modes of {LC3se lift by the he}: 84.5 Hz, 108.5 Hz, 182.7 Hz
+    modes of {LC3sw lift by the he}: 96.5 Hz, 118.7 Hz, 142.0 Hz
+    lowest buckling factor: 512.095
+  vs voxel FEA, case by case: 1 of 6 within 15 %
+    LC1f  push 1.0 N horizontally at the c voxel   0.0007  ccx   0.0011  DIFFERS
+    LC2   camera weight plus 5x vertical s voxel   0.0023  ccx   0.0038  DIFFERS
+    LC3n  lift by the head, north foot cau voxel   0.0157  ccx   0.0171  ok
+    LC3se lift by the head, south-east foo voxel   0.0315  ccx   0.0425  DIFFERS
+    LC3sw lift by the head, south-west foo voxel   0.0217  ccx   0.0311  DIFFERS
+    LC4t  twist the head about the vertica voxel   0.0007  ccx   0.0011  DIFFERS

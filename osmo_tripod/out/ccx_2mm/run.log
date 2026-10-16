@@ -1,0 +1,29 @@
+  shell repaired: 2052 -> 2048 triangles, volume 39790.1 -> 39790.1 mm3 (osmo_tripod_repaired.stl)
+
+mesh target 2.00 mm
+  mesh osmo_tripod_repaired_h2.00_mesh.inp: 16728 nodes, 10880 elements at 2.00 mm
+  LC1 push 30N at camera top z=88, feet  normal   req 3.00  p99.5   6.273  worst   0.399  max   0.0466 mm  FAIL
+      - the worst element is at 0.399, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+  LC2 bag crush 150N straight down on th normal   req 3.00  p99.5  22.637  worst  13.344  max   0.0659 mm  PASS
+  LC3h bag press 150N on one leg tip, bo abnormal req 1.50  p99.5   7.842  worst   1.878  max   0.4902 mm  PASS
+  LC3x worst leverage 150N on one leg ti abnormal req 1.50  p99.5   2.478  worst   0.720  max   4.8595 mm  FAIL
+      - the worst element is at 0.720, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+  LC3b 150N sideways on one leg tip, oth abnormal req 1.50  p99.5  12.290  worst   3.774  max   0.3591 mm  PASS
+  LC5tip DROP 100g: land on one foot, ca abnormal req 1.50  p99.5   0.964  worst   0.052  max  27.3866 mm  FAIL
+      - safety factor p99.5 0.964 is below the required 1.50
+      - the worst element is at 0.052, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails
+
+wrote osmo_tripod/out/ccx_2mm\ccx_summary.json
+  2.00 mm: FAIL  SF 0.964  max 27.38659 mm  mass 49.339686 g
+    modes of {LC1 push 30N at came, LC2 bag crush 150N s}: 1338.2 Hz, 2435.9 Hz, 2488.8 Hz
+    modes of {LC3h bag press 150N }: 2351.0 Hz, 2405.6 Hz, 2677.2 Hz
+    modes of {LC3x worst leverage , LC3b 150N sideways o}: 326.6 Hz, 1484.6 Hz, 1850.9 Hz
+    modes of {LC5tip DROP 100g: la}: 87.8 Hz, 232.6 Hz, 427.8 Hz
+    lowest buckling factor: 5.620
+  vs voxel FEA, case by case: 0 of 6 within 15 %
+    LC1 push 30N at camera top z=88, feet  voxel   0.0231  ccx   0.0466  DIFFERS
+    LC2 bag crush 150N straight down on th voxel   0.0256  ccx   0.0659  DIFFERS
+    LC3b 150N sideways on one leg tip, oth voxel   0.1976  ccx   0.3591  DIFFERS
+    LC3h bag press 150N on one leg tip, bo voxel   0.2387  ccx   0.4902  DIFFERS
+    LC3x worst leverage 150N on one leg ti voxel   1.9269  ccx   4.8595  DIFFERS
+    LC5tip DROP 100g: land on one foot, ca voxel   3.1629  ccx  27.3866  DIFFERS

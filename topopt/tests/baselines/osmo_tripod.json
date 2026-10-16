@@ -1,0 +1,85 @@
+{
+  "_what": "Regression baseline for the osmo_tripod reference model (spec 5.2, 21 Phase 0). Recomputed by tests/make_baseline.py.",
+  "_version": "v3 (2026-08-04) -- case fits widened after the printed v2 would not assemble. See osmo_tripod/osmo_tripod.md 1.",
+  "_rule": "A test going red here means a number moved. Find out why before regenerating this file.",
+  "part_stl": "osmo_tripod/out/osmo_tripod.stl",
+  "fits": {
+    "head_finger_mm": 4.0,
+    "centre_finger_mm": 2.4,
+    "slot_head_mm": 3.8,
+    "slot_nut_mm": 3.8,
+    "slot_x0_mm": 1.2,
+    "slot_x1_mm": 5.0,
+    "bore_width_mm": 5.56,
+    "bore_height_mm": 7.82,
+    "knob_clear_dia_head_mm": 23.4,
+    "knob_clear_dia_nut_mm": 23.4
+  },
+  "printability": {
+    "volume_mm3": 39790.07,
+    "area_mm2": 11536.398,
+    "bed_mm2": 2917.585,
+    "support_mm2": 0.0
+  },
+  "setup_gd_mount": {
+    "voxel_mm": 1.6369635577254278,
+    "design_space_mm3": 142060.8,
+    "preserve_mm3": 13668.3,
+    "obstacle_mm3": 18089.9,
+    "obstacle_declared_mm3": 12984.0,
+    "free_mm3": 125914.2,
+    "domain_mm3": 143631.2,
+    "preserve_bodies": 4,
+    "ok": true,
+    "n_errors": 0
+  },
+  "gd_mount_inputs_sha256": {
+    "osmo_tripod/gd_mount_study.json": "b7bfb54209dee7a0a1d5bdd79ffd67a0b68e122bf5fe733d35849e5132bbcf66",
+    "osmo_tripod/out/mount_only.stl": "02c64698edf3ab47e450fcc6baa13be73e102b76d4b3a721479aaf596260f92b",
+    "osmo_tripod/out/mount_cuts.stl": "c2b42e38e62ec5d6ceb307ae0d4cdba96b39994a3de62b8175c0bab491d547e2",
+    "osmo_tripod/out/design_space.stl": "09833fe93bfde7b1e5c061ed388c6fbe009295f4a0c8b3dcaca03b3dccc5d8c9"
+  },
+  "optimisation_gd_mount": {
+    "volume_mm3": 32644.3,
+    "preserve_mm3": 13668.3,
+    "iterations_run": 34,
+    "components": 1,
+    "island_mm3": 0.0,
+    "safety_factor_p99_5": {
+      "LC1f": 16.615,
+      "LC1b": 16.365,
+      "LC2": 13.562,
+      "LC3x": 1.496
+    }
+  },
+  "fea_study_main": {
+    "voxel_mm": 0.67,
+    "elements": 131674,
+    "cases": {
+      "LC1": {
+        "safety_factor_p99_5": 20.045,
+        "max_displacement_mm": 0.0241
+      },
+      "LC2": {
+        "safety_factor_p99_5": 19.119,
+        "max_displacement_mm": 0.0268
+      },
+      "LC3h": {
+        "safety_factor_p99_5": 6.85,
+        "max_displacement_mm": 0.2392
+      },
+      "LC3x": {
+        "safety_factor_p99_5": 1.947,
+        "max_displacement_mm": 1.9515
+      },
+      "LC3b": {
+        "safety_factor_p99_5": 10.499,
+        "max_displacement_mm": 0.1996
+      },
+      "LC5tip": {
+        "safety_factor_p99_5": 1.167,
+        "max_displacement_mm": 3.1509
+      }
+    }
+  }
+}

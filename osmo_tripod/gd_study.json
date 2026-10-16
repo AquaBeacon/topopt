@@ -1,0 +1,97 @@
+{
+  "_note": "Generative-design setup for the tripod base, in the preserve / obstacle / design_space form (topo_setup.py + topo_opt.py). The older topo_study.json is the same problem written in the legacy keep_in/keep_out schema; keep both so the two can be compared.",
+
+  "material": "PLA",
+  "build_axis": "Z",
+  "target_elements": 30000,
+  "safety_factor": 3.0,
+  "max_deflection_mm": 1.0,
+  "walls": 5,
+  "infill": 0.25,
+
+  "geometry": {
+    "clearance_mm": 0.8,
+
+    "design_space": "out/design_space.stl",
+
+    "_preserve_why": "the pedestal top carries the camera interface and the M5 hinge, and the three pads are what touches the desk. Sized to sit fully inside the design space: the pedestal tapers to 22 x 19 at the top (ped_top_x/y in the .scad), and the disc is only r=52, so a foot of r=8 centred at r=47 would hang 3 mm over the edge.",
+
+    "preserve": {
+      "mount_top": {"type": "box", "min": [-11.3, -9.5, 17], "max": [11.3, 9.5, 23]},
+      "foot_F": {"type": "cylinder", "axis": "Z", "centre": [0.0, 45.0, 0], "r": 6.0, "range": [0, 3]},
+      "foot_L": {"type": "cylinder", "axis": "Z", "centre": [-38.97, -22.5, 0], "r": 6.0, "range": [0, 3]},
+      "foot_R": {"type": "cylinder", "axis": "Z", "centre": [38.97, -22.5, 0], "r": 6.0, "range": [0, 3]}
+    },
+
+    "obstacle": {
+      "_why": "the M5 thumb screw is knurled to 22 mm across. Its knob and the nut have to sit outboard of the fingers, on the hinge axis at z=23, and the measured failure of the first version was the hub rim leaving 0.25 mm of material in the way at x = +-19. That is the constraint, written down. r = 11.75, not 11.0: a Ø22 knob does not go into a Ø22 pocket (the printed v1 measured a Ø21.90 clear envelope), so the pocket carries knob_fit = 0.75 in the .scad and the obstacle has to match it.",
+      "knob_head": {"type": "cylinder", "axis": "X", "centre": [0, 0, 23.0], "r": 11.75, "range": [-32, -16]},
+      "knob_nut":  {"type": "cylinder", "axis": "X", "centre": [0, 0, 23.0], "r": 11.75, "range": [16, 32]}
+    }
+  },
+
+  "_regions_why": "every load and support region is a subset of a preserve body -- topo_setup.py rejects the study otherwise, because a load on free material lets the optimiser delete the thing being pushed on. mx_front/mx_back centroids sit at y = +-7.0, so the 1950 N*mm hinge moment is a 139.3 N couple over a 14 mm lever.",
+
+  "regions": {
+    "mount_top": {"type": "box", "min": [-11, -9.5, 17], "max": [11, 9.5, 23]},
+    "mx_front":  {"type": "box", "min": [-10, 4.5, 17], "max": [10, 9.5, 23]},
+    "mx_back":   {"type": "box", "min": [-10, -9.5, 17], "max": [10, -4.5, 23]},
+    "foot_F":    {"type": "cylinder", "axis": "Z", "centre": [0.0, 45.0, 0], "r": 6.0, "range": [0, 3]},
+    "foot_L":    {"type": "cylinder", "axis": "Z", "centre": [-38.97, -22.5, 0], "r": 6.0, "range": [0, 3]},
+    "foot_R":    {"type": "cylinder", "axis": "Z", "centre": [38.97, -22.5, 0], "r": 6.0, "range": [0, 3]}
+  },
+
+  "cases": [
+    {
+      "name": "LC1f  push 30 N from the front at the camera top",
+      "_note": "30 N at 88 mm becomes 30 N shear plus Mx 1950 N*mm on the pedestal top; the moment is applied as a +-139.3 N couple over the 14 mm lever.",
+      "supports": [
+        {"region": "foot_F", "fix": "xyz"},
+        {"region": "foot_L", "fix": "xyz"},
+        {"region": "foot_R", "fix": "xyz"}
+      ],
+      "loads": [
+        {"region": "mount_top", "force": [0, -30, 0]},
+        {"region": "mx_front", "force": [0, 0, 139.3]},
+        {"region": "mx_back", "force": [0, 0, -139.3]}
+      ]
+    },
+    {
+      "name": "LC1b  push 30 N from the back at the camera top",
+      "supports": [
+        {"region": "foot_F", "fix": "xyz"},
+        {"region": "foot_L", "fix": "xyz"},
+        {"region": "foot_R", "fix": "xyz"}
+      ],
+      "loads": [
+        {"region": "mount_top", "force": [0, 30, 0]},
+        {"region": "mx_front", "force": [0, 0, -139.3]},
+        {"region": "mx_back", "force": [0, 0, 139.3]}
+      ]
+    },
+    {
+      "name": "LC2   crush 150 N down on the mount",
+      "supports": [
+        {"region": "foot_F", "fix": "xyz"},
+        {"region": "foot_L", "fix": "xyz"},
+        {"region": "foot_R", "fix": "xyz"}
+      ],
+      "loads": [{"region": "mount_top", "force": [0, 0, -150]}]
+    },
+    {
+      "name": "LC3x  prise 150 N on one foot, the other two clamped",
+      "_note": "the case the current design fails at SF 1.95, so it has to be in the optimisation, not just the check.",
+      "supports": [
+        {"region": "foot_L", "fix": "xyz"},
+        {"region": "foot_R", "fix": "xyz"}
+      ],
+      "loads": [{"region": "foot_F", "force": [0, 0, -150]}]
+    }
+  ],
+
+  "design": {
+    "volfrac": 0.15,
+    "filter_mm": 5.0,
+    "symmetry": ["X"]
+  }
+}

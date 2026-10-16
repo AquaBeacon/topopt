@@ -1,0 +1,72 @@
+{
+  "part": "out/design_space.stl",
+  "material": "PLA",
+  "build_axis": "Z",
+  "safety_factor": 3.0,
+  "walls": 5,
+  "infill": 0.25,
+
+  "_note": "design domain = the ground disc (r=52, h=17) plus the mount pedestal. The mount itself (pedestal top + fingers) is a keep-in: it holds the M5 bolt and sets the camera interface, so it is not up for optimisation.",
+
+  "regions": {
+    "foot_F":     {"type": "cylinder", "axis": "Z", "centre": [0.0, 47.0, 0], "r": 8.0, "range": [0, 3]},
+    "foot_L":     {"type": "cylinder", "axis": "Z", "centre": [-40.7, -23.5, 0], "r": 8.0, "range": [0, 3]},
+    "foot_R":     {"type": "cylinder", "axis": "Z", "centre": [40.7, -23.5, 0], "r": 8.0, "range": [0, 3]},
+    "hub_bottom": {"type": "cylinder", "axis": "Z", "centre": [0, 0, 0], "r": 19.0, "range": [0, 2]},
+    "bolt":       {"type": "cylinder", "axis": "X", "centre": [0, 0, 23.0], "r": 8.0},
+    "mx_front":   {"type": "box", "min": [-12, 7, 16], "max": [12, 12, 23.5]},
+    "mx_back":    {"type": "box", "min": [-12, -12, 16], "max": [12, -7, 23.5]},
+    "keep_mount": {"type": "box", "min": [-14, -14, 8], "max": [14, 14, 24]}
+  },
+
+  "cases": [
+    {
+      "name": "push 30N from the front (-Y) at camera top",
+      "supports": [
+        {"region": "foot_F", "fix": "xyz"},
+        {"region": "foot_L", "fix": "xyz"},
+        {"region": "foot_R", "fix": "xyz"}
+      ],
+      "loads": [
+        {"region": "bolt", "force": [0, -30, 0]},
+        {"region": "mx_front", "force": [0, 0, 114.7]},
+        {"region": "mx_back", "force": [0, 0, -114.7]}
+      ]
+    },
+    {
+      "name": "push 30N from the back (+Y) at camera top",
+      "supports": [
+        {"region": "foot_F", "fix": "xyz"},
+        {"region": "foot_L", "fix": "xyz"},
+        {"region": "foot_R", "fix": "xyz"}
+      ],
+      "loads": [
+        {"region": "bolt", "force": [0, 30, 0]},
+        {"region": "mx_front", "force": [0, 0, -114.7]},
+        {"region": "mx_back", "force": [0, 0, 114.7]}
+      ]
+    },
+    {
+      "name": "crush 150N down on the mount",
+      "supports": [
+        {"region": "foot_F", "fix": "xyz"},
+        {"region": "foot_L", "fix": "xyz"},
+        {"region": "foot_R", "fix": "xyz"}
+      ],
+      "loads": [{"region": "bolt", "force": [0, 0, -150]}]
+    },
+    {
+      "name": "press 150N on one leg tip, body resting",
+      "supports": [{"region": "hub_bottom", "fix": "xyz"}],
+      "loads": [{"region": "foot_F", "force": [0, 0, -150]}]
+    }
+  ],
+
+  "design": {
+    "keep_in": ["keep_mount"],
+    "volfrac": 0.25,
+    "filter_mm": 5.0,
+    "symmetry": ["X"],
+    "overhang": true
+  }
+}

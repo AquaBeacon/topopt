@@ -1,0 +1,12 @@
+# Store text as LF in the repository regardless of the checkout platform.
+# Without this, a Windows checkout commits CRLF and every file the other
+# platform touches shows as wholly rewritten.
+* text=auto eol=lf
+
+# Binary: never touch these, and do not try to diff them as text.
+*.stl   binary
+*.step  binary
+*.stp   binary
+*.3mf   binary
+*.npy   binary
+*.png   binary

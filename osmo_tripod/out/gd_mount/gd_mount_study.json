@@ -1,0 +1,5001 @@
+{
+  "study": "osmo_tripod/gd_mount_study.json",
+  "schema": "geometry",
+  "material": "PLA",
+  "setup": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      "obstacle 'mount_cuts' shares a one-cell boundary layer with preserve 'mount' (2947.7 mm3) -- that is the voxelisation of a surface the two meshes have in common, as when 'mount_cuts' is a feature cut into 'mount'. Preserve keeps those cells.",
+      "preserve 'mount' is 13 % outside the design space (1570.4 mm3) -- the protruding part is kept as material but no material can be added to it.",
+      "load region 'bolt_tab' in case 'LC1f  push 30 N from the front at the camera top' reaches 39 % (368.5 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 61 % only.",
+      "load region 'mx_front' in case 'LC1f  push 30 N from the front at the camera top' reaches 33 % (175.5 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 67 % only.",
+      "load region 'mx_back' in case 'LC1f  push 30 N from the front at the camera top' reaches 23 % (122.8 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 77 % only.",
+      "load region 'bolt_tab' in case 'LC1b  push 30 N from the back at the camera top' reaches 39 % (368.5 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 61 % only.",
+      "load region 'mx_front' in case 'LC1b  push 30 N from the back at the camera top' reaches 33 % (175.5 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 67 % only.",
+      "load region 'mx_back' in case 'LC1b  push 30 N from the back at the camera top' reaches 23 % (122.8 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 77 % only.",
+      "load region 'bolt_tab' in case 'LC2   crush 150 N down on the mount' reaches 39 % (368.5 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 61 % only.",
+      "symmetry X is requested but preserve is 6 % asymmetric about that plane -- the mirror-average will pull the result away from the geometry you declared",
+      "symmetry X is requested but obstacle is 13 % asymmetric about that plane -- the mirror-average will pull the result away from the geometry you declared"
+    ],
+    "info": {
+      "voxel_mm": 1.6369635577254278,
+      "grid_shape": [
+        68,
+        68,
+        27
+      ],
+      "origin_mm": [
+        -55.657,
+        -55.274,
+        -3.274
+      ],
+      "design_space_mm3": 142060.8,
+      "preserve_mm3": 13668.3,
+      "obstacle_mm3": 18089.9,
+      "obstacle_declared_mm3": 12984.0,
+      "domain_mm3": 143631.2,
+      "free_mm3": 125914.2,
+      "free_voxels": 28705,
+      "domain_voxels": 32744,
+      "preserve_outside_design_space_mm3": 1570.4,
+      "preserve_outside_design_space_pct": 11.5,
+      "preserve_bodies": 4,
+      "domain_components": 1,
+      "preserve_bodies_by_domain_component": {
+        "1": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "note_preserve_bodies": "4 separate preserve bodies, all reachable through the design space -- that is the normal generative-design setup.",
+      "design_space_blocked_pct": 2.8,
+      "boundary_conditions": [
+        {
+          "case": "LC1f  push 30 N from the front at the camera top",
+          "kind": "support",
+          "region": "foot_F",
+          "voxels_in_domain": 84,
+          "voxels_on_preserve": 84
+        },
+        {
+          "case": "LC1f  push 30 N from the front at the camera top",
+          "kind": "support",
+          "region": "foot_L",
+          "voxels_in_domain": 86,
+          "voxels_on_preserve": 86
+        },
+        {
+          "case": "LC1f  push 30 N from the front at the camera top",
+          "kind": "support",
+          "region": "foot_R",
+          "voxels_in_domain": 86,
+          "voxels_on_preserve": 86
+        },
+        {
+          "case": "LC1f  push 30 N from the front at the camera top",
+          "kind": "load",
+          "region": "bolt_tab",
+          "voxels_in_domain": 216,
+          "voxels_on_preserve": 132
+        },
+        {
+          "case": "LC1f  push 30 N from the front at the camera top",
+          "kind": "load",
+          "region": "mx_front",
+          "voxels_in_domain": 120,
+          "voxels_on_preserve": 80
+        },
+        {
+          "case": "LC1f  push 30 N from the front at the camera top",
+          "kind": "load",
+          "region": "mx_back",
+          "voxels_in_domain": 120,
+          "voxels_on_preserve": 92
+        },
+        {
+          "case": "LC1b  push 30 N from the back at the camera top",
+          "kind": "support",
+          "region": "foot_F",
+          "voxels_in_domain": 84,
+          "voxels_on_preserve": 84
+        },
+        {
+          "case": "LC1b  push 30 N from the back at the camera top",
+          "kind": "support",
+          "region": "foot_L",
+          "voxels_in_domain": 86,
+          "voxels_on_preserve": 86
+        },
+        {
+          "case": "LC1b  push 30 N from the back at the camera top",
+          "kind": "support",
+          "region": "foot_R",
+          "voxels_in_domain": 86,
+          "voxels_on_preserve": 86
+        },
+        {
+          "case": "LC1b  push 30 N from the back at the camera top",
+          "kind": "load",
+          "region": "bolt_tab",
+          "voxels_in_domain": 216,
+          "voxels_on_preserve": 132
+        },
+        {
+          "case": "LC1b  push 30 N from the back at the camera top",
+          "kind": "load",
+          "region": "mx_front",
+          "voxels_in_domain": 120,
+          "voxels_on_preserve": 80
+        },
+        {
+          "case": "LC1b  push 30 N from the back at the camera top",
+          "kind": "load",
+          "region": "mx_back",
+          "voxels_in_domain": 120,
+          "voxels_on_preserve": 92
+        },
+        {
+          "case": "LC2   crush 150 N down on the mount",
+          "kind": "support",
+          "region": "foot_F",
+          "voxels_in_domain": 84,
+          "voxels_on_preserve": 84
+        },
+        {
+          "case": "LC2   crush 150 N down on the mount",
+          "kind": "support",
+          "region": "foot_L",
+          "voxels_in_domain": 86,
+          "voxels_on_preserve": 86
+        },
+        {
+          "case": "LC2   crush 150 N down on the mount",
+          "kind": "support",
+          "region": "foot_R",
+          "voxels_in_domain": 86,
+          "voxels_on_preserve": 86
+        },
+        {
+          "case": "LC2   crush 150 N down on the mount",
+          "kind": "load",
+          "region": "bolt_tab",
+          "voxels_in_domain": 216,
+          "voxels_on_preserve": 132
+        },
+        {
+          "case": "LC3x  prise 150 N on one foot, the other two clamped",
+          "kind": "support",
+          "region": "foot_L",
+          "voxels_in_domain": 86,
+          "voxels_on_preserve": 86
+        },
+        {
+          "case": "LC3x  prise 150 N on one foot, the other two clamped",
+          "kind": "support",
+          "region": "foot_R",
+          "voxels_in_domain": 86,
+          "voxels_on_preserve": 86
+        },
+        {
+          "case": "LC3x  prise 150 N on one foot, the other two clamped",
+          "kind": "load",
+          "region": "foot_F",
+          "voxels_in_domain": 84,
+          "voxels_on_preserve": 84
+        }
+      ],
+      "symmetry_mismatch_pct": {
+        "X": {
+          "design_space": 0.0,
+          "preserve": 6.48,
+          "obstacle": 12.75
+        }
+      }
+    },
+    "bodies": [
+      {
+        "name": "design_space",
+        "kind": "design_space",
+        "source": "stl:design_space.stl",
+        "voxels": 32386,
+        "mm3": 142060.8,
+        "bbox_mm": [
+          [
+            -52.38,
+            -52.0,
+            0.0
+          ],
+          [
+            52.38,
+            52.77,
+            22.92
+          ]
+        ]
+      },
+      {
+        "name": "mount",
+        "kind": "preserve",
+        "source": "stl:mount_only.stl",
+        "voxels": 2860,
+        "mm3": 12545.4,
+        "bbox_mm": [
+          [
+            -13.1,
+            -12.71,
+            0.0
+          ],
+          [
+            13.1,
+            13.48,
+            32.74
+          ]
+        ]
+      },
+      {
+        "name": "foot_F",
+        "kind": "preserve",
+        "source": "cylinder",
+        "voxels": 84,
+        "mm3": 368.5,
+        "bbox_mm": [
+          [
+            -6.55,
+            39.67,
+            0.0
+          ],
+          [
+            6.55,
+            51.13,
+            3.27
+          ]
+        ]
+      },
+      {
+        "name": "foot_L",
+        "kind": "preserve",
+        "source": "cylinder",
+        "voxels": 86,
+        "mm3": 377.2,
+        "bbox_mm": [
+          [
+            -44.2,
+            -29.08,
+            0.0
+          ],
+          [
+            -32.74,
+            -15.99,
+            3.27
+          ]
+        ]
+      },
+      {
+        "name": "foot_R",
+        "kind": "preserve",
+        "source": "cylinder",
+        "voxels": 86,
+        "mm3": 377.2,
+        "bbox_mm": [
+          [
+            32.74,
+            -29.08,
+            0.0
+          ],
+          [
+            44.2,
+            -15.99,
+            3.27
+          ]
+        ]
+      },
+      {
+        "name": "mount_cuts",
+        "kind": "obstacle",
+        "source": "stl:mount_cuts.stl",
+        "voxels": 4796,
+        "mm3": 21037.6,
+        "bbox_mm": [
+          [
+            -22.92,
+            -12.71,
+            9.82
+          ],
+          [
+            24.55,
+            13.48,
+            36.01
+          ]
+        ],
+        "clearance_requested_mm": 2.0,
+        "clearance_achieved_mm": 2.0
+      },
+      {
+        "name": "preserve body 1",
+        "kind": "preserve_component",
+        "source": "foot_L",
+        "voxels": 86,
+        "mm3": 377.2,
+        "domain_component": 1
+      },
+      {
+        "name": "preserve body 2",
+        "kind": "preserve_component",
+        "source": "mount",
+        "voxels": 2860,
+        "mm3": 12545.4,
+        "domain_component": 1
+      },
+      {
+        "name": "preserve body 3",
+        "kind": "preserve_component",
+        "source": "foot_F",
+        "voxels": 84,
+        "mm3": 368.5,
+        "domain_component": 1
+      },
+      {
+        "name": "preserve body 4",
+        "kind": "preserve_component",
+        "source": "foot_R",
+        "voxels": 86,
+        "mm3": 377.2,
+        "domain_component": 1
+      }
+    ]
+  },
+  "settings": {
+    "volfrac_of_free_cells": 0.15,
+    "filter_mm": 4.0,
+    "projection_eta": 0.5,
+    "beta_final": 16.0,
+    "penal_final": 3.0,
+    "symmetry": [
+      "X"
+    ],
+    "move_limit": 0.2,
+    "volume_exact": false,
+    "iterations_run": 34,
+    "load_case_reference_compliance_Nmm": [
+      4.472962,
+      4.472962,
+      8.741082,
+      333.23033
+    ]
+  },
+  "solver": {
+    "non_converged_solves": 0,
+    "total_solves": 136,
+    "warnings": []
+  },
+  "volumes": {
+    "final_mm3": 32644.3,
+    "preserve_mm3": 13668.3,
+    "design_space_mm3": 142060.8,
+    "domain_mm3": 143631.2,
+    "volume_fraction_of_free_cells": 0.1507,
+    "volume_fraction_of_domain": 0.2273,
+    "mass_saving_vs_domain_pct": 77.3,
+    "min_member": {
+      "min_mm": 3.274,
+      "p5_mm": 3.274,
+      "median_mm": 3.274
+    },
+    "min_member_optimised": {
+      "min_mm": 3.274,
+      "p5_mm": 3.274,
+      "median_mm": 6.548
+    }
+  },
+  "connectivity": {
+    "components": 1,
+    "preserve_bodies": 4,
+    "preserve_body_components": [
+      {
+        "body": 1,
+        "component": 1,
+        "preserve_voxels": 86,
+        "kept_fraction": 1.0
+      },
+      {
+        "body": 2,
+        "component": 1,
+        "preserve_voxels": 2860,
+        "kept_fraction": 1.0
+      },
+      {
+        "body": 3,
+        "component": 1,
+        "preserve_voxels": 84,
+        "kept_fraction": 1.0
+      },
+      {
+        "body": 4,
+        "component": 1,
+        "preserve_voxels": 86,
+        "kept_fraction": 1.0
+      }
+    ],
+    "connected": true,
+    "island_voxels": 0,
+    "island_mm3": 0.0
+  },
+  "seconds": 1268.0,
+  "history": [
+    {
+      "iter": 1,
+      "penal": 1.0,
+      "beta": 1.0,
+      "objective": 4.0,
+      "compliance_per_case_Nmm": [
+        4.473,
+        4.473,
+        8.7411,
+        333.2303
+      ],
+      "normalised_per_case": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "volume_fraction_free": 0.13056013613325407,
+      "greyness": 0.4471305795519054,
+      "change": 0.19999999999999998,
+      "topology_change_frac": 1.0
+    },
+    {
+      "iter": 2,
+      "penal": 1.0,
+      "beta": 1.0,
+      "objective": 2.7738527243245894,
+      "compliance_per_case_Nmm": [
+        3.1673,
+        3.1673,
+        6.0789,
+        220.6664
+      ],
+      "normalised_per_case": [
+        0.7081,
+        0.7081,
+        0.6954,
+        0.6622
+      ],
+      "volume_fraction_free": 0.14828993234470692,
+      "greyness": 0.47350734194892946,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00425
+    },
+    {
+      "iter": 3,
+      "penal": 1.0,
+      "beta": 1.0,
+      "objective": 2.4734041241598055,
+      "compliance_per_case_Nmm": [
+        2.8306,
+        2.8306,
+        5.3782,
+        197.423
+      ],
+      "normalised_per_case": [
+        0.6328,
+        0.6328,
+        0.6153,
+        0.5925
+      ],
+      "volume_fraction_free": 0.15109732799661552,
+      "greyness": 0.44618526855270974,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01972
+    },
+    {
+      "iter": 4,
+      "penal": 1.0,
+      "beta": 1.0,
+      "objective": 2.3525039180523653,
+      "compliance_per_case_Nmm": [
+        2.6847,
+        2.6847,
+        5.0612,
+        190.9701
+      ],
+      "normalised_per_case": [
+        0.6002,
+        0.6002,
+        0.579,
+        0.5731
+      ],
+      "volume_fraction_free": 0.15083299834551508,
+      "greyness": 0.4158683216769015,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.02648
+    },
+    {
+      "iter": 5,
+      "penal": 1.0,
+      "beta": 1.0,
+      "objective": 2.287077828676748,
+      "compliance_per_case_Nmm": [
+        2.6021,
+        2.6021,
+        4.8726,
+        188.6698
+      ],
+      "normalised_per_case": [
+        0.5817,
+        0.5817,
+        0.5574,
+        0.5662
+      ],
+      "volume_fraction_free": 0.1503075666583436,
+      "greyness": 0.38967379321284357,
+      "change": 0.1308979014757291,
+      "topology_change_frac": 0.01115
+    },
+    {
+      "iter": 6,
+      "penal": 1.5,
+      "beta": 1.0,
+      "objective": 3.3225545122432605,
+      "compliance_per_case_Nmm": [
+        3.3535,
+        3.3535,
+        6.8111,
+        347.8589
+      ],
+      "normalised_per_case": [
+        0.7497,
+        0.7497,
+        0.7792,
+        1.0439
+      ],
+      "volume_fraction_free": 0.1503486977446096,
+      "greyness": 0.3755748601238291,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00732
+    },
+    {
+      "iter": 7,
+      "penal": 1.5,
+      "beta": 1.0,
+      "objective": 3.1063924822267253,
+      "compliance_per_case_Nmm": [
+        3.1663,
+        3.1663,
+        6.2988,
+        323.2488
+      ],
+      "normalised_per_case": [
+        0.7079,
+        0.7079,
+        0.7206,
+        0.97
+      ],
+      "volume_fraction_free": 0.15189863496178257,
+      "greyness": 0.35568185728481433,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.02439
+    },
+    {
+      "iter": 8,
+      "penal": 1.5,
+      "beta": 1.0,
+      "objective": 3.0191355735008223,
+      "compliance_per_case_Nmm": [
+        3.084,
+        3.084,
+        6.0913,
+        314.351
+      ],
+      "normalised_per_case": [
+        0.6895,
+        0.6895,
+        0.6969,
+        0.9433
+      ],
+      "volume_fraction_free": 0.1515304938943104,
+      "greyness": 0.3326483397513522,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01435
+    },
+    {
+      "iter": 9,
+      "penal": 1.5,
+      "beta": 2.0,
+      "objective": 3.0757243045491407,
+      "compliance_per_case_Nmm": [
+        3.0612,
+        3.0612,
+        6.057,
+        337.9058
+      ],
+      "normalised_per_case": [
+        0.6844,
+        0.6844,
+        0.6929,
+        1.014
+      ],
+      "volume_fraction_free": 0.14175069739227478,
+      "greyness": 0.2767717327922354,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.01087
+    },
+    {
+      "iter": 10,
+      "penal": 1.5,
+      "beta": 2.0,
+      "objective": 2.8464256313518375,
+      "compliance_per_case_Nmm": [
+        2.9207,
+        2.9207,
+        5.6725,
+        297.0862
+      ],
+      "normalised_per_case": [
+        0.653,
+        0.653,
+        0.649,
+        0.8915
+      ],
+      "volume_fraction_free": 0.1521148174632684,
+      "greyness": 0.272894778296219,
+      "change": 0.19989061176226364,
+      "topology_change_frac": 0.01944
+    },
+    {
+      "iter": 11,
+      "penal": 2.0,
+      "beta": 2.0,
+      "objective": 3.443452798352957,
+      "compliance_per_case_Nmm": [
+        3.282,
+        3.282,
+        6.6091,
+        406.4941
+      ],
+      "normalised_per_case": [
+        0.7337,
+        0.7337,
+        0.7561,
+        1.2199
+      ],
+      "volume_fraction_free": 0.15161212018608852,
+      "greyness": 0.26396494977459034,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00543
+    },
+    {
+      "iter": 12,
+      "penal": 2.0,
+      "beta": 2.0,
+      "objective": 3.2395378135191253,
+      "compliance_per_case_Nmm": [
+        3.1639,
+        3.1639,
+        6.2312,
+        370.5577
+      ],
+      "normalised_per_case": [
+        0.7073,
+        0.7073,
+        0.7129,
+        1.112
+      ],
+      "volume_fraction_free": 0.1538603823464897,
+      "greyness": 0.2363275633676767,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.01366
+    },
+    {
+      "iter": 13,
+      "penal": 2.0,
+      "beta": 2.0,
+      "objective": 3.1706661703347945,
+      "compliance_per_case_Nmm": [
+        3.1099,
+        3.1099,
+        6.0911,
+        360.9884
+      ],
+      "normalised_per_case": [
+        0.6953,
+        0.6953,
+        0.6968,
+        1.0833
+      ],
+      "volume_fraction_free": 0.15260505535132593,
+      "greyness": 0.21393505290875753,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.0055
+    },
+    {
+      "iter": 14,
+      "penal": 2.0,
+      "beta": 2.0,
+      "objective": 3.110005798153251,
+      "compliance_per_case_Nmm": [
+        3.0689,
+        3.0689,
+        5.9778,
+        351.2055
+      ],
+      "normalised_per_case": [
+        0.6861,
+        0.6861,
+        0.6839,
+        1.0539
+      ],
+      "volume_fraction_free": 0.15201843629960807,
+      "greyness": 0.19574055834222237,
+      "change": 0.18735138891569214,
+      "topology_change_frac": 0.00418
+    },
+    {
+      "iter": 15,
+      "penal": 2.0,
+      "beta": 2.0,
+      "objective": 3.0588460138840734,
+      "compliance_per_case_Nmm": [
+        3.0356,
+        3.0356,
+        5.8876,
+        342.5481
+      ],
+      "normalised_per_case": [
+        0.6787,
+        0.6787,
+        0.6736,
+        1.028
+      ],
+      "volume_fraction_free": 0.1516397606942767,
+      "greyness": 0.1806652073849519,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00418
+    },
+    {
+      "iter": 16,
+      "penal": 2.5,
+      "beta": 2.0,
+      "objective": 3.2909082518536112,
+      "compliance_per_case_Nmm": [
+        3.2038,
+        3.2038,
+        6.2703,
+        380.2357
+      ],
+      "normalised_per_case": [
+        0.7163,
+        0.7163,
+        0.7173,
+        1.1411
+      ],
+      "volume_fraction_free": 0.1514239693609768,
+      "greyness": 0.16834486093083773,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00327
+    },
+    {
+      "iter": 17,
+      "penal": 2.5,
+      "beta": 4.0,
+      "objective": 2.9009220720881492,
+      "compliance_per_case_Nmm": [
+        2.9038,
+        2.9038,
+        5.5277,
+        323.2797
+      ],
+      "normalised_per_case": [
+        0.6492,
+        0.6492,
+        0.6324,
+        0.9701
+      ],
+      "volume_fraction_free": 0.1521207995310853,
+      "greyness": 0.10460817048381267,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00237
+    },
+    {
+      "iter": 18,
+      "penal": 2.5,
+      "beta": 4.0,
+      "objective": 2.889605981245976,
+      "compliance_per_case_Nmm": [
+        2.9009,
+        2.9009,
+        5.5225,
+        320.152
+      ],
+      "normalised_per_case": [
+        0.6485,
+        0.6485,
+        0.6318,
+        0.9608
+      ],
+      "volume_fraction_free": 0.15132839815839053,
+      "greyness": 0.10081588091638449,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00272
+    },
+    {
+      "iter": 19,
+      "penal": 2.5,
+      "beta": 4.0,
+      "objective": 2.8907672360199865,
+      "compliance_per_case_Nmm": [
+        2.9054,
+        2.9054,
+        5.5385,
+        319.2472
+      ],
+      "normalised_per_case": [
+        0.6496,
+        0.6496,
+        0.6336,
+        0.958
+      ],
+      "volume_fraction_free": 0.15034604407916874,
+      "greyness": 0.09893671626330411,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.00202
+    },
+    {
+      "iter": 20,
+      "penal": 2.5,
+      "beta": 4.0,
+      "objective": 2.884230306240008,
+      "compliance_per_case_Nmm": [
+        2.9038,
+        2.9038,
+        5.5411,
+        317.2213
+      ],
+      "normalised_per_case": [
+        0.6492,
+        0.6492,
+        0.6339,
+        0.952
+      ],
+      "volume_fraction_free": 0.150077799241817,
+      "greyness": 0.09735424289900393,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.0016
+    },
+    {
+      "iter": 21,
+      "penal": 3.0,
+      "beta": 4.0,
+      "objective": 2.9898287707934315,
+      "compliance_per_case_Nmm": [
+        2.9857,
+        2.9857,
+        5.7421,
+        332.5354
+      ],
+      "normalised_per_case": [
+        0.6675,
+        0.6675,
+        0.6569,
+        0.9979
+      ],
+      "volume_fraction_free": 0.1500106801082509,
+      "greyness": 0.09611997454976808,
+      "change": 0.164922094747745,
+      "topology_change_frac": 0.00132
+    },
+    {
+      "iter": 22,
+      "penal": 3.0,
+      "beta": 4.0,
+      "objective": 2.981907156339976,
+      "compliance_per_case_Nmm": [
+        2.9816,
+        2.9816,
+        5.7335,
+        330.8316
+      ],
+      "normalised_per_case": [
+        0.6666,
+        0.6666,
+        0.6559,
+        0.9928
+      ],
+      "volume_fraction_free": 0.14993761627406188,
+      "greyness": 0.09448304802640935,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.00098
+    },
+    {
+      "iter": 23,
+      "penal": 3.0,
+      "beta": 4.0,
+      "objective": 2.975398145247115,
+      "compliance_per_case_Nmm": [
+        2.9787,
+        2.9787,
+        5.7277,
+        329.317
+      ],
+      "normalised_per_case": [
+        0.6659,
+        0.6659,
+        0.6553,
+        0.9883
+      ],
+      "volume_fraction_free": 0.14992646674872476,
+      "greyness": 0.09337128531797888,
+      "change": 0.16171726681286946,
+      "topology_change_frac": 0.00098
+    },
+    {
+      "iter": 24,
+      "penal": 3.0,
+      "beta": 4.0,
+      "objective": 2.9697362564821486,
+      "compliance_per_case_Nmm": [
+        2.976,
+        2.976,
+        5.7227,
+        328.0216
+      ],
+      "normalised_per_case": [
+        0.6653,
+        0.6653,
+        0.6547,
+        0.9844
+      ],
+      "volume_fraction_free": 0.1499568239254583,
+      "greyness": 0.09254089109201805,
+      "change": 0.14759824692259071,
+      "topology_change_frac": 0.00056
+    },
+    {
+      "iter": 25,
+      "penal": 3.0,
+      "beta": 8.0,
+      "objective": 2.633661873844784,
+      "compliance_per_case_Nmm": [
+        2.7147,
+        2.7147,
+        5.0837,
+        279.3208
+      ],
+      "normalised_per_case": [
+        0.6069,
+        0.6069,
+        0.5816,
+        0.8382
+      ],
+      "volume_fraction_free": 0.1515512743963489,
+      "greyness": 0.045025729413507284,
+      "change": 0.19999999999999996,
+      "topology_change_frac": 0.00035
+    },
+    {
+      "iter": 26,
+      "penal": 3.0,
+      "beta": 8.0,
+      "objective": 2.6468647942355465,
+      "compliance_per_case_Nmm": [
+        2.7252,
+        2.7252,
+        5.1228,
+        280.6666
+      ],
+      "normalised_per_case": [
+        0.6093,
+        0.6093,
+        0.5861,
+        0.8423
+      ],
+      "volume_fraction_free": 0.15012479641121138,
+      "greyness": 0.045456457257542576,
+      "change": 0.18097588516010898,
+      "topology_change_frac": 0.0023
+    },
+    {
+      "iter": 27,
+      "penal": 3.0,
+      "beta": 8.0,
+      "objective": 2.644555264430258,
+      "compliance_per_case_Nmm": [
+        2.7246,
+        2.7246,
+        5.1324,
+        279.6243
+      ],
+      "normalised_per_case": [
+        0.6091,
+        0.6091,
+        0.5872,
+        0.8391
+      ],
+      "volume_fraction_free": 0.14997371312747831,
+      "greyness": 0.04548348036876106,
+      "change": 0.1526355624322301,
+      "topology_change_frac": 0.00216
+    },
+    {
+      "iter": 28,
+      "penal": 3.0,
+      "beta": 8.0,
+      "objective": 2.640479212406236,
+      "compliance_per_case_Nmm": [
+        2.723,
+        2.723,
+        5.1387,
+        278.2735
+      ],
+      "normalised_per_case": [
+        0.6088,
+        0.6088,
+        0.5879,
+        0.8351
+      ],
+      "volume_fraction_free": 0.14998321280743263,
+      "greyness": 0.045470486185597035,
+      "change": 0.1570222397580383,
+      "topology_change_frac": 0.00118
+    },
+    {
+      "iter": 29,
+      "penal": 3.0,
+      "beta": 8.0,
+      "objective": 2.636951249051964,
+      "compliance_per_case_Nmm": [
+        2.7212,
+        2.7212,
+        5.1453,
+        277.1177
+      ],
+      "normalised_per_case": [
+        0.6084,
+        0.6084,
+        0.5886,
+        0.8316
+      ],
+      "volume_fraction_free": 0.14997891685807987,
+      "greyness": 0.04546030993735226,
+      "change": 0.1766573932540355,
+      "topology_change_frac": 0.00098
+    },
+    {
+      "iter": 30,
+      "penal": 3.0,
+      "beta": 8.0,
+      "objective": 2.633982969696624,
+      "compliance_per_case_Nmm": [
+        2.7194,
+        2.7194,
+        5.1512,
+        276.1602
+      ],
+      "normalised_per_case": [
+        0.608,
+        0.608,
+        0.5893,
+        0.8287
+      ],
+      "volume_fraction_free": 0.14997014135529416,
+      "greyness": 0.04544875676035488,
+      "change": 0.16025930708068253,
+      "topology_change_frac": 0.00098
+    },
+    {
+      "iter": 31,
+      "penal": 3.0,
+      "beta": 8.0,
+      "objective": 2.6313630502722702,
+      "compliance_per_case_Nmm": [
+        2.718,
+        2.718,
+        5.1557,
+        275.3296
+      ],
+      "normalised_per_case": [
+        0.6076,
+        0.6076,
+        0.5898,
+        0.8262
+      ],
+      "volume_fraction_free": 0.14997481045360106,
+      "greyness": 0.04541357470763424,
+      "change": 0.19771716245952475,
+      "topology_change_frac": 0.00084
+    },
+    {
+      "iter": 32,
+      "penal": 3.0,
+      "beta": 8.0,
+      "objective": 2.629301697277876,
+      "compliance_per_case_Nmm": [
+        2.7169,
+        2.7169,
+        5.1598,
+        274.6544
+      ],
+      "normalised_per_case": [
+        0.6074,
+        0.6074,
+        0.5903,
+        0.8242
+      ],
+      "volume_fraction_free": 0.14996132200966888,
+      "greyness": 0.045362509181062,
+      "change": 0.15223851575949587,
+      "topology_change_frac": 0.00049
+    },
+    {
+      "iter": 33,
+      "penal": 3.0,
+      "beta": 16.0,
+      "objective": 2.4994309514423465,
+      "compliance_per_case_Nmm": [
+        2.6204,
+        2.6204,
+        4.9159,
+        255.0482
+      ],
+      "normalised_per_case": [
+        0.5858,
+        0.5858,
+        0.5624,
+        0.7654
+      ],
+      "volume_fraction_free": 0.15052979370708905,
+      "greyness": 0.01843970242187539,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00084
+    },
+    {
+      "iter": 34,
+      "penal": 3.0,
+      "beta": 16.0,
+      "objective": 2.49416717104321,
+      "compliance_per_case_Nmm": [
+        2.6178,
+        2.6178,
+        4.9151,
+        253.7198
+      ],
+      "normalised_per_case": [
+        0.5852,
+        0.5852,
+        0.5623,
+        0.7614
+      ],
+      "volume_fraction_free": 0.1505217623765178,
+      "greyness": 0.017697500941837765,
+      "change": 0.20000000000000007,
+      "topology_change_frac": 0.00146
+    }
+  ],
+  "final_stl_triangles": 10592,
+  "final_smooth_stl_triangles": 10144,
+  "final_step": {
+    "faces": 1604,
+    "vertices": 2100,
+    "edges": 3704,
+    "entities": 31840,
+    "voxel_faces_before_merge": 5296,
+    "open_edges": 0,
+    "non_manifold_edges": 0,
+    "misoriented_edges": 0,
+    "closed_shell": true
+  },
+  "final_fea": [
+    {
+      "elements": 7442,
+      "voxel_mm": 1.6369635577254278,
+      "volume_mm3": 32644.25031111111,
+      "converged": true,
+      "cg_iterations": 762,
+      "compliance_Nmm": 2.5774641728258514,
+      "max_displacement_mm": 0.027763297606709696,
+      "max_displacement_at": [
+        1.63696355772543,
+        3.656760962664549,
+        32.73927115450856
+      ],
+      "von_mises_max_MPa": 4.276156910832167,
+      "von_mises_p99_5_MPa": 2.0311216212748002,
+      "stress_concentration_ratio": 2.105318000676054,
+      "failure_index_max": 0.13510504130538814,
+      "failure_index_p99_5": 0.060185964366861286,
+      "min_safety_factor": 7.401648305185181,
+      "safety_factor_p99_5": 16.615169508700358,
+      "mesh": {
+        "thin_section_mm": 3.2739271154508556,
+        "typical_section_mm": 3.2739271154508556,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 2.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "7.40 (worst element) / 16.62 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "0.028 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 3.27 mm) / 2.0 (typical 3.27 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 1.09"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -7.37,
+            9.39,
+            17.19
+          ],
+          "failure_index": 0.135,
+          "safety_factor": 7.4
+        },
+        {
+          "pos": [
+            0.82,
+            9.39,
+            17.19
+          ],
+          "failure_index": 0.12,
+          "safety_factor": 8.36
+        },
+        {
+          "pos": [
+            -9.0,
+            -10.26,
+            17.19
+          ],
+          "failure_index": 0.12,
+          "safety_factor": 8.36
+        },
+        {
+          "pos": [
+            0.82,
+            7.75,
+            23.74
+          ],
+          "failure_index": 0.084,
+          "safety_factor": 11.87
+        },
+        {
+          "pos": [
+            9.0,
+            9.39,
+            17.19
+          ],
+          "failure_index": 0.067,
+          "safety_factor": 15.03
+        }
+      ],
+      "case": "LC1f  push 30 N from the front at the camera top"
+    },
+    {
+      "elements": 7442,
+      "voxel_mm": 1.6369635577254278,
+      "volume_mm3": 32644.25031111111,
+      "converged": true,
+      "cg_iterations": 762,
+      "compliance_Nmm": 2.5774641728258514,
+      "max_displacement_mm": 0.027763297606709696,
+      "max_displacement_at": [
+        1.63696355772543,
+        3.656760962664549,
+        32.73927115450856
+      ],
+      "von_mises_max_MPa": 4.276156910832167,
+      "von_mises_p99_5_MPa": 2.0311216212748002,
+      "stress_concentration_ratio": 2.105318000676054,
+      "failure_index_max": 0.2080096790745345,
+      "failure_index_p99_5": 0.061104191576173826,
+      "min_safety_factor": 4.807468596890041,
+      "safety_factor_p99_5": 16.36548940760272,
+      "mesh": {
+        "thin_section_mm": 3.2739271154508556,
+        "typical_section_mm": 3.2739271154508556,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 2.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "4.81 (worst element) / 16.37 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "0.028 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 3.27 mm) / 2.0 (typical 3.27 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 1.09"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -7.37,
+            -8.62,
+            18.83
+          ],
+          "failure_index": 0.208,
+          "safety_factor": 4.81
+        },
+        {
+          "pos": [
+            0.82,
+            -8.62,
+            18.83
+          ],
+          "failure_index": 0.116,
+          "safety_factor": 8.64
+        },
+        {
+          "pos": [
+            -7.37,
+            9.39,
+            17.19
+          ],
+          "failure_index": 0.076,
+          "safety_factor": 13.21
+        },
+        {
+          "pos": [
+            10.64,
+            -10.26,
+            17.19
+          ],
+          "failure_index": 0.07,
+          "safety_factor": 14.24
+        },
+        {
+          "pos": [
+            0.82,
+            9.39,
+            17.19
+          ],
+          "failure_index": 0.07,
+          "safety_factor": 14.32
+        }
+      ],
+      "case": "LC1b  push 30 N from the back at the camera top"
+    },
+    {
+      "elements": 7442,
+      "voxel_mm": 1.6369635577254278,
+      "volume_mm3": 32644.25031111111,
+      "converged": true,
+      "cg_iterations": 745,
+      "compliance_Nmm": 4.816222752137332,
+      "max_displacement_mm": 0.03619714875625311,
+      "max_displacement_at": [
+        -1.636963557725423,
+        0.3828338472136892,
+        26.191416923606845
+      ],
+      "von_mises_max_MPa": 4.425537304189672,
+      "von_mises_p99_5_MPa": 2.861199558381129,
+      "stress_concentration_ratio": 1.546741922011776,
+      "failure_index_max": 0.11840356724819459,
+      "failure_index_p99_5": 0.07373438709124039,
+      "min_safety_factor": 8.445691487519333,
+      "safety_factor_p99_5": 13.56219315639771,
+      "mesh": {
+        "thin_section_mm": 3.2739271154508556,
+        "typical_section_mm": 3.2739271154508556,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 2.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "8.45 (worst element) / 13.56 (p99.5)",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "0.036 mm",
+          "pass": true,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 3.27 mm) / 2.0 (typical 3.27 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 1.09"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            -31.92,
+            -18.44,
+            0.82
+          ],
+          "failure_index": 0.118,
+          "safety_factor": 8.45
+        },
+        {
+          "pos": [
+            31.92,
+            -18.44,
+            0.82
+          ],
+          "failure_index": 0.117,
+          "safety_factor": 8.52
+        },
+        {
+          "pos": [
+            -4.09,
+            38.85,
+            0.82
+          ],
+          "failure_index": 0.097,
+          "safety_factor": 10.29
+        },
+        {
+          "pos": [
+            4.09,
+            38.85,
+            0.82
+          ],
+          "failure_index": 0.092,
+          "safety_factor": 10.86
+        },
+        {
+          "pos": [
+            10.64,
+            -10.26,
+            17.19
+          ],
+          "failure_index": 0.09,
+          "safety_factor": 11.07
+        }
+      ],
+      "case": "LC2   crush 150 N down on the mount"
+    },
+    {
+      "elements": 7442,
+      "voxel_mm": 1.6369635577254278,
+      "volume_mm3": 32644.25031111111,
+      "converged": true,
+      "cg_iterations": 1151,
+      "compliance_Nmm": 245.69349570402636,
+      "max_displacement_mm": 1.8672442013802621,
+      "max_displacement_at": [
+        3.27392711545086,
+        51.12870413670195,
+        0.0
+      ],
+      "von_mises_max_MPa": 42.29081888369186,
+      "von_mises_p99_5_MPa": 22.254889762401806,
+      "stress_concentration_ratio": 1.9002933438537835,
+      "failure_index_max": 1.1021473513938893,
+      "failure_index_p99_5": 0.6684999586230309,
+      "min_safety_factor": 0.9073196961688442,
+      "safety_factor_p99_5": 1.49588640522849,
+      "mesh": {
+        "thin_section_mm": 3.2739271154508556,
+        "typical_section_mm": 3.2739271154508556,
+        "elements_across_thin": 2.0,
+        "elements_across_typical": 2.0
+      },
+      "warnings": [],
+      "checks": [
+        {
+          "name": "strength",
+          "required": "safety factor >= 3.00",
+          "got": "0.91 (worst element) / 1.50 (p99.5)",
+          "pass": false,
+          "inspect": true
+        },
+        {
+          "name": "stiffness",
+          "required": "max deflection <= 1.000 mm",
+          "got": "1.867 mm",
+          "pass": false,
+          "inspect": false
+        },
+        {
+          "name": "mesh resolution",
+          "required": ">= 3 elements across the thinnest section",
+          "got": "2.0 (thin 3.27 mm) / 2.0 (typical 3.27 mm)",
+          "pass": false,
+          "inspect": false,
+          "fix": "re-run with --voxel 1.09"
+        }
+      ],
+      "pass": false,
+      "hotspots": [
+        {
+          "pos": [
+            33.56,
+            -16.81,
+            0.82
+          ],
+          "failure_index": 1.102,
+          "safety_factor": 0.91
+        },
+        {
+          "pos": [
+            -33.56,
+            -16.81,
+            0.82
+          ],
+          "failure_index": 1.075,
+          "safety_factor": 0.93
+        },
+        {
+          "pos": [
+            33.56,
+            -26.63,
+            4.09
+          ],
+          "failure_index": 0.969,
+          "safety_factor": 1.03
+        },
+        {
+          "pos": [
+            -33.56,
+            -26.63,
+            4.09
+          ],
+          "failure_index": 0.932,
+          "safety_factor": 1.07
+        },
+        {
+          "pos": [
+            33.56,
+            -24.99,
+            10.64
+          ],
+          "failure_index": 0.545,
+          "safety_factor": 1.84
+        }
+      ],
+      "case": "LC3x  prise 150 N on one foot, the other two clamped"
+    }
+  ],
+  "extracted_members": {
+    "prismatic_axis": null,
+    "prismatic_iou": 0.317,
+    "level": 0.5,
+    "members": [],
+    "note": "structure is not prismatic; 675 skeleton voxels reported as a point cloud rather than clean members. Slice the domain or add symmetry to get a cleaner result.",
+    "skeleton_points_mm": [
+      [
+        -40.11,
+        -21.72,
+        0.82
+      ],
+      [
+        -38.47,
+        -21.72,
+        2.46
+      ],
+      [
+        -36.83,
+        -21.72,
+        2.46
+      ],
+      [
+        -35.19,
+        -21.72,
+        4.09
+      ],
+      [
+        -33.56,
+        -21.72,
+        4.09
+      ],
+      [
+        -31.92,
+        -21.72,
+        5.73
+      ],
+      [
+        -31.92,
+        -20.08,
+        5.73
+      ],
+      [
+        -31.92,
+        -18.44,
+        5.73
+      ],
+      [
+        -30.28,
+        -23.35,
+        5.73
+      ],
+      [
+        -30.28,
+        -21.72,
+        4.09
+      ],
+      [
+        -30.28,
+        -21.72,
+        7.37
+      ],
+      [
+        -30.28,
+        -20.08,
+        4.09
+      ],
+      [
+        -30.28,
+        -20.08,
+        7.37
+      ],
+      [
+        -30.28,
+        -18.44,
+        4.09
+      ],
+      [
+        -30.28,
+        -18.44,
+        7.37
+      ],
+      [
+        -30.28,
+        -16.81,
+        4.09
+      ],
+      [
+        -30.28,
+        -16.81,
+        5.73
+      ],
+      [
+        -30.28,
+        -16.81,
+        7.37
+      ],
+      [
+        -30.28,
+        -15.17,
+        4.09
+      ],
+      [
+        -30.28,
+        -15.17,
+        5.73
+      ],
+      [
+        -30.28,
+        -15.17,
+        7.37
+      ],
+      [
+        -28.65,
+        -23.35,
+        4.09
+      ],
+      [
+        -28.65,
+        -23.35,
+        5.73
+      ],
+      [
+        -28.65,
+        -23.35,
+        7.37
+      ],
+      [
+        -28.65,
+        -21.72,
+        2.46
+      ],
+      [
+        -28.65,
+        -21.72,
+        9.0
+      ],
+      [
+        -28.65,
+        -20.08,
+        2.46
+      ],
+      [
+        -28.65,
+        -20.08,
+        9.0
+      ],
+      [
+        -28.65,
+        -18.44,
+        2.46
+      ],
+      [
+        -28.65,
+        -18.44,
+        9.0
+      ],
+      [
+        -28.65,
+        -16.81,
+        2.46
+      ],
+      [
+        -28.65,
+        -16.81,
+        9.0
+      ],
+      [
+        -28.65,
+        -15.17,
+        2.46
+      ],
+      [
+        -28.65,
+        -15.17,
+        9.0
+      ],
+      [
+        -28.65,
+        -13.53,
+        4.09
+      ],
+      [
+        -28.65,
+        -13.53,
+        5.73
+      ],
+      [
+        -28.65,
+        -13.53,
+        7.37
+      ],
+      [
+        -27.01,
+        -24.99,
+        7.37
+      ],
+      [
+        -27.01,
+        -23.35,
+        4.09
+      ],
+      [
+        -27.01,
+        -23.35,
+        5.73
+      ],
+      [
+        -27.01,
+        -23.35,
+        9.0
+      ],
+      [
+        -27.01,
+        -21.72,
+        2.46
+      ],
+      [
+        -27.01,
+        -21.72,
+        10.64
+      ],
+      [
+        -27.01,
+        -20.08,
+        2.46
+      ],
+      [
+        -27.01,
+        -20.08,
+        10.64
+      ],
+      [
+        -27.01,
+        -18.44,
+        2.46
+      ],
+      [
+        -27.01,
+        -18.44,
+        10.64
+      ],
+      [
+        -27.01,
+        -16.81,
+        2.46
+      ],
+      [
+        -27.01,
+        -16.81,
+        10.64
+      ],
+      [
+        -27.01,
+        -15.17,
+        2.46
+      ],
+      [
+        -27.01,
+        -15.17,
+        10.64
+      ],
+      [
+        -27.01,
+        -13.53,
+        2.46
+      ],
+      [
+        -27.01,
+        -13.53,
+        7.37
+      ],
+      [
+        -27.01,
+        -13.53,
+        9.0
+      ],
+      [
+        -27.01,
+        -11.89,
+        4.09
+      ],
+      [
+        -27.01,
+        -11.89,
+        5.73
+      ],
+      [
+        -25.37,
+        -23.35,
+        4.09
+      ],
+      [
+        -25.37,
+        -23.35,
+        5.73
+      ],
+      [
+        -25.37,
+        -23.35,
+        7.37
+      ],
+      [
+        -25.37,
+        -23.35,
+        9.0
+      ],
+      [
+        -25.37,
+        -23.35,
+        10.64
+      ],
+      [
+        -25.37,
+        -21.72,
+        2.46
+      ],
+      [
+        -25.37,
+        -21.72,
+        12.28
+      ],
+      [
+        -25.37,
+        -20.08,
+        0.82
+      ],
+      [
+        -25.37,
+        -20.08,
+        12.28
+      ],
+      [
+        -25.37,
+        -18.44,
+        0.82
+      ],
+      [
+        -25.37,
+        -18.44,
+        12.28
+      ],
+      [
+        -25.37,
+        -16.81,
+        0.82
+      ],
+      [
+        -25.37,
+        -16.81,
+        12.28
+      ],
+      [
+        -25.37,
+        -15.17,
+        0.82
+      ],
+      [
+        -25.37,
+        -15.17,
+        10.64
+      ],
+      [
+        -25.37,
+        -13.53,
+        2.46
+      ],
+      [
+        -25.37,
+        -13.53,
+        10.64
+      ],
+      [
+        -25.37,
+        -11.89,
+        4.09
+      ],
+      [
+        -25.37,
+        -11.89,
+        5.73
+      ],
+      [
+        -25.37,
+        -11.89,
+        7.37
+      ],
+      [
+        -25.37,
+        -11.89,
+        9.0
+      ],
+      [
+        -23.74,
+        -23.35,
+        4.09
+      ],
+      [
+        -23.74,
+        -23.35,
+        5.73
+      ],
+      [
+        -23.74,
+        -23.35,
+        7.37
+      ],
+      [
+        -23.74,
+        -23.35,
+        9.0
+      ],
+      [
+        -23.74,
+        -23.35,
+        10.64
+      ],
+      [
+        -23.74,
+        -21.72,
+        2.46
+      ],
+      [
+        -23.74,
+        -21.72,
+        12.28
+      ],
+      [
+        -23.74,
+        -20.08,
+        0.82
+      ],
+      [
+        -23.74,
+        -20.08,
+        12.28
+      ],
+      [
+        -23.74,
+        -18.44,
+        0.82
+      ],
+      [
+        -23.74,
+        -18.44,
+        12.28
+      ],
+      [
+        -23.74,
+        -16.81,
+        0.82
+      ],
+      [
+        -23.74,
+        -16.81,
+        12.28
+      ],
+      [
+        -23.74,
+        -15.17,
+        0.82
+      ],
+      [
+        -23.74,
+        -15.17,
+        12.28
+      ],
+      [
+        -23.74,
+        -13.53,
+        0.82
+      ],
+      [
+        -23.74,
+        -13.53,
+        10.64
+      ],
+      [
+        -23.74,
+        -11.89,
+        2.46
+      ],
+      [
+        -23.74,
+        -11.89,
+        9.0
+      ],
+      [
+        -23.74,
+        -10.26,
+        4.09
+      ],
+      [
+        -23.74,
+        -10.26,
+        5.73
+      ],
+      [
+        -23.74,
+        -10.26,
+        7.37
+      ],
+      [
+        -22.1,
+        -23.35,
+        4.09
+      ],
+      [
+        -22.1,
+        -23.35,
+        5.73
+      ],
+      [
+        -22.1,
+        -23.35,
+        7.37
+      ],
+      [
+        -22.1,
+        -23.35,
+        9.0
+      ],
+      [
+        -22.1,
+        -23.35,
+        10.64
+      ],
+      [
+        -22.1,
+        -21.72,
+        2.46
+      ],
+      [
+        -22.1,
+        -21.72,
+        12.28
+      ],
+      [
+        -22.1,
+        -20.08,
+        0.82
+      ],
+      [
+        -22.1,
+        -20.08,
+        12.28
+      ],
+      [
+        -22.1,
+        -18.44,
+        0.82
+      ],
+      [
+        -22.1,
+        -18.44,
+        13.91
+      ],
+      [
+        -22.1,
+        -16.81,
+        0.82
+      ],
+      [
+        -22.1,
+        -16.81,
+        13.91
+      ],
+      [
+        -22.1,
+        -15.17,
+        0.82
+      ],
+      [
+        -22.1,
+        -15.17,
+        12.28
+      ],
+      [
+        -22.1,
+        -13.53,
+        0.82
+      ],
+      [
+        -22.1,
+        -13.53,
+        12.28
+      ],
+      [
+        -22.1,
+        -11.89,
+        0.82
+      ],
+      [
+        -22.1,
+        -11.89,
+        10.64
+      ],
+      [
+        -22.1,
+        -10.26,
+        2.46
+      ],
+      [
+        -22.1,
+        -10.26,
+        7.37
+      ],
+      [
+        -22.1,
+        -10.26,
+        9.0
+      ],
+      [
+        -22.1,
+        -8.62,
+        4.09
+      ],
+      [
+        -22.1,
+        -8.62,
+        5.73
+      ],
+      [
+        -20.46,
+        -23.35,
+        9.0
+      ],
+      [
+        -20.46,
+        -23.35,
+        10.64
+      ],
+      [
+        -20.46,
+        -21.72,
+        4.09
+      ],
+      [
+        -20.46,
+        -21.72,
+        5.73
+      ],
+      [
+        -20.46,
+        -21.72,
+        7.37
+      ],
+      [
+        -20.46,
+        -21.72,
+        12.28
+      ],
+      [
+        -20.46,
+        -20.08,
+        2.46
+      ],
+      [
+        -20.46,
+        -20.08,
+        13.91
+      ],
+      [
+        -20.46,
+        -18.44,
+        0.82
+      ],
+      [
+        -20.46,
+        -18.44,
+        13.91
+      ],
+      [
+        -20.46,
+        -16.81,
+        0.82
+      ],
+      [
+        -20.46,
+        -16.81,
+        13.91
+      ],
+      [
+        -20.46,
+        -15.17,
+        0.82
+      ],
+      [
+        -20.46,
+        -15.17,
+        13.91
+      ],
+      [
+        -20.46,
+        -13.53,
+        0.82
+      ],
+      [
+        -20.46,
+        -13.53,
+        12.28
+      ],
+      [
+        -20.46,
+        -11.89,
+        0.82
+      ],
+      [
+        -20.46,
+        -11.89,
+        12.28
+      ],
+      [
+        -20.46,
+        -10.26,
+        2.46
+      ],
+      [
+        -20.46,
+        -10.26,
+        10.64
+      ],
+      [
+        -20.46,
+        -8.62,
+        4.09
+      ],
+      [
+        -20.46,
+        -8.62,
+        5.73
+      ],
+      [
+        -20.46,
+        -8.62,
+        7.37
+      ],
+      [
+        -20.46,
+        -8.62,
+        9.0
+      ],
+      [
+        -18.83,
+        -21.72,
+        5.73
+      ],
+      [
+        -18.83,
+        -21.72,
+        7.37
+      ],
+      [
+        -18.83,
+        -21.72,
+        9.0
+      ],
+      [
+        -18.83,
+        -21.72,
+        10.64
+      ],
+      [
+        -18.83,
+        -21.72,
+        12.28
+      ],
+      [
+        -18.83,
+        -20.08,
+        2.46
+      ],
+      [
+        -18.83,
+        -20.08,
+        4.09
+      ],
+      [
+        -18.83,
+        -20.08,
+        13.91
+      ],
+      [
+        -18.83,
+        -18.44,
+        0.82
+      ],
+      [
+        -18.83,
+        -18.44,
+        13.91
+      ],
+      [
+        -18.83,
+        -16.81,
+        0.82
+      ],
+      [
+        -18.83,
+        -16.81,
+        13.91
+      ],
+      [
+        -18.83,
+        -15.17,
+        0.82
+      ],
+      [
+        -18.83,
+        -15.17,
+        13.91
+      ],
+      [
+        -18.83,
+        -13.53,
+        0.82
+      ],
+      [
+        -18.83,
+        -13.53,
+        13.91
+      ],
+      [
+        -18.83,
+        -11.89,
+        0.82
+      ],
+      [
+        -18.83,
+        -11.89,
+        12.28
+      ],
+      [
+        -18.83,
+        -10.26,
+        0.82
+      ],
+      [
+        -18.83,
+        -10.26,
+        10.64
+      ],
+      [
+        -18.83,
+        -8.62,
+        2.46
+      ],
+      [
+        -18.83,
+        -8.62,
+        9.0
+      ],
+      [
+        -18.83,
+        -6.98,
+        4.09
+      ],
+      [
+        -18.83,
+        -6.98,
+        5.73
+      ],
+      [
+        -18.83,
+        -6.98,
+        7.37
+      ],
+      [
+        -17.19,
+        -21.72,
+        10.64
+      ],
+      [
+        -17.19,
+        -20.08,
+        4.09
+      ],
+      [
+        -17.19,
+        -20.08,
+        5.73
+      ],
+      [
+        -17.19,
+        -20.08,
+        7.37
+      ],
+      [
+        -17.19,
+        -20.08,
+        9.0
+      ],
+      [
+        -17.19,
+        -20.08,
+        12.28
+      ],
+      [
+        -17.19,
+        -18.44,
+        2.46
+      ],
+      [
+        -17.19,
+        -18.44,
+        13.91
+      ],
+      [
+        -17.19,
+        -16.81,
+        0.82
+      ],
+      [
+        -17.19,
+        -16.81,
+        13.91
+      ],
+      [
+        -17.19,
+        -15.17,
+        0.82
+      ],
+      [
+        -17.19,
+        -15.17,
+        13.91
+      ],
+      [
+        -17.19,
+        -13.53,
+        0.82
+      ],
+      [
+        -17.19,
+        -13.53,
+        13.91
+      ],
+      [
+        -17.19,
+        -11.89,
+        0.82
+      ],
+      [
+        -17.19,
+        -11.89,
+        12.28
+      ],
+      [
+        -17.19,
+        -10.26,
+        0.82
+      ],
+      [
+        -17.19,
+        -10.26,
+        10.64
+      ],
+      [
+        -17.19,
+        -8.62,
+        2.46
+      ],
+      [
+        -17.19,
+        -8.62,
+        9.0
+      ],
+      [
+        -17.19,
+        -6.98,
+        4.09
+      ],
+      [
+        -17.19,
+        -6.98,
+        5.73
+      ],
+      [
+        -17.19,
+        -6.98,
+        7.37
+      ],
+      [
+        -15.55,
+        -20.08,
+        10.64
+      ],
+      [
+        -15.55,
+        -20.08,
+        12.28
+      ],
+      [
+        -15.55,
+        -18.44,
+        4.09
+      ],
+      [
+        -15.55,
+        -18.44,
+        5.73
+      ],
+      [
+        -15.55,
+        -18.44,
+        7.37
+      ],
+      [
+        -15.55,
+        -18.44,
+        9.0
+      ],
+      [
+        -15.55,
+        -18.44,
+        13.91
+      ],
+      [
+        -15.55,
+        -16.81,
+        2.46
+      ],
+      [
+        -15.55,
+        -16.81,
+        13.91
+      ],
+      [
+        -15.55,
+        -15.17,
+        0.82
+      ],
+      [
+        -15.55,
+        -15.17,
+        13.91
+      ],
+      [
+        -15.55,
+        -13.53,
+        0.82
+      ],
+      [
+        -15.55,
+        -13.53,
+        13.91
+      ],
+      [
+        -15.55,
+        -11.89,
+        0.82
+      ],
+      [
+        -15.55,
+        -11.89,
+        12.28
+      ],
+      [
+        -15.55,
+        -10.26,
+        0.82
+      ],
+      [
+        -15.55,
+        -10.26,
+        10.64
+      ],
+      [
+        -15.55,
+        -8.62,
+        0.82
+      ],
+      [
+        -15.55,
+        -8.62,
+        9.0
+      ],
+      [
+        -15.55,
+        -6.98,
+        2.46
+      ],
+      [
+        -15.55,
+        -6.98,
+        7.37
+      ],
+      [
+        -15.55,
+        -5.35,
+        4.09
+      ],
+      [
+        -15.55,
+        -5.35,
+        5.73
+      ],
+      [
+        -13.91,
+        -18.44,
+        9.0
+      ],
+      [
+        -13.91,
+        -18.44,
+        10.64
+      ],
+      [
+        -13.91,
+        -18.44,
+        12.28
+      ],
+      [
+        -13.91,
+        -16.81,
+        4.09
+      ],
+      [
+        -13.91,
+        -16.81,
+        5.73
+      ],
+      [
+        -13.91,
+        -16.81,
+        7.37
+      ],
+      [
+        -13.91,
+        -16.81,
+        13.91
+      ],
+      [
+        -13.91,
+        -15.17,
+        2.46
+      ],
+      [
+        -13.91,
+        -15.17,
+        13.91
+      ],
+      [
+        -13.91,
+        -13.53,
+        2.46
+      ],
+      [
+        -13.91,
+        -13.53,
+        13.91
+      ],
+      [
+        -13.91,
+        -11.89,
+        2.46
+      ],
+      [
+        -13.91,
+        -11.89,
+        12.28
+      ],
+      [
+        -13.91,
+        -10.26,
+        2.46
+      ],
+      [
+        -13.91,
+        -10.26,
+        10.64
+      ],
+      [
+        -13.91,
+        -8.62,
+        2.46
+      ],
+      [
+        -13.91,
+        -8.62,
+        9.0
+      ],
+      [
+        -13.91,
+        -6.98,
+        2.46
+      ],
+      [
+        -13.91,
+        -6.98,
+        9.0
+      ],
+      [
+        -13.91,
+        -5.35,
+        4.09
+      ],
+      [
+        -13.91,
+        -5.35,
+        5.73
+      ],
+      [
+        -13.91,
+        -5.35,
+        7.37
+      ],
+      [
+        -12.28,
+        -16.81,
+        9.0
+      ],
+      [
+        -12.28,
+        -16.81,
+        10.64
+      ],
+      [
+        -12.28,
+        -16.81,
+        12.28
+      ],
+      [
+        -12.28,
+        -15.17,
+        4.09
+      ],
+      [
+        -12.28,
+        -15.17,
+        5.73
+      ],
+      [
+        -12.28,
+        -15.17,
+        7.37
+      ],
+      [
+        -12.28,
+        -15.17,
+        9.0
+      ],
+      [
+        -12.28,
+        -15.17,
+        12.28
+      ],
+      [
+        -12.28,
+        -13.53,
+        2.46
+      ],
+      [
+        -12.28,
+        -13.53,
+        12.28
+      ],
+      [
+        -12.28,
+        -11.89,
+        2.46
+      ],
+      [
+        -12.28,
+        -11.89,
+        12.28
+      ],
+      [
+        -12.28,
+        -10.26,
+        2.46
+      ],
+      [
+        -12.28,
+        -10.26,
+        10.64
+      ],
+      [
+        -12.28,
+        -8.62,
+        2.46
+      ],
+      [
+        -12.28,
+        -8.62,
+        9.0
+      ],
+      [
+        -12.28,
+        -6.98,
+        2.46
+      ],
+      [
+        -12.28,
+        -6.98,
+        9.0
+      ],
+      [
+        -12.28,
+        -5.35,
+        4.09
+      ],
+      [
+        -12.28,
+        -5.35,
+        5.73
+      ],
+      [
+        -12.28,
+        -5.35,
+        7.37
+      ],
+      [
+        -10.64,
+        -15.17,
+        10.64
+      ],
+      [
+        -10.64,
+        -13.53,
+        4.09
+      ],
+      [
+        -10.64,
+        -13.53,
+        5.73
+      ],
+      [
+        -10.64,
+        -13.53,
+        7.37
+      ],
+      [
+        -10.64,
+        -13.53,
+        9.0
+      ],
+      [
+        -10.64,
+        -13.53,
+        10.64
+      ],
+      [
+        -10.64,
+        -11.89,
+        4.09
+      ],
+      [
+        -10.64,
+        -11.89,
+        5.73
+      ],
+      [
+        -10.64,
+        -11.89,
+        7.37
+      ],
+      [
+        -10.64,
+        -11.89,
+        9.0
+      ],
+      [
+        -10.64,
+        -11.89,
+        10.64
+      ],
+      [
+        -10.64,
+        -10.26,
+        4.09
+      ],
+      [
+        -10.64,
+        -10.26,
+        5.73
+      ],
+      [
+        -10.64,
+        -10.26,
+        7.37
+      ],
+      [
+        -10.64,
+        -10.26,
+        9.0
+      ],
+      [
+        -10.64,
+        -8.62,
+        4.09
+      ],
+      [
+        -10.64,
+        -8.62,
+        5.73
+      ],
+      [
+        -10.64,
+        -8.62,
+        7.37
+      ],
+      [
+        -10.64,
+        -6.98,
+        4.09
+      ],
+      [
+        -10.64,
+        -6.98,
+        7.37
+      ],
+      [
+        -10.64,
+        -5.35,
+        5.73
+      ],
+      [
+        -9.0,
+        -6.98,
+        5.73
+      ],
+      [
+        -7.37,
+        -5.35,
+        7.37
+      ],
+      [
+        -7.37,
+        -5.35,
+        15.55
+      ],
+      [
+        -7.37,
+        -5.35,
+        17.19
+      ],
+      [
+        -7.37,
+        -5.35,
+        18.83
+      ],
+      [
+        -7.37,
+        -5.35,
+        20.46
+      ],
+      [
+        -7.37,
+        -5.35,
+        22.1
+      ],
+      [
+        -7.37,
+        -5.35,
+        23.74
+      ],
+      [
+        -7.37,
+        -5.35,
+        25.37
+      ],
+      [
+        -7.37,
+        -3.71,
+        27.01
+      ],
+      [
+        -7.37,
+        -0.44,
+        30.28
+      ],
+      [
+        -7.37,
+        1.2,
+        30.28
+      ],
+      [
+        -7.37,
+        2.84,
+        28.65
+      ],
+      [
+        -7.37,
+        4.48,
+        15.55
+      ],
+      [
+        -7.37,
+        4.48,
+        17.19
+      ],
+      [
+        -7.37,
+        4.48,
+        27.01
+      ],
+      [
+        -7.37,
+        6.11,
+        18.83
+      ],
+      [
+        -7.37,
+        6.11,
+        20.46
+      ],
+      [
+        -7.37,
+        6.11,
+        22.1
+      ],
+      [
+        -7.37,
+        6.11,
+        23.74
+      ],
+      [
+        -7.37,
+        6.11,
+        25.37
+      ],
+      [
+        -5.73,
+        -6.98,
+        13.91
+      ],
+      [
+        -5.73,
+        -3.71,
+        5.73
+      ],
+      [
+        -5.73,
+        -2.07,
+        28.65
+      ],
+      [
+        -5.73,
+        6.11,
+        13.91
+      ],
+      [
+        -4.09,
+        -6.98,
+        12.28
+      ],
+      [
+        -4.09,
+        -2.07,
+        5.73
+      ],
+      [
+        -4.09,
+        7.75,
+        12.28
+      ],
+      [
+        -2.46,
+        -5.35,
+        10.64
+      ],
+      [
+        -2.46,
+        -2.07,
+        7.37
+      ],
+      [
+        -2.46,
+        6.11,
+        10.64
+      ],
+      [
+        -0.82,
+        -6.98,
+        12.28
+      ],
+      [
+        -0.82,
+        -5.35,
+        13.91
+      ],
+      [
+        -0.82,
+        -5.35,
+        15.55
+      ],
+      [
+        -0.82,
+        -5.35,
+        17.19
+      ],
+      [
+        -0.82,
+        -5.35,
+        18.83
+      ],
+      [
+        -0.82,
+        -5.35,
+        20.46
+      ],
+      [
+        -0.82,
+        -5.35,
+        22.1
+      ],
+      [
+        -0.82,
+        -5.35,
+        23.74
+      ],
+      [
+        -0.82,
+        -5.35,
+        25.37
+      ],
+      [
+        -0.82,
+        -3.71,
+        9.0
+      ],
+      [
+        -0.82,
+        -3.71,
+        27.01
+      ],
+      [
+        -0.82,
+        -2.07,
+        7.37
+      ],
+      [
+        -0.82,
+        -0.44,
+        30.28
+      ],
+      [
+        -0.82,
+        1.2,
+        30.28
+      ],
+      [
+        -0.82,
+        2.84,
+        28.65
+      ],
+      [
+        -0.82,
+        4.48,
+        9.0
+      ],
+      [
+        -0.82,
+        4.48,
+        12.28
+      ],
+      [
+        -0.82,
+        4.48,
+        13.91
+      ],
+      [
+        -0.82,
+        4.48,
+        15.55
+      ],
+      [
+        -0.82,
+        4.48,
+        17.19
+      ],
+      [
+        -0.82,
+        4.48,
+        27.01
+      ],
+      [
+        -0.82,
+        6.11,
+        7.37
+      ],
+      [
+        -0.82,
+        6.11,
+        18.83
+      ],
+      [
+        -0.82,
+        6.11,
+        20.46
+      ],
+      [
+        -0.82,
+        6.11,
+        22.1
+      ],
+      [
+        -0.82,
+        6.11,
+        23.74
+      ],
+      [
+        -0.82,
+        6.11,
+        25.37
+      ],
+      [
+        -0.82,
+        7.75,
+        7.37
+      ],
+      [
+        -0.82,
+        9.39,
+        7.37
+      ],
+      [
+        -0.82,
+        11.02,
+        7.37
+      ],
+      [
+        -0.82,
+        12.66,
+        7.37
+      ],
+      [
+        -0.82,
+        14.3,
+        7.37
+      ],
+      [
+        -0.82,
+        15.93,
+        7.37
+      ],
+      [
+        -0.82,
+        17.57,
+        7.37
+      ],
+      [
+        -0.82,
+        19.21,
+        7.37
+      ],
+      [
+        -0.82,
+        20.84,
+        7.37
+      ],
+      [
+        -0.82,
+        22.48,
+        7.37
+      ],
+      [
+        -0.82,
+        24.12,
+        7.37
+      ],
+      [
+        -0.82,
+        25.76,
+        7.37
+      ],
+      [
+        -0.82,
+        27.39,
+        7.37
+      ],
+      [
+        -0.82,
+        29.03,
+        7.37
+      ],
+      [
+        -0.82,
+        30.67,
+        5.73
+      ],
+      [
+        -0.82,
+        35.58,
+        4.09
+      ],
+      [
+        -0.82,
+        37.21,
+        4.09
+      ],
+      [
+        -0.82,
+        38.85,
+        4.09
+      ],
+      [
+        0.82,
+        -2.07,
+        28.65
+      ],
+      [
+        0.82,
+        -0.44,
+        7.37
+      ],
+      [
+        0.82,
+        2.84,
+        7.37
+      ],
+      [
+        0.82,
+        32.3,
+        4.09
+      ],
+      [
+        0.82,
+        33.94,
+        4.09
+      ],
+      [
+        2.46,
+        -0.44,
+        7.37
+      ],
+      [
+        2.46,
+        1.2,
+        7.37
+      ],
+      [
+        4.09,
+        -2.07,
+        7.37
+      ],
+      [
+        4.09,
+        2.84,
+        7.37
+      ],
+      [
+        5.73,
+        -5.35,
+        10.64
+      ],
+      [
+        5.73,
+        -3.71,
+        7.37
+      ],
+      [
+        5.73,
+        -3.71,
+        9.0
+      ],
+      [
+        5.73,
+        4.48,
+        9.0
+      ],
+      [
+        7.37,
+        -6.98,
+        18.83
+      ],
+      [
+        7.37,
+        -5.35,
+        5.73
+      ],
+      [
+        7.37,
+        -5.35,
+        12.28
+      ],
+      [
+        7.37,
+        -5.35,
+        13.91
+      ],
+      [
+        7.37,
+        -5.35,
+        15.55
+      ],
+      [
+        7.37,
+        -5.35,
+        25.37
+      ],
+      [
+        7.37,
+        -5.35,
+        27.01
+      ],
+      [
+        7.37,
+        -3.71,
+        28.65
+      ],
+      [
+        7.37,
+        -2.07,
+        28.65
+      ],
+      [
+        7.37,
+        -0.44,
+        30.28
+      ],
+      [
+        7.37,
+        1.2,
+        30.28
+      ],
+      [
+        7.37,
+        2.84,
+        28.65
+      ],
+      [
+        7.37,
+        4.48,
+        27.01
+      ],
+      [
+        7.37,
+        6.11,
+        10.64
+      ],
+      [
+        7.37,
+        6.11,
+        12.28
+      ],
+      [
+        7.37,
+        6.11,
+        13.91
+      ],
+      [
+        7.37,
+        6.11,
+        15.55
+      ],
+      [
+        7.37,
+        6.11,
+        17.19
+      ],
+      [
+        7.37,
+        6.11,
+        18.83
+      ],
+      [
+        9.0,
+        -8.62,
+        5.73
+      ],
+      [
+        9.0,
+        -6.98,
+        5.73
+      ],
+      [
+        9.0,
+        -6.98,
+        20.46
+      ],
+      [
+        9.0,
+        -6.98,
+        22.1
+      ],
+      [
+        9.0,
+        -6.98,
+        23.74
+      ],
+      [
+        9.0,
+        -5.35,
+        17.19
+      ],
+      [
+        9.0,
+        6.11,
+        23.74
+      ],
+      [
+        9.0,
+        6.11,
+        25.37
+      ],
+      [
+        9.0,
+        7.75,
+        20.46
+      ],
+      [
+        9.0,
+        7.75,
+        22.1
+      ],
+      [
+        10.64,
+        -15.17,
+        5.73
+      ],
+      [
+        10.64,
+        -15.17,
+        7.37
+      ],
+      [
+        10.64,
+        -15.17,
+        9.0
+      ],
+      [
+        10.64,
+        -15.17,
+        10.64
+      ],
+      [
+        10.64,
+        -13.53,
+        4.09
+      ],
+      [
+        10.64,
+        -13.53,
+        5.73
+      ],
+      [
+        10.64,
+        -13.53,
+        7.37
+      ],
+      [
+        10.64,
+        -13.53,
+        9.0
+      ],
+      [
+        10.64,
+        -13.53,
+        10.64
+      ],
+      [
+        10.64,
+        -11.89,
+        4.09
+      ],
+      [
+        10.64,
+        -11.89,
+        5.73
+      ],
+      [
+        10.64,
+        -11.89,
+        7.37
+      ],
+      [
+        10.64,
+        -11.89,
+        9.0
+      ],
+      [
+        10.64,
+        -11.89,
+        10.64
+      ],
+      [
+        10.64,
+        -10.26,
+        4.09
+      ],
+      [
+        10.64,
+        -10.26,
+        5.73
+      ],
+      [
+        10.64,
+        -10.26,
+        7.37
+      ],
+      [
+        10.64,
+        -10.26,
+        9.0
+      ],
+      [
+        10.64,
+        -8.62,
+        4.09
+      ],
+      [
+        10.64,
+        -8.62,
+        7.37
+      ],
+      [
+        10.64,
+        -6.98,
+        4.09
+      ],
+      [
+        10.64,
+        -6.98,
+        7.37
+      ],
+      [
+        10.64,
+        -5.35,
+        5.73
+      ],
+      [
+        12.28,
+        -16.81,
+        5.73
+      ],
+      [
+        12.28,
+        -16.81,
+        7.37
+      ],
+      [
+        12.28,
+        -16.81,
+        9.0
+      ],
+      [
+        12.28,
+        -16.81,
+        10.64
+      ],
+      [
+        12.28,
+        -16.81,
+        12.28
+      ],
+      [
+        12.28,
+        -15.17,
+        4.09
+      ],
+      [
+        12.28,
+        -15.17,
+        12.28
+      ],
+      [
+        12.28,
+        -13.53,
+        2.46
+      ],
+      [
+        12.28,
+        -13.53,
+        12.28
+      ],
+      [
+        12.28,
+        -11.89,
+        2.46
+      ],
+      [
+        12.28,
+        -11.89,
+        12.28
+      ],
+      [
+        12.28,
+        -10.26,
+        2.46
+      ],
+      [
+        12.28,
+        -10.26,
+        10.64
+      ],
+      [
+        12.28,
+        -8.62,
+        2.46
+      ],
+      [
+        12.28,
+        -8.62,
+        9.0
+      ],
+      [
+        12.28,
+        -6.98,
+        2.46
+      ],
+      [
+        12.28,
+        -6.98,
+        9.0
+      ],
+      [
+        12.28,
+        -5.35,
+        4.09
+      ],
+      [
+        12.28,
+        -5.35,
+        5.73
+      ],
+      [
+        12.28,
+        -5.35,
+        7.37
+      ],
+      [
+        13.91,
+        -18.44,
+        7.37
+      ],
+      [
+        13.91,
+        -18.44,
+        9.0
+      ],
+      [
+        13.91,
+        -18.44,
+        10.64
+      ],
+      [
+        13.91,
+        -18.44,
+        12.28
+      ],
+      [
+        13.91,
+        -16.81,
+        4.09
+      ],
+      [
+        13.91,
+        -16.81,
+        5.73
+      ],
+      [
+        13.91,
+        -16.81,
+        13.91
+      ],
+      [
+        13.91,
+        -15.17,
+        2.46
+      ],
+      [
+        13.91,
+        -15.17,
+        13.91
+      ],
+      [
+        13.91,
+        -13.53,
+        2.46
+      ],
+      [
+        13.91,
+        -13.53,
+        13.91
+      ],
+      [
+        13.91,
+        -11.89,
+        2.46
+      ],
+      [
+        13.91,
+        -11.89,
+        12.28
+      ],
+      [
+        13.91,
+        -10.26,
+        2.46
+      ],
+      [
+        13.91,
+        -10.26,
+        10.64
+      ],
+      [
+        13.91,
+        -8.62,
+        2.46
+      ],
+      [
+        13.91,
+        -8.62,
+        9.0
+      ],
+      [
+        13.91,
+        -6.98,
+        2.46
+      ],
+      [
+        13.91,
+        -6.98,
+        9.0
+      ],
+      [
+        13.91,
+        -5.35,
+        4.09
+      ],
+      [
+        13.91,
+        -5.35,
+        5.73
+      ],
+      [
+        13.91,
+        -5.35,
+        7.37
+      ],
+      [
+        15.55,
+        -20.08,
+        7.37
+      ],
+      [
+        15.55,
+        -20.08,
+        9.0
+      ],
+      [
+        15.55,
+        -20.08,
+        10.64
+      ],
+      [
+        15.55,
+        -20.08,
+        12.28
+      ],
+      [
+        15.55,
+        -18.44,
+        4.09
+      ],
+      [
+        15.55,
+        -18.44,
+        5.73
+      ],
+      [
+        15.55,
+        -18.44,
+        13.91
+      ],
+      [
+        15.55,
+        -16.81,
+        2.46
+      ],
+      [
+        15.55,
+        -16.81,
+        13.91
+      ],
+      [
+        15.55,
+        -15.17,
+        0.82
+      ],
+      [
+        15.55,
+        -15.17,
+        13.91
+      ],
+      [
+        15.55,
+        -13.53,
+        0.82
+      ],
+      [
+        15.55,
+        -13.53,
+        13.91
+      ],
+      [
+        15.55,
+        -11.89,
+        0.82
+      ],
+      [
+        15.55,
+        -11.89,
+        12.28
+      ],
+      [
+        15.55,
+        -10.26,
+        0.82
+      ],
+      [
+        15.55,
+        -10.26,
+        10.64
+      ],
+      [
+        15.55,
+        -8.62,
+        0.82
+      ],
+      [
+        15.55,
+        -8.62,
+        9.0
+      ],
+      [
+        15.55,
+        -6.98,
+        2.46
+      ],
+      [
+        15.55,
+        -6.98,
+        7.37
+      ],
+      [
+        15.55,
+        -5.35,
+        4.09
+      ],
+      [
+        15.55,
+        -5.35,
+        5.73
+      ],
+      [
+        17.19,
+        -21.72,
+        9.0
+      ],
+      [
+        17.19,
+        -21.72,
+        10.64
+      ],
+      [
+        17.19,
+        -20.08,
+        4.09
+      ],
+      [
+        17.19,
+        -20.08,
+        5.73
+      ],
+      [
+        17.19,
+        -20.08,
+        7.37
+      ],
+      [
+        17.19,
+        -20.08,
+        12.28
+      ],
+      [
+        17.19,
+        -18.44,
+        2.46
+      ],
+      [
+        17.19,
+        -18.44,
+        13.91
+      ],
+      [
+        17.19,
+        -16.81,
+        0.82
+      ],
+      [
+        17.19,
+        -16.81,
+        13.91
+      ],
+      [
+        17.19,
+        -15.17,
+        0.82
+      ],
+      [
+        17.19,
+        -15.17,
+        13.91
+      ],
+      [
+        17.19,
+        -13.53,
+        0.82
+      ],
+      [
+        17.19,
+        -13.53,
+        13.91
+      ],
+      [
+        17.19,
+        -11.89,
+        0.82
+      ],
+      [
+        17.19,
+        -11.89,
+        12.28
+      ],
+      [
+        17.19,
+        -10.26,
+        0.82
+      ],
+      [
+        17.19,
+        -10.26,
+        10.64
+      ],
+      [
+        17.19,
+        -8.62,
+        2.46
+      ],
+      [
+        17.19,
+        -8.62,
+        9.0
+      ],
+      [
+        17.19,
+        -6.98,
+        4.09
+      ],
+      [
+        17.19,
+        -6.98,
+        5.73
+      ],
+      [
+        17.19,
+        -6.98,
+        7.37
+      ],
+      [
+        18.83,
+        -21.72,
+        5.73
+      ],
+      [
+        18.83,
+        -21.72,
+        7.37
+      ],
+      [
+        18.83,
+        -21.72,
+        9.0
+      ],
+      [
+        18.83,
+        -21.72,
+        10.64
+      ],
+      [
+        18.83,
+        -21.72,
+        12.28
+      ],
+      [
+        18.83,
+        -20.08,
+        2.46
+      ],
+      [
+        18.83,
+        -20.08,
+        4.09
+      ],
+      [
+        18.83,
+        -20.08,
+        13.91
+      ],
+      [
+        18.83,
+        -18.44,
+        0.82
+      ],
+      [
+        18.83,
+        -18.44,
+        13.91
+      ],
+      [
+        18.83,
+        -16.81,
+        0.82
+      ],
+      [
+        18.83,
+        -16.81,
+        13.91
+      ],
+      [
+        18.83,
+        -15.17,
+        0.82
+      ],
+      [
+        18.83,
+        -15.17,
+        13.91
+      ],
+      [
+        18.83,
+        -13.53,
+        0.82
+      ],
+      [
+        18.83,
+        -13.53,
+        13.91
+      ],
+      [
+        18.83,
+        -11.89,
+        0.82
+      ],
+      [
+        18.83,
+        -11.89,
+        12.28
+      ],
+      [
+        18.83,
+        -10.26,
+        0.82
+      ],
+      [
+        18.83,
+        -10.26,
+        10.64
+      ],
+      [
+        18.83,
+        -8.62,
+        2.46
+      ],
+      [
+        18.83,
+        -8.62,
+        4.09
+      ],
+      [
+        18.83,
+        -8.62,
+        5.73
+      ],
+      [
+        18.83,
+        -8.62,
+        7.37
+      ],
+      [
+        18.83,
+        -8.62,
+        9.0
+      ],
+      [
+        20.46,
+        -23.35,
+        7.37
+      ],
+      [
+        20.46,
+        -23.35,
+        9.0
+      ],
+      [
+        20.46,
+        -23.35,
+        10.64
+      ],
+      [
+        20.46,
+        -21.72,
+        4.09
+      ],
+      [
+        20.46,
+        -21.72,
+        5.73
+      ],
+      [
+        20.46,
+        -21.72,
+        12.28
+      ],
+      [
+        20.46,
+        -20.08,
+        2.46
+      ],
+      [
+        20.46,
+        -20.08,
+        13.91
+      ],
+      [
+        20.46,
+        -18.44,
+        0.82
+      ],
+      [
+        20.46,
+        -18.44,
+        13.91
+      ],
+      [
+        20.46,
+        -16.81,
+        0.82
+      ],
+      [
+        20.46,
+        -16.81,
+        13.91
+      ],
+      [
+        20.46,
+        -15.17,
+        0.82
+      ],
+      [
+        20.46,
+        -15.17,
+        13.91
+      ],
+      [
+        20.46,
+        -13.53,
+        0.82
+      ],
+      [
+        20.46,
+        -13.53,
+        12.28
+      ],
+      [
+        20.46,
+        -11.89,
+        0.82
+      ],
+      [
+        20.46,
+        -11.89,
+        12.28
+      ],
+      [
+        20.46,
+        -10.26,
+        2.46
+      ],
+      [
+        20.46,
+        -10.26,
+        9.0
+      ],
+      [
+        20.46,
+        -10.26,
+        10.64
+      ],
+      [
+        20.46,
+        -8.62,
+        4.09
+      ],
+      [
+        20.46,
+        -8.62,
+        5.73
+      ],
+      [
+        20.46,
+        -8.62,
+        7.37
+      ],
+      [
+        22.1,
+        -23.35,
+        4.09
+      ],
+      [
+        22.1,
+        -23.35,
+        5.73
+      ],
+      [
+        22.1,
+        -23.35,
+        7.37
+      ],
+      [
+        22.1,
+        -23.35,
+        9.0
+      ],
+      [
+        22.1,
+        -23.35,
+        10.64
+      ],
+      [
+        22.1,
+        -21.72,
+        2.46
+      ],
+      [
+        22.1,
+        -21.72,
+        12.28
+      ],
+      [
+        22.1,
+        -20.08,
+        0.82
+      ],
+      [
+        22.1,
+        -20.08,
+        12.28
+      ],
+      [
+        22.1,
+        -18.44,
+        0.82
+      ],
+      [
+        22.1,
+        -18.44,
+        12.28
+      ],
+      [
+        22.1,
+        -16.81,
+        0.82
+      ],
+      [
+        22.1,
+        -16.81,
+        12.28
+      ],
+      [
+        22.1,
+        -15.17,
+        0.82
+      ],
+      [
+        22.1,
+        -15.17,
+        12.28
+      ],
+      [
+        22.1,
+        -13.53,
+        0.82
+      ],
+      [
+        22.1,
+        -13.53,
+        12.28
+      ],
+      [
+        22.1,
+        -11.89,
+        0.82
+      ],
+      [
+        22.1,
+        -11.89,
+        10.64
+      ],
+      [
+        22.1,
+        -10.26,
+        2.46
+      ],
+      [
+        22.1,
+        -10.26,
+        4.09
+      ],
+      [
+        22.1,
+        -10.26,
+        5.73
+      ],
+      [
+        22.1,
+        -10.26,
+        7.37
+      ],
+      [
+        22.1,
+        -10.26,
+        9.0
+      ],
+      [
+        23.74,
+        -23.35,
+        4.09
+      ],
+      [
+        23.74,
+        -23.35,
+        5.73
+      ],
+      [
+        23.74,
+        -23.35,
+        7.37
+      ],
+      [
+        23.74,
+        -23.35,
+        9.0
+      ],
+      [
+        23.74,
+        -23.35,
+        10.64
+      ],
+      [
+        23.74,
+        -21.72,
+        2.46
+      ],
+      [
+        23.74,
+        -21.72,
+        12.28
+      ],
+      [
+        23.74,
+        -20.08,
+        0.82
+      ],
+      [
+        23.74,
+        -20.08,
+        12.28
+      ],
+      [
+        23.74,
+        -18.44,
+        0.82
+      ],
+      [
+        23.74,
+        -18.44,
+        12.28
+      ],
+      [
+        23.74,
+        -16.81,
+        0.82
+      ],
+      [
+        23.74,
+        -16.81,
+        12.28
+      ],
+      [
+        23.74,
+        -15.17,
+        0.82
+      ],
+      [
+        23.74,
+        -15.17,
+        12.28
+      ],
+      [
+        23.74,
+        -13.53,
+        0.82
+      ],
+      [
+        23.74,
+        -13.53,
+        10.64
+      ],
+      [
+        23.74,
+        -11.89,
+        2.46
+      ],
+      [
+        23.74,
+        -11.89,
+        4.09
+      ],
+      [
+        23.74,
+        -11.89,
+        7.37
+      ],
+      [
+        23.74,
+        -11.89,
+        9.0
+      ],
+      [
+        23.74,
+        -10.26,
+        5.73
+      ],
+      [
+        25.37,
+        -23.35,
+        4.09
+      ],
+      [
+        25.37,
+        -23.35,
+        5.73
+      ],
+      [
+        25.37,
+        -23.35,
+        7.37
+      ],
+      [
+        25.37,
+        -23.35,
+        9.0
+      ],
+      [
+        25.37,
+        -21.72,
+        2.46
+      ],
+      [
+        25.37,
+        -21.72,
+        10.64
+      ],
+      [
+        25.37,
+        -20.08,
+        0.82
+      ],
+      [
+        25.37,
+        -20.08,
+        12.28
+      ],
+      [
+        25.37,
+        -18.44,
+        0.82
+      ],
+      [
+        25.37,
+        -18.44,
+        12.28
+      ],
+      [
+        25.37,
+        -16.81,
+        0.82
+      ],
+      [
+        25.37,
+        -16.81,
+        10.64
+      ],
+      [
+        25.37,
+        -15.17,
+        0.82
+      ],
+      [
+        25.37,
+        -15.17,
+        10.64
+      ],
+      [
+        25.37,
+        -13.53,
+        2.46
+      ],
+      [
+        25.37,
+        -13.53,
+        9.0
+      ],
+      [
+        25.37,
+        -11.89,
+        4.09
+      ],
+      [
+        25.37,
+        -11.89,
+        5.73
+      ],
+      [
+        25.37,
+        -11.89,
+        7.37
+      ],
+      [
+        27.01,
+        -24.99,
+        7.37
+      ],
+      [
+        27.01,
+        -23.35,
+        4.09
+      ],
+      [
+        27.01,
+        -23.35,
+        5.73
+      ],
+      [
+        27.01,
+        -23.35,
+        9.0
+      ],
+      [
+        27.01,
+        -21.72,
+        2.46
+      ],
+      [
+        27.01,
+        -21.72,
+        10.64
+      ],
+      [
+        27.01,
+        -20.08,
+        2.46
+      ],
+      [
+        27.01,
+        -20.08,
+        10.64
+      ],
+      [
+        27.01,
+        -18.44,
+        2.46
+      ],
+      [
+        27.01,
+        -18.44,
+        10.64
+      ],
+      [
+        27.01,
+        -16.81,
+        2.46
+      ],
+      [
+        27.01,
+        -16.81,
+        10.64
+      ],
+      [
+        27.01,
+        -15.17,
+        2.46
+      ],
+      [
+        27.01,
+        -15.17,
+        9.0
+      ],
+      [
+        27.01,
+        -13.53,
+        2.46
+      ],
+      [
+        27.01,
+        -13.53,
+        7.37
+      ],
+      [
+        27.01,
+        -11.89,
+        4.09
+      ],
+      [
+        27.01,
+        -11.89,
+        5.73
+      ],
+      [
+        28.65,
+        -23.35,
+        4.09
+      ],
+      [
+        28.65,
+        -23.35,
+        5.73
+      ],
+      [
+        28.65,
+        -23.35,
+        7.37
+      ],
+      [
+        28.65,
+        -21.72,
+        2.46
+      ],
+      [
+        28.65,
+        -21.72,
+        9.0
+      ],
+      [
+        28.65,
+        -20.08,
+        2.46
+      ],
+      [
+        28.65,
+        -20.08,
+        9.0
+      ],
+      [
+        28.65,
+        -18.44,
+        2.46
+      ],
+      [
+        28.65,
+        -18.44,
+        9.0
+      ],
+      [
+        28.65,
+        -16.81,
+        2.46
+      ],
+      [
+        28.65,
+        -16.81,
+        9.0
+      ],
+      [
+        28.65,
+        -15.17,
+        2.46
+      ],
+      [
+        28.65,
+        -15.17,
+        9.0
+      ],
+      [
+        28.65,
+        -13.53,
+        4.09
+      ],
+      [
+        28.65,
+        -13.53,
+        5.73
+      ],
+      [
+        28.65,
+        -13.53,
+        7.37
+      ],
+      [
+        30.28,
+        -23.35,
+        5.73
+      ],
+      [
+        30.28,
+        -21.72,
+        4.09
+      ],
+      [
+        30.28,
+        -21.72,
+        7.37
+      ],
+      [
+        30.28,
+        -20.08,
+        4.09
+      ],
+      [
+        30.28,
+        -20.08,
+        7.37
+      ],
+      [
+        30.28,
+        -18.44,
+        4.09
+      ],
+      [
+        30.28,
+        -18.44,
+        5.73
+      ],
+      [
+        30.28,
+        -18.44,
+        7.37
+      ],
+      [
+        30.28,
+        -16.81,
+        4.09
+      ],
+      [
+        30.28,
+        -16.81,
+        5.73
+      ],
+      [
+        30.28,
+        -16.81,
+        7.37
+      ],
+      [
+        30.28,
+        -15.17,
+        4.09
+      ],
+      [
+        30.28,
+        -15.17,
+        5.73
+      ],
+      [
+        30.28,
+        -15.17,
+        7.37
+      ],
+      [
+        31.92,
+        -21.72,
+        5.73
+      ],
+      [
+        31.92,
+        -20.08,
+        5.73
+      ]
+    ],
+    "skeleton_width_mm": 6.43
+  },
+  "outputs": {
+    "preserve": "gd_mount_study_preserve.stl",
+    "obstacle": "gd_mount_study_obstacle.stl",
+    "obstacle_declared": "gd_mount_study_obstacle_declared.stl",
+    "design_space": "gd_mount_study_design_space.stl",
+    "setup": "gd_mount_study_setup.stl",
+    "scad": "gd_mount_study_setup.scad",
+    "png": "gd_mount_study_setup.png",
+    "json": "gd_mount_study_setup.json",
+    "density_raw": "gd_mount_study_density_raw.npy",
+    "density_phys": "gd_mount_study_density_phys.npy",
+    "binary": "gd_mount_study_binary.npy",
+    "final_stl": "gd_mount_study_final.stl",
+    "final_smooth_stl": "gd_mount_study_final_smooth.stl",
+    "final_step": "gd_mount_study_final.step",
+    "result_png": "gd_mount_study_topo.png",
+    "fea_png_1": "gd_mount_study_fea_1.png",
+    "fea_png_2": "gd_mount_study_fea_2.png",
+    "fea_png_3": "gd_mount_study_fea_3.png",
+    "fea_png_4": "gd_mount_study_fea_4.png"
+  }
+}

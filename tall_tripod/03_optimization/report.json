@@ -1,0 +1,133 @@
+{
+  "schema": "topopt/report/1",
+  "verdict": "FAIL",
+  "fail": [
+    {
+      "key": "converged",
+      "condition": "The density field converged (not merely out of iterations)",
+      "detail": "termination: max_iterations"
+    },
+    {
+      "key": "mesh_convergence",
+      "condition": "Mesh convergence confirmed",
+      "detail": "the numbers settled but the hotspot moved 17.49 mm (allowed 7.00); the two meshes are not describing the same failure, so it is a property of the discretisation, not of the part"
+    },
+    {
+      "key": "self_supporting",
+      "condition": "Self-supporting along the build axis (no voxel without material in the 45 degree cone below it)",
+      "detail": "1 voxel(s), 16 mm2 of material with nothing under it within 45 degrees (build axis +Z, at [[-40.0, -44.0, 64.0], [-36.0, -40.0, 68.0]]); it would print on support or not at all. Enable design.overhang, or move the build axis"
+    },
+    {
+      "key": "support_faces",
+      "condition": "No support lands on a mating (preserve) face",
+      "detail": "support rests on 2 preserve voxel(s) (32.0 mm2). Those faces come off the printer rough and out of tolerance. Reorient the part, or accept the finish and say so explicitly."
+    }
+  ],
+  "unknown": [
+    {
+      "key": "min_wall",
+      "condition": "Minimum wall thickness is met",
+      "detail": "not checked in this run"
+    }
+  ],
+  "pass": [
+    {
+      "key": "units",
+      "condition": "Units are declared and are mm / N / MPa",
+      "detail": "mm / N / MPa"
+    },
+    {
+      "key": "material_values",
+      "condition": "Material properties have no unresolved nulls",
+      "detail": "orthotropic_equivalent_solid, provisional card (no values measured on this printer)"
+    },
+    {
+      "key": "build_axis",
+      "condition": "Material coordinate system (build_axis) is defined",
+      "detail": "build axis Z"
+    },
+    {
+      "key": "setup_valid",
+      "condition": "Setup validation passed (preserve/obstacle, loads on preserve)",
+      "detail": "0 error(s), 3 warning(s)"
+    },
+    {
+      "key": "connected",
+      "condition": "All preserve regions are connected",
+      "detail": "1 component(s)"
+    },
+    {
+      "key": "stress_constraint",
+      "condition": "The optimiser's stress constraint held on the final density field",
+      "detail": "not requested (design.stress off); strength is judged by the final FEA only"
+    },
+    {
+      "key": "reanalysed",
+      "condition": "The final shape was re-analysed",
+      "detail": "6 load case(s) re-solved on the thresholded solid"
+    },
+    {
+      "key": "safety_factor",
+      "condition": "Safety factor meets the requirement on every case",
+      "detail": "p99.5 188.99 vs required 1.50 (worst element 50.13)"
+    },
+    {
+      "key": "equilibrium",
+      "condition": "Load/reaction balance within 1 %",
+      "detail": "worst 0.000 %"
+    },
+    {
+      "key": "watertight",
+      "condition": "Final shape is watertight",
+      "detail": "0 open edges, 1 body, no self-intersection"
+    },
+    {
+      "key": "enclosed_support",
+      "condition": "No support inside a sealed cavity",
+      "detail": "all support is reachable from outside"
+    }
+  ],
+  "slicer": {
+    "state": "PASS",
+    "detail": "`pass` means the slice ran and the object fits the plate. It is not a spec 13.3 verdict: all five 13.3 conditions are UNKNOWN here.",
+    "tool": null,
+    "print_time_s": 24784.0,
+    "filament_g": 294.76,
+    "filament_mm3": 233934.32375441535,
+    "support_filament_g": 130.50630765684295,
+    "support_mm3": 103576.43464828805,
+    "layers": 1263,
+    "layer_mm": 0.2,
+    "bed_fits": true,
+    "spec_13_3": "UNKNOWN",
+    "spec_13_3_detail": "the slicer reports how much support, never where it lands; see printcheck",
+    "file": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\04_print\\slice\\slice.json"
+  },
+  "external_tools": {
+    "calculix": {
+      "available": true,
+      "path": "C:\\Users\\ryupc\\Tools\\calculix_2.23_4win\\ccx_static.exe",
+      "version": "This is Version 2.23"
+    },
+    "freecad": {
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    "gmsh": {
+      "available": true,
+      "path": "C:\\Users\\ryupc\\Tools\\gmsh-4.15.2-Windows64\\gmsh.exe",
+      "version": "4.15.2"
+    },
+    "openscad": {
+      "available": true,
+      "path": "C:\\Program Files\\OpenSCAD\\openscad.exe",
+      "version": "OpenSCAD version 2021.01"
+    },
+    "slicer": {
+      "available": true,
+      "path": "C:\\Program Files\\Bambu Studio\\bambu-studio.exe",
+      "version": null
+    }
+  }
+}

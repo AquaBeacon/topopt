@@ -1,0 +1,12 @@
+<evaluation>
+  <qa_pair><question>仕様と MCP 操作説明を読み、設定検査の成功だけで完成品の構造合格と言えるか。YES/NO で答える。</question><answer>NO</answer></qa_pair>
+  <qa_pair><question>コマンド一覧と運用手順を調べ、最適化に先立ち計算費用の実測と設計空間プレビューを生成するコマンド名を答える。</question><answer>setup</answer></qa_pair>
+  <qa_pair><question>CLI ヘルプと MCP 操作説明を調べ、長時間処理を開始した返答から再接続後のログ取得に引き継ぐキーを答える。</question><answer>job_id</answer></qa_pair>
+  <qa_pair><question>仕様と MCP 説明を比較し、外部ソルバ未導入を部品不合格と区別する終了コードを答える。</question><answer>3</answer></qa_pair>
+  <qa_pair><question>CLI の入力エラー規約と MCP ジョブ仕様を読み、存在しない入力 JSON を validate に渡した終了コードを答える。</question><answer>2</answer></qa_pair>
+  <qa_pair><question>設計手順とコマンドのヘルプを読み、メッシュ形状だけの推定ではなく造形時間を実スライサーから取得するコマンド名を答える。</question><answer>slice</answer></qa_pair>
+  <qa_pair><question>解析の構成説明と CLI ヘルプを調べ、ボクセル経路とは別のソルバで形状を再解析するコマンド名を答える。</question><answer>ccx</answer></qa_pair>
+  <qa_pair><question>MCP のファイル操作制限と CLI 引数の取り扱いを比較し、このサーバーを外部の信頼できない入力向けファイルサンドボックスとして使えるか。YES/NO で答える。</question><answer>NO</answer></qa_pair>
+  <qa_pair><question>完了記録のないジョブについて、MCP 仕様と操作説明を読み、強制終了の可能性も含む状態文字列を答える。</question><answer>pending_or_running</answer></qa_pair>
+  <qa_pair><question>設計仕様と MCP サーバーの利用単位を照合し、長さ・荷重・応力の順に単位をスラッシュ区切りで答える。</question><answer>mm/N/MPa</answer></qa_pair>
+</evaluation>

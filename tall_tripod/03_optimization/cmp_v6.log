@@ -1,0 +1,31 @@
+optimum from tall_tripod_study (voxel 3.000 mm, origin [-126.0, -126.0, -6.0])
+geometry (voxel 3.000 mm)
+  optimum            10403 voxels     280881 mm3
+  rebuild            10929 voxels     295083 mm3  (+5.1 % mass)
+  overlap            10298 voxels  (99.0 % of the optimum)
+  missing              105 voxels  (optimum wanted it, rebuild has not)
+  extra                631 voxels  (rebuild added it, optimum did not)
+  wrote tall_tripod/03_optimization/cmp_v6\topo_compare.png
+
+structure (same study, same voxel size)
+  shape          case                        defl mm   compliance       SF
+  optimum shape  LC1f  push 1.0 N horizontally at the camera mount      0.001         0.00  2691.16
+  optimum shape  LC2   camera weight plus 5x vertical shock      0.002         0.03   712.47
+  optimum shape  LC3n  lift by the head, north foot caught      0.017         0.10   231.78
+  optimum shape  LC3sw lift by the head, south-west foot caught      0.025         0.18   212.51
+  optimum shape  LC3se lift by the head, south-east foot caught      0.026         0.18   201.25
+  optimum shape  LC4t  twist the head about the vertical axis      0.001         0.00  1198.64
+  rebuild        LC1f  push 1.0 N horizontally at the camera mount      0.001         0.00  1796.52
+  rebuild        LC2   camera weight plus 5x vertical shock      0.003         0.03   464.57
+  rebuild        LC3n  lift by the head, north foot caught      0.026         0.11   136.69
+  rebuild        LC3sw lift by the head, south-west foot caught      0.032         0.18   147.21
+  rebuild        LC3se lift by the head, south-east foot caught      0.033         0.18   142.60
+  rebuild        LC4t  twist the head about the vertical axis      0.003         0.01   551.04
+
+  LC1f  push 1.0 N horizontally at the camera mount rebuild is 1.14x the optimum's compliance (14 % softer)
+  LC2   camera weight plus 5x vertical shock rebuild is 1.17x the optimum's compliance (17 % softer)
+  LC3n  lift by the head, north foot caught rebuild is 1.08x the optimum's compliance (8 % softer)
+  LC3sw lift by the head, south-west foot caught rebuild is 1.00x the optimum's compliance (0 % stiffer)
+  LC3se lift by the head, south-east foot caught rebuild is 0.96x the optimum's compliance (4 % stiffer)
+  LC4t  twist the head about the vertical axis rebuild is 2.58x the optimum's compliance (158 % softer)
+      -> the rebuild lost the load path. Look at MISSING in the PNG: material the optimum put near the outer surfaces matters most, because bending stiffness goes with the square of the distance from the neutral axis. Widen those members or move them outward and re-check.

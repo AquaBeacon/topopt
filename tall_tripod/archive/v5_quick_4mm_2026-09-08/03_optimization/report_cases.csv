@@ -1,0 +1,7 @@
+case,load_class,required_safety_factor,voxel_sf_p99_5,voxel_sf_worst,voxel_max_disp_mm,ccx_sf_p99_5,ccx_sf_worst,ccx_max_disp_mm,ccx_buckling_min,disp_ratio_ccx_over_voxel,pass
+LC1f  push 1.0 N horizontally at the camera mount,,3.0,3470.176084379748,3131.3512234691416,0.000766854264583764,,,,,,False
+LC2   camera weight plus 5x vertical shock,,3.0,770.9749023901678,765.7484927132832,0.0026422368928837683,,,,,,False
+"LC3n  lift by the head, north foot caught",,3.0,147.6214999481248,133.57526154791654,0.01593312772264141,,,,,,False
+"LC3sw lift by the head, south-west foot caught",,3.0,121.52972266877305,109.40274844482664,0.024544884524074863,,,,,,False
+"LC3se lift by the head, south-east foot caught",,3.0,12.884229251703633,11.826299434335715,0.37538734312515604,,,,,,False
+LC4t  twist the head about the vertical axis,,3.0,1903.8168287059586,1779.3160582939568,0.0008407665050346999,,,,,,False

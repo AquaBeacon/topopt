@@ -1,0 +1,85 @@
+
+                        S T E P       1
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+       -4.611361E-02  3.200722E+01 -4.463801E+01
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.0000000E+00
+
+        1.957800E+01 -1.143069E+00  2.228041E+01
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.0000000E+00
+
+       -1.953188E+01 -8.641494E-01  2.282612E+01
+
+     B U C K L I N G   F A C T O R   O U T P U T
+
+ MODE NO       BUCKLING
+                FACTOR
+
+      1   0.1478958E+03
+      2   0.1602477E+03
+      3   0.1728836E+03
+      4   0.1914456E+03
+
+                    E I G E N V A L U E    N U M B E R     1
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+       -5.673010E-03  5.468708E-05 -5.466250E-04
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.0000000E+00
+
+        4.731736E-03  6.945818E-03  1.091506E-02
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.0000000E+00
+
+        2.289369E-03 -9.182087E-03 -8.374812E-03
+
+                    E I G E N V A L U E    N U M B E R     2
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+        4.118555E-03 -1.187724E-03 -5.890111E-03
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.0000000E+00
+
+        3.953861E-04 -4.116296E-03 -1.034384E-02
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.0000000E+00
+
+       -7.227721E-03  1.195692E-02  1.359048E-02
+
+                    E I G E N V A L U E    N U M B E R     3
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+       -5.386144E-04  8.549738E-04 -6.211199E-04
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.0000000E+00
+
+        3.989296E-04 -2.609358E-03  2.593275E-02
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.0000000E+00
+
+        6.479026E-03 -1.735980E-02 -1.080057E-02
+
+                    E I G E N V A L U E    N U M B E R     4
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+        1.583447E-03  1.066331E-04  4.449036E-03
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.0000000E+00
+
+       -5.266362E-03  2.004129E-03 -3.661756E-02
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.0000000E+00
+
+       -4.553947E-03  2.235666E-02  1.171107E-02

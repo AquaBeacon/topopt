@@ -1,0 +1,375 @@
+{
+  "_what": "Topology-optimisation validation model: the tall tripod (spec 5.3).",
+  "_why": "Raising the camera to 201 mm puts a real three-dimensional load path between the mount and the floor, and how to build it -- one column, three legs, a braced tripod, something else -- is genuinely open.",
+  "_not_a_part": "This is a validation model, not the shipped bracket. osmo_tripod/osmo_tripod.scad stays as it is.",
+  "_history_v1": "The first version raised the hinge to 173 mm, which forced a 300 mm footprint to stay stable, which does not fit a 250 mm printer. Nothing checked, and 3.6 hours of optimisation produced an STL that fits the machine in no orientation at all. See tall_tripod/archive/v1_unprintable/.",
+  "_history_v3": "v2 and v3 fixed the printability but kept a design space that was a disc plus a tapered mast, and preserve that included three foot pads and a hub seat. Everything structural about the answer -- how wide the base is, how thick the mast is, where the three feet go -- was therefore decided in CAD before the optimiser started. The reports said so, in a section headed 'what this does not show'.",
+  "_what_changed_in_v4": [
+    "The design space is one cylinder that fills the plate: d240 x 146 mm. No disc, no mast, no pedestal outline.",
+    "preserve is the camera mount head and nothing else. There are no foot pads and no hub.",
+    "Supports use `\"contact\": \"ground\"`: they act on whatever material the optimiser puts on the build plane, so the number of feet and where they go is now a result rather than an input.",
+    "The camera interface is re-cut from CAD in the `finish` stage, so it survives a voxel size that cannot represent it.",
+    "The screw-access volumes are declared as obstacle. With the design space now surrounding the head, they are reachable for the first time and would otherwise be filled in."
+  ],
+  "units": "mm_N_MPa",
+  "material": "PLA",
+  "build_axis": "Z",
+  "raster_axis": "X",
+  "_build_axis_note": "Printed standing up, the way the model is drawn: the layer planes are horizontal, so bending the structure pulls the layers apart. That is the worst orientation for an FFF part and is exactly what this model is meant to expose. `build_axis` is also which way is *down* for ground contact.",
+  "printer": "X1C",
+  "_printer_note": "Declared, not defaulted. The design space is d240 x 146 against a 250 mm usable envelope. `tall_tripod.scad` asserts the same limit on the design-space extents themselves -- v3's assert tested `r_foot` and only covered the design space by coincidence, which stopped being true the moment the legs went away.",
+  "safety_factor": 3.0,
+  "_safety_factor_note": "materials.required_safety_factor() asks for 4.0 while the PLA card is provisional (no value measured on this printer). 3.0 is kept here so the number stays comparable with the recorded runs; the report states the shortfall.",
+  "max_deflection_mm": 3.0,
+  "_deflection_note": "At 201 mm the camera is a long lever. 3 mm at the camera top is about 0.9 degrees of tilt, which is where video framing visibly drifts.",
+  "voxel_mm": 10.0,
+  "_voxel_note": "A COARSE EXPLORATORY GRID, chosen deliberately. 10 mm across a d240 x 146 design space is 24 cells wide and about 6,600 cells in the domain -- enough to see which topology the loads ask for, and not enough to size a member. Override it from the command line with `--voxel`; `topopt setup` times one solve on whatever grid it builds and prints what 80 iterations would cost, so the trade is priced before it is paid rather than after.",
+  "_voxel_and_the_interface": "10 mm cannot represent the camera interface at all: the centre finger is 2.40 mm. That used to be the reason a coarse grid was unaffordable. It is not any more -- the interface is preserve, the optimiser never touches it, and the `finish` block below re-cuts it from CAD on a 0.5 mm grid. MEASURED: the 2.40 mm finger comes out 2.00, the 3.80 mm slot 4.00, the 4.00 mm outer finger 4.00, the bolt bore 5.60. So it is good to about a finish voxel on a width, not to the drawing. What a coarse grid still costs is the FEA: stresses in and around the head are resolved no better than 10 mm, and the report says so.",
+  "target_elements": 200000,
+  "design": {
+    "volfrac": 0.04,
+    "_volfrac_note": "Set for a part of comparable mass to the recorded v3 result (309,312 mm3), not by copying v3's 0.22. volfrac is a fraction of the FREE cells, and v4's design space is 5.8x bigger, so the same number would have asked for 1.4 kg of PLA. 0.040 of ~6.58e6 mm3 is about 263,000 mm3 of optimised material plus ~23,000 mm3 of preserve. Same material, far more freedom: that is the comparison this version is for.",
+    "filter_mm": 20.0,
+    "_filter_note": "Two voxels, which is the floor the grid imposes anyway -- at 10 mm there is nothing finer to ask for. On a finer grid this is the knob that sets the minimum member; see known-issues G1 and lessons-learned #49 for what it does and does not control.",
+    "symmetry": [],
+    "_symmetry_note": "No mirror symmetry declared. The three LC3 cases each load one side and LC4t twists; mirror-averaging would pull the result away from what those cases actually ask for. It would also decide part of the stance, which is the thing v4 exists to stop doing.",
+    "move": 0.2,
+    "tol_change": 0.002
+  },
+  "geometry": {
+    "voxel_mm": 10.0,
+    "clearance_mm": 0.0,
+    "_clearance_note": "Zero on purpose. At 10 mm a requested clearance under one voxel is rounded up to a whole one, so asking for 1 mm would silently grow every obstacle by 10 mm. The clearances that matter are in the CAD geometry itself (tall_tripod.scad, the [Screw] block).",
+    "pad_voxels": 2,
+    "_preserve_why": "The camera mount head as a SOLID envelope, before the slots are cut, and NOTHING ELSE. Handing over a shape with the holes already cut would make those holes free cells and the optimiser would fill them. v3 also preserved three foot pads and a hub seat; those are gone, which is what frees the stance.",
+    "_attach_why": "Where the optimiser may JOIN the head. Without this the design space touches the whole head and material grows onto the flanks and the top of the pedestal, which is exactly where the camera and the thumbscrew need the space (and it is not how anyone would draw the part). `head_underside` is a box under the pedestal; it is clipped to the one-voxel shell around the head, so only the cells directly under the pedestal's bottom face remain attachable. The rest of the head's surface becomes obstacle (`no_attach`). The number of cells in the zone is in the setup report under info.attach.",
+    "preserve": {
+      "mount_head": {
+        "stl": "02_setup/tall_preserve.stl",
+        "attach": [
+          "head_underside"
+        ]
+      }
+    },
+    "_design_space_why": "One cylinder, d240 x 146 mm, sitting on the plate. Simple and as wide as the machine allows. The point of this version is that the outline should not contain the answer.",
+    "design_space": "02_setup/tall_design_space.stl",
+    "_obstacle_why": "Two things that are not part of the part and must stay empty. (1) The volume the camera case sweeps as it tilts +/-30 deg -- material there stops the camera turning. (2) The volume a hand needs to turn the thumbscrew, and a socket needs to reach the nut. MEASURED ON v3: the swept volume removed ZERO cells, because the design space stopped at the hinge and the sweep is almost entirely above it. That is no longer true: v4's design space goes to the top of the head, so both of these bind for the first time. Re-read `obstacle_mm3` in the setup report after any change to the design space.",
+    "_obstacle_why_not_the_holes": "The prong slots (3.80 mm) and the M5 bore (5.60 mm) are NOT obstacles. They are features cut INTO preserve, they are far below one voxel here, and declaring them would either do nothing (preserve wins, which is the rule) or trip the preserve/obstacle overlap error. They are cut in the `finish` stage instead, from the same CAD.",
+    "obstacle": {
+      "camera_swing_and_screw_access": "02_setup/tall_obstacle.stl"
+    }
+  },
+  "finish": {
+    "_what": "How the chosen shape becomes a part. The optimised body is resampled from the analysis grid, the analysed voxels of the head are DROPPED (the add entry is named after the preserve body `mount_head`, so it replaces them) except a one-voxel bridge where a strut meets the head, the CAD head is unioned in, the optimised body is smoothed with the CAD head / plate contact held and the obstacles kept empty, and the head's slots, bore, nut pocket and knob pocket are cut last. See topopt/finish.py.",
+    "_why": "Because the interface is preserve. It went in as CAD, the optimiser never had a say in it, and there is no reason for it to come out of a 10 mm grid. This is what makes the coarse grid a trade rather than a mistake.",
+    "_not": "It does not re-run the analysis. The FEA saw the 10 mm interface; the finished file is a finished SHAPE, not a re-verified part.",
+    "voxel_mm": 1.0,
+    "_voxel_mm_note": "1.0 mm for exploration: 0.5 mm over this part is 119M cells and the smoothing holds a float32 field of that size. Use 0.5 for the run you keep (the 2.40 mm centre finger is 2 cells at 1.0 mm and 5 at 0.5 mm; a feature WIDTH can be out by a whole finish cell either way). Quote `feature_tolerance_mm` from the extract summary.",
+    "add": {
+      "mount_head": "02_setup/tall_mount_solid.stl"
+    },
+    "cut": {
+      "mount_features": "02_setup/tall_mount_cuts.stl"
+    },
+    "smooth_mm": "auto",
+    "_smooth_mm_note": "Gaussian sigma for the OPTIMISED body only, in mm; \"auto\" is half the analysis voxel. The CAD head, the plate layer and the obstacles are not smoothed. The threshold is picked so the smoothed body keeps the analysed volume, so a one-voxel strut does not come out thinner than the one the FEA passed. false turns it off."
+  },
+  "regions": {
+    "_ground_all_note": "The build plane. `face`/`min` measures from the extent of the material, not the grid, so the padding cannot move it. Used with `\"contact\": \"ground\"`, which clips it to the one-voxel contact band and fixes only the nodes on the plane itself.",
+    "ground_all": {
+      "type": "face",
+      "axis": "Z",
+      "side": "min",
+      "depth": 2.0
+    },
+    "_catch_zone_note": [
+      "Three d100 patches of floor at 120 degrees, radius 85 mm from the axis, for the one-foot-caught cases.",
+      "WHY THREE CASES AND NOT ONE. A ground support is glued: the FEA cannot tip the part over. So none of the standing cases rewards a wide base -- a slim central post standing anywhere on the plate is stiffer per gram than a tripod, and MEASURED: with a single catch zone the optimiser produced exactly that, a post leaning towards the one zone, 2 contact pads, and a footprint of 50 x 140 mm. It would fall over if you looked at it.",
+      "Stability is a rigid-body criterion and compliance minimisation cannot express it. The scenario that does require reach is being lifted with one leg hooked, and that leg can be any of them -- so it is three cases, and the structure has to reach all three patches.",
+      "THIS IS THE ONE THING A HUMAN STILL CHOOSES ABOUT THE STANCE: that there are three zones and roughly where. Each is d100 rather than v3's 16 mm pad, so the radius, the number of contact patches, the leg shape and everything above the floor are the optimiser's. Rotate the set and re-run if you want to know whether the answer depends on the choice."
+    ],
+    "catch_n": {
+      "type": "cylinder",
+      "axis": "Z",
+      "centre": [
+        0.0,
+        85.0,
+        0
+      ],
+      "r": 50.0
+    },
+    "catch_sw": {
+      "type": "cylinder",
+      "axis": "Z",
+      "centre": [
+        -73.6,
+        -42.5,
+        0
+      ],
+      "r": 50.0
+    },
+    "catch_se": {
+      "type": "cylinder",
+      "axis": "Z",
+      "centre": [
+        73.6,
+        -42.5,
+        0
+      ],
+      "r": 50.0
+    },
+    "_head_underside_note": "Attach zone for the head (see geometry._attach_why). The pedestal bottom is 15 x 15 mm at z = 110 (z_hinge 136 - head_h 26); the box reaches a little wider and a few voxels down so that, at any voxel size, the cells directly under the bottom face fall in it. Clipping to the shell removes the rest.",
+    "head_underside": {
+      "type": "box",
+      "min": [
+        -9.0,
+        -9.0,
+        90.0
+      ],
+      "max": [
+        9.0,
+        9.0,
+        111.0
+      ]
+    },
+    "_mount_head_note": "The three fingers the camera clamps to -- the same envelope as the preserve body, written as a region so it stays on preserve at any voxel size. v3 used a 32 x 32 mm box here, which at this grid is 88 % free material; the tool clips it to preserve and warns, but a region that is mostly warning is a region nobody reads.",
+    "mount_head": {
+      "type": "cylinder",
+      "axis": "X",
+      "centre": [
+        0,
+        0,
+        136
+      ],
+      "r": 9.5,
+      "range": [
+        -9,
+        11
+      ]
+    },
+    "_couple_note": "The two halves of the head, for LC4t. v3 applied a single 6 N force to the whole tab, whose centroid is on the axis -- so it was a sideways shove, not the twist its own comment claimed. A couple on the two halves is a twist.",
+    "head_minus_x": {
+      "type": "cylinder",
+      "axis": "X",
+      "centre": [
+        0,
+        0,
+        136
+      ],
+      "r": 9.5,
+      "range": [
+        -9,
+        -1
+      ]
+    },
+    "head_plus_x": {
+      "type": "cylinder",
+      "axis": "X",
+      "centre": [
+        0,
+        0,
+        136
+      ],
+      "r": 9.5,
+      "range": [
+        1,
+        11
+      ]
+    }
+  },
+  "required_cases": [
+    "LC1f",
+    "LC2",
+    "LC3n",
+    "LC3sw",
+    "LC3se",
+    "LC4t"
+  ],
+  "cases": [
+    {
+      "name": "LC1f  push 1.0 N horizontally at the camera mount",
+      "_note": "1.0 N is the tipping limit, and the tipping limit is what bounds the load on this model -- it is not a strength case, because past it the part is lying on the floor. tall_tripod.scad computes the BEST-CASE tipping force (feet on the rim of the design space): 1.025 N. The actual value depends on where the optimiser puts the feet and is only known after the run -- read `ground_contact` in the summary.",
+      "_note_on_the_support": "With the whole floor available as contact the FEA cannot tip: this case is 'push it sideways with the base standing on the table'. Tipping itself stays a closed-form check in the CAD, where it belongs.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "mount_head",
+          "force": [
+            0,
+            1.0,
+            0
+          ]
+        },
+        {
+          "region": "mount_head",
+          "force": [
+            0,
+            0,
+            -3.44
+          ]
+        }
+      ],
+      "_load_note": "1.0 N forward at the head plus the 0.35 kg camera weight (3.44 N down). The horizontal force is applied at the head because that is where preserve is; the moment it stands in for is 1.0 N x 65 mm of remaining lever to the camera top."
+    },
+    {
+      "name": "LC2   camera weight plus 5x vertical shock",
+      "_note": "Setting the tripod down hard, or a knock straight down. 5 g is the usual screening factor for a hand-carried item.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "mount_head",
+          "force": [
+            0,
+            0,
+            -17.2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LC3n  lift by the head, north foot caught",
+      "load_class": "abnormal",
+      "_note": "Picking the tripod up by the camera while one leg is still hooked on something. This is the case that decided the mass of the short tripod, and the only kind of case here that asks for a wide base -- everything else is happiest with a single central post. Three of them, one per catch zone, because the hooked leg can be any of them and one case alone just moves the post over to that zone (measured -- see the catch-zone note in `regions`).",
+      "supports": [
+        {
+          "region": "catch_n",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "mount_head",
+          "force": [
+            0,
+            0,
+            12.0
+          ]
+        },
+        {
+          "region": "mount_head",
+          "force": [
+            4.0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LC3sw lift by the head, south-west foot caught",
+      "load_class": "abnormal",
+      "supports": [
+        {
+          "region": "catch_sw",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "mount_head",
+          "force": [
+            0,
+            0,
+            12.0
+          ]
+        },
+        {
+          "region": "mount_head",
+          "force": [
+            -3.46,
+            -2.0,
+            0
+          ]
+        }
+      ],
+      "_load_note": "The 4 N horizontal component points away from the caught foot, as in LC3n, rotated with the zone."
+    },
+    {
+      "name": "LC3se lift by the head, south-east foot caught",
+      "load_class": "abnormal",
+      "supports": [
+        {
+          "region": "catch_se",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "mount_head",
+          "force": [
+            0,
+            0,
+            12.0
+          ]
+        },
+        {
+          "region": "mount_head",
+          "force": [
+            3.46,
+            -2.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LC4t  twist the head about the vertical axis",
+      "_note": "Tightening the thumb screw, or panning the camera against friction. A hollow section is stiff in bending and can still be soft in torsion, so this case is what stops the optimiser producing an open C-section.",
+      "supports": [
+        {
+          "region": "ground_all",
+          "fix": "xyz",
+          "contact": "ground"
+        }
+      ],
+      "loads": [
+        {
+          "region": "head_plus_x",
+          "force": [
+            0,
+            3.0,
+            0
+          ]
+        },
+        {
+          "region": "head_minus_x",
+          "force": [
+            0,
+            -3.0,
+            0
+          ]
+        },
+        {
+          "region": "mount_head",
+          "force": [
+            0,
+            0,
+            -3.44
+          ]
+        }
+      ],
+      "_load_note": "A 3 N couple across the head: +Y on the +X half, -Y on the -X half, about 10 mm apart. Combined with the camera weight so the case is a real one rather than pure torsion."
+    }
+  ],
+  "_history_v4": "v4 (2026-08-06 .. 2026-09-08) put a cylinder of design space around the WHOLE head. Material could join the head anywhere -- and did: the 10 mm result grew onto the flanks and top of the pedestal, and the finish stage then unioned the CAD head into its own 30 x 30 x 30 mm voxelisation, so the shipped STL was a block with the interface lost inside it. Archived as archive/v4_before_attach_2026-09-08/.",
+  "_what_changed_in_v5": [
+    "The head declares WHERE it may be joined: `attach` on the preserve body. Only the underside of the pedestal is attachable; every other face of the head gets a one-voxel no-contact shell that is obstacle from setup onwards (orange in the setup preview).",
+    "The finish stage REPLACES the analysed head voxels with the CAD head (the add entry is named after the preserve body), keeping a one-voxel bridge where the optimised material meets it, and SMOOTHS ONLY the optimised material -- the CAD head, its cuts and the plate contact are held exactly.",
+    "Exploratory runs are done at 4 mm (`--voxel 4`) rather than the 10 mm the study records: at 10 mm the attach zone under the 15 mm pedestal is one or two cells and the answer is decided by rounding."
+  ]
+}

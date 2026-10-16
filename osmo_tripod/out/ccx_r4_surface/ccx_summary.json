@@ -1,0 +1,1160 @@
+{
+  "schema": "topopt/ccx/1",
+  "stl": "osmo_tripod/out/osmo_tripod.stl",
+  "study": "osmo_tripod/study_main.json",
+  "map_mode": "surface",
+  "runs": [
+    {
+      "mesh_target_mm": 4.0,
+      "nodes": 44738,
+      "elements": 24308,
+      "converged": true,
+      "convergence_note": "no error or divergence reported",
+      "material_model": {
+        "material_model": "orthotropic_equivalent_solid",
+        "card_id": "pla_generic_fff_orthotropic_v1",
+        "classification": "conservative_literature_based_default",
+        "measured_for_specific_printer": false,
+        "solid_fraction_applied": 1.0,
+        "Ex_Ey_Ez_MPa": [
+          3000,
+          2400,
+          1500
+        ],
+        "Gxy_Gyz_Gzx_MPa": [
+          1000,
+          550,
+          550
+        ],
+        "strengths_MPa": {
+          "Xt": 50,
+          "Xc": 60,
+          "Yt": 35,
+          "Yc": 50,
+          "Zt": 22,
+          "Zc": 40,
+          "Sxy": 25,
+          "Syz": 15,
+          "Szx": 15
+        },
+        "source": "docs/FFF_PLA_PETG_orthotropic_material_reference.md section 5"
+      },
+      "build_axis": "Z",
+      "map_mode": "surface",
+      "ground_tol_mm": 0.05,
+      "exclude_mm": 0.0,
+      "mesh_quality": {
+        "min": 0.0052,
+        "sliver_count": 39,
+        "sliver_fraction": 0.001604,
+        "p1": 0.04908,
+        "p5": 0.1322,
+        "median": 0.5221,
+        "poor_count": 694,
+        "poor_fraction": 0.02855,
+        "elements": 24308,
+        "pass": false,
+        "note": "the mesh contains sliver elements; the stress maximum may be a property of the worst element rather than of the part"
+      },
+      "mass_properties": {
+        "volume_mm3": 39790.069443,
+        "mass_g": 49.339686,
+        "centroid_mm": [
+          0.115083,
+          0.002606,
+          7.926415
+        ],
+        "inertia_tensor_g_mm2": [
+          [
+            16788.471516,
+            -0.812036,
+            -77.902461
+          ],
+          [
+            -0.812036,
+            16458.456878,
+            -0.596237
+          ],
+          [
+            -77.902461,
+            -0.596237,
+            29555.962995
+          ]
+        ],
+        "elements": 24308
+      },
+      "density_kg_m3": 1240,
+      "inp": "osmo_tripod/out/ccx_r4_surface\\osmo_tripod_repaired_h4.00.inp",
+      "frd": "osmo_tripod/out/ccx_r4_surface\\osmo_tripod_repaired_h4.00.frd",
+      "stl_meshed": "osmo_tripod/out/ccx_r4_surface\\osmo_tripod_repaired_h4.00_shell.stl",
+      "surface_refinement": {
+        "triangles_before": 2048,
+        "triangles_after": 12012,
+        "max_edge_before_mm": 38.647,
+        "max_edge_after_mm": 4.0,
+        "passes": 5,
+        "path": "osmo_tripod/out/ccx_r4_surface\\osmo_tripod_repaired_h4.00_shell.stl"
+      },
+      "shell": {
+        "stl": "osmo_tripod/out/osmo_tripod.stl",
+        "shell": {
+          "triangles": 2052,
+          "open_edges": 0,
+          "non_manifold_edges": 2,
+          "degenerate": 4,
+          "closed_shell": false
+        },
+        "repaired": true,
+        "repair": {
+          "before": {
+            "triangles": 2052,
+            "open_edges": 0,
+            "non_manifold_edges": 2,
+            "degenerate": 4,
+            "closed_shell": false
+          },
+          "after": {
+            "triangles": 2048,
+            "open_edges": 0,
+            "non_manifold_edges": 0,
+            "degenerate": 0,
+            "closed_shell": true
+          },
+          "volume_before_mm3": 39790.07,
+          "volume_after_mm3": 39790.07,
+          "path": "osmo_tripod/out/ccx_r4_surface\\osmo_tripod_repaired.stl"
+        },
+        "meshed_stl": "osmo_tripod/out/ccx_r4_surface\\osmo_tripod_repaired.stl"
+      },
+      "cases": [
+        {
+          "case": "LC1 push 30N at camera top z=88, feet gripped",
+          "step": 1,
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "foot_F",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 270,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 156.4863
+              },
+              {
+                "region": "foot_L",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 297,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 152.0928
+              },
+              {
+                "region": "foot_R",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 285,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 154.65
+              }
+            ],
+            "loads": [
+              {
+                "region": "bolt",
+                "mode": "surface",
+                "nodes": 3850,
+                "force_N": [
+                  0.0,
+                  -30.0,
+                  0.0
+                ]
+              },
+              {
+                "region": "mx_front",
+                "mode": "surface",
+                "nodes": 568,
+                "force_N": [
+                  0.0,
+                  0.0,
+                  114.7
+                ]
+              },
+              {
+                "region": "mx_back",
+                "mode": "surface",
+                "nodes": 548,
+                "force_N": [
+                  0.0,
+                  0.0,
+                  -114.7
+                ]
+              }
+            ],
+            "gravity": {
+              "vector_mm_s2": [
+                0.0,
+                0.0,
+                -9810.0
+              ],
+              "density_kg_m3": 1240.0,
+              "mass_g": 49.33969,
+              "weight_N": [
+                0.0,
+                0.0,
+                -0.484022
+              ],
+              "note": "the solid material's density. The voxel FEA derates it by the infill fill factor and this path does not, so the two disagree about the weight of a gravity case by that factor -- a real difference to expect when comparing drop cases."
+            },
+            "load_distribution": "each region's total force is split equally over its surface nodes: the resultant is exact, the distribution is approximate"
+          },
+          "max_disp_mm": 0.04273,
+          "max_disp_components_mm": [
+            0.00502,
+            0.04271,
+            0.02282
+          ],
+          "max_disp_at_mm": [
+            0.7,
+            0.828,
+            32.464
+          ],
+          "von_mises_max_MPa": 31.4421,
+          "von_mises_p99_5_MPa": 2.188,
+          "principal_max_MPa": 36.1786,
+          "principal_min_MPa": -39.2896,
+          "tresca_max_MPa": 32.8684,
+          "strain_energy_density_max_MPa": 0.377207,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 1.63416,
+          "failure_index_p99_5": 0.09375,
+          "safety_factor_p99_5": 10.667,
+          "worst_element_safety_factor": 0.612,
+          "hotspot": {
+            "node": 7030,
+            "xyz_mm": [
+              11.739,
+              10.136,
+              17.062
+            ],
+            "failure_index": 1.6342
+          },
+          "applied_N": [
+            0.0,
+            -30.0,
+            -0.48402
+          ],
+          "reaction_total_N": [
+            2e-05,
+            30.0,
+            0.481
+          ],
+          "reaction_moment_Nmm": [
+            -2827.2537,
+            -22.3016,
+            -29.3759
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              2827.258,
+              22.2445,
+              29.3766
+            ],
+            "reaction_Nmm": [
+              -2827.2537,
+              -22.3016,
+              -29.3759
+            ],
+            "residual_Nmm": [
+              0.004301,
+              -0.057095,
+              0.000676
+            ],
+            "relative_error": 2e-05,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 4.240484,
+          "equilibrium": {
+            "applied_N": [
+              0.0,
+              -30.0,
+              -0.484
+            ],
+            "reaction_N": [
+              0.0,
+              30.0,
+              0.481
+            ],
+            "residual_N": [
+              8e-06,
+              -1e-06,
+              -0.003032
+            ],
+            "relative_error": 0.000101,
+            "pass": true,
+            "required": "<= 1 % of the applied load + the body force on elements touching a fixed node (0.017463 N), which CalculiX nets out of the printed total",
+            "netted_bound_N": 0.017463,
+            "residual_norm_N": 0.003032,
+            "allowance_N": 0.317502
+          },
+          "pass": false,
+          "notes": [
+            "the worst element is at 0.612, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails"
+          ]
+        },
+        {
+          "case": "LC2 bag crush 150N straight down on the mount",
+          "step": 2,
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "foot_F",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 270,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 156.4863
+              },
+              {
+                "region": "foot_L",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 297,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 152.0928
+              },
+              {
+                "region": "foot_R",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 285,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 154.65
+              }
+            ],
+            "loads": [
+              {
+                "region": "bolt",
+                "mode": "surface",
+                "nodes": 3850,
+                "force_N": [
+                  0.0,
+                  0.0,
+                  -150.0
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is split equally over its surface nodes: the resultant is exact, the distribution is approximate"
+          },
+          "max_disp_mm": 0.04419,
+          "max_disp_components_mm": [
+            0.00871,
+            0.00688,
+            0.04376
+          ],
+          "max_disp_at_mm": [
+            -9.0,
+            2.854,
+            32.052
+          ],
+          "von_mises_max_MPa": 6.5156,
+          "von_mises_p99_5_MPa": 2.0505,
+          "principal_max_MPa": 1.8033,
+          "principal_min_MPa": -8.8944,
+          "tresca_max_MPa": 7.1131,
+          "strain_energy_density_max_MPa": 0.013931,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.15676,
+          "failure_index_p99_5": 0.04428,
+          "safety_factor_p99_5": 22.582,
+          "worst_element_safety_factor": 6.379,
+          "hotspot": {
+            "node": 4804,
+            "xyz_mm": [
+              -33.393,
+              -19.219,
+              0.0
+            ],
+            "failure_index": 0.1568
+          },
+          "applied_N": [
+            0.0,
+            0.0,
+            -150.0
+          ],
+          "reaction_total_N": [
+            3e-05,
+            -1e-05,
+            150.48098
+          ],
+          "reaction_moment_Nmm": [
+            0.6304,
+            146.8265,
+            0.0019
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              -0.6258,
+              -146.8831,
+              0.0
+            ],
+            "reaction_Nmm": [
+              0.6304,
+              146.8265,
+              0.0019
+            ],
+            "residual_Nmm": [
+              0.004551,
+              -0.056585,
+              0.001908
+            ],
+            "relative_error": 0.000387,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 6.095207,
+          "equilibrium": {
+            "applied_N": [
+              0.0,
+              0.0,
+              -150.0
+            ],
+            "reaction_N": [
+              -0.0,
+              0.0,
+              150.481
+            ],
+            "residual_N": [
+              -0.0,
+              1e-05,
+              0.48099
+            ],
+            "relative_error": 0.003207,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "pass": true
+        },
+        {
+          "case": "LC3h bag press 150N on one leg tip, body resting (hub supported)",
+          "step": 3,
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "hub_bottom",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 2782,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 1014.1989
+              }
+            ],
+            "loads": [
+              {
+                "region": "foot_F",
+                "mode": "surface",
+                "nodes": 270,
+                "force_N": [
+                  0.0,
+                  0.0,
+                  -150.0
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is split equally over its surface nodes: the resultant is exact, the distribution is approximate"
+          },
+          "max_disp_mm": 0.366,
+          "max_disp_components_mm": [
+            0.00784,
+            0.07159,
+            0.35895
+          ],
+          "max_disp_at_mm": [
+            -2.5,
+            52.0,
+            0.0
+          ],
+          "von_mises_max_MPa": 28.3268,
+          "von_mises_p99_5_MPa": 6.3828,
+          "principal_max_MPa": 46.0049,
+          "principal_min_MPa": -34.5086,
+          "tresca_max_MPa": 30.7068,
+          "strain_energy_density_max_MPa": 0.287875,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.92331,
+          "failure_index_p99_5": 0.17762,
+          "safety_factor_p99_5": 5.63,
+          "worst_element_safety_factor": 1.083,
+          "hotspot": {
+            "node": 14273,
+            "xyz_mm": [
+              13.435,
+              13.435,
+              1.062
+            ],
+            "failure_index": 0.9233
+          },
+          "applied_N": [
+            0.0,
+            0.0,
+            -150.0
+          ],
+          "reaction_total_N": [
+            3e-05,
+            0.0001,
+            150.47804
+          ],
+          "reaction_moment_Nmm": [
+            6958.5245,
+            23.4048,
+            0.0005
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              -6958.5241,
+              -23.4593,
+              0.0
+            ],
+            "reaction_Nmm": [
+              6958.5245,
+              23.4048,
+              0.0005
+            ],
+            "residual_Nmm": [
+              0.000363,
+              -0.054538,
+              0.000538
+            ],
+            "relative_error": 8e-06,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 41.079067,
+          "equilibrium": {
+            "applied_N": [
+              0.0,
+              0.0,
+              -150.0
+            ],
+            "reaction_N": [
+              -0.0,
+              -0.0,
+              150.478
+            ],
+            "residual_N": [
+              -0.0,
+              -0.0,
+              0.478
+            ],
+            "relative_error": 0.003187,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "pass": false,
+          "notes": [
+            "the worst element is at 1.083, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails"
+          ]
+        },
+        {
+          "case": "LC3x worst leverage 150N on one leg tip, other two feet gripped",
+          "step": 4,
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "foot_L",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 297,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 152.0928
+              },
+              {
+                "region": "foot_R",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 285,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 154.65
+              }
+            ],
+            "loads": [
+              {
+                "region": "foot_F",
+                "mode": "surface",
+                "nodes": 270,
+                "force_N": [
+                  0.0,
+                  0.0,
+                  -150.0
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is split equally over its surface nodes: the resultant is exact, the distribution is approximate"
+          },
+          "max_disp_mm": 3.04704,
+          "max_disp_components_mm": [
+            0.02801,
+            1.03636,
+            3.03702
+          ],
+          "max_disp_at_mm": [
+            -2.5,
+            52.0,
+            0.0
+          ],
+          "von_mises_max_MPa": 51.9115,
+          "von_mises_p99_5_MPa": 18.0662,
+          "principal_max_MPa": 48.2651,
+          "principal_min_MPa": -68.4445,
+          "tresca_max_MPa": 55.2102,
+          "strain_energy_density_max_MPa": 0.947122,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 1.6252,
+          "failure_index_p99_5": 0.4896,
+          "safety_factor_p99_5": 2.042,
+          "worst_element_safety_factor": 0.615,
+          "hotspot": {
+            "node": 17676,
+            "xyz_mm": [
+              -34.301,
+              -28.17,
+              3.399
+            ],
+            "failure_index": 1.6252
+          },
+          "applied_N": [
+            0.0,
+            0.0,
+            -150.0
+          ],
+          "reaction_total_N": [
+            0.00019,
+            -5e-05,
+            150.48179
+          ],
+          "reaction_moment_Nmm": [
+            6958.5797,
+            23.4129,
+            0.0152
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              -6958.5241,
+              -23.4593,
+              0.0
+            ],
+            "reaction_Nmm": [
+              6958.5797,
+              23.4129,
+              0.0152
+            ],
+            "residual_Nmm": [
+              0.055585,
+              -0.046387,
+              0.015222
+            ],
+            "relative_error": 1.1e-05,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 410.062761,
+          "equilibrium": {
+            "applied_N": [
+              0.0,
+              0.0,
+              -150.0
+            ],
+            "reaction_N": [
+              0.0,
+              0.0,
+              150.482
+            ],
+            "residual_N": [
+              0.0,
+              0.0,
+              0.48196
+            ],
+            "relative_error": 0.003213,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "pass": false,
+          "notes": [
+            "the worst element is at 0.615, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails"
+          ]
+        },
+        {
+          "case": "LC3b 150N sideways on one leg tip, other two feet gripped",
+          "step": 5,
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "foot_L",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 297,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 152.0928
+              },
+              {
+                "region": "foot_R",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 285,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 154.65
+              }
+            ],
+            "loads": [
+              {
+                "region": "foot_F",
+                "mode": "surface",
+                "nodes": 270,
+                "force_N": [
+                  150.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            ],
+            "gravity": null,
+            "load_distribution": "each region's total force is split equally over its surface nodes: the resultant is exact, the distribution is approximate"
+          },
+          "max_disp_mm": 0.27232,
+          "max_disp_components_mm": [
+            0.2711,
+            0.0458,
+            0.04625
+          ],
+          "max_disp_at_mm": [
+            -2.5,
+            52.0,
+            0.0
+          ],
+          "von_mises_max_MPa": 6.5902,
+          "von_mises_p99_5_MPa": 4.5087,
+          "principal_max_MPa": 8.2976,
+          "principal_min_MPa": -6.7789,
+          "tresca_max_MPa": 7.2206,
+          "strain_energy_density_max_MPa": 0.012163,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 0.18741,
+          "failure_index_p99_5": 0.10799,
+          "safety_factor_p99_5": 9.26,
+          "worst_element_safety_factor": 5.336,
+          "hotspot": {
+            "node": 23411,
+            "xyz_mm": [
+              37.467,
+              -16.373,
+              0.0
+            ],
+            "failure_index": 0.1874
+          },
+          "applied_N": [
+            150.0,
+            0.0,
+            0.0
+          ],
+          "reaction_total_N": [
+            -149.99998,
+            3e-05,
+            0.48193
+          ],
+          "reaction_moment_Nmm": [
+            0.0495,
+            -76.5162,
+            6958.5238
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              0.0,
+              76.4588,
+              -6958.5241
+            ],
+            "reaction_Nmm": [
+              0.0495,
+              -76.5162,
+              6958.5238
+            ],
+            "residual_Nmm": [
+              0.049466,
+              -0.057371,
+              -0.00029
+            ],
+            "relative_error": 1.1e-05,
+            "pass": true,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 33.882081,
+          "equilibrium": {
+            "applied_N": [
+              150.0,
+              0.0,
+              0.0
+            ],
+            "reaction_N": [
+              -150.0,
+              0.0,
+              0.482
+            ],
+            "residual_N": [
+              -0.0,
+              0.0,
+              0.481959
+            ],
+            "relative_error": 0.003213,
+            "pass": true,
+            "required": "<= 1 % of the applied load"
+          },
+          "pass": true
+        },
+        {
+          "case": "LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount",
+          "step": 6,
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "worst_element_minimum": 1.5,
+          "mapping": {
+            "supports": [
+              {
+                "region": "foot_F",
+                "mode": "surface",
+                "fix": "xyz",
+                "nodes": 270,
+                "dofs": [
+                  1,
+                  2,
+                  3
+                ],
+                "area_mm2": 156.4863
+              }
+            ],
+            "loads": [
+              {
+                "region": "bolt",
+                "mode": "surface",
+                "nodes": 3850,
+                "force_N": [
+                  0.0,
+                  0.0,
+                  -245.0
+                ]
+              }
+            ],
+            "gravity": {
+              "vector_mm_s2": [
+                0.0,
+                0.0,
+                -981000.0
+              ],
+              "density_kg_m3": 1240.0,
+              "mass_g": 49.33969,
+              "weight_N": [
+                0.0,
+                0.0,
+                -48.402232
+              ],
+              "note": "the solid material's density. The voxel FEA derates it by the infill fill factor and this path does not, so the two disagree about the weight of a gravity case by that factor -- a real difference to expect when comparing drop cases."
+            },
+            "load_distribution": "each region's total force is split equally over its surface nodes: the resultant is exact, the distribution is approximate"
+          },
+          "max_disp_mm": 5.40581,
+          "max_disp_components_mm": [
+            0.06788,
+            2.28849,
+            5.3963
+          ],
+          "max_disp_at_mm": [
+            -38.319,
+            -29.629,
+            7.769
+          ],
+          "von_mises_max_MPa": 111.3083,
+          "von_mises_p99_5_MPa": 42.1284,
+          "principal_max_MPa": 64.1137,
+          "principal_min_MPa": -137.8147,
+          "tresca_max_MPa": 125.252,
+          "strain_energy_density_max_MPa": 3.750994,
+          "failure_criterion": "max_stress_material_axes",
+          "failure_index_max": 2.53414,
+          "failure_index_p99_5": 1.1359,
+          "safety_factor_p99_5": 0.88,
+          "worst_element_safety_factor": 0.395,
+          "hotspot": {
+            "node": 21636,
+            "xyz_mm": [
+              -3.116,
+              39.581,
+              0.0
+            ],
+            "failure_index": 2.5341
+          },
+          "applied_N": [
+            0.0,
+            0.0,
+            -293.40223
+          ],
+          "reaction_total_N": [
+            7e-05,
+            -0.00045,
+            293.30529
+          ],
+          "reaction_moment_Nmm": [
+            -3.3692,
+            234.3741,
+            -0.0013
+          ],
+          "moment_error": {
+            "applied_Nmm": [
+              -1.0222,
+              -239.9091,
+              0.0
+            ],
+            "reaction_Nmm": [
+              -3.3692,
+              234.3741,
+              -0.0013
+            ],
+            "residual_Nmm": [
+              -4.391445,
+              -5.534943,
+              -0.001338
+            ],
+            "relative_error": 0.02945,
+            "pass": false,
+            "required": "<= 1 % of the applied moment"
+          },
+          "compliance_Nmm": 725.763153,
+          "equilibrium": {
+            "applied_N": [
+              0.0,
+              0.0,
+              -293.4022
+            ],
+            "reaction_N": [
+              -0.0,
+              0.0,
+              293.3052
+            ],
+            "residual_N": [
+              -0.0,
+              0.0,
+              -0.097032
+            ],
+            "relative_error": 0.000331,
+            "pass": true,
+            "required": "<= 1 % of the applied load + the body force on elements touching a fixed node (0.579258 N), which CalculiX nets out of the printed total",
+            "netted_bound_N": 0.579258,
+            "residual_norm_N": 0.097032,
+            "allowance_N": 3.51328
+          },
+          "pass": false,
+          "notes": [
+            "safety factor p99.5 0.880 is below the required 1.50",
+            "the worst element is at 0.395, below the absolute minimum 1.5 -- the p99.5 value does not carry a case whose worst element fails"
+          ]
+        }
+      ],
+      "governing_case": "LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount",
+      "safety_factor_p99_5": 0.88,
+      "worst_element_safety_factor": 0.395,
+      "hotspot": {
+        "node": 21636,
+        "xyz_mm": [
+          -3.116,
+          39.581,
+          0.0
+        ],
+        "failure_index": 2.5341
+      },
+      "failure_criterion": "max_stress_material_axes",
+      "von_mises_p99_5_MPa": 42.1284,
+      "required_safety_factor": 1.5,
+      "load_class": "abnormal",
+      "p99_5_stress_MPa": 42.1284,
+      "hotspot_xyz_mm": [
+        -3.116,
+        39.581,
+        0.0
+      ],
+      "max_disp_mm": 5.40581,
+      "von_mises_max_MPa": 111.3083,
+      "max_stress_MPa": 111.3083,
+      "equilibrium": {
+        "applied_N": [
+          0.0,
+          0.0,
+          -150.0
+        ],
+        "reaction_N": [
+          0.0,
+          0.0,
+          150.482
+        ],
+        "residual_N": [
+          0.0,
+          0.0,
+          0.48196
+        ],
+        "relative_error": 0.003213,
+        "pass": true,
+        "required": "<= 1 % of the applied load"
+      },
+      "pass": false,
+      "error": "the mesh contains sliver elements; the stress maximum may be a property of the worst element rather than of the part"
+    }
+  ],
+  "vs_voxel_fea_cases": {
+    "cases": [
+      {
+        "case": "LC1 push 30N at camera top z=88, feet gripped",
+        "voxel_case": "LC1 push 30N at camera top z=88, feet gripped",
+        "voxel_max_disp_mm": 0.03929210613322837,
+        "ccx_max_disp_mm": 0.04273,
+        "voxel_safety_factor_p99_5": 18.141232853611516,
+        "voxel_min_safety_factor": 4.955803365964354,
+        "ccx_safety_factor_p99_5": 10.667,
+        "ccx_worst_element_safety_factor": 0.612,
+        "ratio_ccx_over_voxel": 1.0875,
+        "relative_difference": 0.08046,
+        "pass": true
+      },
+      {
+        "case": "LC2 bag crush 150N straight down on the mount",
+        "voxel_case": "LC2 bag crush 150N straight down on the mount",
+        "voxel_max_disp_mm": 0.04098785787604535,
+        "ccx_max_disp_mm": 0.04419,
+        "voxel_safety_factor_p99_5": 20.377139968729377,
+        "voxel_min_safety_factor": 9.111627118198324,
+        "ccx_safety_factor_p99_5": 22.582,
+        "ccx_worst_element_safety_factor": 6.379,
+        "ratio_ccx_over_voxel": 1.07812,
+        "relative_difference": 0.07246,
+        "pass": true
+      },
+      {
+        "case": "LC3b 150N sideways on one leg tip, other two feet gripped",
+        "voxel_case": "LC3b 150N sideways on one leg tip, other two feet gripped",
+        "voxel_max_disp_mm": 0.25386148163449207,
+        "ccx_max_disp_mm": 0.27232,
+        "voxel_safety_factor_p99_5": 9.207074786433932,
+        "voxel_min_safety_factor": 4.403813245645644,
+        "ccx_safety_factor_p99_5": 9.26,
+        "ccx_worst_element_safety_factor": 5.336,
+        "ratio_ccx_over_voxel": 1.07271,
+        "relative_difference": 0.06778,
+        "pass": true
+      },
+      {
+        "case": "LC3h bag press 150N on one leg tip, body resting (hub supported)",
+        "voxel_case": "LC3h bag press 150N on one leg tip, body resting (hub supported)",
+        "voxel_max_disp_mm": 0.3466577107645445,
+        "ccx_max_disp_mm": 0.366,
+        "voxel_safety_factor_p99_5": 5.336370106478206,
+        "voxel_min_safety_factor": 2.6170516735202964,
+        "ccx_safety_factor_p99_5": 5.63,
+        "ccx_worst_element_safety_factor": 1.083,
+        "ratio_ccx_over_voxel": 1.0558,
+        "relative_difference": 0.05285,
+        "pass": true
+      },
+      {
+        "case": "LC3x worst leverage 150N on one leg tip, other two feet gripped",
+        "voxel_case": "LC3x worst leverage 150N on one leg tip, other two feet gripped",
+        "voxel_max_disp_mm": 2.7836676965433087,
+        "ccx_max_disp_mm": 3.04704,
+        "voxel_safety_factor_p99_5": 2.0071492210352573,
+        "voxel_min_safety_factor": 0.8450857410143623,
+        "ccx_safety_factor_p99_5": 2.042,
+        "ccx_worst_element_safety_factor": 0.615,
+        "ratio_ccx_over_voxel": 1.09461,
+        "relative_difference": 0.08644,
+        "pass": true
+      },
+      {
+        "case": "LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount",
+        "voxel_case": "LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount",
+        "voxel_max_disp_mm": 4.6308685466978385,
+        "ccx_max_disp_mm": 5.40581,
+        "voxel_safety_factor_p99_5": 0.9442568632048819,
+        "voxel_min_safety_factor": 0.3483895792678611,
+        "ccx_safety_factor_p99_5": 0.88,
+        "ccx_worst_element_safety_factor": 0.395,
+        "ratio_ccx_over_voxel": 1.16734,
+        "relative_difference": 0.14335,
+        "pass": true
+      }
+    ],
+    "pass": true,
+    "within": 6,
+    "total": 6,
+    "tolerance": 0.15,
+    "unmatched_voxel": [],
+    "unmatched_ccx": [],
+    "note": "every case agrees within 15 %",
+    "voxel_fea": "osmo_tripod/out/fea_conv_auto/osmo_tripod_fea.json",
+    "note_rewritten": "comparison recomputed with ccx.compare_cases against the 1 mm run of `topopt fea --converge` (the run was launched against out/fea_final, an older 0.67 mm baseline)"
+  }
+}

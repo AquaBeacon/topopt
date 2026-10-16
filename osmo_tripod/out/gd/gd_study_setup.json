@@ -1,0 +1,355 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [
+    "obstacle 'knob_head': clearance 0.80 mm is below the voxel size 2.32 mm, so it was rounded up to one voxel (2.32 mm). Refine the grid if that matters.",
+    "obstacle 'knob_nut': clearance 0.80 mm is below the voxel size 2.32 mm, so it was rounded up to one voxel (2.32 mm). Refine the grid if that matters."
+  ],
+  "info": {
+    "voxel_mm": 2.3236723448710017,
+    "grid_shape": [
+      50,
+      49,
+      19
+    ],
+    "origin_mm": [
+      -58.092,
+      -56.647,
+      -4.647
+    ],
+    "design_space_mm3": 141274.3,
+    "preserve_mm3": 3814.2,
+    "obstacle_mm3": 20902.6,
+    "obstacle_declared_mm3": 12295.6,
+    "domain_mm3": 141274.3,
+    "free_mm3": 133620.9,
+    "free_voxels": 10650,
+    "domain_voxels": 11260,
+    "preserve_outside_design_space_mm3": 0.0,
+    "preserve_bodies": 4,
+    "domain_components": 1,
+    "preserve_bodies_by_domain_component": {
+      "1": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "note_preserve_bodies": "4 separate preserve bodies, all reachable through the design space -- that is the normal generative-design setup.",
+    "design_space_blocked_pct": 2.7,
+    "boundary_conditions": [
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "support",
+        "region": "foot_F",
+        "voxels_in_domain": 20,
+        "voxels_on_preserve": 20
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "support",
+        "region": "foot_L",
+        "voxels_in_domain": 22,
+        "voxels_on_preserve": 22
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "support",
+        "region": "foot_R",
+        "voxels_in_domain": 22,
+        "voxels_on_preserve": 22
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "load",
+        "region": "mount_top",
+        "voxels_in_domain": 240,
+        "voxels_on_preserve": 240
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "load",
+        "region": "mx_front",
+        "voxels_in_domain": 48,
+        "voxels_on_preserve": 48
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "load",
+        "region": "mx_back",
+        "voxels_in_domain": 48,
+        "voxels_on_preserve": 48
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "support",
+        "region": "foot_F",
+        "voxels_in_domain": 20,
+        "voxels_on_preserve": 20
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "support",
+        "region": "foot_L",
+        "voxels_in_domain": 22,
+        "voxels_on_preserve": 22
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "support",
+        "region": "foot_R",
+        "voxels_in_domain": 22,
+        "voxels_on_preserve": 22
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "load",
+        "region": "mount_top",
+        "voxels_in_domain": 240,
+        "voxels_on_preserve": 240
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "load",
+        "region": "mx_front",
+        "voxels_in_domain": 48,
+        "voxels_on_preserve": 48
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "load",
+        "region": "mx_back",
+        "voxels_in_domain": 48,
+        "voxels_on_preserve": 48
+      },
+      {
+        "case": "LC2   crush 150 N down on the mount",
+        "kind": "support",
+        "region": "foot_F",
+        "voxels_in_domain": 20,
+        "voxels_on_preserve": 20
+      },
+      {
+        "case": "LC2   crush 150 N down on the mount",
+        "kind": "support",
+        "region": "foot_L",
+        "voxels_in_domain": 22,
+        "voxels_on_preserve": 22
+      },
+      {
+        "case": "LC2   crush 150 N down on the mount",
+        "kind": "support",
+        "region": "foot_R",
+        "voxels_in_domain": 22,
+        "voxels_on_preserve": 22
+      },
+      {
+        "case": "LC2   crush 150 N down on the mount",
+        "kind": "load",
+        "region": "mount_top",
+        "voxels_in_domain": 240,
+        "voxels_on_preserve": 240
+      },
+      {
+        "case": "LC3x  prise 150 N on one foot, the other two clamped",
+        "kind": "support",
+        "region": "foot_L",
+        "voxels_in_domain": 22,
+        "voxels_on_preserve": 22
+      },
+      {
+        "case": "LC3x  prise 150 N on one foot, the other two clamped",
+        "kind": "support",
+        "region": "foot_R",
+        "voxels_in_domain": 22,
+        "voxels_on_preserve": 22
+      },
+      {
+        "case": "LC3x  prise 150 N on one foot, the other two clamped",
+        "kind": "load",
+        "region": "foot_F",
+        "voxels_in_domain": 20,
+        "voxels_on_preserve": 20
+      }
+    ],
+    "symmetry_mismatch_pct": {
+      "X": {
+        "design_space": 0.0,
+        "preserve": 0.0,
+        "obstacle": 0.0
+      }
+    }
+  },
+  "bodies": [
+    {
+      "name": "design_space",
+      "kind": "design_space",
+      "source": "stl:design_space.stl",
+      "voxels": 11260,
+      "mm3": 141274.3,
+      "bbox_mm": [
+        [
+          -51.12,
+          -52.0,
+          0.0
+        ],
+        [
+          51.12,
+          52.57,
+          23.24
+        ]
+      ]
+    },
+    {
+      "name": "mount_top",
+      "kind": "preserve",
+      "source": "box",
+      "voxels": 240,
+      "mm3": 3011.2,
+      "bbox_mm": [
+        [
+          -11.62,
+          -10.17,
+          16.27
+        ],
+        [
+          11.62,
+          8.42,
+          23.24
+        ]
+      ]
+    },
+    {
+      "name": "foot_F",
+      "kind": "preserve",
+      "source": "cylinder",
+      "voxels": 20,
+      "mm3": 250.9,
+      "bbox_mm": [
+        [
+          -6.97,
+          38.62,
+          0.0
+        ],
+        [
+          6.97,
+          50.24,
+          2.32
+        ]
+      ]
+    },
+    {
+      "name": "foot_L",
+      "kind": "preserve",
+      "source": "cylinder",
+      "voxels": 22,
+      "mm3": 276.0,
+      "bbox_mm": [
+        [
+          -44.15,
+          -28.76,
+          0.0
+        ],
+        [
+          -32.53,
+          -17.14,
+          2.32
+        ]
+      ]
+    },
+    {
+      "name": "foot_R",
+      "kind": "preserve",
+      "source": "cylinder",
+      "voxels": 22,
+      "mm3": 276.0,
+      "bbox_mm": [
+        [
+          32.53,
+          -28.76,
+          0.0
+        ],
+        [
+          44.15,
+          -17.14,
+          2.32
+        ]
+      ]
+    },
+    {
+      "name": "knob_head",
+      "kind": "obstacle",
+      "source": "cylinder",
+      "voxels": 833,
+      "mm3": 10451.3,
+      "bbox_mm": [
+        [
+          -34.86,
+          -12.5,
+          9.29
+        ],
+        [
+          -13.94,
+          13.06,
+          37.18
+        ]
+      ],
+      "clearance_requested_mm": 0.8,
+      "clearance_achieved_mm": 2.324
+    },
+    {
+      "name": "knob_nut",
+      "kind": "obstacle",
+      "source": "cylinder",
+      "voxels": 833,
+      "mm3": 10451.3,
+      "bbox_mm": [
+        [
+          13.94,
+          -12.5,
+          9.29
+        ],
+        [
+          34.86,
+          13.06,
+          37.18
+        ]
+      ],
+      "clearance_requested_mm": 0.8,
+      "clearance_achieved_mm": 2.324
+    },
+    {
+      "name": "preserve body 1",
+      "kind": "preserve_component",
+      "source": "foot_L",
+      "voxels": 22,
+      "mm3": 276.0,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 2",
+      "kind": "preserve_component",
+      "source": "mount_top",
+      "voxels": 240,
+      "mm3": 3011.2,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 3",
+      "kind": "preserve_component",
+      "source": "foot_F",
+      "voxels": 20,
+      "mm3": 250.9,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 4",
+      "kind": "preserve_component",
+      "source": "foot_R",
+      "voxels": 22,
+      "mm3": 276.0,
+      "domain_component": 1
+    }
+  ]
+}

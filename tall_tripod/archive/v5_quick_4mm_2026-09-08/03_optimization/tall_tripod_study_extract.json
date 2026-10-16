@@ -1,0 +1,3337 @@
+{
+  "schema": "topopt/extract/1",
+  "source_dir": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\03_optimization",
+  "study": "tall_tripod/tall_tripod_study.json",
+  "voxel_mm": 4.0,
+  "grid_origin_mm": [
+    -128.0,
+    -128.0,
+    -8.0
+  ],
+  "required_safety_factor": 3.0,
+  "material_model": "orthotropic_equivalent_solid",
+  "levels": [
+    0.4,
+    0.5,
+    0.6
+  ],
+  "candidates": [
+    {
+      "level": 0.4,
+      "connected": true,
+      "connectivity": {
+        "components": 1,
+        "preserve_bodies": 1,
+        "preserve_body_components": [
+          {
+            "body": 1,
+            "component": 1,
+            "preserve_voxels": 320,
+            "kept_fraction": 1.0
+          }
+        ],
+        "connected": true,
+        "island_voxels": 0,
+        "island_mm3": 0.0,
+        "unsupported_pruned_voxels": 0,
+        "unsupported_pruned_mm3": 0.0,
+        "pinches_healed": 2,
+        "pinches_healed_mm3": 128.0,
+        "pinches_left": 20,
+        "pinches_note": "20 contact(s) between cells remain an edge or a corner because every bridging cell is obstacle; the STL has a non-manifold edge there and the printed part a line contact"
+      },
+      "volumes": {
+        "final_mm3": 296320.0,
+        "preserve_mm3": 20480.0,
+        "design_space_mm3": 6515712.0,
+        "domain_mm3": 6515712.0,
+        "volume_fraction_of_free_cells": 0.0427,
+        "volume_fraction_of_domain": 0.0455,
+        "mass_saving_vs_domain_pct": 95.5,
+        "min_member": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 17.889
+        },
+        "min_member_optimised": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 17.889
+        },
+        "ground_contact": {
+          "plane_mm": 0.0,
+          "axis": "Z",
+          "area_mm2": 2272.0,
+          "pads": 6,
+          "band_area_mm2": 45248.0
+        },
+        "unsupported": {
+          "voxels": 0,
+          "area_mm2": 0.0,
+          "on_preserve_voxels": 14,
+          "on_preserve_area_mm2": 224.0,
+          "axis": "Z",
+          "up": "+",
+          "max_support_mm": 0.0,
+          "allow_support": [],
+          "rule": "solid voxel with no solid voxel in the 45 degree cone below; voxels touching preserve are listed separately"
+        }
+      },
+      "thickness": {
+        "voxel_mm": 4.0,
+        "grid_floor_mm": 8.0,
+        "whole_part": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 17.889,
+          "grid_limited": true,
+          "note": "min_mm is exactly 2 x voxel: this is the finest feature the grid can represent, not a measurement of the structure. Re-run at a smaller --voxel to measure it."
+        },
+        "optimised_region": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 17.889,
+          "grid_limited": true,
+          "note": "min_mm is exactly 2 x voxel: this is the finest feature the grid can represent, not a measurement of the structure. Re-run at a smaller --voxel to measure it."
+        }
+      },
+      "downward_face_area_mm2": 9008.0,
+      "solid_voxels": 4630,
+      "fea": [
+        {
+          "elements": 4630,
+          "voxel_mm": 4.0,
+          "volume_mm3": 296320.0,
+          "converged": true,
+          "cg_iterations": 25,
+          "compliance_Nmm": 0.0018336280615286835,
+          "max_displacement_mm": 0.001134395628892983,
+          "max_displacement_at": [
+            12.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.03083941573621964,
+          "von_mises_p99_5_MPa": 0.01733738684405787,
+          "stress_concentration_ratio": 1.7787810823860914,
+          "failure_index_max": 0.0009109661152506314,
+          "failure_index_p99_5": 0.00046214637739014537,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 1097.7356712383016,
+          "safety_factor_p99_5": 2163.81659345086,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 17.88854381999832,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.47213595499958
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "1097.74 (worst element) / 2163.82 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.001 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.5 (typical 17.89 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1097.74
+            },
+            {
+              "pos": [
+                10.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1217.31
+            },
+            {
+              "pos": [
+                10.0,
+                6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1946.44
+            },
+            {
+              "pos": [
+                18.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.0,
+              "safety_factor": 2490.52
+            },
+            {
+              "pos": [
+                -6.0,
+                2.0,
+                106.0
+              ],
+              "failure_index": 0.0,
+              "safety_factor": 2574.51
+            }
+          ],
+          "case": "LC1f  push 1.0 N horizontally at the camera mount",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4630,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 903,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 209,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.291
+            }
+          },
+          "solve_seconds": 0.159
+        },
+        {
+          "elements": 4630,
+          "voxel_mm": 4.0,
+          "volume_mm3": 296320.0,
+          "converged": true,
+          "cg_iterations": 24,
+          "compliance_Nmm": 0.028745386517108337,
+          "max_displacement_mm": 0.00231204808861185,
+          "max_displacement_at": [
+            12.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.08679609303417735,
+          "von_mises_p99_5_MPa": 0.05849854289761755,
+          "stress_concentration_ratio": 1.4837308543921401,
+          "failure_index_max": 0.0030151982409368275,
+          "failure_index_p99_5": 0.0014717694678982156,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 331.6531518303414,
+          "safety_factor_p99_5": 679.4542364220032,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 17.88854381999832,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.47213595499958
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "331.65 (worst element) / 679.45 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.002 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.5 (typical 17.89 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.003,
+              "safety_factor": 331.65
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 462.75
+            },
+            {
+              "pos": [
+                10.0,
+                -10.0,
+                118.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 467.72
+            },
+            {
+              "pos": [
+                6.0,
+                6.0,
+                106.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 531.69
+            },
+            {
+              "pos": [
+                10.0,
+                -6.0,
+                134.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 537.77
+            }
+          ],
+          "case": "LC2   camera weight plus 5x vertical shock",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4630,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 903,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 209,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.291
+            }
+          },
+          "solve_seconds": 0.159
+        },
+        {
+          "elements": 4630,
+          "voxel_mm": 4.0,
+          "volume_mm3": 296320.0,
+          "converged": true,
+          "cg_iterations": 35,
+          "compliance_Nmm": 0.09968447714140627,
+          "max_displacement_mm": 0.01690721822374689,
+          "max_displacement_at": [
+            -8.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.24601994457418616,
+          "von_mises_p99_5_MPa": 0.10770232709423859,
+          "stress_concentration_ratio": 2.284258392661478,
+          "failure_index_max": 0.012127027701666564,
+          "failure_index_p99_5": 0.0045498552409182266,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 82.4604366874312,
+          "safety_factor_p99_5": 219.78721235055943,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 17.88854381999832,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.47213595499958
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "82.46 (worst element) / 219.79 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.017 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.5 (typical 17.89 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -14.0,
+                34.0,
+                2.0
+              ],
+              "failure_index": 0.012,
+              "safety_factor": 82.46
+            },
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.01,
+              "safety_factor": 97.5
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.009,
+              "safety_factor": 113.5
+            },
+            {
+              "pos": [
+                -6.0,
+                6.0,
+                138.0
+              ],
+              "failure_index": 0.004,
+              "safety_factor": 243.78
+            },
+            {
+              "pos": [
+                -18.0,
+                38.0,
+                22.0
+              ],
+              "failure_index": 0.004,
+              "safety_factor": 251.75
+            }
+          ],
+          "case": "LC3n  lift by the head, north foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4630,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 903,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 209,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.291
+            }
+          },
+          "solve_seconds": 0.167
+        },
+        {
+          "elements": 4630,
+          "voxel_mm": 4.0,
+          "volume_mm3": 296320.0,
+          "converged": true,
+          "cg_iterations": 45,
+          "compliance_Nmm": 0.1715233268711457,
+          "max_displacement_mm": 0.024731540642587854,
+          "max_displacement_at": [
+            12.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.36524142364343815,
+          "von_mises_p99_5_MPa": 0.1344042354747098,
+          "stress_concentration_ratio": 2.7174844777281133,
+          "failure_index_max": 0.016290046463591813,
+          "failure_index_p99_5": 0.005117886221706223,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 61.387179111796634,
+          "safety_factor_p99_5": 195.39316754615456,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 17.88854381999832,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.47213595499958
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "61.39 (worst element) / 195.39 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.025 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.5 (typical 17.89 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -30.0,
+                -10.0,
+                2.0
+              ],
+              "failure_index": 0.016,
+              "safety_factor": 61.39
+            },
+            {
+              "pos": [
+                10.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.007,
+              "safety_factor": 143.58
+            },
+            {
+              "pos": [
+                -26.0,
+                -14.0,
+                30.0
+              ],
+              "failure_index": 0.006,
+              "safety_factor": 179.13
+            },
+            {
+              "pos": [
+                -14.0,
+                -14.0,
+                18.0
+              ],
+              "failure_index": 0.005,
+              "safety_factor": 181.94
+            },
+            {
+              "pos": [
+                18.0,
+                2.0,
+                106.0
+              ],
+              "failure_index": 0.004,
+              "safety_factor": 224.61
+            }
+          ],
+          "case": "LC3sw lift by the head, south-west foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4630,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 903,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 209,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.291
+            }
+          },
+          "solve_seconds": 0.282
+        },
+        {
+          "elements": 4630,
+          "voxel_mm": 4.0,
+          "volume_mm3": 296320.0,
+          "converged": true,
+          "cg_iterations": 41,
+          "compliance_Nmm": 0.1760472859639192,
+          "max_displacement_mm": 0.025400938028539405,
+          "max_displacement_at": [
+            -8.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.39188564153745653,
+          "von_mises_p99_5_MPa": 0.14494552470072714,
+          "stress_concentration_ratio": 2.7036753452484525,
+          "failure_index_max": 0.01737835104671124,
+          "failure_index_p99_5": 0.005450461026974284,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 57.542858773660505,
+          "safety_factor_p99_5": 183.47071835776987,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 17.88854381999832,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.47213595499958
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "57.54 (worst element) / 183.47 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.025 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.5 (typical 17.89 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                26.0,
+                -18.0,
+                2.0
+              ],
+              "failure_index": 0.017,
+              "safety_factor": 57.54
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.01,
+              "safety_factor": 103.04
+            },
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.008,
+              "safety_factor": 131.85
+            },
+            {
+              "pos": [
+                42.0,
+                -18.0,
+                22.0
+              ],
+              "failure_index": 0.006,
+              "safety_factor": 155.54
+            },
+            {
+              "pos": [
+                62.0,
+                -30.0,
+                46.0
+              ],
+              "failure_index": 0.006,
+              "safety_factor": 171.02
+            }
+          ],
+          "case": "LC3se lift by the head, south-east foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4630,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 903,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 209,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.291
+            }
+          },
+          "solve_seconds": 0.4
+        },
+        {
+          "elements": 4630,
+          "voxel_mm": 4.0,
+          "volume_mm3": 296320.0,
+          "converged": true,
+          "cg_iterations": 25,
+          "compliance_Nmm": 0.0033292797083456405,
+          "max_displacement_mm": 0.0011274190499839204,
+          "max_displacement_at": [
+            -8.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.06241696433750209,
+          "von_mises_p99_5_MPa": 0.0317139983781249,
+          "stress_concentration_ratio": 1.9681203105741127,
+          "failure_index_max": 0.0014032868729700317,
+          "failure_index_p99_5": 0.0008577675671295615,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 712.6126662066737,
+          "safety_factor_p99_5": 1165.816986233702,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 17.88854381999832,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.47213595499958
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "712.61 (worst element) / 1165.82 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.001 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.5 (typical 17.89 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -2.0,
+                -6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 712.61
+            },
+            {
+              "pos": [
+                10.0,
+                6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1068.34
+            },
+            {
+              "pos": [
+                2.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1149.37
+            },
+            {
+              "pos": [
+                -2.0,
+                -18.0,
+                106.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1156.53
+            },
+            {
+              "pos": [
+                6.0,
+                -10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1359.25
+            }
+          ],
+          "case": "LC4t  twist the head about the vertical axis",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4630,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 903,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 209,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.291
+            }
+          },
+          "solve_seconds": 0.159
+        }
+      ],
+      "min_safety_factor_p99_5": 183.47071835776987,
+      "worst_element_safety_factor": 57.542858773660505,
+      "max_displacement_mm": 0.025400938028539405,
+      "pass": false
+    },
+    {
+      "level": 0.5,
+      "connected": true,
+      "connectivity": {
+        "components": 1,
+        "preserve_bodies": 1,
+        "preserve_body_components": [
+          {
+            "body": 1,
+            "component": 1,
+            "preserve_voxels": 320,
+            "kept_fraction": 1.0
+          }
+        ],
+        "connected": true,
+        "island_voxels": 0,
+        "island_mm3": 0.0,
+        "unsupported_pruned_voxels": 0,
+        "unsupported_pruned_mm3": 0.0,
+        "pinches_healed": 5,
+        "pinches_healed_mm3": 320.0,
+        "pinches_left": 20,
+        "pinches_note": "20 contact(s) between cells remain an edge or a corner because every bridging cell is obstacle; the STL has a non-manifold edge there and the printed part a line contact"
+      },
+      "volumes": {
+        "final_mm3": 280576.0,
+        "preserve_mm3": 20480.0,
+        "design_space_mm3": 6515712.0,
+        "domain_mm3": 6515712.0,
+        "volume_fraction_of_free_cells": 0.0403,
+        "volume_fraction_of_domain": 0.0431,
+        "mass_saving_vs_domain_pct": 95.7,
+        "min_member": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 16.0
+        },
+        "min_member_optimised": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 16.0
+        },
+        "ground_contact": {
+          "plane_mm": 0.0,
+          "axis": "Z",
+          "area_mm2": 2000.0,
+          "pads": 6,
+          "band_area_mm2": 45248.0
+        },
+        "unsupported": {
+          "voxels": 1,
+          "area_mm2": 16.0,
+          "on_preserve_voxels": 14,
+          "on_preserve_area_mm2": 224.0,
+          "axis": "Z",
+          "up": "+",
+          "max_support_mm": 0.0,
+          "allow_support": [],
+          "rule": "solid voxel with no solid voxel in the 45 degree cone below; voxels touching preserve are listed separately",
+          "bbox_mm": [
+            [
+              -32.0,
+              -24.0,
+              48.0
+            ],
+            [
+              -28.0,
+              -20.0,
+              52.0
+            ]
+          ]
+        }
+      },
+      "thickness": {
+        "voxel_mm": 4.0,
+        "grid_floor_mm": 8.0,
+        "whole_part": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 16.0,
+          "grid_limited": true,
+          "note": "min_mm is exactly 2 x voxel: this is the finest feature the grid can represent, not a measurement of the structure. Re-run at a smaller --voxel to measure it."
+        },
+        "optimised_region": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 16.0,
+          "grid_limited": true,
+          "note": "min_mm is exactly 2 x voxel: this is the finest feature the grid can represent, not a measurement of the structure. Re-run at a smaller --voxel to measure it."
+        }
+      },
+      "downward_face_area_mm2": 8752.0,
+      "solid_voxels": 4384,
+      "fea": [
+        {
+          "elements": 4384,
+          "voxel_mm": 4.0,
+          "volume_mm3": 280576.0,
+          "converged": true,
+          "cg_iterations": 26,
+          "compliance_Nmm": 0.001890489716820902,
+          "max_displacement_mm": 0.0011710155802809035,
+          "max_displacement_at": [
+            12.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.03360945340863569,
+          "von_mises_p99_5_MPa": 0.01775045940798024,
+          "stress_concentration_ratio": 1.8934413265678958,
+          "failure_index_max": 0.0009334764594936915,
+          "failure_index_p99_5": 0.0004811806898747309,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 1071.2642936302757,
+          "safety_factor_p99_5": 2078.2213855263744,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "1071.26 (worst element) / 2078.22 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.001 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1071.26
+            },
+            {
+              "pos": [
+                10.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1215.83
+            },
+            {
+              "pos": [
+                10.0,
+                6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1946.26
+            },
+            {
+              "pos": [
+                18.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.0,
+              "safety_factor": 2483.56
+            },
+            {
+              "pos": [
+                -6.0,
+                2.0,
+                106.0
+              ],
+              "failure_index": 0.0,
+              "safety_factor": 2561.81
+            }
+          ],
+          "case": "LC1f  push 1.0 N horizontally at the camera mount",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4384,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 871,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 205,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.068
+            }
+          },
+          "solve_seconds": 0.115
+        },
+        {
+          "elements": 4384,
+          "voxel_mm": 4.0,
+          "volume_mm3": 280576.0,
+          "converged": true,
+          "cg_iterations": 25,
+          "compliance_Nmm": 0.029734891292295076,
+          "max_displacement_mm": 0.002418586224724938,
+          "max_displacement_at": [
+            12.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.08779215341211828,
+          "von_mises_p99_5_MPa": 0.05885225755365677,
+          "stress_concentration_ratio": 1.4917380753334133,
+          "failure_index_max": 0.0030472859213215115,
+          "failure_index_p99_5": 0.0014760895998958217,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 328.1608703020331,
+          "safety_factor_p99_5": 677.4656498295071,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "328.16 (worst element) / 677.47 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.002 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.003,
+              "safety_factor": 328.16
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 457.89
+            },
+            {
+              "pos": [
+                10.0,
+                -10.0,
+                118.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 468.84
+            },
+            {
+              "pos": [
+                6.0,
+                6.0,
+                106.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 531.39
+            },
+            {
+              "pos": [
+                10.0,
+                -6.0,
+                134.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 537.8
+            }
+          ],
+          "case": "LC2   camera weight plus 5x vertical shock",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4384,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 871,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 205,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.068
+            }
+          },
+          "solve_seconds": 0.115
+        },
+        {
+          "elements": 4384,
+          "voxel_mm": 4.0,
+          "volume_mm3": 280576.0,
+          "converged": true,
+          "cg_iterations": 36,
+          "compliance_Nmm": 0.10471962615789493,
+          "max_displacement_mm": 0.017891324047347827,
+          "max_displacement_at": [
+            -8.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.25345536933390805,
+          "von_mises_p99_5_MPa": 0.11807208204527475,
+          "stress_concentration_ratio": 2.1466155668934555,
+          "failure_index_max": 0.012512875554329245,
+          "failure_index_p99_5": 0.004803679845617141,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 79.91768124426177,
+          "safety_factor_p99_5": 208.17374016138817,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "79.92 (worst element) / 208.17 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.018 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -14.0,
+                34.0,
+                2.0
+              ],
+              "failure_index": 0.013,
+              "safety_factor": 79.92
+            },
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.01,
+              "safety_factor": 96.3
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.009,
+              "safety_factor": 111.03
+            },
+            {
+              "pos": [
+                -18.0,
+                26.0,
+                18.0
+              ],
+              "failure_index": 0.004,
+              "safety_factor": 226.66
+            },
+            {
+              "pos": [
+                38.0,
+                102.0,
+                2.0
+              ],
+              "failure_index": 0.004,
+              "safety_factor": 233.06
+            }
+          ],
+          "case": "LC3n  lift by the head, north foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4384,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 871,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 205,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.068
+            }
+          },
+          "solve_seconds": 0.42
+        },
+        {
+          "elements": 4384,
+          "voxel_mm": 4.0,
+          "volume_mm3": 280576.0,
+          "converged": true,
+          "cg_iterations": 47,
+          "compliance_Nmm": 0.18510933956811926,
+          "max_displacement_mm": 0.02680501362196911,
+          "max_displacement_at": [
+            12.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.37858708299705224,
+          "von_mises_p99_5_MPa": 0.1485401264124523,
+          "stress_concentration_ratio": 2.5487192729715815,
+          "failure_index_max": 0.017549872610377843,
+          "failure_index_p99_5": 0.005543162562989017,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 56.98047058237138,
+          "safety_factor_p99_5": 180.4024306768254,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "56.98 (worst element) / 180.40 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.027 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -26.0,
+                -18.0,
+                2.0
+              ],
+              "failure_index": 0.018,
+              "safety_factor": 56.98
+            },
+            {
+              "pos": [
+                10.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.007,
+              "safety_factor": 143.59
+            },
+            {
+              "pos": [
+                -26.0,
+                -14.0,
+                30.0
+              ],
+              "failure_index": 0.006,
+              "safety_factor": 155.33
+            },
+            {
+              "pos": [
+                -66.0,
+                -34.0,
+                38.0
+              ],
+              "failure_index": 0.005,
+              "safety_factor": 187.56
+            },
+            {
+              "pos": [
+                -98.0,
+                -54.0,
+                2.0
+              ],
+              "failure_index": 0.005,
+              "safety_factor": 212.09
+            }
+          ],
+          "case": "LC3sw lift by the head, south-west foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4384,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 871,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 205,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.068
+            }
+          },
+          "solve_seconds": 0.488
+        },
+        {
+          "elements": 4384,
+          "voxel_mm": 4.0,
+          "volume_mm3": 280576.0,
+          "converged": true,
+          "cg_iterations": 45,
+          "compliance_Nmm": 0.19026778801000535,
+          "max_displacement_mm": 0.027250213304507827,
+          "max_displacement_at": [
+            -8.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.4363231279451896,
+          "von_mises_p99_5_MPa": 0.15864408805985258,
+          "stress_concentration_ratio": 2.7503270577632586,
+          "failure_index_max": 0.019155580650148017,
+          "failure_index_p99_5": 0.005811417966984296,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 52.20410794450508,
+          "safety_factor_p99_5": 172.07504359197338,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "52.20 (worst element) / 172.08 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.027 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                26.0,
+                -18.0,
+                2.0
+              ],
+              "failure_index": 0.019,
+              "safety_factor": 52.2
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.01,
+              "safety_factor": 101.01
+            },
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.008,
+              "safety_factor": 130.56
+            },
+            {
+              "pos": [
+                42.0,
+                -18.0,
+                22.0
+              ],
+              "failure_index": 0.007,
+              "safety_factor": 144.5
+            },
+            {
+              "pos": [
+                14.0,
+                -18.0,
+                18.0
+              ],
+              "failure_index": 0.005,
+              "safety_factor": 199.38
+            }
+          ],
+          "case": "LC3se lift by the head, south-east foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4384,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 871,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 205,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.068
+            }
+          },
+          "solve_seconds": 0.495
+        },
+        {
+          "elements": 4384,
+          "voxel_mm": 4.0,
+          "volume_mm3": 280576.0,
+          "converged": true,
+          "cg_iterations": 25,
+          "compliance_Nmm": 0.0034208349487014405,
+          "max_displacement_mm": 0.0011658257501232611,
+          "max_displacement_at": [
+            -8.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.062416984166658654,
+          "von_mises_p99_5_MPa": 0.032005618791179975,
+          "stress_concentration_ratio": 1.9501883270527287,
+          "failure_index_max": 0.0014032782725720437,
+          "failure_index_p99_5": 0.0008612533246546024,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 712.6170336601292,
+          "safety_factor_p99_5": 1161.0985657454974,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "712.62 (worst element) / 1161.10 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.001 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -2.0,
+                -6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 712.62
+            },
+            {
+              "pos": [
+                10.0,
+                6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1068.34
+            },
+            {
+              "pos": [
+                2.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1150.07
+            },
+            {
+              "pos": [
+                -2.0,
+                -18.0,
+                106.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1186.09
+            },
+            {
+              "pos": [
+                6.0,
+                -10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1359.22
+            }
+          ],
+          "case": "LC4t  twist the head about the vertical axis",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4384,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 871,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 205,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 52,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.068
+            }
+          },
+          "solve_seconds": 0.115
+        }
+      ],
+      "min_safety_factor_p99_5": 172.07504359197338,
+      "worst_element_safety_factor": 52.20410794450508,
+      "max_displacement_mm": 0.027250213304507827,
+      "pass": false
+    },
+    {
+      "level": 0.6,
+      "connected": true,
+      "connectivity": {
+        "components": 1,
+        "preserve_bodies": 1,
+        "preserve_body_components": [
+          {
+            "body": 1,
+            "component": 1,
+            "preserve_voxels": 320,
+            "kept_fraction": 1.0
+          }
+        ],
+        "connected": true,
+        "island_voxels": 0,
+        "island_mm3": 0.0,
+        "unsupported_pruned_voxels": 0,
+        "unsupported_pruned_mm3": 0.0,
+        "pinches_healed": 2,
+        "pinches_healed_mm3": 128.0,
+        "pinches_left": 20,
+        "pinches_note": "20 contact(s) between cells remain an edge or a corner because every bridging cell is obstacle; the STL has a non-manifold edge there and the printed part a line contact"
+      },
+      "volumes": {
+        "final_mm3": 262912.0,
+        "preserve_mm3": 20480.0,
+        "design_space_mm3": 6515712.0,
+        "domain_mm3": 6515712.0,
+        "volume_fraction_of_free_cells": 0.0375,
+        "volume_fraction_of_domain": 0.0404,
+        "mass_saving_vs_domain_pct": 96.0,
+        "min_member": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 16.0
+        },
+        "min_member_optimised": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 16.0
+        },
+        "ground_contact": {
+          "plane_mm": 0.0,
+          "axis": "Z",
+          "area_mm2": 1760.0,
+          "pads": 6,
+          "band_area_mm2": 45248.0
+        },
+        "unsupported": {
+          "voxels": 1,
+          "area_mm2": 16.0,
+          "on_preserve_voxels": 14,
+          "on_preserve_area_mm2": 224.0,
+          "axis": "Z",
+          "up": "+",
+          "max_support_mm": 0.0,
+          "allow_support": [],
+          "rule": "solid voxel with no solid voxel in the 45 degree cone below; voxels touching preserve are listed separately",
+          "bbox_mm": [
+            [
+              56.0,
+              -32.0,
+              44.0
+            ],
+            [
+              60.0,
+              -28.0,
+              48.0
+            ]
+          ]
+        }
+      },
+      "thickness": {
+        "voxel_mm": 4.0,
+        "grid_floor_mm": 8.0,
+        "whole_part": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 16.0,
+          "grid_limited": true,
+          "note": "min_mm is exactly 2 x voxel: this is the finest feature the grid can represent, not a measurement of the structure. Re-run at a smaller --voxel to measure it."
+        },
+        "optimised_region": {
+          "min_mm": 8.0,
+          "p5_mm": 8.0,
+          "median_mm": 16.0,
+          "grid_limited": true,
+          "note": "min_mm is exactly 2 x voxel: this is the finest feature the grid can represent, not a measurement of the structure. Re-run at a smaller --voxel to measure it."
+        }
+      },
+      "downward_face_area_mm2": 8560.0,
+      "solid_voxels": 4108,
+      "fea": [
+        {
+          "elements": 4108,
+          "voxel_mm": 4.0,
+          "volume_mm3": 262912.0,
+          "converged": true,
+          "cg_iterations": 27,
+          "compliance_Nmm": 0.001954099201952288,
+          "max_displacement_mm": 0.0012052242708339002,
+          "max_displacement_at": [
+            12.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.033473831674946844,
+          "von_mises_p99_5_MPa": 0.01834283108618276,
+          "stress_concentration_ratio": 1.8248999577912444,
+          "failure_index_max": 0.0009281388279055891,
+          "failure_index_p99_5": 0.0005064083550512859,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 1077.4250251512165,
+          "safety_factor_p99_5": 1974.6909584434607,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "1077.43 (worst element) / 1974.69 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.001 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1077.43
+            },
+            {
+              "pos": [
+                10.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1215.58
+            },
+            {
+              "pos": [
+                10.0,
+                6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1946.37
+            },
+            {
+              "pos": [
+                18.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.0,
+              "safety_factor": 2528.53
+            },
+            {
+              "pos": [
+                -6.0,
+                2.0,
+                106.0
+              ],
+              "failure_index": 0.0,
+              "safety_factor": 2578.44
+            }
+          ],
+          "case": "LC1f  push 1.0 N horizontally at the camera mount",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4108,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 821,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 200,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 50,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.067
+            }
+          },
+          "solve_seconds": 0.106
+        },
+        {
+          "elements": 4108,
+          "voxel_mm": 4.0,
+          "volume_mm3": 262912.0,
+          "converged": true,
+          "cg_iterations": 26,
+          "compliance_Nmm": 0.03153680213211471,
+          "max_displacement_mm": 0.0026727472870049147,
+          "max_displacement_at": [
+            12.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.0878417244454554,
+          "von_mises_p99_5_MPa": 0.05928436009690966,
+          "stress_concentration_ratio": 1.481701485887074,
+          "failure_index_max": 0.0030494529648598116,
+          "failure_index_p99_5": 0.0015155696049606888,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 327.9276681829299,
+          "safety_factor_p99_5": 659.8179303192995,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "327.93 (worst element) / 659.82 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.003 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.003,
+              "safety_factor": 327.93
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 464.53
+            },
+            {
+              "pos": [
+                10.0,
+                -10.0,
+                118.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 466.83
+            },
+            {
+              "pos": [
+                6.0,
+                6.0,
+                106.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 531.85
+            },
+            {
+              "pos": [
+                10.0,
+                -6.0,
+                134.0
+              ],
+              "failure_index": 0.002,
+              "safety_factor": 537.76
+            }
+          ],
+          "case": "LC2   camera weight plus 5x vertical shock",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4108,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 821,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 200,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 50,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.067
+            }
+          },
+          "solve_seconds": 0.106
+        },
+        {
+          "elements": 4108,
+          "voxel_mm": 4.0,
+          "volume_mm3": 262912.0,
+          "converged": true,
+          "cg_iterations": 38,
+          "compliance_Nmm": 0.10957549867258846,
+          "max_displacement_mm": 0.018892593932825746,
+          "max_displacement_at": [
+            -8.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.2557912501144807,
+          "von_mises_p99_5_MPa": 0.11824408738118151,
+          "stress_concentration_ratio": 2.163247700410513,
+          "failure_index_max": 0.012710857696342774,
+          "failure_index_p99_5": 0.004932165289544317,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 78.67289713169589,
+          "safety_factor_p99_5": 202.75070710219245,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "78.67 (worst element) / 202.75 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.019 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -14.0,
+                34.0,
+                2.0
+              ],
+              "failure_index": 0.013,
+              "safety_factor": 78.67
+            },
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.01,
+              "safety_factor": 95.81
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.009,
+              "safety_factor": 111.49
+            },
+            {
+              "pos": [
+                38.0,
+                102.0,
+                2.0
+              ],
+              "failure_index": 0.004,
+              "safety_factor": 223.92
+            },
+            {
+              "pos": [
+                -18.0,
+                38.0,
+                22.0
+              ],
+              "failure_index": 0.004,
+              "safety_factor": 238.42
+            }
+          ],
+          "case": "LC3n  lift by the head, north foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4108,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 821,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 200,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 50,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.067
+            }
+          },
+          "solve_seconds": 0.413
+        },
+        {
+          "elements": 4108,
+          "voxel_mm": 4.0,
+          "volume_mm3": 262912.0,
+          "converged": true,
+          "cg_iterations": 48,
+          "compliance_Nmm": 0.2053809042201866,
+          "max_displacement_mm": 0.02927089897365759,
+          "max_displacement_at": [
+            12.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.5007423687196312,
+          "von_mises_p99_5_MPa": 0.1607593237987241,
+          "stress_concentration_ratio": 3.1148573960573316,
+          "failure_index_max": 0.02271152852854841,
+          "failure_index_p99_5": 0.006130118166298812,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 44.03050189876032,
+          "safety_factor_p99_5": 163.1289924389453,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "44.03 (worst element) / 163.13 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.029 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -30.0,
+                -10.0,
+                2.0
+              ],
+              "failure_index": 0.023,
+              "safety_factor": 44.03
+            },
+            {
+              "pos": [
+                -26.0,
+                -14.0,
+                26.0
+              ],
+              "failure_index": 0.007,
+              "safety_factor": 135.45
+            },
+            {
+              "pos": [
+                -94.0,
+                -54.0,
+                2.0
+              ],
+              "failure_index": 0.007,
+              "safety_factor": 142.63
+            },
+            {
+              "pos": [
+                10.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.007,
+              "safety_factor": 144.12
+            },
+            {
+              "pos": [
+                -66.0,
+                -30.0,
+                42.0
+              ],
+              "failure_index": 0.006,
+              "safety_factor": 167.49
+            }
+          ],
+          "case": "LC3sw lift by the head, south-west foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4108,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 821,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 200,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 50,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.067
+            }
+          },
+          "solve_seconds": 0.512
+        },
+        {
+          "elements": 4108,
+          "voxel_mm": 4.0,
+          "volume_mm3": 262912.0,
+          "converged": true,
+          "cg_iterations": 45,
+          "compliance_Nmm": 0.21277822639833463,
+          "max_displacement_mm": 0.030267686337343627,
+          "max_displacement_at": [
+            -8.0,
+            8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.45900387035867507,
+          "von_mises_p99_5_MPa": 0.17746754199918133,
+          "stress_concentration_ratio": 2.586410253886271,
+          "failure_index_max": 0.019963636321576602,
+          "failure_index_p99_5": 0.006285227321772191,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 50.09107478677143,
+          "safety_factor_p99_5": 159.10323506295055,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 1.50",
+              "got": "50.09 (worst element) / 159.10 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.030 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                26.0,
+                -18.0,
+                2.0
+              ],
+              "failure_index": 0.02,
+              "safety_factor": 50.09
+            },
+            {
+              "pos": [
+                -10.0,
+                18.0,
+                106.0
+              ],
+              "failure_index": 0.01,
+              "safety_factor": 101.42
+            },
+            {
+              "pos": [
+                -6.0,
+                -6.0,
+                106.0
+              ],
+              "failure_index": 0.008,
+              "safety_factor": 130.08
+            },
+            {
+              "pos": [
+                26.0,
+                -14.0,
+                46.0
+              ],
+              "failure_index": 0.006,
+              "safety_factor": 154.73
+            },
+            {
+              "pos": [
+                14.0,
+                -14.0,
+                18.0
+              ],
+              "failure_index": 0.006,
+              "safety_factor": 156.79
+            }
+          ],
+          "case": "LC3se lift by the head, south-east foot caught",
+          "load_class": "abnormal",
+          "required_safety_factor": 1.5,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4108,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 821,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 200,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 50,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.067
+            }
+          },
+          "solve_seconds": 0.489
+        },
+        {
+          "elements": 4108,
+          "voxel_mm": 4.0,
+          "volume_mm3": 262912.0,
+          "converged": true,
+          "cg_iterations": 27,
+          "compliance_Nmm": 0.003588754802563587,
+          "max_displacement_mm": 0.0012499359733507138,
+          "max_displacement_at": [
+            -8.0,
+            -8.0,
+            144.0
+          ],
+          "von_mises_max_MPa": 0.062411729772669636,
+          "von_mises_p99_5_MPa": 0.03259775879685021,
+          "stress_concentration_ratio": 1.9146018645521186,
+          "failure_index_max": 0.0014029967942360132,
+          "failure_index_p99_5": 0.0008715527710216774,
+          "failure_criterion": "max_stress_material_axes",
+          "material_axes": {
+            "build_axis": "Z",
+            "raster_axis": "X",
+            "stiffness": "orthotropic",
+            "card_id": "pla_generic_fff_orthotropic_v1"
+          },
+          "min_safety_factor": 712.7600035212762,
+          "safety_factor_p99_5": 1147.3774546408135,
+          "mesh": {
+            "thin_section_mm": 8.0,
+            "typical_section_mm": 16.0,
+            "elements_across_thin": 2.0,
+            "elements_across_typical": 4.0
+          },
+          "warnings": [],
+          "checks": [
+            {
+              "name": "strength",
+              "required": "safety factor >= 3.00",
+              "got": "712.76 (worst element) / 1147.38 (p99.5)",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "stiffness",
+              "required": "max deflection <= 3.000 mm",
+              "got": "0.001 mm",
+              "pass": true,
+              "inspect": false
+            },
+            {
+              "name": "mesh resolution",
+              "required": ">= 3 elements across the thinnest section",
+              "got": "2.0 (thin 8.00 mm) / 4.0 (typical 16.00 mm)",
+              "pass": false,
+              "inspect": false,
+              "fix": "re-run with --voxel 2.67"
+            }
+          ],
+          "pass": false,
+          "hotspots": [
+            {
+              "pos": [
+                -2.0,
+                -6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 712.76
+            },
+            {
+              "pos": [
+                10.0,
+                6.0,
+                134.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1068.21
+            },
+            {
+              "pos": [
+                2.0,
+                10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1152.52
+            },
+            {
+              "pos": [
+                -2.0,
+                -18.0,
+                106.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1178.27
+            },
+            {
+              "pos": [
+                6.0,
+                -10.0,
+                118.0
+              ],
+              "failure_index": 0.001,
+              "safety_factor": 1363.13
+            }
+          ],
+          "case": "LC4t  twist the head about the vertical axis",
+          "load_class": "normal",
+          "required_safety_factor": 3.0,
+          "solver": {
+            "backend": "cuda",
+            "device": "NVIDIA GeForce RTX 4060 Ti",
+            "torch": "2.12.0+cu130",
+            "preconditioner": "mg",
+            "precision": "mixed32",
+            "multigrid": {
+              "levels": [
+                {
+                  "shape": [
+                    64,
+                    64,
+                    42
+                  ],
+                  "elements": 4108,
+                  "ndof": 545025
+                },
+                {
+                  "shape": [
+                    32,
+                    32,
+                    21
+                  ],
+                  "elements": 821,
+                  "ndof": 71874
+                },
+                {
+                  "shape": [
+                    16,
+                    16,
+                    11
+                  ],
+                  "elements": 200,
+                  "ndof": 10404
+                },
+                {
+                  "shape": [
+                    8,
+                    8,
+                    6
+                  ],
+                  "elements": 50,
+                  "ndof": 1701
+                }
+              ],
+              "smoother": "chebyshev(degree 2, D^-1 K, lambda ratio 30)",
+              "coarse_solver": "dense cholesky",
+              "precision": "mixed (float32 cycle, float64 coarse solve and outer CG)",
+              "setup_seconds": 0.067
+            }
+          },
+          "solve_seconds": 0.106
+        }
+      ],
+      "min_safety_factor_p99_5": 159.10323506295055,
+      "worst_element_safety_factor": 44.03050189876032,
+      "max_displacement_mm": 0.030267686337343627,
+      "pass": false
+    }
+  ],
+  "chosen_level": 0.4,
+  "chosen_reason": "no candidate passes every check; this is the strongest of the connected ones and is NOT a pass. Outstanding: mesh resolution (2.0 (thin 8.00 mm) / 4.5 (typical 17.89 mm), required >= 3 elements across the thinnest section)",
+  "finish": {
+    "voxel_mm": 1.0,
+    "refine_factor": 4,
+    "feature_tolerance_mm": 1.0,
+    "grid_shape": [
+      256,
+      256,
+      168
+    ],
+    "analysed_mm3": 296320.0,
+    "replaced_preserve": [
+      {
+        "add": "mount_head",
+        "preserve": "mount_head",
+        "voxels": 320,
+        "mm3": 20480.0
+      }
+    ],
+    "replaced_mm3": 20480.0,
+    "bridge_mm3": 1024.0,
+    "resampled_mm3": 276864.0,
+    "smooth_mm": 2.0,
+    "added": [
+      {
+        "name": "mount_head",
+        "stl": "tall_mount_solid.stl",
+        "voxels": 18712,
+        "added_mm3": 18200.0
+      }
+    ],
+    "cut": [
+      {
+        "name": "mount_features",
+        "stl": "tall_mount_cuts.stl",
+        "voxels": 12404,
+        "removed_mm3": 2524.0
+      }
+    ],
+    "smooth": {
+      "sigma_mm": 2.0,
+      "level": 0.471,
+      "held_cells": 20984,
+      "void_cells": 34718,
+      "cells_before": 295064,
+      "cells_after": 295068,
+      "volume_change_pct": 0.0,
+      "note": "Gaussian on the optimised material only; the CAD bodies, unreplaced preserve and the plate layer are held at 1, obstacles at 0, and the threshold is chosen so the volume matches the analysed staircase"
+    },
+    "final_mm3": 292544.0,
+    "finish_stl_triangles": 154036,
+    "finish_stl_kind": "isosurface",
+    "finish_voxel_stl_triangles": 58218
+  },
+  "outputs": {
+    "stl": "tall_tripod/03_optimization\\tall_tripod_study_t40.stl",
+    "smooth_stl": "tall_tripod/03_optimization\\tall_tripod_study_t40_smooth.stl",
+    "step": "tall_tripod/03_optimization\\tall_tripod_study_t40.step",
+    "finish_stl": "tall_tripod/03_optimization\\tall_tripod_study_t40_finish.stl",
+    "finish_voxel_stl": "tall_tripod/03_optimization\\tall_tripod_study_t40_finish_voxel.stl"
+  },
+  "shell": {
+    "finish_stl": {
+      "triangles": 154036,
+      "open_edges": 0,
+      "non_manifold_edges": 0,
+      "degenerate": 0,
+      "closed_shell": true,
+      "components": 1,
+      "edge_components": 1,
+      "self_intersections": null,
+      "self_intersection_examples": [],
+      "self_intersection_note": "154036 triangles is over the 60000 the pair search is sized for; not checked",
+      "file": "tall_tripod_study_t40_finish.stl"
+    },
+    "finish_voxel_stl": {
+      "triangles": 58218,
+      "open_edges": 25774,
+      "non_manifold_edges": 2,
+      "degenerate": 0,
+      "closed_shell": false,
+      "components": 1,
+      "edge_components": 80,
+      "self_intersections": 0,
+      "self_intersection_examples": [],
+      "file": "tall_tripod_study_t40_finish_voxel.stl"
+    },
+    "smooth_stl": {
+      "triangles": 8968,
+      "open_edges": 0,
+      "non_manifold_edges": 0,
+      "degenerate": 0,
+      "closed_shell": true,
+      "components": 1,
+      "edge_components": 1,
+      "self_intersections": 0,
+      "self_intersection_examples": [],
+      "file": "tall_tripod_study_t40_smooth.stl"
+    },
+    "stl": {
+      "triangles": 9484,
+      "open_edges": 0,
+      "non_manifold_edges": 20,
+      "degenerate": 0,
+      "closed_shell": false,
+      "components": 1,
+      "edge_components": 1,
+      "self_intersections": 0,
+      "self_intersection_examples": [],
+      "file": "tall_tripod_study_t40.stl"
+    }
+  }
+}

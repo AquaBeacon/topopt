@@ -1,0 +1,13 @@
+
+mesh target 4.00 mm
+  shell refined to 4.00 mm edges: 16100 -> 24712 triangles
+  mesh tall_tripod_study_t40_smooth_h4.00_mesh.inp: 165726 nodes, 106074 elements at 4.00 mm
+  LC1f  push 1.0 N horizontally at the c normal   req 3.00  p99.5 4102.779  worst 946.869  max   0.0008 mm  PASS
+  LC2   camera weight plus 5x vertical s normal   req 3.00  p99.5 1058.713  worst 340.402  max   0.0017 mm  PASS
+  LC3n  lift by the head, north foot cau abnormal req 1.50  p99.5 386.038  worst  28.633  max   0.0149 mm  PASS
+  LC3sw lift by the head, south-west foo abnormal req 1.50  p99.5 305.696  worst  21.782  max   0.0216 mm  PASS
+  LC3se lift by the head, south-east foo abnormal req 1.50  p99.5 295.548  worst  15.444  max   0.0224 mm  PASS
+  LC4t  twist the head about the vertica normal   req 3.00  p99.5 1751.131  worst 534.390  max   0.0007 mm  PASS
+
+wrote tall_tripod/03_optimization\ccx_summary.json
+  4.00 mm: PASS  SF 295.548  max 0.02242 mm  mass 377.580888 g

@@ -1,0 +1,344 @@
+{
+  "ok": true,
+  "errors": [],
+  "warnings": [
+    "obstacle 'mount_cuts' shares a one-cell boundary layer with preserve 'mount' (2985.2 mm3) -- that is the voxelisation of a surface the two meshes have in common, as when 'mount_cuts' is a feature cut into 'mount'. Preserve keeps those cells.",
+    "preserve 'mount' is 14 % outside the design space (1811.9 mm3) -- the protruding part is kept as material but no material can be added to it.",
+    "load region 'bolt_tab' in case 'LC1f  push 30 N from the front at the camera top' reaches 37 % (331.7 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 63 % only.",
+    "load region 'mx_front' in case 'LC1f  push 30 N from the front at the camera top' reaches 26 % (116.1 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 74 % only.",
+    "load region 'mx_back' in case 'LC1f  push 30 N from the front at the camera top' reaches 30 % (132.7 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.",
+    "load region 'bolt_tab' in case 'LC1b  push 30 N from the back at the camera top' reaches 37 % (331.7 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 63 % only.",
+    "load region 'mx_front' in case 'LC1b  push 30 N from the back at the camera top' reaches 26 % (116.1 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 74 % only.",
+    "load region 'mx_back' in case 'LC1b  push 30 N from the back at the camera top' reaches 30 % (132.7 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 70 % only.",
+    "load region 'bolt_tab' in case 'LC2   crush 150 N down on the mount' reaches 37 % (331.7 mm3) beyond preserve -- a hole it crosses, or free material. That part is dropped; the load acts on the preserve 63 % only.",
+    "symmetry X is requested but preserve is 4 % asymmetric about that plane -- the mirror-average will pull the result away from the geometry you declared",
+    "symmetry X is requested but obstacle is 10 % asymmetric about that plane -- the mirror-average will pull the result away from the geometry you declared"
+  ],
+  "info": {
+    "voxel_mm": 1.6065013249808755,
+    "grid_shape": [
+      70,
+      69,
+      27
+    ],
+    "origin_mm": [
+      -56.228,
+      -55.213,
+      -3.213
+    ],
+    "design_space_mm3": 152345.5,
+    "preserve_mm3": 14005.6,
+    "obstacle_mm3": 17111.1,
+    "obstacle_declared_mm3": 12239.4,
+    "domain_mm3": 154157.4,
+    "free_mm3": 135856.4,
+    "free_voxels": 32767,
+    "domain_voxels": 37181,
+    "preserve_outside_design_space_mm3": 1811.9,
+    "preserve_outside_design_space_pct": 12.9,
+    "preserve_bodies": 4,
+    "domain_components": 1,
+    "preserve_bodies_by_domain_component": {
+      "1": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "note_preserve_bodies": "4 separate preserve bodies, all reachable through the design space -- that is the normal generative-design setup.",
+    "design_space_blocked_pct": 2.8,
+    "boundary_conditions": [
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "support",
+        "region": "foot_F",
+        "voxels_in_domain": 88,
+        "voxels_on_preserve": 88
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "support",
+        "region": "foot_L",
+        "voxels_in_domain": 84,
+        "voxels_on_preserve": 84
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "support",
+        "region": "foot_R",
+        "voxels_in_domain": 84,
+        "voxels_on_preserve": 84
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "load",
+        "region": "bolt_tab",
+        "voxels_in_domain": 214,
+        "voxels_on_preserve": 134
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "load",
+        "region": "mx_front",
+        "voxels_in_domain": 108,
+        "voxels_on_preserve": 80
+      },
+      {
+        "case": "LC1f  push 30 N from the front at the camera top",
+        "kind": "load",
+        "region": "mx_back",
+        "voxels_in_domain": 108,
+        "voxels_on_preserve": 76
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "support",
+        "region": "foot_F",
+        "voxels_in_domain": 88,
+        "voxels_on_preserve": 88
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "support",
+        "region": "foot_L",
+        "voxels_in_domain": 84,
+        "voxels_on_preserve": 84
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "support",
+        "region": "foot_R",
+        "voxels_in_domain": 84,
+        "voxels_on_preserve": 84
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "load",
+        "region": "bolt_tab",
+        "voxels_in_domain": 214,
+        "voxels_on_preserve": 134
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "load",
+        "region": "mx_front",
+        "voxels_in_domain": 108,
+        "voxels_on_preserve": 80
+      },
+      {
+        "case": "LC1b  push 30 N from the back at the camera top",
+        "kind": "load",
+        "region": "mx_back",
+        "voxels_in_domain": 108,
+        "voxels_on_preserve": 76
+      },
+      {
+        "case": "LC2   crush 150 N down on the mount",
+        "kind": "support",
+        "region": "foot_F",
+        "voxels_in_domain": 88,
+        "voxels_on_preserve": 88
+      },
+      {
+        "case": "LC2   crush 150 N down on the mount",
+        "kind": "support",
+        "region": "foot_L",
+        "voxels_in_domain": 84,
+        "voxels_on_preserve": 84
+      },
+      {
+        "case": "LC2   crush 150 N down on the mount",
+        "kind": "support",
+        "region": "foot_R",
+        "voxels_in_domain": 84,
+        "voxels_on_preserve": 84
+      },
+      {
+        "case": "LC2   crush 150 N down on the mount",
+        "kind": "load",
+        "region": "bolt_tab",
+        "voxels_in_domain": 214,
+        "voxels_on_preserve": 134
+      },
+      {
+        "case": "LC3x  prise 150 N on one foot, the other two clamped",
+        "kind": "support",
+        "region": "foot_L",
+        "voxels_in_domain": 84,
+        "voxels_on_preserve": 84
+      },
+      {
+        "case": "LC3x  prise 150 N on one foot, the other two clamped",
+        "kind": "support",
+        "region": "foot_R",
+        "voxels_in_domain": 84,
+        "voxels_on_preserve": 84
+      },
+      {
+        "case": "LC3x  prise 150 N on one foot, the other two clamped",
+        "kind": "load",
+        "region": "foot_F",
+        "voxels_in_domain": 88,
+        "voxels_on_preserve": 88
+      }
+    ],
+    "symmetry_mismatch_pct": {
+      "X": {
+        "design_space": 0.0,
+        "preserve": 3.67,
+        "obstacle": 9.72
+      }
+    }
+  },
+  "bodies": [
+    {
+      "name": "design_space",
+      "kind": "design_space",
+      "source": "stl:design_space.stl",
+      "voxels": 36744,
+      "mm3": 152345.5,
+      "bbox_mm": [
+        [
+          -51.41,
+          -52.0,
+          0.0
+        ],
+        [
+          51.41,
+          52.42,
+          22.49
+        ]
+      ]
+    },
+    {
+      "name": "mount",
+      "kind": "preserve",
+      "source": "stl:mount_only.stl",
+      "voxels": 3122,
+      "mm3": 12944.2,
+      "bbox_mm": [
+        [
+          -12.85,
+          -13.44,
+          0.0
+        ],
+        [
+          12.85,
+          12.26,
+          32.13
+        ]
+      ]
+    },
+    {
+      "name": "foot_F",
+      "kind": "preserve",
+      "source": "cylinder",
+      "voxels": 88,
+      "mm3": 364.9,
+      "bbox_mm": [
+        [
+          -6.43,
+          39.57,
+          0.0
+        ],
+        [
+          6.43,
+          50.82,
+          3.21
+        ]
+      ]
+    },
+    {
+      "name": "foot_L",
+      "kind": "preserve",
+      "source": "cylinder",
+      "voxels": 84,
+      "mm3": 348.3,
+      "bbox_mm": [
+        [
+          -44.98,
+          -27.9,
+          0.0
+        ],
+        [
+          -33.74,
+          -16.66,
+          3.21
+        ]
+      ]
+    },
+    {
+      "name": "foot_R",
+      "kind": "preserve",
+      "source": "cylinder",
+      "voxels": 84,
+      "mm3": 348.3,
+      "bbox_mm": [
+        [
+          33.74,
+          -27.9,
+          0.0
+        ],
+        [
+          44.98,
+          -16.66,
+          3.21
+        ]
+      ]
+    },
+    {
+      "name": "mount_cuts",
+      "kind": "obstacle",
+      "source": "stl:mount_cuts.stl",
+      "voxels": 4847,
+      "mm3": 20096.3,
+      "bbox_mm": [
+        [
+          -22.49,
+          -13.44,
+          9.64
+        ],
+        [
+          24.1,
+          13.87,
+          35.34
+        ]
+      ],
+      "clearance_requested_mm": 2.0,
+      "clearance_achieved_mm": 2.0
+    },
+    {
+      "name": "preserve body 1",
+      "kind": "preserve_component",
+      "source": "foot_L",
+      "voxels": 84,
+      "mm3": 348.3,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 2",
+      "kind": "preserve_component",
+      "source": "mount",
+      "voxels": 3122,
+      "mm3": 12944.2,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 3",
+      "kind": "preserve_component",
+      "source": "foot_F",
+      "voxels": 88,
+      "mm3": 364.9,
+      "domain_component": 1
+    },
+    {
+      "name": "preserve body 4",
+      "kind": "preserve_component",
+      "source": "foot_R",
+      "voxels": 84,
+      "mm3": 348.3,
+      "domain_component": 1
+    }
+  ]
+}

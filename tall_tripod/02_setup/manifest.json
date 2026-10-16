@@ -1,0 +1,61 @@
+{
+  "schema": "topopt/manifest/1",
+  "tool": {
+    "name": "topopt",
+    "version": "1.0.0"
+  },
+  "command": {
+    "name": "setup",
+    "argv": [
+      "tall_tripod/tall_tripod_study.json",
+      "--out",
+      "tall_tripod/02_setup",
+      "--voxel",
+      "4",
+      "--iters",
+      "80"
+    ],
+    "line": "setup tall_tripod/tall_tripod_study.json --out tall_tripod/02_setup --voxel 4 --iters 80",
+    "cwd": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing"
+  },
+  "run": {
+    "started_utc": "2026-09-09T15:24:04Z",
+    "finished_utc": "2026-09-09T15:24:14Z",
+    "seconds": 9.215,
+    "exit_code": 0,
+    "exit_code_meaning": "pass / valid"
+  },
+  "source": {
+    "git_commit": "57541b1feb77cf083f5656a8ec85ee27448cfd18",
+    "git_dirty": true
+  },
+  "environment": {
+    "python": "3.13.5",
+    "python_full": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "packages": {
+      "numpy": "2.4.2",
+      "scipy": "1.18.0",
+      "matplotlib": "3.10.8",
+      "skimage": "0.26.0",
+      "pytest": "9.1.1",
+      "torch": "2.12.0+cu130"
+    },
+    "external_tools": {
+      "freecad": null,
+      "calculix": null,
+      "gmsh": null,
+      "openscad": null
+    }
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\tall_tripod\\tall_tripod_study.json",
+      "bytes": 23621,
+      "sha256": "afc830674e8b24f5f35d425e128627fb3f04d2fa3bf346ca5a35121b62b6ddbf"
+    }
+  ],
+  "random_seed": null,
+  "random_seed_note": "no seed was declared by the study. The voxel path is deterministic (uniform initial density, OC update, CG solve), so a seed is not currently required for reproducibility."
+}

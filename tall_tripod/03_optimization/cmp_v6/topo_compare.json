@@ -1,0 +1,94 @@
+{
+  "voxel_mm": 3.0,
+  "optimum_voxels": 10403,
+  "rebuild_voxels": 10929,
+  "overlap": 10298,
+  "missing": 105,
+  "extra": 631,
+  "fea": [
+    {
+      "shape": "optimum shape",
+      "case": "LC1f  push 1.0 N horizontally at the camera mount",
+      "deflection_mm": 0.0010530612408190393,
+      "compliance_Nmm": 0.001708392104604628,
+      "safety_factor": 2691.1555403069137
+    },
+    {
+      "shape": "optimum shape",
+      "case": "LC2   camera weight plus 5x vertical shock",
+      "deflection_mm": 0.0024058732933128577,
+      "compliance_Nmm": 0.02671716894570732,
+      "safety_factor": 712.4734920328528
+    },
+    {
+      "shape": "optimum shape",
+      "case": "LC3n  lift by the head, north foot caught",
+      "deflection_mm": 0.017046766522071783,
+      "compliance_Nmm": 0.0979848241331605,
+      "safety_factor": 231.78376006381282
+    },
+    {
+      "shape": "optimum shape",
+      "case": "LC3sw lift by the head, south-west foot caught",
+      "deflection_mm": 0.024975726795476345,
+      "compliance_Nmm": 0.17603080054270975,
+      "safety_factor": 212.50611658962097
+    },
+    {
+      "shape": "optimum shape",
+      "case": "LC3se lift by the head, south-east foot caught",
+      "deflection_mm": 0.026304241217948547,
+      "compliance_Nmm": 0.1821623435990905,
+      "safety_factor": 201.25282813020786
+    },
+    {
+      "shape": "optimum shape",
+      "case": "LC4t  twist the head about the vertical axis",
+      "deflection_mm": 0.0010853039791008025,
+      "compliance_Nmm": 0.0032712733585639857,
+      "safety_factor": 1198.6423579405837
+    },
+    {
+      "shape": "rebuild",
+      "case": "LC1f  push 1.0 N horizontally at the camera mount",
+      "deflection_mm": 0.0012223102515428238,
+      "compliance_Nmm": 0.001942703490468739,
+      "safety_factor": 1796.5199334840718
+    },
+    {
+      "shape": "rebuild",
+      "case": "LC2   camera weight plus 5x vertical shock",
+      "deflection_mm": 0.0034349265695633683,
+      "compliance_Nmm": 0.03132143453703089,
+      "safety_factor": 464.5689502747917
+    },
+    {
+      "shape": "rebuild",
+      "case": "LC3n  lift by the head, north foot caught",
+      "deflection_mm": 0.025811523169741436,
+      "compliance_Nmm": 0.10622875218554703,
+      "safety_factor": 136.68714089932968
+    },
+    {
+      "shape": "rebuild",
+      "case": "LC3sw lift by the head, south-west foot caught",
+      "deflection_mm": 0.032049047389732556,
+      "compliance_Nmm": 0.17549619546227083,
+      "safety_factor": 147.21436727347742
+    },
+    {
+      "shape": "rebuild",
+      "case": "LC3se lift by the head, south-east foot caught",
+      "deflection_mm": 0.032766060167863015,
+      "compliance_Nmm": 0.17557890406842003,
+      "safety_factor": 142.6025014980257
+    },
+    {
+      "shape": "rebuild",
+      "case": "LC4t  twist the head about the vertical axis",
+      "deflection_mm": 0.0027618179798982907,
+      "compliance_Nmm": 0.008450304559617119,
+      "safety_factor": 551.0393664370646
+    }
+  ]
+}

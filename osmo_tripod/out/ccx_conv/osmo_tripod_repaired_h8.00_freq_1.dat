@@ -1,0 +1,143 @@
+
+                        S T E P       1
+
+
+     E I G E N V A L U E   O U T P U T
+
+ MODE NO    EIGENVALUE                       FREQUENCY   
+                                     REAL PART            IMAGINARY PART
+                           (RAD/TIME)      (CYCLES/TIME     (RAD/TIME)
+
+      1   0.1318575E+09   0.1148292E+05   0.1827564E+04   0.0000000E+00
+      2   0.3476230E+09   0.1864465E+05   0.2967388E+04   0.0000000E+00
+      3   0.4379681E+09   0.2092769E+05   0.3330745E+04   0.0000000E+00
+      4   0.4794605E+09   0.2189659E+05   0.3484950E+04   0.0000000E+00
+      5   0.6537016E+09   0.2556759E+05   0.4069208E+04   0.0000000E+00
+      6   0.6902041E+09   0.2627174E+05   0.4181277E+04   0.0000000E+00
+
+     P A R T I C I P A T I O N   F A C T O R S
+
+MODE NO.   X-COMPONENT     Y-COMPONENT     Z-COMPONENT     X-ROTATION      Y-ROTATION      Z-ROTATION
+
+      1  -0.7686736E-05  -0.6854520E-04  -0.6353706E-02  -0.1283404E-02   0.3268633E-02   0.5209806E-04
+      2   0.1825532E-02   0.8756903E-04   0.7357745E-04  -0.2951979E-03   0.8520432E-01  -0.5202750E-02
+      3   0.1393983E-03   0.1032601E-02   0.1009234E-03  -0.1021336E+00  -0.1562374E-02   0.1373341E-02
+      4   0.2385017E-03   0.1522376E-03   0.2171880E-04  -0.1858797E-02   0.3689894E-01  -0.2588783E-02
+      5  -0.2592411E-02   0.5300017E-02  -0.7585503E-04  -0.2980228E-01   0.1940217E-02   0.1005971E-01
+      6   0.2991254E-02   0.3437741E-02  -0.1007139E-03  -0.1796441E-01  -0.1181567E-01   0.5971595E-03
+
+     E F F E C T I V E   M O D A L   M A S S
+
+MODE NO.   X-COMPONENT     Y-COMPONENT     Z-COMPONENT     X-ROTATION      Y-ROTATION      Z-ROTATION
+
+      1   0.5908592E-10   0.4698445E-08   0.4036958E-04   0.1647126E-05   0.1068396E-04   0.2714208E-08
+      2   0.3332565E-05   0.7668336E-08   0.5413641E-08   0.8714177E-07   0.7259776E-02   0.2706861E-04
+      3   0.1943188E-07   0.1066264E-05   0.1018552E-07   0.1043128E-01   0.2441011E-05   0.1886066E-05
+      4   0.5688308E-07   0.2317630E-07   0.4717063E-09   0.3455125E-05   0.1361532E-02   0.6701797E-05
+      5   0.6720597E-05   0.2809019E-04   0.5753985E-08   0.8881759E-03   0.3764442E-05   0.1011977E-03
+      6   0.8947599E-05   0.1181807E-04   0.1014330E-07   0.3227201E-03   0.1396100E-03   0.3565995E-06
+TOTAL     0.1907714E-04   0.4101006E-04   0.4040155E-04   0.1164736E-01   0.8777807E-02   0.1372135E-03
+
+     T O T A L   E F F E C T I V E   M A S S
+
+           X-COMPONENT     Y-COMPONENT     Z-COMPONENT     X-ROTATION      Y-ROTATION      Z-ROTATION
+
+          0.4747531E-04   0.4747531E-04   0.4747531E-04   0.1787388E-01   0.1769995E-01   0.2570050E-01
+
+
+     F R A C T I O N   O F   T O T A L S
+
+           X-COMPONENT     Y-COMPONENT     Z-COMPONENT     X-ROTATION      Y-ROTATION      Z-ROTATION
+
+          0.4018328E+00   0.8638187E+00   0.8510013E+00   0.6516414E+00   0.4959227E+00   0.5338942E-02
+
+
+                    E I G E N V A L U E    N U M B E R     1
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.1000000E+01
+
+        6.426784E+03 -2.975033E+05  2.791171E+05
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.1000000E+01
+
+        3.158763E+05  1.488149E+05  2.753063E+05
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.1000000E+01
+
+       -3.212896E+05  1.577265E+05  2.833601E+05
+
+                    E I G E N V A L U E    N U M B E R     2
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.1000000E+01
+
+       -1.343405E+04 -1.519243E+04 -6.649334E+03
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.1000000E+01
+
+       -3.210133E+05 -2.079888E+05 -3.936171E+05
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.1000000E+01
+
+       -3.001493E+05  1.927402E+05  3.746892E+05
+
+                    E I G E N V A L U E    N U M B E R     3
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.1000000E+01
+
+       -1.350225E+03 -4.091760E+05  6.963073E+05
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.1000000E+01
+
+       -2.889641E+05 -2.589162E+04 -3.608078E+05
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.1000000E+01
+
+        2.292624E+05 -1.717852E+04 -3.797007E+05
+
+                    E I G E N V A L U E    N U M B E R     4
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.1000000E+01
+
+        2.319431E+04 -4.479707E+04  8.629584E+03
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.1000000E+01
+
+       -7.781777E+04 -8.776871E+04 -2.524697E+05
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.1000000E+01
+
+       -5.972870E+04  5.957384E+04  2.334268E+05
+
+                    E I G E N V A L U E    N U M B E R     5
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.1000000E+01
+
+        3.174537E+05 -1.831444E+06  1.215014E+05
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.1000000E+01
+
+        1.059133E+05 -5.207912E+05 -1.390154E+05
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.1000000E+01
+
+        1.271297E+06 -1.112395E+06  6.710051E+04
+
+                    E I G E N V A L U E    N U M B E R     6
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.1000000E+01
+
+       -3.060247E+05 -1.208483E+06  7.171573E+04
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.1000000E+01
+
+       -1.349849E+06 -9.059738E+05  2.249135E+05
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.1000000E+01
+
+       -4.087019E+05 -2.582861E+05 -2.271160E+05

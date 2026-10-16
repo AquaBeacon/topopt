@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+license = { text = "Apache-2.0" }
+name = "topopt"
+version = "1.0.0"
+description = "Voxel FEA and SIMP topology optimisation for FDM-printed parts"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+# matplotlib: every PNG (setup preview, FEA report, section plots)
+# scikit-image: marching-cubes smooth STL and skeleton-based member extraction
+# pytest: the regression suite. Never a runtime dependency -- `tests/smoke.py`
+#         stays runnable with nothing but numpy and scipy, on purpose, because
+#         it is what you run when pytest itself is what you suspect.
+# pyyaml: YAML study files. JSON needs nothing, so YAML stays optional and
+#         `topopt` says how to install it if you hand it a .yaml.
+plots = ["matplotlib>=3.6"]
+mesh = ["scikit-image>=0.20"]
+yaml = ["pyyaml>=6.0"]
+test = ["pytest>=7.0"]
+mcp = ["mcp>=1.12,<2"]
+all = ["matplotlib>=3.6", "scikit-image>=0.20", "pyyaml>=6.0"]
+
+[project.scripts]
+topopt = "topopt.cli:main"
+topopt-mcp = "topopt.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# `tests/` has no __init__.py, so prepend import mode puts it on sys.path and
+# `import checks` resolves the same way it does for `python tests/smoke.py`.
+addopts = "-q --strict-markers"
+markers = [
+    "slow: minutes, not seconds -- full optimisation or fine-voxel FEA runs",
+    "osmo: needs the osmo_tripod reference model next to the package",
+]

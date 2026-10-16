@@ -1,0 +1,416 @@
+{
+  "schema": "topopt/fea-convergence/1",
+  "part": "C:\\Users\\ryupc\\WorkSpace\\Mitou26\\TO_printing\\osmo_tripod\\out/osmo_tripod.stl",
+  "voxel_mm": [
+    4.0,
+    2.0,
+    1.0
+  ],
+  "cases": {
+    "LC1 push 30N at camera top z=88, feet gripped": {
+      "runs": [
+        {
+          "level": "coarse",
+          "target_mm": 4.0,
+          "elements": 615,
+          "max_disp_mm": 0.04263192553457729,
+          "max_stress_MPa": 2.6766538002564606,
+          "p99_5_stress_MPa": 2.4855972485086597,
+          "safety_factor_p99_5": 12.977724172190802,
+          "min_safety_factor": 7.520938233085646,
+          "hotspot_xyz_mm": [
+            7.72,
+            8.37,
+            18.0
+          ]
+        },
+        {
+          "level": "medium",
+          "target_mm": 2.0,
+          "elements": 4923,
+          "max_disp_mm": 0.045132088348677074,
+          "max_stress_MPa": 4.155614315326331,
+          "p99_5_stress_MPa": 2.1891986018430423,
+          "safety_factor_p99_5": 14.416799430037091,
+          "min_safety_factor": 5.299034201347073,
+          "hotspot_xyz_mm": [
+            -7.28,
+            9.37,
+            17.0
+          ]
+        },
+        {
+          "level": "fine",
+          "target_mm": 1.0,
+          "elements": 39662,
+          "max_disp_mm": 0.03929210613322837,
+          "max_stress_MPa": 3.975097787760146,
+          "p99_5_stress_MPa": 1.653003841645126,
+          "safety_factor_p99_5": 18.141232853611516,
+          "min_safety_factor": 4.955803365964354,
+          "hotspot_xyz_mm": [
+            -8.78,
+            9.87,
+            17.5
+          ]
+        }
+      ],
+      "verdict": {
+        "steps": [
+          {
+            "displacement_change": 0.0554,
+            "stress_change": 0.13539,
+            "hotspot_shift_mm": 15.06652
+          },
+          {
+            "displacement_change": 0.14863,
+            "stress_change": 0.32438,
+            "hotspot_shift_mm": 1.65831
+          }
+        ],
+        "tolerance": 0.05,
+        "hotspot_tolerance_mm": 2.0,
+        "pass": false,
+        "note": "the answer is still moving with the mesh; it is a property of the discretisation, not of the part"
+      }
+    },
+    "LC2 bag crush 150N straight down on the mount": {
+      "runs": [
+        {
+          "level": "coarse",
+          "target_mm": 4.0,
+          "elements": 615,
+          "max_disp_mm": 0.04089658098581577,
+          "max_stress_MPa": 3.3821015820090765,
+          "p99_5_stress_MPa": 2.9071429502702832,
+          "safety_factor_p99_5": 17.295316922842225,
+          "min_safety_factor": 16.966851993999544,
+          "hotspot_xyz_mm": [
+            35.72,
+            -11.63,
+            2.0
+          ]
+        },
+        {
+          "level": "medium",
+          "target_mm": 2.0,
+          "elements": 4923,
+          "max_disp_mm": 0.04028360457540484,
+          "max_stress_MPa": 4.540078619345607,
+          "p99_5_stress_MPa": 2.7365680696725727,
+          "safety_factor_p99_5": 17.112586065135467,
+          "min_safety_factor": 12.194807228869749,
+          "hotspot_xyz_mm": [
+            32.72,
+            -16.63,
+            1.0
+          ]
+        },
+        {
+          "level": "fine",
+          "target_mm": 1.0,
+          "elements": 39662,
+          "max_disp_mm": 0.04098785787604535,
+          "max_stress_MPa": 5.873583189131179,
+          "p99_5_stress_MPa": 2.2797472140764556,
+          "safety_factor_p99_5": 20.377139968729377,
+          "min_safety_factor": 9.111627118198324,
+          "hotspot_xyz_mm": [
+            4.22,
+            38.87,
+            0.5
+          ]
+        }
+      ],
+      "verdict": {
+        "steps": [
+          {
+            "displacement_change": 0.01522,
+            "stress_change": 0.06233,
+            "hotspot_shift_mm": 5.91608
+          },
+          {
+            "displacement_change": 0.01718,
+            "stress_change": 0.20038,
+            "hotspot_shift_mm": 62.39191
+          }
+        ],
+        "tolerance": 0.05,
+        "hotspot_tolerance_mm": 2.0,
+        "pass": false,
+        "note": "the answer is still moving with the mesh; it is a property of the discretisation, not of the part"
+      }
+    },
+    "LC3h bag press 150N on one leg tip, body resting (hub supported)": {
+      "runs": [
+        {
+          "level": "coarse",
+          "target_mm": 4.0,
+          "elements": 615,
+          "max_disp_mm": 0.30549481884297575,
+          "max_stress_MPa": 10.204763840864757,
+          "p99_5_stress_MPa": 9.209144489961767,
+          "safety_factor_p99_5": 4.5979627272890475,
+          "min_safety_factor": 4.050084774038379,
+          "hotspot_xyz_mm": [
+            7.72,
+            20.37,
+            10.0
+          ]
+        },
+        {
+          "level": "medium",
+          "target_mm": 2.0,
+          "elements": 4923,
+          "max_disp_mm": 0.3644736919493728,
+          "max_stress_MPa": 11.506165238619626,
+          "p99_5_stress_MPa": 8.922680202312284,
+          "safety_factor_p99_5": 4.164685866724513,
+          "min_safety_factor": 2.965156910645613,
+          "hotspot_xyz_mm": [
+            -9.28,
+            21.37,
+            11.0
+          ]
+        },
+        {
+          "level": "fine",
+          "target_mm": 1.0,
+          "elements": 39662,
+          "max_disp_mm": 0.3466577107645445,
+          "max_stress_MPa": 16.744132800911938,
+          "p99_5_stress_MPa": 7.215668641305325,
+          "safety_factor_p99_5": 5.336370106478206,
+          "min_safety_factor": 2.6170516735202964,
+          "hotspot_xyz_mm": [
+            2.22,
+            19.87,
+            0.5
+          ]
+        }
+      ],
+      "verdict": {
+        "steps": [
+          {
+            "displacement_change": 0.16182,
+            "stress_change": 0.03211,
+            "hotspot_shift_mm": 17.05872
+          },
+          {
+            "displacement_change": 0.05139,
+            "stress_change": 0.23657,
+            "hotspot_shift_mm": 15.64449
+          }
+        ],
+        "tolerance": 0.05,
+        "hotspot_tolerance_mm": 2.0,
+        "pass": false,
+        "note": "the answer is still moving with the mesh; it is a property of the discretisation, not of the part"
+      }
+    },
+    "LC3x worst leverage 150N on one leg tip, other two feet gripped": {
+      "runs": [
+        {
+          "level": "coarse",
+          "target_mm": 4.0,
+          "elements": 615,
+          "max_disp_mm": 2.5875784469952965,
+          "max_stress_MPa": 39.13388258204425,
+          "p99_5_stress_MPa": 33.70637014683181,
+          "safety_factor_p99_5": 1.5605062283433004,
+          "min_safety_factor": 1.4602356541129942,
+          "hotspot_xyz_mm": [
+            -32.28,
+            -23.63,
+            6.0
+          ]
+        },
+        {
+          "level": "medium",
+          "target_mm": 2.0,
+          "elements": 4923,
+          "max_disp_mm": 2.6401131190450116,
+          "max_stress_MPa": 46.768432661239885,
+          "p99_5_stress_MPa": 20.75469061489383,
+          "safety_factor_p99_5": 1.8160459092783965,
+          "min_safety_factor": 1.2025647577876666,
+          "hotspot_xyz_mm": [
+            34.72,
+            -14.63,
+            1.0
+          ]
+        },
+        {
+          "level": "fine",
+          "target_mm": 1.0,
+          "elements": 39662,
+          "max_disp_mm": 2.7836676965433087,
+          "max_stress_MPa": 61.82866358318851,
+          "p99_5_stress_MPa": 21.110784365112153,
+          "safety_factor_p99_5": 2.0071492210352573,
+          "min_safety_factor": 0.8450857410143623,
+          "hotspot_xyz_mm": [
+            -33.78,
+            -17.13,
+            0.5
+          ]
+        }
+      ],
+      "verdict": {
+        "steps": [
+          {
+            "displacement_change": 0.0199,
+            "stress_change": 0.62404,
+            "hotspot_shift_mm": 67.78643
+          },
+          {
+            "displacement_change": 0.05157,
+            "stress_change": 0.01687,
+            "hotspot_shift_mm": 68.54743
+          }
+        ],
+        "tolerance": 0.05,
+        "hotspot_tolerance_mm": 2.0,
+        "pass": false,
+        "note": "the answer is still moving with the mesh; it is a property of the discretisation, not of the part"
+      }
+    },
+    "LC3b 150N sideways on one leg tip, other two feet gripped": {
+      "runs": [
+        {
+          "level": "coarse",
+          "target_mm": 4.0,
+          "elements": 615,
+          "max_disp_mm": 0.25295004279266753,
+          "max_stress_MPa": 6.489517031494239,
+          "p99_5_stress_MPa": 6.130508828688169,
+          "safety_factor_p99_5": 6.066378143208537,
+          "min_safety_factor": 5.529426068504548,
+          "hotspot_xyz_mm": [
+            -8.28,
+            16.37,
+            6.0
+          ]
+        },
+        {
+          "level": "medium",
+          "target_mm": 2.0,
+          "elements": 4923,
+          "max_disp_mm": 0.2523557683122476,
+          "max_stress_MPa": 7.5467322490758635,
+          "p99_5_stress_MPa": 5.269646793115309,
+          "safety_factor_p99_5": 7.8093865310108255,
+          "min_safety_factor": 4.501886437338469,
+          "hotspot_xyz_mm": [
+            -9.28,
+            21.37,
+            11.0
+          ]
+        },
+        {
+          "level": "fine",
+          "target_mm": 1.0,
+          "elements": 39662,
+          "max_disp_mm": 0.25386148163449207,
+          "max_stress_MPa": 7.710106364767785,
+          "p99_5_stress_MPa": 4.668204301194146,
+          "safety_factor_p99_5": 9.207074786433932,
+          "min_safety_factor": 4.403813245645644,
+          "hotspot_xyz_mm": [
+            -9.78,
+            23.87,
+            11.5
+          ]
+        }
+      ],
+      "verdict": {
+        "steps": [
+          {
+            "displacement_change": 0.00235,
+            "stress_change": 0.16336,
+            "hotspot_shift_mm": 7.14143
+          },
+          {
+            "displacement_change": 0.00593,
+            "stress_change": 0.12884,
+            "hotspot_shift_mm": 2.59808
+          }
+        ],
+        "tolerance": 0.05,
+        "hotspot_tolerance_mm": 2.0,
+        "pass": false,
+        "note": "the answer is still moving with the mesh; it is a property of the discretisation, not of the part"
+      }
+    },
+    "LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount": {
+      "runs": [
+        {
+          "level": "coarse",
+          "target_mm": 4.0,
+          "elements": 615,
+          "max_disp_mm": 3.792805759731682,
+          "max_stress_MPa": 70.10892756594282,
+          "p99_5_stress_MPa": 64.14375961466865,
+          "safety_factor_p99_5": 0.7045511739338391,
+          "min_safety_factor": 0.5863119577335099,
+          "hotspot_xyz_mm": [
+            -4.28,
+            40.37,
+            6.0
+          ]
+        },
+        {
+          "level": "medium",
+          "target_mm": 2.0,
+          "elements": 4923,
+          "max_disp_mm": 4.141721289466981,
+          "max_stress_MPa": 88.23213955979722,
+          "p99_5_stress_MPa": 42.13230692494523,
+          "safety_factor_p99_5": 0.8887684993023413,
+          "min_safety_factor": 0.5008104558437816,
+          "hotspot_xyz_mm": [
+            2.72,
+            37.37,
+            1.0
+          ]
+        },
+        {
+          "level": "fine",
+          "target_mm": 1.0,
+          "elements": 39662,
+          "max_disp_mm": 4.6308685466978385,
+          "max_stress_MPa": 128.95637619450707,
+          "p99_5_stress_MPa": 42.35224999338928,
+          "safety_factor_p99_5": 0.9442568632048819,
+          "min_safety_factor": 0.3483895792678611,
+          "hotspot_xyz_mm": [
+            4.22,
+            38.87,
+            0.5
+          ]
+        }
+      ],
+      "verdict": {
+        "steps": [
+          {
+            "displacement_change": 0.08424,
+            "stress_change": 0.52244,
+            "hotspot_shift_mm": 9.11043
+          },
+          {
+            "displacement_change": 0.10563,
+            "stress_change": 0.00519,
+            "hotspot_shift_mm": 2.17945
+          }
+        ],
+        "tolerance": 0.05,
+        "hotspot_tolerance_mm": 2.0,
+        "pass": false,
+        "note": "the answer is still moving with the mesh; it is a property of the discretisation, not of the part"
+      }
+    }
+  },
+  "governing_case": "LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount",
+  "pass": false,
+  "note": "still moving with the mesh in: LC1 push 30N at camera top z=88, feet gripped (the answer is still moving with the mesh; it is a property of the discretisation, not of the part), LC2 bag crush 150N straight down on the mount (the answer is still moving with the mesh; it is a property of the discretisation, not of the part), LC3h bag press 150N on one leg tip, body resting (hub supported) (the answer is still moving with the mesh; it is a property of the discretisation, not of the part), LC3x worst leverage 150N on one leg tip, other two feet gripped (the answer is still moving with the mesh; it is a property of the discretisation, not of the part), LC3b 150N sideways on one leg tip, other two feet gripped (the answer is still moving with the mesh; it is a property of the discretisation, not of the part), LC5tip DROP 100g: land on one foot, camera inertia 245N down at the mount (the answer is still moving with the mesh; it is a property of the discretisation, not of the part)"
+}

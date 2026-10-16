@@ -1,0 +1,84 @@
+
+                        S T E P       1
+
+
+                                INCREMENT     1
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.1000000E+01
+
+       -6.806598E-01  3.178758E+01 -4.379364E+01
+
+ total force (fx,fy,fz) for set FIXED1_2 and time  0.1000000E+01
+
+        1.935449E+01 -6.605007E-01  2.203042E+01
+
+ total force (fx,fy,fz) for set FIXED1_3 and time  0.1000000E+01
+
+       -1.867383E+01 -1.127082E+00  2.223145E+01
+
+                        S T E P       2
+
+
+                                INCREMENT     1
+
+
+ total force (fx,fy,fz) for set FIXED2_1 and time  0.2000000E+01
+
+        7.837514E-01 -6.051958E+01  4.997388E+01
+
+ total force (fx,fy,fz) for set FIXED2_2 and time  0.2000000E+01
+
+        6.292063E+01  2.959279E+01  4.844184E+01
+
+ total force (fx,fy,fz) for set FIXED2_3 and time  0.2000000E+01
+
+       -6.370438E+01  3.092679E+01  5.205251E+01
+
+                        S T E P       3
+
+
+                                INCREMENT     1
+
+
+ total force (fx,fy,fz) for set FIXED3_1 and time  0.3000000E+01
+
+       -1.617539E-09  1.030007E-08  1.504563E+02
+
+                        S T E P       4
+
+
+                                INCREMENT     1
+
+
+ total force (fx,fy,fz) for set FIXED4_1 and time  0.4000000E+01
+
+        8.840491E+01  4.036046E-01  7.529711E+01
+
+ total force (fx,fy,fz) for set FIXED4_2 and time  0.4000000E+01
+
+       -8.840491E+01 -4.036029E-01  7.517637E+01
+
+                        S T E P       5
+
+
+                                INCREMENT     1
+
+
+ total force (fx,fy,fz) for set FIXED5_1 and time  0.5000000E+01
+
+       -7.453672E+01 -1.454840E+02  5.252225E+00
+
+ total force (fx,fy,fz) for set FIXED5_2 and time  0.5000000E+01
+
+       -7.546328E+01  1.454840E+02 -4.778746E+00
+
+                        S T E P       6
+
+
+                                INCREMENT     1
+
+
+ total force (fx,fy,fz) for set FIXED6_1 and time  0.6000000E+01
+
+        1.920128E-07 -1.028028E-06  2.928768E+02

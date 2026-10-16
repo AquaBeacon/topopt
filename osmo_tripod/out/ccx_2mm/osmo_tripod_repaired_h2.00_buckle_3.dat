@@ -1,0 +1,45 @@
+
+                        S T E P       1
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+        5.197842E-12  3.228751E-12  1.500000E+02
+
+     B U C K L I N G   F A C T O R   O U T P U T
+
+ MODE NO       BUCKLING
+                FACTOR
+
+      1   0.2307788E+03
+      2   0.2838653E+03
+      3   0.3266310E+03
+      4   0.3638196E+03
+
+                    E I G E N V A L U E    N U M B E R     1
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+        8.231152E+01 -5.362293E+00  5.614136E+00
+
+                    E I G E N V A L U E    N U M B E R     2
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+        7.582871E-01  2.156376E+00  1.742170E+00
+
+                    E I G E N V A L U E    N U M B E R     3
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+        8.062227E+00  7.475651E+00  2.765441E+01
+
+                    E I G E N V A L U E    N U M B E R     4
+
+
+ total force (fx,fy,fz) for set FIXED1_1 and time  0.0000000E+00
+
+       -3.638401E+01  3.866122E-01 -1.916596E+01
